@@ -4,6 +4,7 @@
     "CoachCard": "./components/CoachCard/CoachCard",
     "ClassDetails": "./components/ClassDetails/ClassDetails",
     "ActionButton": "../../../../components/ActionButton/ActionButton",
-    "OtherDates": "./components/OtherDates/OtherDates"
+    "OtherDates": "./components/OtherDates/OtherDates",
+    "GetInfoButton": "../../../../components/GetInfoButton/GetInfoButton"
   }
 }

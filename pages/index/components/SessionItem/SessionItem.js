@@ -15,11 +15,11 @@ Component({
   },
   lifetimes: {
     attached() {
-      const user = wx.getStorageSync('current_user')
+      const user = wx.getStorageSync('user')
       this.setData({
-        user: user.user
+        user
       })
-      console.log('sessionItemAttached', this.data.user)
+      // console.log('sessionItemAttached', this.data.user)
     },
   },
   /**
