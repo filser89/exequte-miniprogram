@@ -3,7 +3,7 @@ import {
   promisifyAll
 } from 'miniprogram-api-promise';
 
-import {saveUsersAvatar} from '../../utils/requests/index'
+import {saveUserAvatar} from '../../utils/requests/index'
 const wxp = {}
 promisifyAll(wx, wxp)
 Component({
@@ -35,7 +35,7 @@ Component({
       console.log('GetUserInfo', data.userInfo)
       const user = wx.getStorageSync('user')
       const avatarUrl = data.userInfo.avatarUrl
-      saveUsersAvatar(user.id, {avatarUrl})
+      saveUserAvatar(user.id, {avatarUrl})
       
     },
 

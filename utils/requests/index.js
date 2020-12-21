@@ -27,7 +27,9 @@ import {
   getCurrentUser,
   getUserDetails,
   updateUser,
-  saveUsersAvatar
+  saveUserAvatar,
+  uploadUserAvatar
+
 } from './users.js'
 
 const getStrings = (keys) => {
@@ -55,7 +57,8 @@ module.exports = {
   getInstructor,
   getUserDetails,
   updateUser,
-  saveUsersAvatar,
+  saveUserAvatar,
+  uploadUserAvatar,
   getMembershipTypes,
   buyMembership,
   addUserToQueue,
