@@ -2,8 +2,16 @@
 import WxValidate from '../../utils/WxValidate'
 import {
   getUserDetails,
-  updateUser
+  updateUser,
+  uploadUserAvatar
 } from '../../utils/requests/index'
+
+import {
+  promisifyAll,
+} from 'miniprogram-api-promise';
+
+const wxp = {}
+promisifyAll(wx, wxp)
 Page({
 
   /**
@@ -24,6 +32,20 @@ Page({
       user: await getUserDetails(user.id)
     })
   },
+  async uploadImage(e){
+    console.log("upload image")
+   const res = await wxp.chooseImage({
+      count: 1,
+      sizeType: ['original','compressed'],
+      courceType: ['album','camera']
+    })
+    const filePath = res.tempFilePaths[0]
+    console.log("url", filePath)
+ const response = await uploadUserAvatar(this.data.user.id, filePath)
+},
+
+
+
   formSubmit({
     detail
   }) {

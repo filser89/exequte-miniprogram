@@ -1,4 +1,4 @@
-import {request} from './request'
+import {request, upload} from './request'
 
 const getCurrentUser = async () => {
   const options = {
@@ -33,7 +33,7 @@ const updateUser =  async (id, params) => {
   return request(options)
 }
 
-const saveUsersAvatar = async (id, params) => {
+const saveUserAvatar = async (id, params) => {
   const options = {
     method: 'put',
     url: `/users/${id}/wechat_avatar`,
@@ -42,10 +42,20 @@ const saveUsersAvatar = async (id, params) => {
   return request(options)
 }
 
+const uploadUserAvatar = async (userId, filePath) => {
+  const options = {
+    url: `/users/${userId}/avatar`,
+    filePath,
+    name: 'avatar'
+  }
+  return upload(options)
+}
+
 module.exports = {
   getCurrentUser,
   getInstructor,
   getUserDetails,
   updateUser,
-  saveUsersAvatar
+  saveUserAvatar,
+  uploadUserAvatar
 }
