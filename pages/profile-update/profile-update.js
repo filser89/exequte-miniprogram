@@ -18,10 +18,10 @@ Page({
     console.log('profile-update', options)
     this.setData(options)
     this.initValidate()
-    const user = wx.getStorageSync('current_user')
-    console.log('id', user.user.id)
+    const user = wx.getStorageSync('user')
+    console.log('id', user.id)
     this.setData({
-      user: await getUserDetails(user.user.id)
+      user: await getUserDetails(user.id)
     })
   },
   formSubmit({
@@ -43,20 +43,21 @@ Page({
     // console.log('submitRequest', params)
     const res = await updateUser(this.data.user.id, params)
     console.log("RES", res)
-if (this.data.sessionId){
-  this.redirectToBooking()
-} else {
-  wx.showToast({
-    title: res.message,
-    icon: 'none',
-    duration: 1500,
-})
-wx.setStorageSync('current_user.user', res.user)
-}
+    if (this.data.sessionId) {
+      this.redirectToBooking()
 
+    } else {
+      wx.showToast({
+        title: res.message,
+        icon: 'none',
+        duration: 1500,
+      })
+    }
+    console.log("RES.USER", res.user)
+    wx.setStorageSync('user', res.user)
   },
 
-  redirectToBooking(){
+  redirectToBooking() {
     wx.redirectTo({
       url: `../../pages/booking/booking?sessionId=${this.data.sessionId}`,
     })
