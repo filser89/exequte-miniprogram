@@ -33,9 +33,19 @@ const updateUser =  async (id, params) => {
   return request(options)
 }
 
+const saveUsersAvatar = async (id, params) => {
+  const options = {
+    method: 'put',
+    url: `/users/${id}/wechat_avatar`,
+    data: params
+  }
+  return request(options)
+}
+
 module.exports = {
   getCurrentUser,
   getInstructor,
   getUserDetails,
-  updateUser
+  updateUser,
+  saveUsersAvatar
 }

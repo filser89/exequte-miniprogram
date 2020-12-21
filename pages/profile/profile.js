@@ -15,10 +15,10 @@ Page({
   async onLoad(){
     wx.setStorageSync('selectedTab', 2)
     console.log('profile page', wx.getStorageSync('selectedTab'))
-    const user = wx.getStorageSync('current_user')
-    console.log('id', user.user.id)
+    const user = wx.getStorageSync('user')
+    console.log('id', user.id)
     this.setData({
-      user: await getUserDetails(user.user.id)
+      user: await getUserDetails(user.id)
     })
   },
 
