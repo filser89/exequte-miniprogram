@@ -32,5 +32,4 @@ Page({
       url: `../../pages/profile-update/profile-update`
     })
   }
-
 })

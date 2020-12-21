@@ -18,6 +18,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   async onLoad(options) {
+    const user = wx.getStorageSync('user')
+      this.setData({
+        user
+      })
     const {
       sessionId,
       instructorId
