@@ -1,2 +1,4 @@
 <!--pages/class-attandence/class-attandence.wxml-->
-<text>pages/class-attandence/class-attandence.wxml</text>
+<view>
+<button bindtap="requestPermission">Send msg</button>
+</view>
