@@ -5,7 +5,7 @@
     <button bindtap="switchTab" data-selected="1">History</button>
   </view>
   <view wx:if="{{bookings[selected].length}}">
-    <BookingsList bookings="{{bookings}}" />
+    <BookingsList selected="selected" bookings="{{bookings}}" />
   </view>
   <view wx:else>
     <view>What are you waiting for?</view>

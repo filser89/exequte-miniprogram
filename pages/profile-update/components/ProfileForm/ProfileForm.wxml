@@ -17,7 +17,7 @@
 </view>
 <view>
   <text>Email</text>
-  <input name="email" value="{{user.email}}" />
+  <input name="mp_email" value="{{user.mp_email}}" />
 </view>
 <view>
   <text>Emergency Contact Name</text>

@@ -1,5 +1,5 @@
 <!--pages/profile-update/profile-update.wxml-->
-<form bindsubmit="formSubmit">
+<form bindsubmit="formSubmit" report-submit>
   <ProfileForm user="{{user}}" birthday="{{user.birthday}}" />
   <view>My Body Now:</view>
   <BodyNowForm user="{{user}}" />

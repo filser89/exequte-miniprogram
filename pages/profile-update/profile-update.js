@@ -106,7 +106,7 @@ Page({
       phone: {
         required: true
       },
-      email: {
+      mp_email: {
         required: true
       },
       emergency_name: {
@@ -127,7 +127,7 @@ Page({
       phone: {
         required: "Phone is a required field"
       },
-      email: {
+      mp_email: {
         required: "Email is a required field"
       },
       emergency_name: {
