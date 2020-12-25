@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "AttendanceForm": "./Components/AttendanceForm/AttendanceForm"
+  }
 }

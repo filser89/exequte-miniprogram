@@ -9,9 +9,8 @@
     "pages/about/about",
     "pages/my-classes/my-classes",
     "pages/class-attandence/class-attandence",
-    "pages/booking-confirmation/booking-confirmation"
-
-
+    "pages/booking-confirmation/booking-confirmation",
+    "pages/booking-details/booking-details"
   ],
   "tabBar": {
     "custom": true,

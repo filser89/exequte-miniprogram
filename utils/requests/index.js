@@ -5,7 +5,8 @@ import {
   getSession,
   getSessions,
   addUserToQueue,
-  getSessionDates
+  getSessionDates,
+  getSessionAttendance
 } from './sessions'
 
 import {
@@ -72,5 +73,6 @@ module.exports = {
   getSessions,
   takeAttendance,
   getBanner,
-  getSessionDates
+  getSessionDates,
+  getSessionAttendance
 }

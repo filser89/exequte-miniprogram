@@ -1,4 +1,11 @@
 <!--pages/class-attandence/class-attandence.wxml-->
 <view>
-<button bindtap="requestPermission">Send msg</button>
+  <view>
+    Name: {{session.name}}
+    From: {{session.from}}
+    Date: {{session.date}}
+  </view>
+<AttendanceForm bookings="{{session.bookings}}"/>
+
+
 </view>
