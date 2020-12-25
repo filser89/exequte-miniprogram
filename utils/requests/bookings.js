@@ -34,14 +34,11 @@ const cancelBooking = () => {
   return request(options)
 }
 
-const takeAttendance = () => {
+const takeAttendance = (attendance) => {
   const options = {
     method: 'put',
     url: '/bookings/take_attendance',
-    data: [{
-      id: 62,
-      attended: true
-    }]
+    data: attendance
   }
   return request(options)
 }

@@ -1,0 +1,8 @@
+<!--pages/class-attandence/Components/AttendanceCard/AttendanceCard.wxml-->
+<checkbox-group name="{{item.id}}">
+      <label class="checkbox">
+        <image style="width: 40rpx; height: 40rpx" src="{{item.avatar_url}}"></image> {{item.first_name}}
+        {{item.last_name}}
+        <checkbox value="{{item.id}}" checked="{{item.attended}}" />
+      </label>
+    </checkbox-group>

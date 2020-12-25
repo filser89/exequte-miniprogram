@@ -40,10 +40,21 @@ const getSessionDates = (trainingId) =>{
   return request(options)
 }
 
+const getSessionAttendance = (id) =>{
+  const options = {
+    method: 'get',
+    url: `/training_sessions/${id}/session_attendance`,
+  }
+  return request(options)
+}
+
+// /training_sessions/:id/session_attendance
+
 module.exports = {
   getInstructorSessions,
   getSession,
   getSessions,
   addUserToQueue,
-  getSessionDates
+  getSessionDates,
+  getSessionAttendance
 }
