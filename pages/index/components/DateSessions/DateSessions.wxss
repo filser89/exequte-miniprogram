@@ -1,1 +1,3 @@
 /* pages/index/components/DateSessions/DateSessions.wxss */
+
+@import "/app.wxss";

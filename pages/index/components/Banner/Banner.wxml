@@ -3,3 +3,4 @@
 <view>
   <image src="{{url}}"></image>
 </view>
+

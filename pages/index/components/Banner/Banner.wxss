@@ -1,1 +1,3 @@
 /* pages/index/components/Banner/Banner.wxss */
+
+@import "/app.wxss";
