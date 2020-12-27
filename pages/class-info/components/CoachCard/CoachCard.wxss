@@ -1,1 +1,3 @@
 /* pages/class-info/components/CoachCard/CoachCard.wxss */
+
+@import "/app.wxss";

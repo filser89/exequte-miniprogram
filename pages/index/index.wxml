@@ -1,5 +1,6 @@
 <!--index.wxml-->
   <!-- <Banner url="{{banner.url}}" /> -->
+  <view style="background-color: black">
   <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/banner.png');">
     <image src='/images/logo.png' class="icon-lg logo my" />
     <view class="language-button  " style=''>中文</view>
@@ -7,34 +8,11 @@
     <view class='text-white bold text-size-theader mb p20 w60'>First 5 trainings for FREE<slot></slot></view>
   </view>
 </view>
-<view class="card" style="margin-left: 5px">
-  <view class="d-flex ">
-  <view class="text-white" style="height:110px">
-    <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px; margin-left: 3px;  ">
-      <image class="card-image" src="/images/banner.png" />
-    </view>
-    <!-- <view class=" status text-white " style="background-color: #5C0C17" >FULL</view> -->
-  </view>
-  <view>
-    
-  </view>
-  <view class="text-capitalize bold mb1 text-lh-copy text-white" style="position: absolute; margin-top: 5px; margin-left: 125px">XQ LUMO TONE PARTY</view>
-    <view class="text-white" style="padding: 10px; margin-left: 10px; margin-top: 35px;">
-      <view class="mb1 text-size-sbody">08:00-09:00</view>
-      <view class="text-size-sbody mb1">60 min</view>
-      <view class="text-size-sbody mb1">600 kCals </view>
-    </view>
-    <view class="text-white" style="padding: 10px; margin-left: 10px">
-      <view class="book-button">
-        <view class="text-capitalize bold">BOOK NOW</view>
-        <view class="text-size-sbody">100RMB</view>
-      </view>
-    </view>
-    
-  </view>
-</view>
 
-  <view style="background-color: black; color: white">
+
+  <view class="db" style="background-color: black; color: white">
     <Schedule sessions="{{sessions}}"  />
   </view>
-  <TabBar />
+</view>
+<view class="black tc db" style="height: 55px!important; background-color: black; z-index: 1">ExeQute</view>
+  <!-- <TabBar />  -->

@@ -1,5 +1,5 @@
 <!--pages/class-info/class-info.wxml-->
-<text>pages/class-info/class-info.wxml</text>
+<!-- <text>pages/class-info/class-info.wxml</text> -->
 <ClassDescription session="{{session}}">
   <CoachCard instructor="{{instructor}}" />
   <view>

@@ -7,6 +7,7 @@
 page {
   font-family: Nunito, Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  height: 100%;
 }
 .container {
   height: 100%;

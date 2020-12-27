@@ -1,13 +1,32 @@
 <!--pages/class-info/components/ClassDescription/ClassDescription.wxml-->
-<view>
-  <view>
-    <image src="{{session.image_url}}"></image>
-    Name: {{session.name}}
+<view class='banner d-flex item-center w-100 h-20 ' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}});   height:600rpx !important; postition: absolute; z-index: -1">
+    <image src='/images/logo.png' class="icon-lg logo my" />
+    <view class="language-button  " style=''>中文</view>
+  <view class="pl20">
+  </view>
+</view>
+<view style="background-color: black; border-radius: 27px; margin-top: -30px;  " > 
+  <view class='text-white ' >
+   <view class="">Name: {{session.name}}</view> 
     Description: {{session.description}}
     Duration: {{session.duration}}
     Calories: {{session.calories}}
   </view>
   <slot />
+  <view>
+  <view class="">Name: {{session.name}}</view> 
+    Description: {{session.description}}
+    Duration: {{session.duration}}
+    Calories: {{session.calories}}
+  </view>
+
+  <view>
+  <image src="{{instructor.image_url}}"></image>
+  First Name: {{instructor.first_name}}
+  Last Name: {{instructor.last_name}}
+  Bio: {{instructor.bio}}
+  
+</view>
   <view>
     Cancel {{session.cancel_before}} hours
     From: {{session.from}}

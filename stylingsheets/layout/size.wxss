@@ -80,6 +80,10 @@
   height: 30%;
 }
 
+.h25 {
+  height: 25%;
+}
+
 .h20 {
   height: 20%;
 }
