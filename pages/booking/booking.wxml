@@ -4,7 +4,7 @@
   <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" />
   <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
-    <PromoCode />
+    <PromoCode bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
   </view>
   <view wx:if="{{selected == 'buy-membership'}}">
     <DateForm dates="{{session.dates_array}}" binddatechanged="handleDateChange" />

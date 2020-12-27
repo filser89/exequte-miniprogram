@@ -15,7 +15,7 @@
   
   <view wx:if="{{session.access_options.membership == 'buy-membership'}}">
     <view wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
-      <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership" style="padding: 20rpx">
+      <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership" data-membership-type-price="{{mt.price}}" style="padding: 20rpx">
         Name: {{mt.name}}
         Duration: {{mt.duration}}
         Price: {{mt.price}}
