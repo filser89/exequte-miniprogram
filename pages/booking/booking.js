@@ -14,8 +14,12 @@ Page({
     session: {},
     selected: '',
     selectedMembershipTypeId: '',
+    selectedMembershipTypePrice: 0,
     btnPattern: {},
-    membershipDate: ''
+    membershipDate: '',
+    discount: 0,
+    couponCode: null,
+    couponBtnDisabled: false
   },
 
   /**
@@ -30,18 +34,25 @@ Page({
     const session = await getSession(sessionId)
     const membershipTypes = await getMembershipTypes()
     const selected = this.setSelected(session.access_options)
-    const btnPattern = this.setBtnPattern(selected)
+    console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     this.setData({
       session,
       selected,
-      btnPattern,
       membershipDate,
-      membershipTypes
+      membershipTypes,
     })
+    this.setBtnPattern(this.data.selected)
   },
 
  //event handlers
+  handleCouponUsed({detail}){
+    console.log("handleCouponUsed", detail)
+    const {discount, couponCode} = detail
+    this.setData({couponCode, discount, couponBtnDisabled: true})
+    this.setBtnPattern(this.data.selected)
+  },
+
   handleOptionChange({
     detail
   }) {
@@ -76,6 +87,7 @@ Page({
   },
 
   setBtnPattern(accessOption) {
+    let price
     console.log("setBtnPattern", accessOption)
     switch (accessOption) {
       case 'free':
@@ -92,23 +104,30 @@ Page({
         break
       case 'drop-in':
         console.log('in drop-in')
+        price = this.data.session.price * (1- this.data.discount)
+        console.log(price)
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'PAY',
+            text: `PAY ${price}`,
             params: {
-              booked_with: 'drop-in'
+              booked_with: 'drop-in',
+              price_cents: price * 100,
+              coupon: this.data.couponCode
             }
           }
         })
         break
       case 'buy-membership':
+        price = this.data.selectedMembershipTypePrice * (1 - this.data.discount)
         this.setData({
           btnPattern: {
             action: 'buyMembership',
-            text: 'PAY',
+            text: `PAY ${price}`,
             params: {
-              start_date: this.data.membershipDate
+              start_date: this.data.membershipDate,
+              price_cents: price * 100,
+              coupon: this.data.couponCode
             }
           }
         })
