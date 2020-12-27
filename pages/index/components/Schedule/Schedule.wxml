@@ -1,8 +1,8 @@
 <!--pages/index/components/Schedule/Schedule.wxml-->
 <!-- <text>pages/index/components/Schedule/Schedule.wxml</text>
 <view>Dates:</view> -->
-<view class="d-flex">
-<view wx:for="{{sessions.dates}}" wx:for-item="date" wx:for-index="i" wx:key="*this" >
+<view class="d-flex text-size-body ">
+<view wx:for="{{sessions.dates}}" wx:for-item="date" wx:for-index="i" wx:key="*this">
   <view data-index="{{i}}"  bindtap="toggleCurrent" class="calendar-button" >
 {{date}}
   </view>

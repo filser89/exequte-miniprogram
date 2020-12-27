@@ -11,8 +11,8 @@
   <view class="text-capitalize bold mb1 text-lh-copy text-white" style="position: absolute; margin-top: 5px; margin-left: 125px">{{session.name}}</view>
     <view class="text-white" style="padding: 10px; margin-left: 10px; margin-top: 35px">
       <view class="mb1 text-size-sbody"> {{session.from}}-{{session.to}}</view>
-      <view class="text-size-sbody mb1"><image src='/images/time.png' class='icon-card' style="margin-right: 2px"> </image>{{session.duration}} min</view>
-      <view class="text-size-sbody mb1"><image src='/images/fire.png' class='icon-card' style="margin-right: 2px"> </image> {{session.calories}} kCals </view>
+      <view class="text-size-sbody mb1"><image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} min</view>
+      <view class="text-size-sbody mb1"><image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}} kCals </view>
     </view>
     <view class="text-white" style="padding: 10px; margin-left: 10px">
       <view class="book-button"  bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" >

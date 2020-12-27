@@ -14,8 +14,21 @@
   width: 15px;
 }
 
-.icon-card {
+.icon-time {
   height: 13px;
+  width: 13px;
+}
+.icon-fire {
+  height: 13px;
+  width: 10px;
+}
+
+.icon-time2 {
+  height: 16px;
+  width: 16px;
+}
+.icon-fire2 {
+  height: 16px;
   width: 13px;
 }
 

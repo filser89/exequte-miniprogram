@@ -39,6 +39,10 @@ text {
   font-size: 13px;
 }
 
+.text14 {
+  font-size: 14px;
+}
+
 .text-size-mbody {
   font-size: 12px;
 }
