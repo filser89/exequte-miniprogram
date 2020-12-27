@@ -1,1 +1,3 @@
 /* pages/index/components/SessionItem/SessionItem.wxss */
+
+@import "/app.wxss";

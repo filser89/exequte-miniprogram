@@ -1,5 +1,5 @@
 <!--pages/profile/profile.wxml-->
-<view class="container">
+<view class="container" style="background-color: black; color: white">
   <view>
   <image src="{{user.avatar_url}}"></image>
   <view>{{user.first_name}} {{user.last_name}}</view>
