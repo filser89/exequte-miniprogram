@@ -52,8 +52,18 @@ const getBanner = async () => {
   return request(options)
 }
 
+const useCoupon = async (coupon) => {
+  const options = {
+    method: 'get',
+    url: `/coupons?coupon_code=${coupon}`,
+  }
+  return request(options)
+}
+
+
 module.exports = {
   getStrings,
+  useCoupon,
   getCurrentUser,
   getInstructor,
   getUserDetails,

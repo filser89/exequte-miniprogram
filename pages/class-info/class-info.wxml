@@ -2,7 +2,18 @@
 <!-- <text>pages/class-info/class-info.wxml</text> -->
 <ClassDescription session="{{session}}">
   <!-- <CoachCard instructor="{{instructor}}" /> -->
+
   <!-- <view>
+
+  <view>
+  <image src="{{instructor.image_url}}"></image>
+  First Name: {{instructor.first_name}}
+  Last Name: {{instructor.last_name}}
+  Bio: {{instructor.bio}}
+  
+</view>
+  <view>
+
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" />
   </view> -->
