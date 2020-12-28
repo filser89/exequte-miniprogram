@@ -13,6 +13,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   async onLoad(options) {
+    wx.setStorageSync('selectedTab', -1)
+    console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     this.setData({booking: await getBooking(options.bookingId)})
   }
 

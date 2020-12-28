@@ -9,7 +9,8 @@
     "pages/about/about",
     "pages/my-classes/my-classes",
     "pages/class-attandence/class-attandence",
-    "pages/booking-confirmation/booking-confirmation"
+    "pages/booking-confirmation/booking-confirmation",
+    "pages/booking-info/booking-info"
 
 
   ],

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "BookingDescription": "./components/BookingDescription/BookingDescription",
+    "ActionButton": "../../components/ActionButton/ActionButton",
+    "TabBar": "../../components/TabBar/TabBar"
+  }
+}

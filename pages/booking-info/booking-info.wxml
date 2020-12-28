@@ -1,0 +1,8 @@
+<!--pages/booking-info/booking-info.wxml-->
+<BookingDescription session="{{booking.session}}" instructor="{{instructor}}" />
+<view wx:if="{{booking.can_cancel}}">
+  <ActionButton itemId="{{booking.id}}" action="cancelBooking">
+  CANCEL
+</ActionButton>
+</view>
+<TabBar />
