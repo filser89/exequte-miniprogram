@@ -1,6 +1,6 @@
 <!--pages/class-info/class-info.wxml-->
 <!-- <text>pages/class-info/class-info.wxml</text> -->
-<ClassDescription session="{{session}}">
+<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
   <!-- <CoachCard instructor="{{instructor}}" /> -->
 
   <!-- <view>

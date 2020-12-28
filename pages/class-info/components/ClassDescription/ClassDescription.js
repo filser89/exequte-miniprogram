@@ -4,7 +4,8 @@ Component({
    * Component properties
    */
   properties: {
-    session: Object
+    session: Object,
+    instructor: Object
   },
 
   /**
@@ -18,6 +19,10 @@ Component({
    * Component methods
    */
   methods: {
-
+    async handleChangedDate({
+      detail
+    }) {
+      this.triggerEvent( 'changeddate', detail)
+    },
   }
 })
