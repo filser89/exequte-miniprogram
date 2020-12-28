@@ -9,15 +9,16 @@
     "pages/about/about",
     "pages/my-classes/my-classes",
     "pages/class-attandence/class-attandence",
-    "pages/booking-confirmation/booking-confirmation",
-    "pages/booking-details/booking-details"
+    "pages/booking-confirmation/booking-confirmation"
+
+
   ],
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "color": "black",
     "selectedColor": "#5C0C17",
     "borderStyle": "black",
-    "backgroundColor": "black",
+    "backgroundColor": "#000000",
     "list": [{
       "pagePath": "pages/about/about",
       "iconPath": "images/XQ-logo-white.png",
@@ -28,14 +29,14 @@
       "selectedIconPath": "images/schedule.png"
     }, {
       "pagePath": "pages/profile/profile",
-      "iconPath": "images/user-xq.png",
-      "selectedIconPath": "images/user-xq.png"
+      "iconPath": "/images/user-xq.png",
+      "selectedIconPath": "/images/user-xq.png"
     }]
   },
   "window":{
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "#fff",
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "ExeQute",
     "navigationBarTextStyle":"white"
   },
   "style": "v2",

@@ -2,23 +2,20 @@
 Component({
   data: {
     selected: 1,
-    color: "#7A7E83",
-    selectedColor: "#3cc51f",
+    color: "#FFFFFF",
+    selectedColor: "#5C0C17",
     list: [{
       pagePath: "../../pages/about/about",
-      iconPath: "../../images/icon_component.png",
-      selectedIconPath: "../../images/icon_component_HL.png",
-      text: "about"
+      iconPath: "../../images/XQ1.svg",
+      selectedIconPath: "../../images/XQ1.svg"
     }, {
       pagePath: "../../pages/index/index",
-      iconPath: "../../images/icon_API.png",
-      selectedIconPath: "../../images/icon_API_HL.png",
-      text: "home"
+      iconPath: "../../images/schedule.svg",
+      selectedIconPath: "../../images/schedule.svg"
     }, {
       pagePath: "../../pages/profile/profile",
-      iconPath: "../../images/icon_API.png",
-      selectedIconPath: "../../images/icon_API_HL.png",
-      text: "profile"
+      iconPath: "../../images/user.svg",
+      selectedIconPath: "../../images/user.svg"
     }]
   },
   ready() {

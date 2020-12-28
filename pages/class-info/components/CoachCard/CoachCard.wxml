@@ -1,8 +1,8 @@
 <!--pages/class-info/components/CoachCard/CoachCard.wxml-->
-<view>
+<!-- <view>
   <image src="{{instructor.image_url}}"></image>
   First Name: {{instructor.first_name}}
   Last Name: {{instructor.last_name}}
   Bio: {{instructor.bio}}
   
-</view>
+</view> -->

@@ -1,6 +1,6 @@
 <!--pages/index/components/SessionItem/SessionItem.wxml-->
 <!-- <text>pages/index/components/SessionItem/SessionItem.wxml</text> -->
-<view class="card" style="margin-left: 5px">
+<view class="card tl" style="margin-left: 5px">
   <view class="d-flex " data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}" bindtap="navigateToClassInfo">
   <view class="text-white" style="height:110px">
     <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px; margin-left: 3px;  ">
@@ -11,8 +11,8 @@
   <view class="text-capitalize bold mb1 text-lh-copy text-white" style="position: absolute; margin-top: 5px; margin-left: 125px">{{session.name}}</view>
     <view class="text-white" style="padding: 10px; margin-left: 10px; margin-top: 35px">
       <view class="mb1 text-size-sbody"> {{session.from}}-{{session.to}}</view>
-      <view class="text-size-sbody mb1">{{session.duration}} min</view>
-      <view class="text-size-sbody mb1"> {{session.calories}} kCals </view>
+      <view class="text-size-sbody mb1"><image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} min</view>
+      <view class="text-size-sbody mb1"><image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}} kCals </view>
     </view>
     <view class="text-white" style="padding: 10px; margin-left: 10px">
       <view class="book-button"  bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" >
@@ -31,6 +31,7 @@
     
   </view>
 </view>
+
 
 <!-- <view class="card">
   <view data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}" bindtap="navigateToClassInfo" >

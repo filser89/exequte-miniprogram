@@ -128,6 +128,14 @@
   background: linear-gradient(to left, #0575e6, #021b79);
 }
 
+.bg-black {
+  background-color: black;
+}
+
+.bg-grey-card {
+  background-color: #18181D;
+}
+
 /* BORDER COLORS */
 .border-white {
   border-color: white;

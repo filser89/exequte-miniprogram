@@ -6,5 +6,8 @@
       <SessionItem session="{{session}}" />
     </view>
   </view>
-  <view wx:else> No sessions today </view>
+  <view wx:else > 
+    <view class=" tc db" style="height: 200px!important; background-color: black; z-index: 1;  ">No sessions today </view>
+  </view>
+  
 </view>

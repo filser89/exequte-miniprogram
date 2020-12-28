@@ -1,7 +1,10 @@
 <!--pages/class-info/class-info.wxml-->
-<text>pages/class-info/class-info.wxml</text>
+<!-- <text>pages/class-info/class-info.wxml</text> -->
 <ClassDescription session="{{session}}">
   <!-- <CoachCard instructor="{{instructor}}" /> -->
+
+  <!-- <view>
+
   <view>
   <image src="{{instructor.image_url}}"></image>
   First Name: {{instructor.first_name}}
@@ -10,11 +13,12 @@
   
 </view>
   <view>
+
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" />
-  </view>
+  </view> -->
 </ClassDescription>
-<view wx:if="{{user.first_name}}">
+<!-- <view wx:if="{{user.first_name}}">
   <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
     btnDisabled="{{session.btn_pattern.disabled}}">
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
@@ -24,4 +28,4 @@
   <GetInfoButton itemId="{{session.id}}">
     Click
   </GetInfoButton>
-</view>
+</view> -->
