@@ -1,41 +1,53 @@
 <!--pages/class-info/components/ClassDescription/ClassDescription.wxml-->
-<view class='banner d-flex item-center w-100 h-20 ' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}});   height:600rpx !important; postition: absolute; z-index: -1">
-    <image src='/images/logo.png' class="icon-lg logo my" />
-    <view class="language-button  " style=''>中文</view>
+<view class='banner d-flex item-center w-100 h-20 '
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}});   height:600rpx !important; postition: absolute; z-index: -1">
+  <image src='/images/logo.png' class="icon-lg logo my" />
+  <view class="language-button  " style=''>中文</view>
   <view class="pl20">
   </view>
 </view>
-<view style="background-color: black; border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px " > 
-</view> 
+<view style="background-color: black; border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px ">
+</view>
 <view class=" bg-black ">
-  <view class='text-white' style="margin-left: 25px" >
-   <view class="text-size-sheader bold">{{session.name}}</view> 
-   <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
-   <view class="db-flex" style="justify-content: space-around">
-    <view class="text-size-sbody" style="margin-top: 20px; display:flex"><image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} min<image src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>{{session.calories}} kCal</view>
+  <view class='text-white' style="margin-left: 25px">
+    <view class="text-size-sheader bold">{{session.name}}</view>
+    <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
+    <view class="db-flex" style="justify-content: space-around">
+      <view class="text-size-sbody" style="margin-top: 20px; display:flex">
+        <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} min
+        <image src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
+        {{session.calories}} kCal
+      </view>
     </view>
-  <view class="coach-card  tl" style="margin-right: 5px; margin-top: 10px">
-  <view class="db">
-    <image style="width: 60px; height: 60px; radius: 50%; z-index: 1; margin-right: 20px" src="{{instructor.image_url}}"></image>
-Coach {{instructor.first_name}}
-  </view>
-  <!-- Last Name: {{instructor.last_name}} -->
- <view class='text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px"> Bio: {{instructor.bio}}</view>
-  
-</view>
-</view>
+    <view class="coach-card  tl" style="margin-right: 5px; margin-top: 10px">
+      <view class="db">
+        <image style="width: 60px; height: 60px; radius: 50%; z-index: 1; margin-right: 20px"
+          src="{{instructor.image_url}}"></image>
+        Coach {{instructor.first_name}}
+      </view>
+      <!-- Last Name: {{instructor.last_name}} -->
+      <view class='text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px"> Bio: {{instructor.bio}}
+      </view>
 
-<view style="width: 100%; height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; " >
-  <view class="bold" style="margin-left: 25px; padding: 5px;">Check Other Dates <image src='/images/Triangle.png' class='icon-time2' style="margin-right: 5px; margin-left: 150px; margin-top: 7px"></image></view>
+    </view>
+  </view>
+
+  <view style="width: 100%; height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
+    <view class="bold" style="margin-left: 25px; padding: 5px;">Check Other Dates <image src='/images/Triangle.png'
+        class='icon-time2' style="margin-right: 5px; margin-left: 150px; margin-top: 7px"></image>
+    </view>
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" />
   </view>
   <view class="coach-card text-white tl" style="margin-top: 10px; margin-right: 20px; margin-left: 20px">
-    <view class="text-size-sbody ml"><image src='/images/information.png' class='icon-time' style="margin-right: 5px; "> </image>Free cancellation {{session.cancel_before}} hours inadvance.</view>
+    <view class="text-size-sbody ml">
+      <image src='/images/information.png' class='icon-time' style="margin-right: 5px; "> </image>Free cancellation
+      {{session.cancel_before}} hours inadvance.
+    </view>
     <view class="text-size-sbody ml"> Price: {{session.price}}</view>
     <view class="text-size-sbody ml"> {{session.from}}-{{session.to}}</view>
-    <view class="text-size-sbody ml">    Date: {{session.date}}</view>
+    <view class="text-size-sbody ml"> Date: {{session.date}}</view>
   </view>
 
- 
+
 </view>
