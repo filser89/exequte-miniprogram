@@ -1,6 +1,9 @@
 // components/ActionButton/ActionButton.js
-import {createBooking, buyMembership, addUserToQueue, } from '../../utils/requests/index'
-Component({
+import {createBooking, buyMembership, addUserToQueue, cancelBooking} from '../../utils/requests/index'
+import {promisifyAll} from 'miniprogram-api-promise'
+const wxp = {}
+promisifyAll(wx, wxp)
+ Component({
   /**
    * Component properties
    */
@@ -45,6 +48,8 @@ Component({
         this.reLaunchToMyClasses()
       } else if(action == "reLaunchToIndexPage"){
         this.reLaunchToIndexPage()
+      } else if(action == "cancelBooking"){
+        this.cancelBooking()
       } else {
         console.log("Unknow action")
       }
@@ -86,7 +91,30 @@ Component({
       wx.reLaunch({
         url: '../../pages/index/index',
       })
-    }
+    },
+   async cancelBooking(){
+      let res = await wxp.showModal({
+        title: "Are you sure?",
+        cancelText: "No",
+        confirmText: "Yes",
+      })
+      if (res.confirm) { this.handleCancelled()}
+    },
 
+    async handleCancelled(){
+      const result = await cancelBooking(this.data.itemId)
+            console.log(result)
+            wx.showToast({
+              title: result.msg,
+              icon: 'none'
+            })
+            // wx.hideToast({
+            //   success: (res) => {
+            //     wx.navigateBack({
+            //       delta: 1,
+            //     })
+            //   },
+            // })
+    }
   }
 })

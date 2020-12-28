@@ -26,10 +26,10 @@ const createBooking = (sessionId, params) => {
   }
   return request(options)
 }
-const cancelBooking = () => {
+const cancelBooking = (id) => {
   const options = {
     method: 'put',
-    url: '/bookings/61/cancel',
+    url: `/bookings/${id}/cancel`,
   }
   return request(options)
 }
