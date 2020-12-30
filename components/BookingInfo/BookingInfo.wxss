@@ -1,1 +1,26 @@
 /* pages/booking/components/BookingInfo/BookingInfo.wxss */
+@import "/app.wxss";
+
+.card-booking {
+  width:90%;
+  height: 400rpx;
+  background-color: #18181D;
+  border-radius: 10px;
+  /* margin-bottom: 12px; */
+  position: center;
+  margin: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  color: white;
+  justify-content: center;
+}
+
+.card-image-booking {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  right: 5px;
+}

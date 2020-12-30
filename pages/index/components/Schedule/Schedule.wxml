@@ -1,20 +1,24 @@
 <!--pages/index/components/Schedule/Schedule.wxml-->
 <!-- <text>pages/index/components/Schedule/Schedule.wxml</text>
 <view>Dates:</view> -->
-<view class="d-flex text-size-body ">
-<view wx:for="{{sessions.dates}}" wx:for-item="date" wx:for-index="i" wx:key="*this">
-  <view data-index="{{i}}"  bindtap="toggleCurrent" class="calendar-button" >
-{{date}}
+<view style="padding: 10px;">
+  <view class="table text-size-body z">
+    <view wx:for="{{dates}}" wx:for-item="date" wx:for-index="i" wx:key="*this">
+      <view data-index="{{i}}" bindtap="toggleCurrent"
+        class="{{current == i ? 'calendar-button-active' : 'calendar-button' }}">
+        <view>{{date.dateW}}</view>
+        <view>{{date.dateD}}</view>
+        <view>{{date.dateM}}</view>
+      </view>
+    </view>
   </view>
-</view>
-</view>
-<view class="d-flex ">
-<view wx:for="{{sessions.sessions}}"  wx:for-item="date" wx:for-index="i" wx:key="unique" >
-  <view wx:if="{{current == i}}">
-    <DateSessions sessions="{{date}}" class="calendar-button"/>
-    <!-- <view wx:for="{{date}}" wx:for-item="session" wx:for-index="n" wx:key="unique">
+
+  <view wx:for="{{sessions}}" wx:for-item="date" wx:for-index="i" wx:key="unique">
+    <view wx:if="{{current == i}}">
+      <DateSessions sessions="{{date}}" />
+      <!-- <view wx:for="{{date}}" wx:for-item="session" wx:for-index="n" wx:key="unique">
       {{n}}:{{session.id}}
     </view> -->
+    </view>
   </view>
-</view>
 </view>

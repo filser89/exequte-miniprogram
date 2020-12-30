@@ -28,10 +28,22 @@ Page({
 const strings = await getStrings(this.data.keys)
 const user = await getCurrentUser()
 const banner = await getBanner()
-const sessions =  await getSessions()
-Promise.all([strings, user, banner, sessions]).then((values) => {
+const arr =  await getSessions()
+console.log("SESSIONS", arr)
+
+
+const sessions = arr.sessions
+const dates = arr.dates.map(d => {
+  let sd = d.split(/\s+/)
+  return {
+    dateW: sd[0],
+    dateD: sd[1],
+    dateM: sd[2]
+  }
+ })
+Promise.all([strings, user, banner, arr]).then((values) => {
   console.log('values', values)
-  this.setData({strings, user, banner, sessions})
+  this.setData({strings, user, banner, sessions: sessions, dates: dates})
   wx.hideLoading()
 })
 

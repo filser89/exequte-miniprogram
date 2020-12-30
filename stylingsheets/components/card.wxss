@@ -1,13 +1,13 @@
 /* CARD */
 .card {
-  width:95%;
-  height: 110px;
+  /* width:95%; */
+  /* height: 110px; */
   background-color: #18181D;
   border-radius: 10px;
   /* margin-bottom: 12px; */
   position: center;
-  margin: 10px;
-  padding: 5px
+  margin: 10px 5px;
+  padding: 10px;
 }
 
 .coach-card {
@@ -41,7 +41,7 @@
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .status {

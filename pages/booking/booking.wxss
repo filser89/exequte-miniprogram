@@ -1,1 +1,3 @@
 /* pages/booking/booking.wxss */
+
+@import "/app.wxss";

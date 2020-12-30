@@ -1,4 +1,5 @@
 <!--pages/booking/booking.wxml-->
+<page>
 <view class="container">
   <BookingInfo session="{{session}}" />
   <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
@@ -15,3 +16,4 @@
     {{btnPattern.text}}
   </ActionButton>
 </view>
+</page>
