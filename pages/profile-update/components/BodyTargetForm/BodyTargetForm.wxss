@@ -1,1 +1,41 @@
-/* pages/profile-update/components/BodyTargetForm/BodyTargetForm.wxss */
+/* pages/profile-update/components/ProfileForm/ProfileForm.wxss */
+/* @import "/app.wxss"; */
+view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 30rpx;
+}
+text {
+  margin-right: 30rpx;
+  color: white;
+  width: 30%;
+  font-size: 14px;
+}
+input {
+  padding: 2px;
+  border-radius: 10px;
+  width: 55%;
+  margin-right: 20px;
+  margin-left: 10px;
+  background-color: white;
+  height: 33px;
+  color: black;
+  padding-left: 15px;
+  
+}
+.picker{
+  padding: 2px 2px 0px 0px;
+  border-radius: 2px;
+  width: 130px;
+  /* margin-right: 10px; */
+  margin-left: 5px;
+  background-color: white;
+  height: 33px;
+  color: black;
+  justify-content: center;
+}
+textarea {
+  padding-bottom: 1px;
+  border: 1px solid gray;
+}

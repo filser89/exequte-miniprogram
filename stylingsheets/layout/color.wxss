@@ -101,7 +101,7 @@
 }
 
 .bg-red {
-  background-color: rgba(171, 23, 24, 1.00);
+  background-color: #5C0C17;
 }
 
 .bg-purple {
