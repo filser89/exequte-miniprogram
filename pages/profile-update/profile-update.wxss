@@ -1,9 +1,6 @@
 /* pages/profile-update/profile-update.wxss */
 /* @import "/app.wxss"; */
 
-button {
-
-}
 view {
   display: flex;
   flex-direction: row;

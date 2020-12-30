@@ -108,6 +108,11 @@
           "pathName": "pages/class-attandence/class-attandence",
           "query": "id=50",
           "scene": null
+        },
+        {
+          "name": "components/BookingInfo/BookingInfo",
+          "pathName": "components/BookingInfo/BookingInfo",
+          "scene": null
         }
       ]
     }
