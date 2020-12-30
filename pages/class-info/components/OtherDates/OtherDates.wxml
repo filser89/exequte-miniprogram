@@ -1,15 +1,18 @@
 <!--pages/class-info/components/OtherDates/OtherDates.wxml-->
-<button data-training-id="{{session.training_id}}" bindtap="showOtherDates">Show dates</button>
-Current Session ID: {{session.id}} (can use it show selected item)
-<view wx:if="{{datesShown}}">
+<view class="bold check-other-dates" data-training-id="{{session.training_id}}" bindtap="showOtherDates">
+  Check Other Dates <image src='/images/Triangle.png'
+        class='icon-time2' style="margin-right: 5px; margin-left: 150px; margin-top: 7px"></image>
+</view>
+<!-- Current Session ID: {{session.id}} (can use it show selected item) -->
+<view wx:if="{{datesShown}}" class='bg-white'>
 <view bindtap="hideOtherDates">
   <view wx:for="{{dates}}" wx:for-item="date" wx:for-index="i" wx:key="unique">
-    <view data-session-id="{{date.id}}" data-instructor-id="{{date.instructor_id}}" catchtap="switchSelectedDate" style="margin: 20px">
-      {{i}}
-      ID: {{date.id}}
-      Date: {{date.date}}
-      From: {{date.from}}
-      To: {{date.to}} 
+    <view data-session-id="{{date.id}}" data-instructor-id="{{date.instructor_id}}" catchtap="switchSelectedDate" class='choose-date d-flex '>
+      <!-- {{i}} -->
+      <!-- ID: {{date.id}} -->
+      <view class='tc bold text14 '>{{date.date}}</view>
+      <view class='tc text14 ' style="margin-bottom: 12px">{{date.from}}-{{date.to}} </view>
+      <view class='tc text14'>Book Now</view>
     </view>
   </view>
 </view>

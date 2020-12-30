@@ -1,31 +1,18 @@
 <!--pages/class-info/class-info.wxml-->
-<!-- <text>pages/class-info/class-info.wxml</text> -->
-<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
-  <!-- <CoachCard instructor="{{instructor}}" /> -->
 
-  <!-- <view>
-
-  <view>
-  <image src="{{instructor.image_url}}"></image>
-  First Name: {{instructor.first_name}}
-  Last Name: {{instructor.last_name}}
-  Bio: {{instructor.bio}}
+<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate" >
   
-</view>
-  <view>
-
-    <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
-      selectedInstructorId="{{session.instructor_id}}" />
-  </view> -->
 </ClassDescription>
-<!-- <view wx:if="{{user.first_name}}">
-  <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
-    btnDisabled="{{session.btn_pattern.disabled}}">
+<view style="height: 20px; background-color: black"></view>
+
+<view wx:if="{{user.first_name}}" >
+  <view bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
+    btnDisabled="{{session.btn_pattern.disabled}}" class="text-capitalize class-info-book-button" >
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
-  </ActionButton>
 </view>
-<view wx:else>
-  <GetInfoButton itemId="{{session.id}}">
-    Click
-  </GetInfoButton>
-</view> -->
+</view>
+<view wx:else >
+  <view itemId="{{session.id}}" class="text-capitalize class-info-book-button">
+    BOOK NOW
+  </view>
+</view>

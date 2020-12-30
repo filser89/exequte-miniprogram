@@ -1,5 +1,6 @@
 <!--index.wxml-->
   <!-- <Banner url="{{banner.url}}" /> -->
+  <page>
   <view style="background-color: black">
   <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/banner.png');">
     <image src='/images/logo.png' class="icon-lg logo my" />
@@ -15,4 +16,5 @@
   </view>
 </view>
 <view class="black tc db" style="height: 55px!important; background-color: black; z-index: 1">ExeQute</view>
-  <!-- <TabBar />  -->
+</page>
+

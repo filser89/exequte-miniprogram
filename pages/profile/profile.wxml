@@ -1,7 +1,14 @@
 <!--pages/profile/profile.wxml-->
+<view class=' d-flex item-center w-100 bg-black'
+  style="  height:120rpx !important; postition: absolute; z-index: -1">
+  <image src='/images/logo.png' class="icon-lg logo my" />
+  <view class="language-button  " style=''>中文</view>
+  <view class="pl20">
+  </view>
+</view>
 <view class="container" style="background-color: black; color: white">
-  <view>
-  <image src="{{user.avatar_url}}"></image>
+  <view >
+  <image style='width: 100px; height: 100px; border-radius: 50%' src="{{user.avatar_url}}"></image>
   <view>{{user.first_name}} {{user.last_name}}</view>
 </view>
 <view>
@@ -33,4 +40,3 @@
 </view>
 <button bindtap="navigateToProfileUpdate" >My personal information</button>
 </view>
-<TabBar />
