@@ -22,5 +22,40 @@
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;
-  right: 5px;
+  margin-right: 10px;
+  position: absolute;
+	top: 25px; 
+  right: 20px; 
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between; 
+  margin: 20rpx;
+  margin-bottom: 100px;
+}
+text {
+  /* margin-right: 30rpx; */
+  color: white;
+  /* width: 30%; */
+  font-size: 14px;
+}
+input {
+  padding: 2px;
+  border-radius: 2px;
+  width: 60%;
+  margin-right: 5px;
+  margin-left: 10px;
+  background-color: white;
+  height: 33px;
+  color: black;
+  padding-left: 15px;
+  
+}
+
+.icon-time-booking {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
 }
