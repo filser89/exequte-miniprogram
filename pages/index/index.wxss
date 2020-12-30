@@ -1,5 +1,10 @@
 /**index.wxss**/
 @import "/app.wxss";
+
+page {
+  background-color: black;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

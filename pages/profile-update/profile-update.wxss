@@ -16,3 +16,6 @@ view {
   color: white
 } */
 
+page {
+  background-color: black;
+}

@@ -7,7 +7,7 @@
 
 <view wx:if="{{user.first_name}}" >
   <view bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
-    btnDisabled="{{session.btn_pattern.disabled}}" >
+    btnDisabled="{{session.btn_pattern.disabled}}" class="text-capitalize class-info-book-button" >
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
 </view>
 </view>
