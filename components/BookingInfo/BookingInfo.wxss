@@ -3,7 +3,7 @@
 
 .card-booking {
   width:90%;
-  height: 400rpx;
+  height: 350px;
   background-color: #18181D;
   border-radius: 10px;
   /* margin-bottom: 12px;

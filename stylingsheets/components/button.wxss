@@ -176,15 +176,14 @@ button cover-view {
 
 .button-option {
   background-color: #D8D8D8;
+  color: #000000;
   padding: 20px;
-  color: black;
+  font-weight: bold;
   font-size: 20px;
-  height: 55px;
-  margin-bottom: 10px;
+  position: center;
+  margin: 10px 10px;
   border-radius: 15px;
-  padding: 10px;
-  margin-left: 20px;
-  
+  vertical-align: center;
 }
 
 .button-option-active {
