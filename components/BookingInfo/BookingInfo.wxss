@@ -2,11 +2,13 @@
 @import "/app.wxss";
 
 .card-booking {
-  width: 90%;
-  height: 350px;
+  width:90%;
+  height: 400rpx;
   background-color: #18181D;
   border-radius: 10px;
-  /* margin-bottom: 12px; */
+  /* margin-bottom: 12px;
+  margin: 10px;
+  margin-right: 10px; */
   position: center;
   flex-wrap:wrap;
   /* margin: 10px; */
@@ -24,6 +26,7 @@
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;
+  right: 5px;
   margin-right: 10px;
   position: absolute;
 	top: 25px; 

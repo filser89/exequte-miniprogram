@@ -1,17 +1,18 @@
 <!--pages/class-info/class-info.wxml-->
 
-<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate" >
-  
+<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
+
 </ClassDescription>
 <view style="height: 20px; background-color: black"></view>
 
-<view wx:if="{{user.first_name}}" >
+
+<view wx:if="{{user.first_name}}">
   <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
-    btnDisabled="{{session.btn_pattern.disabled}}" >
+    btnDisabled="{{session.btn_pattern.disabled}}">
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
-</ActionButton>
+  </ActionButton>
 </view>
-<view wx:else >
+<view wx:else>
   <GetInfoButton itemId="{{session.id}}" style="color: white">
     BOOK NOW
   </GetInfoButton>

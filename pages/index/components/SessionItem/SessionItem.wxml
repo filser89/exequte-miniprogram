@@ -1,34 +1,67 @@
 <!--pages/index/components/SessionItem/SessionItem.wxml-->
 <!-- <text>pages/index/components/SessionItem/SessionItem.wxml</text> -->
-<view class="card tl" style="margin-left: 5px">
-  <view class="d-flex " data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}" bindtap="navigateToClassInfo">
-  <view class="text-white" style="height:110px">
-    <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px; margin-left: 3px;  ">
-      <image class="card-image" src="{{session.image_url}}" />
-    </view>
-    <!-- <view class=" status text-white " style="background-color: #5C0C17" >FULL</view> -->
-  </view>
-  <view class="text-capitalize bold mb1 text-lh-copy text-white" style="position: absolute; margin-top: 5px; margin-left: 125px">{{session.name}}</view>
-    <view class="text-white" style="padding: 10px; margin-left: 10px; margin-top: 35px">
-      <view class="mb1 text-size-sbody"> {{session.from}}-{{session.to}}</view>
-      <view class="text-size-sbody mb1"><image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} min</view>
-      <view class="text-size-sbody mb1"><image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}} kCals </view>
-    </view>
-    <view class="text-white" style="padding: 10px; margin-left: 10px">
-      <view class="book-button"  bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" >
-      <!-- <view class="book-button" wx:if="{{user.first_name}}"> -->
-          <view class="text-capitalize bold"> {{session.btn_pattern.text}}</view>
-          <view class="text-size-sbody"> {{session.btn_pattern.disabled ? "" : (session.price + "RMB")}} </view>
+<view class="card tl">
+  <view class="d-flex" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
+    bindtap="navigateToClassInfo">
+    <!-- left sede of the card -->
+    <view class="text-white">
+      <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px;">
+        <image class="card-image" src="{{session.image_url}}" />
       </view>
-      <!-- <view class="book-button" wx:else>
-        <view class="text-capitalize bold"> 
-          <GetInfoButton itemId="{{session.id}}">
-          Sign Up
-      </GetInfoButton>
+      <!-- <view class=" status text-white " style="background-color: #5C0C17" >FULL</view> -->
     </view>
-      </view> -->
+    <!-- left side finished -->
+    <!-- right side of the card -->
+    <view class="d-flex flex-column flex-grow space-around pl">
+      <!-- top of the right of the card -->
+      <view class="text-capitalize bold text-lh-copy text-white">
+        {{session.name}}
+      </view>
+      <!-- top of the right of the card finished -->
+      <!-- bottom of the right card -->
+      <view class="d-flex space-between item-center tl ">
+        <!-- details -->
+        <view class="text-white">
+          <view class="mb1 text-size-sbody">
+            {{session.from}}-{{session.to}}
+          </view>
+          <view class="text-size-sbody mb1">
+            <image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} min
+          </view>
+          <view class="text-size-sbody mb1">
+            <image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}}
+            kCals
+          </view>
+        </view>
+        <!-- details finished -->
+        <!-- button -->
+       <view style="height: 100%;">
+        <view wx:if="{{user.first_name}}">
+          <ActionButtonSmall bindqueuedup="handleQueuedUp" itemId="{{session.id}}"
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
+            <view class="d-flex flex-column">
+              <view class="text-capitalize bold"> {{session.btn_pattern.text}}</view>
+              <view wx:if="{{!session.btn_pattern.disabled}}" class="text-size-sbody">
+                {{session.btn_pattern.disabled ? "" : (session.price + "RMB")}} </view>
+            </view>
+          </ActionButtonSmall>
+
+        </view>
+
+        <!-- <view class="book-button" wx:else>
+          <view class="text-capitalize bold">
+            <GetInfoButton itemId="{{session.id}}">
+              Sign Up
+            </GetInfoButton>
+          </view>
+        </view> -->
+
+       </view>
+       <!-- button finished -->
+      </view>
+      <!-- bottom of th right side finished -->
     </view>
-    
+    <!-- right side of the card finished -->
   </view>
 </view>
 

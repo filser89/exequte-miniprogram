@@ -2,7 +2,9 @@
 
 @import "/app.wxss";
 
+
 page {
   background-color: black;
   color: white;
 }
+

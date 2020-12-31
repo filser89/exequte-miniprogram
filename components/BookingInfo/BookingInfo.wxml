@@ -1,6 +1,7 @@
 <!--pages/booking/components/BookingInfo/BookingInfo.wxml-->
 <view class='card-booking'>
   <!-- <image src="{{session.image_url}}"></image> -->
+
 <view class='block' style='margin-bottom: 60px;'>
   <view class='db bold' style="display: flex; flex-direction: column">
     <text class='text-size-sheader' >{{session.name}} class </text>

@@ -1,6 +1,6 @@
 <!--components/getInfoButton/getInfoButton.wxml-->
 <view class="text-capitalize class-info-book-button text-white" >
   <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" catchtap="navigateToProfileUpdate" >
+  <slot />
   </button>
-  <!-- <button data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction"> <slot /> </button> -->
 </view>

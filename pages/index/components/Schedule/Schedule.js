@@ -4,7 +4,8 @@ Component({
    * Component properties
    */
   properties: {
-    sessions: Object
+    sessions: Array,
+    dates: Array
   },
 
   /**
@@ -20,12 +21,17 @@ Component({
   methods: {
     toggleCurrent(e) {
 
-      this.setData({current: e.target.dataset.index})
+      this.setData({current: e.currentTarget.dataset.index})
       console.log("current changed", this.data.current)
     }
   },
 
   logSession(e) {
     console.log(e.target)
+  },
+  splitDates(){
+    
   }
+
+  
 })
