@@ -110,8 +110,9 @@
           "scene": null
         },
         {
-          "name": "components/BookingInfo/BookingInfo",
-          "pathName": "components/BookingInfo/BookingInfo",
+          "name": "pages/booking-info/booking-info",
+          "pathName": "pages/booking-info/booking-info",
+          "query": "bookingId=141&instructorId=6",
           "scene": null
         }
       ]
