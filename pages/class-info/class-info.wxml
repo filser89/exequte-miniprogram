@@ -5,6 +5,7 @@
 </ClassDescription>
 <view style="height: 20px; background-color: black"></view>
 
+
 <view wx:if="{{user.first_name}}">
   <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
     btnDisabled="{{session.btn_pattern.disabled}}">

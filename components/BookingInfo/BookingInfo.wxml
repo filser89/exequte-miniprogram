@@ -2,11 +2,33 @@
 <view class='card-booking'>
   <!-- <image src="{{session.image_url}}"></image> -->
 
-  <image class="card-image " src="/images/banner.png"></image>
-  Name: {{session.name}} class
-  Duration: {{session.duration}}90 min
-  Date: {{session.date}} 2020 Jan 2
-  From: {{session.from}} 20:00
-  To: {{session.to}} 21:00
-  Cancel: {{session.cancel_before}}  5 hours
+<view class='block' style='margin-bottom: 60px;'>
+  <view class='db bold' style="display: flex; flex-direction: column">
+    <text class='text-size-sheader' >{{session.name}} class </text>
+    <view class="db" style="margin-top: 15px; ">
+      <image src='/images/time-white.png' class='icon-time-booking'> </image><text style="font-size: 16px;">  {{session.duration}} min</text>
+    </view>
+  </view>
+  <image class="card-image-booking " src="/images/banner.png"></image>
+
+</view>
+<view class="block" style='margin-bottom: 15px'>
+  <text style='width: 60%; color: #9B9B9B;'>Date:</text>
+  <text style='width: 30%; color: #9B9B9B;'>Time:</text>
+</view>
+<view class="block" style='margin-bottom: 15px'>
+  <text style='width: 60%; '>{{session.date}} </text>
+  <text style='width: 30%; '>{{session.from}} -  {{session.to}}</text>
+</view>
+<view class="block" style='margin-bottom: 15px'>
+  <text style='width: 60%; color: #9B9B9B;'>Address:</text>
+</view>
+<view class="block" style='margin-bottom: 15px'>
+  <text style='width: 100%; '>425 Yanping Road, 1st floor.
+Few minutes walk from Line 7 Changping Rd. Exit 5</text>
+</view>
+<view class="block" style='margin-bottom: 15px'>
+  <!-- <image src='/images/information.png' class='icon-time' style="margin-right: 5px;  margin-left: 5px; width: 5%"> </image> -->
+  <text style='width: 100%; '>Free cancellation {{session.cancel_before}} hours in advance.</text>
+</view>
 </view>

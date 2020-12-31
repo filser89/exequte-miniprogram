@@ -1,3 +1,10 @@
 /* pages/booking/booking.wxss */
 
 @import "/app.wxss";
+
+
+page {
+  background-color: black;
+  color: white;
+}
+
