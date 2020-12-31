@@ -1,5 +1,6 @@
 <!--pages/booking/booking.wxml-->
-<view class="container">
+<page>
+<!-- <view class="container"> -->
   <BookingInfo session="{{session}}" />
   <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" />
@@ -14,4 +15,5 @@
     itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}">
     {{btnPattern.text}}
   </ActionButton>
-</view>
+<!-- </view> -->
+</page>

@@ -43,7 +43,7 @@ text {
   font-size: 14px;
 }
 
-.text-size-mbody {
+.text-size12 {
   font-size: 12px;
 }
 .text-size-mini {
