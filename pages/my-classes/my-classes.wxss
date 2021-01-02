@@ -1,1 +1,12 @@
 /* pages/my-classes/my-classes.wxss */
+@import "/app.wxss";
+
+.button-my-classes {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #D8D8D8; 
+  color: #5C0C17; 
+  height: 50px; 
+  vertical-align: center;
+
+}

@@ -1,1 +1,26 @@
 /* pages/booking-confirmation/booking-confirmation.wxss */
+
+@import "/app.wxss";
+
+
+page {
+  background-color: black;
+}  
+.white-square {
+  background-color: white;
+  display: block;
+  color: black; 
+  justify-content: center;
+  font-weight: bold;
+  height: 80px;
+  width: 250px;
+  padding: 25px;
+  border-radius: 15px;
+  /* margin: 60rpx 30rpx ; */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}

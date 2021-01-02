@@ -1,1 +1,12 @@
 /* components/PromoCode/PromoCode.wxss */
+
+@import "/app.wxss";
+
+.line {
+  background-color: white;
+  height: 2px;
+  width: 130px;
+  margin-top: 0px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+}

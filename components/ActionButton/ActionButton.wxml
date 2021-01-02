@@ -1,7 +1,7 @@
 <!--components/ActionButton/ActionButton.wxml-->
 <view class="text-capitalize class-info-book-button text-white">
 
-  <button data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction" >
+  <button data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction" class='class-info-book-button text-capitalize'>
   <slot />
    </button>
  

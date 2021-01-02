@@ -1,7 +1,14 @@
 <!--pages/my-classes/my-classes.wxml-->
-<view class="container">
-  <view>
-    <button bindtap="switchTab" data-selected="0">Upcoing</button>
+<view class=' d-flex item-center w-100 bg-black'
+  style="  height:120rpx !important; postition: absolute; z-index: -1">
+  <image src='/images/logo.png' class="icon-lg logo my" />
+  <view class="language-button  " style=''>中文</view>
+  <view class="pl20">
+  </view>
+</view>
+<view class="container text-white">
+  <view class='d-flex w-100' style='flex-direction: flex-end'>
+    <button bindtap="switchTab" data-selected="0" class='button-my-classes '>Upcoming</button>
     <button bindtap="switchTab" data-selected="1">History</button>
   </view>
   <view wx:if="{{bookings[selected].length}}">

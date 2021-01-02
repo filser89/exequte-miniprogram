@@ -12,7 +12,7 @@
   <view class="section__title">Choose Date</view>
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{dates}}">
     <view class="picker">
-      Date：{{dates[index]}}
+      Start Date：{{dates[index]}}
     </view>
   </picker>
 </view>
