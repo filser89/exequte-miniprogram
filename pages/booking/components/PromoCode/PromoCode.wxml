@@ -1,6 +1,7 @@
 <!--components/PromoCode/PromoCode.wxml-->
 <form bindsubmit="formSubmit">
-  <text>Add Promo Code</text>
+  <view class='bold text-white ' style='margin: 10px; margin-left: 30px; color: white; font-size: 16px;'>Add Promo Code +</view>
+  <view class='line'></view>
   <PromoCodeInput name="promoCode"></PromoCodeInput>
-  <button disabled="{{btnDisabled}}" form-type="submit">Use Promo Code</button>
+  <button disabled="{{btnDisabled}}" form-type="submit" class='bg-black text-white' style='margin-left: 0px !important; margin-top: 0px; '>Use Promo Code</button>
 </form>

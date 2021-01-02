@@ -1,42 +1,39 @@
 <!--pages/booking/components/AccessOptions/AccessOptions.wxml-->
-<view class='db' style='margin: 10px'>
-  <view class='bold text-size-theader' style='margin: 10px;'>Access Options</view>
-  <view bindtap="chooseOption" data-booking-type="free" wx:if="{{session.access_options.free}}" style="" class="text-size-stheader {{current == i ? 'button-option' : 'button-option-active' }}">
-    <view class="block" >
-      <text style='width: 60%; float: right;'> Join for free</text>
-      <text style='width: 20%;float: left; '>FREE</text>
+<view class='db' style='' >
+  <view class='bold text-size-theader' style='margin: 20px; color: white'>Access Options</view>
+  <view bindtap="chooseOption" data-booking-type="free" wx:if="{{session.access_options.free}}" data-index="{{i}}" class="{{current == i ? 'button-option' : 'button-option-active' }}">
+    <view class="" >
+      <text style='width: 80%; float: left;'> Join for free</text>
+      <text style='width: 20%; float: right; '>FREE</text>
     </view>
   </view>
   <view bindtap="chooseOption" data-booking-type="drop-in" wx:if="{{session.access_options.drop_in}}"
-    style="" class="text-size-stheader {{current == i ? 'button-option' : 'button-option-active' }}">
-    <view class="block" >
-      <text style='width: 60%; float: right;'> Drop in </text>
-      <text style='width: 20%;float: left; '>{{session.price}}</text>
+   data-index="{{i}}" class="{{current == i ? 'button-option' : 'button-option-active' }}">
+    <view class="block " >
+      <text style='width: 80%; float: left;'> Drop in </text>
+      <text style='width: 20%; float: right; '>{{session.price}}</text>
     </view>
   </view>
   <view bindtap="chooseOption" data-booking-type="voucher" wx:if="{{session.access_options.voucher}}"
-    style=" " class="text-size-stheader {{current == i ? 'button-option' : 'button-option-active' }}">
+   data-index="{{i}}" class="{{current == i ? 'button-option' : 'button-option-active'  }}">
     <view class="block" >
-      <text style='width: 60%; float: right;'>Voucher</text>
-      <text style='width: 20%;float: left; '>FREE</text>
+      <text style='width: 80%; float: left;'>Voucher</text>
+      <text style='width: 20%;float: right; '>FREE</text>
     </view>
   </view>
   
   <view wx:if="{{session.access_options.membership == 'buy-membership'}}">
     <view wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
-      <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership" data-membership-type-price="{{mt.price}}" style="padding: 20rpx" class="text-size-stheader {{current == i ? 'button-option' : 'button-option-active' }}">
+      <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership" data-membership-type-price="{{mt.price}}" data-index="{{i}}" class="{{current == i ? 'button-option' : 'button-option-active'  }}">
       <view class="block" >
-        <text style='width: 60%; float: right;'>Voucher</text>
-        <text style='width: 20%;float: left; '>FREE</text>
+        <text style='width: 80%; float: left;'>{{mt.name}} {{mt.duration}}</text>
+        <text style='width: 20%;float: right; '>{{mt.price}}</text>
       </view>
-        Name: {{mt.name}}
-        Duration: {{mt.duration}}
-        Price: {{mt.price}}
       </view>
     </view>
   </view>
   <view bindtap="chooseOption" data-booking-type="membership" data-membership-id="{{session.usable_membership.id}}"
-    wx:if="{{session.access_options.membership == 'membership'}}" class="text-size-stheader  {{current == i ? 'button-option' : 'button-option-active' }}">
+    wx:if="{{session.access_options.membership == 'membership'}}" data-index="{{i}}" class="{{current == i ? 'button-option' : 'button-option-active'  }}">
     Membership
   </view>
 

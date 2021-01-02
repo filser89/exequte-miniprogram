@@ -6,3 +6,6 @@
 @import './position';
 @import './size';
 
+page {
+  background-color: black;
+}

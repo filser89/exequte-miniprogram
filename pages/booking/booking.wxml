@@ -12,7 +12,7 @@
   </view>
   <ActionButton bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
     action="{{btnPattern.action}}" params="{{btnPattern.params}}"
-    itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}">
+    itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
     {{btnPattern.text}}
   </ActionButton>
 </page>
