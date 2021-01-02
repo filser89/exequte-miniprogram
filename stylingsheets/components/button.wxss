@@ -174,7 +174,7 @@ button cover-view {
   padding: 5px;
 }
 
-.button-option {
+/* .button-option {
   background-color: #D8D8D8;
   color: #000000;
   padding: 20px;
@@ -199,4 +199,4 @@ button cover-view {
   padding: 10px;
   margin-left: 20px;
 
-}
+} */

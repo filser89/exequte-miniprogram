@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "ActionButtonSmall": "../../../../components/ActionButtonSmall/ActionButtonSmall",
-    "GetInfoButton": "../../../../components/GetInfoButton/GetInfoButton"
+    "GetInfoButtonSmall": "../../../../components/GetInfoButtonSmall/GetInfoButtonSmall"
   }
 }

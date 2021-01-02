@@ -17,6 +17,7 @@ Page({
     selectedMembershipTypePrice: 0,
     btnPattern: {},
     membershipDate: '',
+    membership: {},
     discount: 0,
     couponCode: null,
     couponBtnDisabled: false
@@ -36,11 +37,13 @@ Page({
     const selected = this.setSelected(session.access_options)
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
+    const membership = session.usable_membership
     this.setData({
       session,
       selected,
       membershipDate,
       membershipTypes,
+      membership
     })
     this.setBtnPattern(this.data.selected)
   },
@@ -108,12 +111,13 @@ Page({
         console.log(price)
         this.setData({
           btnPattern: {
+            price,
             action: 'bookClass',
-            text: `PAY ${price}`,
+            text: `Pay`,
             params: {
               booked_with: 'drop-in',
               price_cents: price * 100,
-              coupon: this.data.couponCode
+              coupon: this.data.couponCode,
             }
           }
         })
@@ -122,12 +126,13 @@ Page({
         price = this.data.selectedMembershipTypePrice * (1 - this.data.discount)
         this.setData({
           btnPattern: {
+            price,
             action: 'buyMembership',
-            text: `PAY ${price}`,
+            text: `Pay`,
             params: {
               start_date: this.data.membershipDate,
               price_cents: price * 100,
-              coupon: this.data.couponCode
+              coupon: this.data.couponCode,
             }
           }
         })
@@ -148,7 +153,7 @@ Page({
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'BOOK',
+            text: 'Book Class',
             params: {
               booked_with: 'membership',
               membership_id: this.data.session.usable_membership.id

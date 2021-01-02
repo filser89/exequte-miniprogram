@@ -48,13 +48,13 @@
 
         </view>
 
-        <!-- <view class="book-button" wx:else>
+        <view wx:else>
           <view class="text-capitalize bold">
-            <GetInfoButton itemId="{{session.id}}">
+            <GetInfoButtonSmall itemId="{{session.id}}">
               Sign Up
-            </GetInfoButton>
+            </GetInfoButtonSmall>
           </view>
-        </view> -->
+        </view>
 
        </view>
        <!-- button finished -->

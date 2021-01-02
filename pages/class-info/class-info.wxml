@@ -14,6 +14,6 @@
 </view>
 <view wx:else>
   <GetInfoButton itemId="{{session.id}}" style="color: white">
-    BOOK NOW
+    SIGN UP
   </GetInfoButton>
 </view>

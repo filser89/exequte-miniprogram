@@ -1,0 +1,27 @@
+/* pages/booking/components/PayButton/PayButton.wxss */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.action-btn{
+  background-color: #5C0C17;
+  padding: 10px 40px;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  min-width: 80px;
+
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
