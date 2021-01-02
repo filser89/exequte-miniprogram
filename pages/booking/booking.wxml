@@ -1,18 +1,25 @@
 <!--pages/booking/booking.wxml-->
-<page>
+<!-- <page> -->
 
   <BookingInfo session="{{session}}" />
   <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
-    selected="{{selected}}" />
+    selected="{{selected}}" membership="{{membership}}" />
   <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
     <PromoCode bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
   </view>
   <view wx:if="{{selected == 'buy-membership'}}">
     <DateForm dates="{{session.dates_array}}" binddatechanged="handleDateChange" />
   </view>
-  <ActionButton bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
+
+  <!-- bottom -->
+  
+<view class="d-flex space-between bottom" >
+  <view class="text-white d-flex item-center content-center text-left">Total: ¥{{btnPattern.price || 0}}</view>
+  <PayButton bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
     action="{{btnPattern.action}}" params="{{btnPattern.params}}"
     itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
     {{btnPattern.text}}
-  </ActionButton>
-</page>
+  </PayButton>
+</view>
+  <!-- bottom ends -->
+<!-- </page> -->

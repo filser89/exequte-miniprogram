@@ -1,40 +1,52 @@
 /* pages/booking/components/AccessOptions/AccessOptions.wxss */
 @import "/app.wxss";
 
-.block {
-  display: flex;
-  flex-direction: row;
-  align-items: space-between; 
-  width: 100%;
-  margin:10px;
-  /* color: black; */
-
-  /* margin: 20rpx; */
-}
-
 .button-option {
   background-color: #D8D8D8;
   color: #000000;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding: 0 20px;
+  height: 72px;
   font-weight: bold;
-  font-size: 20px;
-  position: center;
-  margin: 10px 10px;
+  font-size: 16px;
+  margin: 10px;
   border-radius: 15px;
-  vertical-align: center;
 }
 
 .button-option-active {
   background-color: #5C0C17;
-  padding: 20px;
   color: white;
-  font-size: 20px;
-  height: 55px;
-  margin-bottom: 10px;
-  margin-bottom: 10px;
-  border-radius: 15px;
   border: 2px solid white;
-  padding: 10px;
-  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  height: 72px;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 15px;
+}
 
+.sm-text {
+  font-size: 12px;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.content-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center{
+  align-items: center;
 }

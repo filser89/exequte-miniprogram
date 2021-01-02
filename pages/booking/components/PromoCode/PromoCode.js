@@ -29,11 +29,13 @@ Component({
         this.setData({btnDisabled: true})
         wx.showToast({
           title: 'Promo code used!',
+          icon: 'none'
         })
         this.triggerEvent("couponused", {couponCode: coupon.coupon_code, discount: coupon.discount})
       } else {
         wx.showToast({
           title: coupon.msg,
+          icon: 'none'
         })
       }
       

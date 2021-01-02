@@ -3,7 +3,13 @@
 @import "/app.wxss";
 
 
-page {
+/* page {
   background-color: black;
-}
+} */
 
+.bottom {
+  font-size: 18px;
+  /* position: fixed; */
+  bottom: 0px;
+  padding: 10px;
+}
