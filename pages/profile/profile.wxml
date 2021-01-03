@@ -16,11 +16,11 @@
     <view class='d-flex tc bold' > Classes</view>
     <view class='d-flex tc' >
     <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.attanded_classes}}33 </view>
+      <view class='tc bold'>{{user.attended_classes}}</view>
       <view class='tc' >Since joining</view>
     </view>
     <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.average_attandence}}66</view>
+      <view class='tc bold'>{{user.average_attendence}}</view>
       <view class='tc'>4 weeks average</view>
     </view>
     </view>
@@ -29,11 +29,11 @@
     <view class='d-flex tc bold' > Body</view>
     <view class='d-flex tc' >
     <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.current_weight}}  </view>
+      <view class='tc bold'>{{user.current_weight}}</view>
       <view class='tc'>Weight</view>
     </view>
     <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.current_body_fat}}  </view>
+      <view class='tc bold'>{{user.current_body_fat}}</view>
       <view class='tc'>Fat</view>
     </view>
     </view>
@@ -53,7 +53,7 @@
 <image src='/images/Triangle2.png' class='icon-time2' style="margin-right: 5px; margin-left: 150px;"></image>
 </view>
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
-  <view style="margin-top: 10px">{{item.name}}Unlimited Membership </view>
+  <view style="margin-top: 10px">{{item.name}}</view>
   <view wx:if="{{item.smoothie}}"> + smoothies </view>
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>

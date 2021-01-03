@@ -1,3 +1,13 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view style="color: white;">
+  <view>{{info.title_one}}</view>
+  <view>{{info.paragraph_one}}</view>
+  <view>{{info.title_two}}</view>
+  <view>{{info.paragraph_two}}</view>
+  <view wx:for="{{instructors}}">
+    <view>{{item.first_name}}</view>
+    <view>{{item.bio}}</view>
+    <image src="{{item.image_url}}"></image>
+  </view>
+</view>
 <TabBar />
