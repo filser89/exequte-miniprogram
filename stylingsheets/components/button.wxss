@@ -97,12 +97,16 @@ button cover-view {
 	top: 10px; 
   right: 10px; 
   background-color: #555555;
-  width: 35px !important;
+  width: 40px !important;
   height: 25px;
   border-radius: 10px;
   color: white;
   padding: 3px;
   font-weight: bold;
+  text-align: center;
+  position: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar-button-active {
@@ -173,6 +177,7 @@ button cover-view {
   margin-left: 25px; 
   padding: 5px;
 }
+
 
 /* .button-option {
   background-color: #D8D8D8;

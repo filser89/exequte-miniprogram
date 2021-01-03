@@ -6,10 +6,10 @@
   <view class="pl20">
   </view>
 </view>
-<view class="container text-white">
-  <view class='d-flex w-100' style='flex-direction: flex-end'>
-    <button bindtap="switchTab" data-selected="0" class='button-my-classes '>Upcoming</button>
-    <button bindtap="switchTab" data-selected="1">History</button>
+<view class=" text-white">
+  <view class='btn-tabs bold '>
+    <button bindtap="switchTab" data-selected="0" class='button-my-classes-active '>Upcoming</button>
+    <button bindtap="switchTab" data-selected="1" class='button-my-classes '>History</button>
   </view>
   <view wx:if="{{bookings[selected].length}}">
     <BookingsList selected="selected" bookings="{{bookings}}" />
@@ -21,4 +21,3 @@
     </ActionButton>
   </view>
 </view>
-<TabBar />

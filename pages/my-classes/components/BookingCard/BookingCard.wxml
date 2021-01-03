@@ -1,6 +1,6 @@
 <!--pages/my-classes/components/BookingCard/BookingCard.wxml-->
-<view>
-  <view>
+<!-- <view>
+  <view class='card-booking '>
     <view>{{booking.session.name}}</view>
     <view>{{booking.session.duration}}</view>
     <view>{{booking.session.date}}</view>
@@ -14,4 +14,25 @@
     
     
   </view>
+</view> -->
+
+<view class='card-my-classes' style='color: white !important'>
+<view class='block'>
+  <view class='db bold' style="flex-direction: column">
+    <view class='text-size-sheader' style='margin-top: 10px;'>{{booking.session.name}}  </view>
+    <view class="db" style="margin-top: 15px; ">
+      <view style="font-size: 16px;"><image src='/images/time-white.png' class='icon-time-booking'> </image>  {{booking.session.duration}} min</view>
+    </view>
+    <view class="w100 d-flex" style='margin-top: 10px; margin-bottom: 5px; color: white; '>
+      <view class='text14 mr'>{{booking.session.date}} </view>
+      <view class='text14' style='margin-left: 20px'>{{booking.session.from}} - {{booking.session.to}}</view>
+    </view>
+  </view>
+
+  <image class="card-image-my-classes" src="{{booking.session.image_url}}"></image>
+</view>
+ <!-- <view wx:if="{{selected == 1}}"> -->
+  <view class="status green-status d-flex">{{booking.attended ? 'COMPLETED' : 'NO SHOW'}}</view>
+  <!-- </view> -->
+
 </view>
