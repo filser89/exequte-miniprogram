@@ -1,3 +1,25 @@
 /* pages/class-info/components/OtherDates/OtherDates.wxss */
 
 @import "/app.wxss";
+
+.dates-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.date-box {
+  color: black;
+  border: 2px solid #5c282f;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.date-box-current{
+  color: white;
+  background-color: rgb(85, 85, 85);
+  border: 2px solid #5c282f;
+  border-radius: 10px;
+  padding: 10px 0;
+}

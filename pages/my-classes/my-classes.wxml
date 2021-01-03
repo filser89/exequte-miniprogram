@@ -8,16 +8,16 @@
 </view>
 <view class=" text-white">
   <view class='btn-tabs bold '>
-    <button bindtap="switchTab" data-selected="0" class='button-my-classes-active '>Upcoming</button>
-    <button bindtap="switchTab" data-selected="1" class='button-my-classes '>History</button>
+    <view bindtap="switchTab" data-selected="0" class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>Upcoming</view>
+    <view bindtap="switchTab" data-selected="1" class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>History</view>
   </view>
   <view wx:if="{{bookings[selected].length}}">
     <BookingsList selected="selected" bookings="{{bookings}}" />
   </view>
-  <view wx:else>
-    <view>What are you waiting for?</view>
-    <ActionButton action="reLaunchToIndexPage">
+  <view wx:else class="no-classes">
+    <view class="tc">What are you waiting for...</view>
+    <BookNowButton action="reLaunchToIndexPage">
       BOOK NOW
-    </ActionButton>
+    </BookNowButton>
   </view>
 </view>

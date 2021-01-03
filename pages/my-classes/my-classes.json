@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "ActionButton": "../../components/ActionButton/ActionButton",
+    "BookNowButton": "./components/BookNowButton/BookNowButton",
     "TabBar": "../../components/TabBar/TabBar",
     "BookingsList": "./components/BookingsList/BookingsList"
   }
