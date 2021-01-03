@@ -25,6 +25,7 @@ import {
 
 import {
   getInstructor,
+  getAllInstructors,
   getCurrentUser,
   getUserDetails,
   updateUser,
@@ -60,12 +61,22 @@ const useCoupon = async (coupon) => {
   return request(options)
 }
 
+const getInfo = async () => {
+  const options = {
+    method: 'get',
+    url: '/infos',
+  }
+  return request(options)
+}
+
 
 module.exports = {
+  getInfo,
   getStrings,
   useCoupon,
   getCurrentUser,
   getInstructor,
+  getAllInstructors,
   getUserDetails,
   updateUser,
   saveUserAvatar,

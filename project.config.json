@@ -114,6 +114,12 @@
           "pathName": "pages/booking-info/booking-info",
           "query": "bookingId=141&instructorId=6",
           "scene": null
+        },
+        {
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "bookingId=141&instructorId=6",
+          "scene": null
         }
       ]
     }

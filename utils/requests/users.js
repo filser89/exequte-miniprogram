@@ -16,6 +16,14 @@ const getInstructor = async (id) => {
   return request(options)
 }
 
+const getAllInstructors = async () => {
+  const options = {
+    method: 'get',
+    url: `/users/instructors`,
+  }
+  return request(options)
+}
+
 const getUserDetails = async (id) => {
   const options = {
     method: 'get',
@@ -54,6 +62,7 @@ const uploadUserAvatar = async (userId, filePath) => {
 module.exports = {
   getCurrentUser,
   getInstructor,
+  getAllInstructors,
   getUserDetails,
   updateUser,
   saveUserAvatar,
