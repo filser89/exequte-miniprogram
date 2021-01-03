@@ -1,12 +1,42 @@
 /* pages/my-classes/my-classes.wxss */
 @import "/app.wxss";
 
-.button-my-classes {
-  margin-left: 10px;
-  margin-right: 10px;
+.button-my-classes-active {
+  /* margin: 10px; */
   background-color: #D8D8D8; 
   color: #5C0C17; 
-  height: 50px; 
-  vertical-align: center;
+  width: 170px !important;
+  height: 60px;
+  text-align: center;
+  position: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+
+.button-my-classes {
+  /* margin: 10px; */
+  background-color: #18181D; 
+  color: white; 
+  width: 170px !important;
+  height: 60px;
+  text-align: center;
+  position: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.btn-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
 
 }

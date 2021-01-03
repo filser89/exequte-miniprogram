@@ -1,1 +1,67 @@
 /* pages/my-classes/components/BookingCard/BookingCard.wxss */
+
+@import "/app.wxss";
+
+.card-my-classes {
+  width:90%;
+  height: 100%;
+  background-color: #18181D;
+  color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+  flex-wrap: wrap;
+  /* padding: 5px; */
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.card-image-my-classes {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  right: 5px;
+  margin-right: 10px;
+  position: absolute;
+	top: 10px; 
+}
+
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between; 
+  margin: 20rpx;
+}
+
+.icon-time-booking {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+
+.status {
+  height: 10px;
+  font-size: 13px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  /* margin-left: 0px !important; */
+}
+
+.green-status {
+  background-color: #1FDE8D;
+}
+
+.red-status {
+  background-color: #5C0C17;
+}

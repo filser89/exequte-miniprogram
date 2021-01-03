@@ -4,7 +4,7 @@
 
 <view class='block' style='margin-bottom: 60px;'>
   <view class='db bold' style="display: flex; flex-direction: column">
-    <text class='text-size-sheader' >{{session.name}} class </text>
+    <text class='text-size-sheader' >{{session.name}} </text>
     <view class="db" style="margin-top: 15px; ">
       <image src='/images/time-white.png' class='icon-time-booking'> </image><text style="font-size: 16px;">  {{session.duration}} min</text>
     </view>
