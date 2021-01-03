@@ -2,41 +2,37 @@
 @import "/app.wxss";
 
 .button-my-classes-active {
-  /* margin: 10px; */
   background-color: #D8D8D8; 
   color: #5C0C17; 
-  width: 170px !important;
-  height: 60px;
-  text-align: center;
-  position: center;
+  padding: 15px 0;
   font-size: 18px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-
+  border-radius: 10px
 }
 
 .button-my-classes {
-  /* margin: 10px; */
   background-color: #18181D; 
   color: white; 
-  width: 170px !important;
-  height: 60px;
-  text-align: center;
-  position: center;
+  padding: 15px 0;
   font-size: 18px;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 10px;
   border: 1px solid white;
 }
 
 .btn-tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding: 20px;
   margin-top: 20px; 
+}
 
+.no-classes {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

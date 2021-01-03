@@ -2,19 +2,12 @@
 
 @import "/app.wxss";
 
-.card-my-classes {
+/* .card-my-classes {
   width:90%;
-  height: 100%;
   background-color: #18181D;
-  color: white;
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  position: center;
-  flex-wrap: wrap;
-  /* padding: 5px; */
-  justify-content: center;
-  margin-top: 20px;
+
+  margin: 20px auto 0 auto;
   position: relative;
 }
 
@@ -37,6 +30,22 @@
   flex-direction: row;
   align-items: space-between; 
   margin: 20rpx;
+} */
+.class-card {
+  background-color: #18181D;
+  border-radius: 10px;
+  width: 90%;
+  margin: 20px auto 0 auto;
+  
+}
+
+
+.class-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-size:cover;
+  margin-left: 20px;
 }
 
 .icon-time-booking {
@@ -50,12 +59,11 @@
   font-size: 13px;
   text-align: center;
   justify-content: center;
-  margin-top: 20px;
-  position: relative;
-  text-align: center;
+  margin-top: 10px;
   display: flex;
   align-items: center;
-  /* margin-left: 0px !important; */
+  margin-left: 0px !important;
+  position: relative;
 }
 
 .green-status {

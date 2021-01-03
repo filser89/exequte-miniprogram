@@ -28,6 +28,10 @@
   justify-content: space-around;
 }
 
+.space-evenly {
+  justify-content: space-evenly;
+}
+
 .content-center {
   justify-content: center;
 }
