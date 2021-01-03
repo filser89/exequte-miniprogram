@@ -31,8 +31,8 @@
 
   <image class="card-image-my-classes" src="{{booking.session.image_url}}"></image>
 </view>
- <!-- <view wx:if="{{selected == 1}}"> -->
-  <view class="status green-status d-flex">{{booking.attended ? 'COMPLETED' : 'NO SHOW'}}</view>
-  <!-- </view> -->
+ <view wx:if="{{selected == 1}}">
+  <view class="status red-status d-flex">{{booking.attended ? 'COMPLETED' : 'NO SHOW'}}</view>
+  </view>
 
 </view>
