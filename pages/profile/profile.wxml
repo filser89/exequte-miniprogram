@@ -49,7 +49,7 @@
 </view> 
 </view>
 <view class='my-classes-btn'>
-<button bindtap="navigateToMyClasses" class='my-classes-btn'>My Classes </button>
+<button bindtap="navigateToClasses" class='my-classes-btn'>My Classes </button>
 <image src='/images/Triangle2.png' class='icon-time2' style="margin-right: 5px; margin-left: 150px;"></image>
 </view>
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>

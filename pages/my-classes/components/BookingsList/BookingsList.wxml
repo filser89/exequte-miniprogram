@@ -1,5 +1,5 @@
 <!--pages/my-classes/components/BookingCard/BookingsList/BookingsList.wxml-->
-<view wx:for="{{bookings[tab]}}" wx:key="unique">
+<view wx:for="{{bookings}}" wx:key="unique">
   <view>
     <BookingCard booking="{{item}}" selected="selected" />
   </view>
