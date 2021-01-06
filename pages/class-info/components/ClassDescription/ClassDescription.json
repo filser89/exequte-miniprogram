@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "OtherDates": "../OtherDates/OtherDates"
+    "OtherDates": "../OtherDates/OtherDates",
+    "Topbar": "../../../../components/Topbar/Topbar"
   }
 }

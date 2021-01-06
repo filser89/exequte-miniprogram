@@ -88,7 +88,7 @@ App({
 async getPhoneLanguage() {
   const { language } = await wxp.getSystemInfo()
   console.log('lang:', language)
-  return language
+  this.globalData.headers['X-API-Lang'] = language
 }
 
 })

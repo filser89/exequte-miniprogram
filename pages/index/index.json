@@ -2,6 +2,7 @@
   "usingComponents": {
     "Banner": "./components/Banner/Banner",
     "Schedule": "./components/Schedule/Schedule",
-    "TabBar": "../../components/TabBar/TabBar"
+    "TabBar": "../../components/TabBar/TabBar",
+    "Topbar": "/components/Topbar/Topbar"
   }
 }

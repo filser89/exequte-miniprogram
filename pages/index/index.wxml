@@ -1,10 +1,10 @@
 <!--index.wxml-->
   <!-- <Banner url="{{banner.url}}" /> -->
-
+<Topbar />
   <view style="background-color: black">
   <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/banner.png');">
-    <image src='/images/logo.png' class="icon-lg logo my" />
-    <view class="language-button  " style=''>中文</view>
+    <!-- <image src='/images/logo.png' class="icon-lg logo my" />
+    <view class="language-button  " style=''>中文</view> -->
   <view class="pl20">
     <view class='text-white bold text-size-theader mb p20 w60'>First 5 trainings for FREE<slot></slot></view>
   </view>
