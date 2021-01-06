@@ -42,6 +42,12 @@ Page({
     const filePath = res.tempFilePaths[0]
     console.log("url", filePath)
  const response = await uploadUserAvatar(this.data.user.id, filePath)
+ console.log('response', response)
+ wx.showToast({
+   title: 'Avatar uploaded',
+   icon: 'none',
+   duration: 1500
+ })
 },
 
 

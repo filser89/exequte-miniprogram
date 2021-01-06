@@ -5,7 +5,7 @@
   <view class="table text-size-body z">
     <view wx:for="{{dates}}" wx:for-item="date" wx:for-index="i" wx:key="*this">
       <view data-index="{{i}}" bindtap="toggleCurrent"
-        class="{{current == i ? 'calendar-button-active' : 'calendar-button' }}">
+        class="d-flex flex-column content-around {{current == i ? 'calendar-button-active' : 'calendar-button' }}">
         <view>{{date.dateW}}</view>
         <view>{{date.dateD}}</view>
         <view>{{date.dateM}}</view>
