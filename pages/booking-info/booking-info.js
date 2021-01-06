@@ -31,8 +31,9 @@ Page({
     })
 
   },
-  setBtnPattern(){
-
+  
+  async handleClassCancelled (){
+    const booking = await getBooking(this.data.booking.id)
+    this.setData({booking})
   }
- 
 })
