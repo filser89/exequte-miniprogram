@@ -11,13 +11,15 @@ Page({
   data: {
     session: {},
     instructor: {},
-    btnPattern: {}
+    btnPattern: {},
+    options:{}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   async onLoad(options) {
+    console.log(options)
     const user = wx.getStorageSync('user')
       this.setData({
         user
@@ -28,7 +30,8 @@ Page({
     } = options
     this.setData({
       session: await getSession(sessionId),
-      instructor: await getInstructor(instructorId)
+      instructor: await getInstructor(instructorId),
+      options
     })
     
     this.setBtnPattern(this.data.session)
@@ -46,17 +49,10 @@ Page({
     })
     this.setBtnPattern(this.data.session)
   },
-  // async setPageData(obj) {
-  //   const {
-  //     sessionId,
-  //     instructorId
-  //   } = obj
-  //   console.log(obj)
-  //   this.setData({
-  //     session: await getSession(sessionId),
-  //     instructor: await getInstructor(instructorId)
-  //   })
-  // },
+  handleLanguageChanged(){
+    this.onLoad(this.data.options)
+  },
+
   handleQueuedUp({
     detail
   }) {

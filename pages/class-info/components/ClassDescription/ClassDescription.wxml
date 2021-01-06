@@ -1,13 +1,15 @@
 <!--pages/class-info/components/ClassDescription/ClassDescription.wxml-->
+
 <view class='banner d-flex item-center w-100 h-20 '
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}});   height:600rpx !important; postition: absolute; z-index: -1">
-  <image src='/images/logo.png' class="icon-lg logo my" />
-  <view class="language-button  " style=''>中文</view>
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}}); height:600rpx !important; postition: absolute; z-index: -1">
+  <!-- <image src='/images/logo.png' class="icon-lg logo my" />
+  <view class="language-button  " style=''>中文</view> -->
   <view class="pl20">
   </view>
 </view>
 <view style="background-color: black; border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px ">
 </view>
+
 <view class=" bg-black ">
   <view class='text-white' style="margin-left: 25px">
     <view class="text-size-sheader bold">{{session.name}}</view>
@@ -38,8 +40,9 @@
       selectedInstructorId="{{session.instructor_id}}" />
   </view>
   <view class="cancel-card text-white tl" style="margin-top: 20px; margin-right: 25px; margin-left: 20px;">
-    <view class="text-size-sbody ml" >
-      <image src='/images/information.png' class='icon-time' style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>Free cancellation
+    <view class="text-size-sbody ml">
+      <image src='/images/information.png' class='icon-time'
+        style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>Free cancellation
       {{session.cancel_before}} hours inadvance.
     </view>
     <view class="text-size-sbody ml" style="margin-left: 15px"> Price: {{session.price}}</view>

@@ -1,0 +1,24 @@
+/* components/Topbar/Topbar.wxss */
+@import "/app.wxss";
+
+.topbar{
+  position: absolute;
+  top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.language-button-topbar {
+  background-color: #555555;
+  width: 40px !important;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+  padding: 3px;
+  font-weight: bold;
+  text-align: center;
+}

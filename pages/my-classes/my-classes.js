@@ -24,6 +24,8 @@ Page({
   switchTab({currentTarget}){
     const {selected} = currentTarget.dataset
     this.setData({selected})
+  },
+  handleLanguageChanged(){
+    this.onLoad()
   }
-
 })
