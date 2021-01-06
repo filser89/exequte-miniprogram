@@ -112,7 +112,7 @@
         {
           "name": "pages/booking-info/booking-info",
           "pathName": "pages/booking-info/booking-info",
-          "query": "bookingId=141&instructorId=6",
+          "query": "bookingId=2074&instructorId=90",
           "scene": null
         },
         {

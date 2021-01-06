@@ -19,6 +19,12 @@ Component({
    * Component methods
    */
   methods: {
-
+    navigateToBookingInfo(){
+      const bookingId = this.data.booking.id
+      const instructorId = this.data.booking.session.instructor_id
+      wx.navigateTo({
+        url: `../../../../booking-info/booking-info?bookingId=${bookingId}&instructorId=${instructorId}`,
+      })
+    }
   }
 })

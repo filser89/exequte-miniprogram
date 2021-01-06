@@ -105,13 +105,7 @@ export default Behavior ({
               title: result.msg,
               icon: 'none'
             })
-            // wx.hideToast({
-            //   success: (res) => {
-            //     wx.navigateBack({
-            //       delta: 1,
-            //     })
-            //   },
-            // })
+            this.triggerEvent('classcancelled', {})
     }
   }
 })
