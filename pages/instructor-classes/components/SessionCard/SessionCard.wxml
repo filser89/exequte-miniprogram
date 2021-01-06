@@ -1,0 +1,28 @@
+<!--pages/instructor-classes/components/SessionCard/SessionCard.wxml-->
+<view bindtap="navigateToClassAttendance" class="class-card">
+  <!-- card -->
+  <view class="bold d-flex space-between pa">
+    <!-- left side -->
+    <view class="d-flex flex-column space-between flex-grow">
+      <!-- header -->
+      <view class="text-size-sheader">{{session.name}}</view>
+      <!-- header ends -->
+      <!-- duration -->
+      <view class="text14">
+        <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.duration}} min
+      </view>
+      <!-- duration ends -->
+      <!-- date time -->
+      <view class="d-flex space-between text14">
+        <view>{{session.date}}</view>
+        <view>{{session.from}} - {{session.to}}</view>
+      </view>
+      <!-- date time ends -->
+    </view>
+    <!-- left side ends -->
+    <!-- image -->
+    <image class="class-image" src="{{session.image_url}}"></image>
+    <!-- image ends -->
+  </view>
+  <!-- card ends -->
+</view>

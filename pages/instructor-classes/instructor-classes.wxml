@@ -1,4 +1,5 @@
-<!--pages/my-classes/my-classes.wxml-->
+<!--pages/instructor-classes/instructor-classes.wxml-->
+
 <view class=' d-flex item-center w-100 bg-black'
   style="  height:120rpx !important; postition: absolute; z-index: -1">
   <image src='/images/logo.png' class="icon-lg logo my" />
@@ -11,13 +12,10 @@
     <view bindtap="switchTab" data-selected="0" class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>Upcoming</view>
     <view bindtap="switchTab" data-selected="1" class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>History</view>
   </view>
-  <view wx:if="{{bookings[selected].length}}">
-    <BookingsList selected="selected" bookings="{{bookings[selected]}}" />
+  <view wx:if="{{sessions[selected].length}}">
+    <SessionsList selected="selected" sessions="{{sessions[selected]}}" />
   </view>
   <view wx:else class="no-classes">
-    <view class="tc">What are you waiting for...</view>
-    <BookNowButton action="reLaunchToIndexPage">
-      BOOK NOW
-    </BookNowButton>
+    <view class="tc">You have no classes... Yet</view>
   </view>
 </view>

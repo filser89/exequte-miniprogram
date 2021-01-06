@@ -120,6 +120,12 @@
           "pathName": "pages/about/about",
           "query": "bookingId=141&instructorId=6",
           "scene": null
+        },
+        {
+          "name": "pages/instructor-classes/instructor-classes",
+          "pathName": "pages/instructor-classes/instructor-classes",
+          "query": "bookingId=2074&instructorId=90",
+          "scene": null
         }
       ]
     }

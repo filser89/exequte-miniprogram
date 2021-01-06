@@ -22,9 +22,11 @@ Page({
     })
   },
 
-  navigateToMyClasses(){
+  navigateToClasses(){
+    console.log('clicked')
+    let direction = this.data.user.instructor ? 'instructor' : 'my'
     wx.navigateTo({
-      url: `../../pages/my-classes/my-classes`
+      url: `../../pages/${direction}-classes/${direction}-classes`
     })
   },
   navigateToProfileUpdate(){
