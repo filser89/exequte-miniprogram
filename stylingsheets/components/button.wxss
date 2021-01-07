@@ -1,25 +1,4 @@
-/* RESET SYSTEM STYLE */
-/* button::after {
-  border: none;
-}
 
-button {
-  color: unset;
-  background-color: unset;
-  width: unset;
-}
-
-button:hoover {
-  color: unset;
-  background-color: unset;
-  width: unset;
-}
-
-button[disabled]:not([type]) {
-  color: unset;
-  background-color: unset;
-  width: unset;
-} */
 
 /* To be used when button is not button element e.g. navigator */
 .button {
@@ -29,9 +8,7 @@ button[disabled]:not([type]) {
 }
 
 /* OVERWIRTES SYSTEM DEFAULT */
-button cover-view {
-  display: flex;
-}
+
 
 .btn {
   text-align:center;
@@ -112,7 +89,7 @@ button cover-view {
 .calendar-button-active {
   background-color: #5C0C17;
   width: 40px !important;
-  height: 60px;
+  height: 65px;
   text-align: center;
   border-radius: 10px;
   color: white;

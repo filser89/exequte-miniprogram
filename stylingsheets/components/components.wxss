@@ -15,9 +15,7 @@
 @import './slider';
 @import './tower';
 
-button cover-view {
-  display: flex;
-}
+
 
 .label-lg {
   position: absolute;

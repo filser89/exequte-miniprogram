@@ -25,20 +25,20 @@ input {
   
 }
 .picker{
-  padding: 2px 2px 0px 0px;
+  padding: 0px;
   border-radius: 2px;
-  width: 130px;
+  width: 150px;
   /* margin-right: 10px; */
-  margin-left: 5px;
+  margin-left: 6px;
   background-color: white;
-  height: 33px;
+  height: 36px;
   color: black;
   justify-content: center;
 }
 textarea {
   padding: 2px;
   border-radius: 2px;
-  width: 55%;
+  width: 60%;
   margin-right: 5px;
   margin-left: 10px;
   background-color: white;

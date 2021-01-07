@@ -2,7 +2,7 @@
   <!-- <Banner url="{{banner.url}}" /> -->
 
   <view style="background-color: black">
-  <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/banner.png');">
+  <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{banner.url}}');">
     <image src='/images/logo.png' class="icon-lg logo my" />
     <view class="language-button  " style=''>中文</view>
   <view class="pl20">

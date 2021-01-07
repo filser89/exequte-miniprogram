@@ -10,55 +10,55 @@
   <view >
   <image style='width: 100px; height: 100px; border-radius: 50%' src="{{user.avatar_url}}"></image>
 </view>
-  <view class='bold' style="font-size: 20px;">{{user.first_name}} {{user.last_name}}</view>
-<view class='db' >
-  <view class=' red-box d-flex' style='flex-direction: column' >
-    <view class='d-flex tc bold' > Classes</view>
+  <view class='bold container' style="font-size: 20px; ">{{user.first_name}} {{user.last_name}}</view>
+<view class='d-flex container' style='flex-direction: row;'  >
+  <view class=' red-box d-flex' style='flex-direction: column; ' >
+    <view class='d-flex tc bold' style='justify-content: center; '> Classes</view>
     <view class='d-flex tc' >
-    <view class='d-flex tc' style='flex-direction: column'>
+    <view class='d-flex tc' style='flex-direction: column; '>
       <view class='tc bold'>{{user.attended_classes}}</view>
       <view class='tc' >Since joining</view>
     </view>
-    <view class='d-flex tc' style='flex-direction: column'>
+    <view class='d-flex tc' style='flex-direction: column; '>
       <view class='tc bold'>{{user.average_attendence}}</view>
       <view class='tc'>4 weeks average</view>
     </view>
     </view>
   </view>
-  <view class=' red-box d-flex' style='flex-direction: column' >
-    <view class='d-flex tc bold' > Body</view>
+  <view class=' red-box d-flex' style='flex-direction: column;  ' >
+    <view class='d-flex tc bold' style='justify-content: ;  align-items: center'> Body</view>
     <view class='d-flex tc' >
-    <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.current_weight}}</view>
+    <view class='d-flex tc' style='flex-direction: column; align-items: center'>
+      <view class='tc bold' >{{user.current_weight}}</view>
       <view class='tc'>Weight</view>
     </view>
-    <view class='d-flex tc' style='flex-direction: column'>
+    <view class='d-flex tc' style='flex-direction: column; align-items: center'>
       <view class='tc bold'>{{user.current_body_fat}}</view>
       <view class='tc'>Fat</view>
     </view>
     </view>
   </view>
 </view>
-<view wx:if="{{user.voucher_count}}" class='voucher-box'>
+<view wx:if="{{user.voucher_count}}" class='voucher-box container'>
   <view class='bold'> {{user.voucher_count}} Vouchers Available!</view> 
   <view style='margin-top: 20px;'>Each voucher is equal to one class.</view>
 </view>
 <view wx:else >
-<view class='no-voucher-box'>
+<view class='no-voucher-box container'>
     <view class='bold'> Mind! Nutrition! Move! </view> 
 </view> 
 </view>
-<view class='my-classes-btn'>
+<view class='my-classes-btn d-flex container' style='flex-direction: row;' >
 <button bindtap="navigateToMyClasses" class='my-classes-btn'>My Classes </button>
 <image src='/images/Triangle2.png' class='icon-time2' style="margin-right: 5px; margin-left: 150px;"></image>
 </view>
-<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
+<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box container'>
   <view style="margin-top: 10px">{{item.name}}</view>
   <view wx:if="{{item.smoothie}}"> + smoothies </view>
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
-<view class='bold' style="font-size: 20px;">My Nutrition</view>
-<view class=' big-red-box d-flex' style='flex-direction: column; ' >
+<view class='bold container' style="font-size: 20px;">My Nutrition</view>
+<view class=' big-red-box d-flex container' style='flex-direction: column; ' >
     <view class='d-flex tc bold' >Daily Recommendation</view>
     <view class='d-flex tc' >
     <view class='d-flex tc' style='flex-direction: column'>
@@ -75,7 +75,7 @@
     </view>
     </view>
   </view>
-<view class='my-classes-btn'>
+<view class='my-classes-btn d-flex container' style='flex-direction: row;'>
 <button bindtap="navigateToProfileUpdate" class='my-classes-btn'>My Info </button>
 <image src='/images/Triangle2.png' class='icon-time2' style="margin-right: 5px; margin-left: 150px;"></image>
 </view>

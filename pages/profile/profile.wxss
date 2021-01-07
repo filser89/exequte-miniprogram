@@ -2,10 +2,8 @@
 @import "/app.wxss";
 
 view {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: 10rpx;
+  align-items: center;
 }
 
 .red-box {
@@ -14,6 +12,7 @@ view {
   height: 130px;
   color: white;
   border-radius: 10px;
+  margin: 10rpx;
 }
 
 .big-red-box {
@@ -22,6 +21,7 @@ view {
   height: 130px;
   color: white;
   border-radius: 10px;
+  margin: 10rpx;
 }
 
 .voucher-box {
@@ -36,6 +36,7 @@ view {
   font-size: 18px;
   justify-content: center;
   align-items: center;
+  margin: 10rpx;
 }
 
 .no-voucher-box {
@@ -50,6 +51,7 @@ view {
   font-size: 18px;
   justify-content: center;
   align-items: center;
+  margin: 10rpx;
 }
 
 .my-classes-btn {
@@ -60,6 +62,7 @@ view {
   text-align: left !important;
   font-size: 18px;
   align-items: center;
+  margin: 10rpx;
 }
 
 .membership-box {
@@ -75,6 +78,7 @@ view {
   font-size: 18px;
   justify-content: center;
   align-items: center;
+  margin: 10rpx;
 }
 
 .valid {
@@ -90,6 +94,7 @@ view {
   display: flex;
   align-items: center;
   background-color: #1FDE8D;
+  margin: 10rpx;
 
 
 }

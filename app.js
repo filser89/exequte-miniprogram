@@ -5,7 +5,8 @@ const wxp = {}
 App({
   globalData: {
     ApiKey: 'ExeQuteapikey',
-    BASE_URL: 'http://localhost:3000/api/v1',
+    BASE_URL: 'https://exequte.cn/api/v1',
+    // BASE_URL: 'https://localhost:3000/api/v1',
     headers: {
       'API-Key': 'ExeQuteapikey'
     }
@@ -13,7 +14,8 @@ App({
   onLaunch: function () {
 
     promisifyAll(wx, wxp)
-    const BASE_URL = 'http://localhost:3000/api/v1'
+    const BASE_URL = 'https://exequte.cn/api/v1'
+    // const BASE_URL = 'http://localhost:3000/api/v1'
     const HEADERS = {
       'API-Key': 'ExeQuteapikey'
     }
