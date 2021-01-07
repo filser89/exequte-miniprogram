@@ -1,5 +1,7 @@
 // components/Topbar/Topbar.js
+
 const app = getApp()
+
 Component({
   /**
    * Component properties
@@ -15,8 +17,8 @@ Component({
     lang: ''
   },
 lifetimes: {
-  attached(){
-    const lang = wx.getStorageSync('lang')
+  async attached(){
+    const lang = app.globalData.headers['X-API-Lang']
    this.setData({lang})
   }
 },
