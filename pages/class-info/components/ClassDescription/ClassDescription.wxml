@@ -2,8 +2,6 @@
 
 <view class='banner d-flex item-center w-100 h-20 '
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}}); height:600rpx !important; postition: absolute; z-index: -1">
-  <!-- <image src='/images/logo.png' class="icon-lg logo my" />
-  <view class="language-button  " style=''>中文</view> -->
   <view class="pl20">
   </view>
 </view>
@@ -16,16 +14,16 @@
     <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
     <view class="db-flex" style="justify-content: space-around">
       <view class="text-size-sbody" style="margin-top: 20px; display:flex">
-        <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} min
+        <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}}{{strings.min}}
         <image src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
-        {{session.calories}} kCal
+        {{session.calories}}{{strings.kcal}}
       </view>
     </view>
     <view class="coach-card  tl" style="margin-right: 5px; margin-top: 10px">
       <view class="d-flex" >
         <image style="width: 70px; height: 70px; border-radius: 50%; margin: 5px 5px"
           src="{{instructor.image_url}}"></image>
-        <view style='justify-content: center; align-items: center;  margin: 35px 10px'> Coach {{instructor.first_name}}</view> 
+        <view style='justify-content: center; align-items: center;  margin: 35px 10px'> {{strings.coach}}{{instructor.first_name}}</view> 
       </view>
       <!-- Last Name: {{instructor.last_name}} -->
       <view class='text-size-sbody' style="margin-left: 5px; padding: 5px"> {{instructor.bio}}
@@ -42,12 +40,11 @@
   <view class="cancel-card text-white tl" style="margin-top: 20px; margin-right: 25px; margin-left: 20px;">
     <view class="text-size-sbody ml">
       <image src='/images/info.svg' class='icon-time'
-        style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>Free cancellation
-      {{session.cancel_before}} hours inadvance.
+        style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
     </view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> Price: {{session.price}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> Time: {{session.from}}-{{session.to}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px"> Date: {{session.date}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.price}}{{session.price}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.time}}{{session.from}}-{{session.to}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date}}</view>
   </view>
 
 

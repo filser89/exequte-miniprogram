@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     session: Object,
-    instructor: Object
+    instructor: Object,
+    strings: Object
   },
 
   /**

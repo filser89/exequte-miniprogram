@@ -1,7 +1,8 @@
 // pages/class-info/class-info.js
 import {
   getSession,
-  getInstructor
+  getInstructor,
+  getStrings
 } from '../../utils/requests/index'
 Page({
 
@@ -9,6 +10,8 @@ Page({
    * Page initial data
    */
   data: {
+    keys: ['min', 'kcal', 'coach', 'cancellation_1', 'cancellation_2', 'date', 'price', 'time'],
+    strings: {},
     session: {},
     instructor: {},
     btnPattern: {},
@@ -31,6 +34,7 @@ Page({
     this.setData({
       session: await getSession(sessionId),
       instructor: await getInstructor(instructorId),
+      strings: await getStrings('class-info', this.data.keys),
       options
     })
     
