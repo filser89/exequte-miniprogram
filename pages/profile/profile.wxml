@@ -4,81 +4,83 @@
   <view class='block'>
     <image class='photo-style ' src="{{user.avatar_url}}"></image>
   </view>
-  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.first_name}} {{user.last_name}}</view>
+  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.first_name}}
+    {{user.last_name}}</view>
+</view>
+<!-- stats -->
+<view class='block' style='margin-top: 15px'>
+  <view class=' red-box d-flex flex-column space-between'>
+    <view class='d-flex tc bold content-center pb'> Classes</view>
+    <view class='d-flex flex-column space-between flex-grow'>
+      <view class='text-grid tc'>
+        <view class='tc bold'>{{user.attended_classes}}</view>
+        <view class='tc bold'>{{user.average_attendence}}</view>
+      </view>
+      <view class='text-grid tc'>
+        <view class='tc'>Since joining</view>
+        <view class='tc'>4 weeks av.</view>
+      </view>
+    </view>
   </view>
-  <!-- stats -->
-  <view class='block' style='margin-top: 15px'>
-  <view class=' red-box d-flex' style='flex-direction: column' >
-    <view class='d-flex tc bold' style='justify-content: center; padding: 30rpx'> Classes</view>
-    <view class='d-flex tc' >
-    <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.attended_classes}}</view>
-      <view class='tc' >Since joining</view>
-    </view>
-    <view class='d-flex tc' style='flex-direction: column'>
-      <view class='tc bold'>{{user.average_attendence}}</view>
-      <view class='tc'>4 weeks average</view>
-    </view>
-    </view>
-  </view>
-  <view class='red-box d-flex' style='flex-direction: column' >
-    <view class='d-flex bold' style='justify-content: center; padding: 20px'> Body</view>
-    <view class='d-flex' style='justify-content: center; '>
-    <view class='d-flex ' style='flex-direction: column; '>
-      <view class='bold d-flex' style='align-items: center'>{{user.current_weight}} kg</view>
-      <view class='mr'>Weight</view>
-    </view>
-    <view class='d-flex' style='flex-direction: column;  '>
-      <view class='tc bold d-flex' style='align-items: center'>{{user.current_body_fat}} %</view>
-      <view class='ml'>Fat</view>
-    </view>
+  <view class='red-box d-flex flex-column space-between'>
+    <view class='d-flex bold content-center pb'> Body</view>
+    <view class='d-flex flex-column space-between flex-grow'>
+      <view class='text-grid tc'>
+        <view class='bold'>{{user.current_weight}} kg</view>
+        <view class='tc bold'>{{user.current_body_fat}} %</view>
+      </view>
+      <view class='text-grid tc'>
+        <view class=''>Weight</view>
+        <view class=''>Fat</view>
+      </view>
     </view>
   </view>
 </view>
 <!-- Vouchers -->
-<view wx:if="{{user.voucher_count}}" class='voucher-box ' >
-  <view class='bold'> {{user.voucher_count}} Vouchers Available!</view> 
+<view wx:if="{{user.voucher_count}}" class='voucher-box '>
+  <view class='bold'> {{user.voucher_count}} Vouchers Available!</view>
   <view style='margin-top: 20px;'>Each voucher is equal to one class.</view>
 </view>
-<view wx:else >
-<view class='no-voucher-box'>
-    <view class='bold'> Mind! Nutrition! Move! </view> 
-</view> 
+<view wx:else>
+  <view class='no-voucher-box'>
+    <view class='bold'> Mind! Nutrition! Move! </view>
+  </view>
 </view>
 <!-- button my classes -->
-<view bindtap="navigateToClasses"  class='my-classes-btn d-flex'>
-<view style='margin-left: 20px;'>My Classes </view>
-<image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+<view bindtap="navigateToClasses" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Classes </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <!-- membership -->
-<view wx:for="{{user.memberships}}"  wx:key="unique" class='membership-box'>
+<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
   <view style="margin-top: 10px">ff{{item.name}}</view>
   <view wx:if="{{item.smoothie}}"> + smoothies </view>
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
 <!-- nutrition -->
 <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
-<view class=' big-red-box' >
-    <view class='d-flex tc bold' style='padding: 20px' >Daily Recommendation</view>
-    <view class='d-flex tc' style="padding-bottom: 20px">
-    <view class='d-flex tc' style='flex-direction: column; padding: 5px'>
-      <view class='tc bold'>{{user.recommended_bmr || '???'}} </view>
-      <view class='tc' >BMR kCals</view>
+<view class=' big-red-box'>
+  <view class='d-flex content-center tc bold' style="padding-bottom: 30rpx">Daily Recommendation</view>
+    <view class="grid-nutrition">
+      <view>
+        <view class='grid-nutrition-item tc bold'>{{user.recommended_bmr || '???'}} </view>
+        <view class='grid-nutrition-item tc'>BMR kCals</view>
+      </view>
+      <view>
+        <view class='grid-nutrition-item tc bold'>{{user.recommended_kcals || '???'}}</view>
+        <view class='grid-nutrition-item tc'>Target kCals</view>
+      </view>
+      <view>
+        <view class='grid-nutrition-item tc bold'>{{user.carb_prot_fat || '???'}}</view>
+        <view class='grid-nutrition-item tc'>Carbs/Prot/Fat %</view>
+      </view>
     </view>
-    <view class='d-flex tc' style='flex-direction: column; padding: 5px'>
-      <view class='tc bold'>{{user.recommended_kcals || '???'}}</view>
-      <view class='tc'>Target kCals</view>
-    </view>
-    <view class='d-flex tc' style='flex-direction: column; padding: 5px'>
-      <view class='tc bold'>{{user.carbs_prot_fat || '???'}}</view>
-      <view class='tc'>Carbs/Prot/Fat %</view>
-    </view>
-    </view>
-  </view>
-  <!-- button my classes -->
-<view bindtap="navigateToProfileUpdate"  class='my-classes-btn d-flex'>
-<view style='margin-left: 20px;'>My Personal Information </view>
-<image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+
+    <!-- </view> -->
+
 </view>
-
-
+<!-- button my classes -->
+<view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Personal Information </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
