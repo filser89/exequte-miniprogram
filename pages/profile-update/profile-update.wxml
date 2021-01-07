@@ -1,11 +1,7 @@
 <!--pages/profile-update/profile-update.wxml-->
-<page>
-<view class='d-flex item-center w-100 bg-black'
-  style="  height:120rpx !important; postition: absolute; z-index: -1; margin:0px">
-  <image src='/images/logo.png' class="icon-lg logo my" />
-  <view class="language-button " style='margin-right: 5px !important'>中文</view>
-</view>
-<view class="white tc bold" style="margin: 0px; margin-top: 15px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
+<Topbar bindlanguagechanged="handleLanguageChanged" />
+<view></view>
+<view class="white tc bold" style="margin: 0px; margin-top: 75px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
   Let us know about you...
 </view>  
 <view style="background-color: black; margin: 0; color: white">
@@ -24,4 +20,3 @@
   <button style="background-color: #5C0C17; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white" form-type="submit">SAVE</button>
 </form>
 </view>
-</page>

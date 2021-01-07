@@ -1,12 +1,7 @@
 <!--pages/my-classes/my-classes.wxml-->
-<view class=' d-flex item-center w-100 bg-black'
-  style="  height:120rpx !important; postition: absolute; z-index: -1">
-  <image src='/images/logo.png' class="icon-lg logo my" />
-  <view class="language-button  " style=''>中文</view>
-  <view class="pl20">
-  </view>
-</view>
-<view class=" text-white">
+<Topbar bindlanguagechanged="handleLanguageChanged" />
+
+<view class=" text-white" style='margin-top: 70px'>
   <view class='btn-tabs bold '>
     <view bindtap="switchTab" data-selected="0" class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>Upcoming</view>
     <view bindtap="switchTab" data-selected="1" class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>History</view>

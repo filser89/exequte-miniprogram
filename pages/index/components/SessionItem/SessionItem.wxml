@@ -64,26 +64,3 @@
     <!-- right side of the card finished -->
   </view>
 </view>
-
-
-<!-- <view class="card">
-  <view data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}" bindtap="navigateToClassInfo" >
-    <image src="{{session.image_url}}"></image>
-    ID: {{session.id}}
-    Name: {{session.name}}
-    From: {{session.from}}
-    To: {{session.to}}
-    Duration: {{session.duration}}
-    Calories: {{session.calories}}
-    <view wx:if="{{user.first_name}}">
-      <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
-      {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
-    </ActionButton>
-    </view>
-    <view wx:else>
-      <GetInfoButton itemId="{{session.id}}">
-        Click
-      </GetInfoButton>
-    </view>
-  </view>
-</view> -->

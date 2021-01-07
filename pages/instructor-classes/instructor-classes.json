@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "SessionsList": "./components/SessionsList/SessionsList"
+    "SessionsList": "./components/SessionsList/SessionsList",
+    "Topbar": "/components/Topbar/Topbar"
+
   }
 }

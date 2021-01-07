@@ -2,6 +2,8 @@
   "usingComponents": {
     "ProfileForm": "./components/ProfileForm/ProfileForm",
     "BodyNowForm": "./components/BodyNowForm/BodyNowForm",
-    "BodyTargetForm": "./components/BodyTargetForm/BodyTargetForm"
+    "BodyTargetForm": "./components/BodyTargetForm/BodyTargetForm",
+    "Topbar": "/components/Topbar/Topbar"
+
   }
 }

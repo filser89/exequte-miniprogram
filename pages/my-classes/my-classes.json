@@ -2,6 +2,8 @@
   "usingComponents": {
     "BookNowButton": "./components/BookNowButton/BookNowButton",
     "TabBar": "../../components/TabBar/TabBar",
-    "BookingsList": "./components/BookingsList/BookingsList"
+    "BookingsList": "./components/BookingsList/BookingsList",
+    "Topbar": "/components/Topbar/Topbar"
+
   }
 }

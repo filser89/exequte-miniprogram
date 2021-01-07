@@ -1,5 +1,8 @@
 <!--pages/booking-confirmation/booking-confirmation.wxml-->
-<page>
+<!-- <Topbar bindlanguagechanged="handleLanguageChanged"/> -->
+
+<page >
+
 <BookingInfo session="{{booking.session}}" />
 <view class='white-square db'>
   <view class='bold text-black tc'>Class Booked!</view>
