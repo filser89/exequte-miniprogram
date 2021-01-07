@@ -1,4 +1,6 @@
 <!--pages/booking-info/booking-info.wxml-->
+<Topbar bindlanguagechanged="handleLanguageChanged" />
+
 <BookingDescription session="{{booking.session}}" instructor="{{instructor}}" />
 <!-- <view wx:if="{{booking.can_cancel}}"> -->
   <ActionButton itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}">

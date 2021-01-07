@@ -22,13 +22,13 @@
       </view>
     </view>
     <view class="coach-card  tl" style="margin-right: 5px; margin-top: 10px">
-      <view class="db">
-        <image style="width: 60px; height: 60px; border-radius: 50%; z-index: 1; margin-right: 20px"
+      <view class="d-flex" >
+        <image style="width: 70px; height: 70px; border-radius: 50%; margin: 5px 5px"
           src="{{instructor.image_url}}"></image>
-        Coach {{instructor.first_name}}
+        <view style='justify-content: center; align-items: center;  margin: 35px 10px'> Coach {{instructor.first_name}}</view> 
       </view>
       <!-- Last Name: {{instructor.last_name}} -->
-      <view class='text-size-sbody' style="margin-top: 5px; margin-left: 5px; padding: 5px"> Bio: {{instructor.bio}}
+      <view class='text-size-sbody' style="margin-left: 5px; padding: 5px"> {{instructor.bio}}
       </view>
 
     </view>
@@ -41,12 +41,12 @@
   </view>
   <view class="cancel-card text-white tl" style="margin-top: 20px; margin-right: 25px; margin-left: 20px;">
     <view class="text-size-sbody ml">
-      <image src='/images/information.png' class='icon-time'
+      <image src='/images/info.svg' class='icon-time'
         style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>Free cancellation
       {{session.cancel_before}} hours inadvance.
     </view>
     <view class="text-size-sbody ml" style="margin-left: 15px"> Price: {{session.price}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> {{session.from}}-{{session.to}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px"> Time: {{session.from}}-{{session.to}}</view>
     <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px"> Date: {{session.date}}</view>
   </view>
 

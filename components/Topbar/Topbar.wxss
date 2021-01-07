@@ -13,12 +13,19 @@
 }
 
 .language-button-topbar {
+  position: absolute;
+	top: 5px; 
+  right: 10px; 
   background-color: #555555;
   width: 40px !important;
   height: 25px;
   border-radius: 10px;
   color: white;
   padding: 3px;
+  padding-top: 3px;
   font-weight: bold;
   text-align: center;
+  position: center;
+  justify-content: center;
+  align-items: center;
 }
