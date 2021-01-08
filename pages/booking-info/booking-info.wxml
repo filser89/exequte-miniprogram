@@ -3,8 +3,8 @@
 
 <BookingDescription session="{{booking.session}}" instructor="{{instructor}}" />
 <!-- <view wx:if="{{booking.can_cancel}}"> -->
-  <ActionButton itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}">
-    {{booking.can_cancel ? 'CANCEL' : 'CANCELLED'}}
-  </ActionButton>
+  <CancelButton itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}">
+    {{booking.can_cancel ? 'Cancel Class' : 'Cancelled'}}
+  </CancelButton>
 <!-- </view> -->
 <!-- <TabBar /> -->
