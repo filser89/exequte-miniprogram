@@ -1,7 +1,7 @@
 {
   "usingComponents": {
+    "CancelButton": "./components/CancelButton/CancelButton",
     "BookingDescription": "./components/BookingDescription/BookingDescription",
-    "ActionButton": "../../components/ActionButton/ActionButton",
     "TabBar": "../../components/TabBar/TabBar",
     "Topbar": "/components/Topbar/Topbar"
 

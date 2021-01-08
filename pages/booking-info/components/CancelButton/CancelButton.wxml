@@ -1,0 +1,10 @@
+<!--pages/booking-info/components/CancelButton/CancelButton.wxml-->
+<view class="text-capitalize text-white btn-container">
+
+  <view class="{{btnDisabled ? 'action-btn-disabled' : 'action-btn'}}" data-action="{{action}}"
+    disabled="{{btnDisabled}}" catchtap="takeAction">
+    <slot />
+  </view>
+
+
+</view>
