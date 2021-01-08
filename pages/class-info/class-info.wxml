@@ -1,6 +1,6 @@
 <!--pages/class-info/class-info.wxml-->
   <Topbar bindlanguagechanged="handleLanguageChanged" />
-<ClassDescription session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
+<ClassDescription strings="{{strings}}" session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
 <Topbar />
 </ClassDescription>
 <view style="height: 20px; background-color: black"></view>

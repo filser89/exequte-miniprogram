@@ -34,11 +34,14 @@ import {
 
 } from './users.js'
 
-const getStrings = (keys) => {
+const getStrings = (page, keys) => {
   const options = {
     method: 'post',
     url: '/pages',
-    data: keys
+    data: {
+      keys,
+      page
+    }
   }
   return request(options)
 }
