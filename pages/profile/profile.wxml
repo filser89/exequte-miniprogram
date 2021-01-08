@@ -60,8 +60,8 @@
 <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
 <view class=' big-red-box' >
     <view class='d-flex tc bold' style='padding: 20px' >Daily Recommendation</view>
-    <view class='d-flex tc' style="padding-bottom: 20px">
-    <view class='d-flex tc' style='flex-direction: column; padding: 5px'>
+    <view class='d-flex tc' style="padding-bottom: 20px; ">
+    <view class='d-flex tc' style='flex-direction: column; padding: 5px; '>
       <view class='tc bold'>{{user.recommended_bmr || '???'}} </view>
       <view class='tc' >BMR kCals</view>
     </view>

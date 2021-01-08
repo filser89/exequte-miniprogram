@@ -1,1 +1,26 @@
 /* pages/class-attandence/Components/AttendanceCard/AttendanceCard.wxss */
+
+.attend {
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 45px; 
+  height: 45px;
+  border-radius: 50%;
+  justify-content: center;
+  float: left;
+
+}
+
+.check-text {
+  text-align: center;
+  justify-content: center;
+  margin-top: 12px;
+
+}

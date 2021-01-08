@@ -3,5 +3,5 @@
   <view wx:for="{{bookings}}" wx:key="unique">
    <AttendanceCard item="{{item}}"/>
   </view>
-  <button type="primary" form-type="submit">Submit</button>
+  <view class='update' form-type="submit">UPDATE</view>
 </form>
