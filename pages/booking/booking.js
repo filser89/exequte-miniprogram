@@ -1,5 +1,4 @@
 // pages/booking/booking.js
-const computedBehavior = require('miniprogram-computed')
 import {
   getSession,
   getMembershipTypes
@@ -28,10 +27,10 @@ Page({
    */
   async onLoad(options) {
     console.log(options)
-    const {
-      sessionId
-    } = options
-
+    this.setData({options})
+  },
+  async onShow(){
+    const sessionId = this.data.options.sessionId
     const session = await getSession(sessionId)
     const membershipTypes = await getMembershipTypes()
     const selected = this.setSelected(session.access_options)
@@ -81,6 +80,10 @@ Page({
     wx.redirectTo({
       url: `booking?sessionId=${this.data.session.id}`
     })
+  },
+
+  handleLanguageChanged(){
+    this.onShow()
   },
 
   // data setters

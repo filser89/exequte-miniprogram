@@ -70,7 +70,7 @@
         {
           "name": "pages/booking/booking",
           "pathName": "pages/booking/booking",
-          "query": "sessionId=19",
+          "query": "sessionId=700",
           "scene": null
         },
         {
@@ -100,7 +100,7 @@
         {
           "name": "pages/class-attandence/class-attandence",
           "pathName": "pages/class-attandence/class-attandence",
-          "query": "sessionId=3&instructorId=1",
+          "query": "sessionId=699&instructorId=1",
           "scene": null
         },
         {

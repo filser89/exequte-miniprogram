@@ -1,6 +1,6 @@
 <!--pages/booking/booking.wxml-->
 <!-- <page> -->
-
+  <Topbar2 bindlanguagechanged="handleLanguageChanged"/>
   <BookingInfo session="{{session}}" />
   <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" membership="{{membership}}" />

@@ -14,7 +14,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(options) {
+  async onShow() {
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
 
@@ -25,6 +25,10 @@ Page({
   switchTab({currentTarget}){
     const {selected} = currentTarget.dataset
     this.setData({selected})
+  },
+  
+  handleLanguageChanged(){
+    this.onShow()
   }
 
 })

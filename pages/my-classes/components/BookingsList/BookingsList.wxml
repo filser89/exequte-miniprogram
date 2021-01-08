@@ -1,6 +1,38 @@
 <!--pages/my-classes/components/BookingCard/BookingsList/BookingsList.wxml-->
-<view wx:for="{{bookings}}" wx:key="unique">
+<view wx:for="{{bookings}}" wx:for-item="booking" wx:key="unique">
+
+  <!-- <BookingCard booking="{{item}}" selected="tab" /> -->
   <view>
-    <BookingCard booking="{{item}}" selected="selected" />
+    <view bindtap="navigateToBookingInfo" class="class-card" data-booking-id="{{booking.id}}"
+      data-instructor-id="{{booking.session.instructor_id}}">
+      <!-- card -->
+      <view class="bold d-flex space-between pa">
+        <!-- left side -->
+        <view class="d-flex flex-column space-between flex-grow">
+          <!-- header -->
+          <view class="text-size-sheader">{{booking.session.name}}</view>
+          <!-- header ends -->
+          <!-- duration -->
+          <view class="text14">
+            <image src='/images/time-white.png' class='icon-time-booking'> </image> {{booking.session.duration}} min
+          </view>
+          <!-- duration ends -->
+          <!-- date time -->
+          <view class="d-flex space-between text14">
+            <view>{{booking.session.date}}</view>
+            <view>{{booking.session.from}} - {{booking.session.to}}</view>
+          </view>
+          <!-- date time ends -->
+        </view>
+        <!-- left side ends -->
+        <!-- image -->
+        <image class="class-image" src="{{booking.session.image_url}}"></image>
+        <!-- image ends -->
+      </view>
+      <!-- card ends -->
+      <view wx:if="{{selected == 1}}" class="status {{booking.attended ? 'green-status' : 'red-status'}}">
+        {{booking.status}}
+      </view>
+    </view>
   </view>
 </view>

@@ -1,14 +1,17 @@
 <!--pages/class-attandence/class-attandence.wxml-->
+<Topbar2 bindlanguagechanged="handleLanguageChanged"/>
 <view class='back'>
   <view class='class-about'>
 
-    <view style='font-size: 20px; margin:10px'>{{session.name}}</view> 
+    <view style='font-size: 20px; margin:10px'>{{session.name}}</view>
     <view style='display; flex; flex-direction: row; margin:10px'>
-      <view>  <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.from}}</view>
+      <view>
+        <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.from}}
+      </view>
       <view>{{session.date}}</view>
-    </view>  
+    </view>
   </view>
-<AttendanceForm bookings="{{session.bookings}}"/>
+  <AttendanceForm bookings="{{session.bookings}}" />
 
 
 </view>

@@ -12,7 +12,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(){
+  async onShow(){
     wx.setStorageSync('selectedTab', 2)
     console.log('profile page', wx.getStorageSync('selectedTab'))
     const user = wx.getStorageSync('user')
@@ -33,5 +33,8 @@ Page({
     wx.navigateTo({
       url: `../../pages/profile-update/profile-update`
     })
+  },
+  handleLanguageChanged(){
+    this.onShow()
   }
 })

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "AttendanceForm": "./Components/AttendanceForm/AttendanceForm"
+    "AttendanceForm": "./Components/AttendanceForm/AttendanceForm",
+    "Topbar2": "/components/Topbar2/Topbar2"
   }
 }

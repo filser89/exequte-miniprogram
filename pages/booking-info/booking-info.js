@@ -18,10 +18,14 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(options) {
+
+   onLoad(options){
+    this.setData({options})
+   },
+  async onShow() {
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
-
+    const options = this.data.options
     console.log(options)
     const booking = await getBooking(options.bookingId)
     const instructor = await getInstructor(options.instructorId)
@@ -35,5 +39,11 @@ Page({
   async handleClassCancelled (){
     const booking = await getBooking(this.data.booking.id)
     this.setData({booking})
+  },
+
+  handleLanguageChanged(){
+    this.onShow()
   }
+
+
 })

@@ -17,7 +17,7 @@ Page({
     keys: ['title', 'dog', 'focus'],
   },
 
-  async onLoad() {
+  async onShow() {
     wx.setStorageSync('selectedTab', 1)
     console.log('index page', wx.getStorageSync('selectedTab'))
 
@@ -25,7 +25,7 @@ Page({
         title: 'Just a sec..',
       })
 
-const strings = await getStrings(this.data.keys)
+const strings = await getStrings('index', this.data.keys)
 const user = await getCurrentUser()
 const banner = await getBanner()
 const arr =  await getSessions()
@@ -49,9 +49,6 @@ Promise.all([strings, user, banner, arr]).then((values) => {
 
   },
 
-  onShow() {
-
-  },
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -59,8 +56,10 @@ Promise.all([strings, user, banner, arr]).then((values) => {
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
 
-  
+  handleLanguageChanged(){
+    this.onShow()
+  }
 
 })
