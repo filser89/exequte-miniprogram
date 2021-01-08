@@ -59,6 +59,7 @@
 </view>
 <!-- nutrition -->
 <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
+
 <view class=' big-red-box'>
   <view class='d-flex content-center tc bold' style="padding-bottom: 30rpx">Daily Recommendation</view>
     <view class="grid-nutrition">
@@ -74,6 +75,7 @@
         <view class='grid-nutrition-item tc bold'>{{user.carb_prot_fat || '???'}}</view>
         <view class='grid-nutrition-item tc'>Carbs/Prot/Fat %</view>
       </view>
+
     </view>
 
     <!-- </view> -->

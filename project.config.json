@@ -100,7 +100,7 @@
         {
           "name": "pages/class-attandence/class-attandence",
           "pathName": "pages/class-attandence/class-attandence",
-          "query": "",
+          "query": "sessionId=3&instructorId=1",
           "scene": null
         },
         {

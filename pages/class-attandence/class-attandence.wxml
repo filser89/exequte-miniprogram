@@ -1,9 +1,12 @@
 <!--pages/class-attandence/class-attandence.wxml-->
-<view>
-  <view>
-    Name: {{session.name}}
-    From: {{session.from}}
-    Date: {{session.date}}
+<view class='back'>
+  <view class='class-about'>
+
+    <view style='font-size: 20px; margin:10px'>{{session.name}}</view> 
+    <view style='display; flex; flex-direction: row; margin:10px'>
+      <view>  <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.from}}</view>
+      <view>{{session.date}}</view>
+    </view>  
   </view>
 <AttendanceForm bookings="{{session.bookings}}"/>
 
