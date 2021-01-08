@@ -1,32 +1,33 @@
 <!--pages/about/about.wxml-->
 <Topbar bindlanguagechanged="handleLanguageChanged" />
 
-<view class='about' >
+<view class='about'>
   {{info.title_one}}
 </view>
 <view class='gym-photo' style="background-image: url('/images/gym1.png')"></view>
 <view class='paragraph'>
-{{info.paragraph_one}}</view>
+  {{info.paragraph_one}}</view>
 <view class='paragraph'>
-{{info.paragraph_two}}</view>
+  {{info.paragraph_two}}</view>
 <view class='address' style="background-image: url('/images/direction.png')">
-  <view class='address-text'><view class='bold'>Address:</view> 425 Yanping Road, 1st floor.
-Few minutes walk from Line 7 Changping Rd. Exit 5.</view>
+  <view class='address-text'>
+    <view class='bold'>Address:</view> 425 Yanping Road, 1st floor.
+    Few minutes walk from Line 7 Changping Rd. Exit 5.
+  </view>
 </view>
 <view class='paragraph'>
-{{info.paragraph_three}}</view>
+  {{info.paragraph_three}}</view>
 <view class='gym-photo' style="background-image: url('/images/gym2.png')">
 </view>
-<view class='team' >
- {{info.title_two}}
+<view class='team'>
+  {{info.title_two}}
 </view>
 <view class='paragraph'>
-{{info.paragraph_four}}</view>
-<view wx:for="{{instructors}}" >
-  <view class='instructor-card'> 
+  {{info.paragraph_four}}</view>
+<view wx:for="{{instructors}}" wx:key="unique">
+  <view class='instructor-card'>
     <image class='instructor-photo' src="{{item.image_url}}"></image>
-      <view class='instructor-name'>Coach {{item.first_name}}</view>
+    <view class='instructor-name'>Coach {{item.first_name}}</view>
   </view>
   <view class='paragraph'>{{item.bio}}</view>
-  </view>
-
+</view>

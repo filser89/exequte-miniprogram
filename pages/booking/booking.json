@@ -4,6 +4,7 @@
     "AccessOptions": "./components/AccessOptions/AccessOptions",
     "PromoCode": "./components/PromoCode/PromoCode",
     "DateForm": "./components/DateForm/DateForm",
-    "PayButton": "./components/PayButton/PayButton"
+    "PayButton": "./components/PayButton/PayButton",
+    "Topbar2": "../../components/Topbar2/Topbar2"
   }
 }

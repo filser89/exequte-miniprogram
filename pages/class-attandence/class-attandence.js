@@ -6,17 +6,23 @@ Page({
    * Page initial data
    */
   data: {
-    session: {}
+    session: {},
+    options: {}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(options) {
-    console.log(options)
-    const session = await getSessionAttendance(options.id)
-    this.setData({session})
+onLoad(options) {
+    this.setData({options})
+
+  },
+  async onShow(){
+    this.setData({session: await getSessionAttendance(this.data.options.id)})
   },
 
+  handleLanguageChanged(){
+    this.onShow()
+  }
   
 })

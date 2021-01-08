@@ -1,6 +1,6 @@
 <!--index.wxml-->
   <!-- <Banner url="{{banner.url}}" /> -->
-<Topbar />
+<Topbar bindlanguagechanged="handleLanguageChanged"/>
   <view style="background-color: black">
   <view class='banner d-flex item-center w-100 h-20' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{banner.url}}');">
    

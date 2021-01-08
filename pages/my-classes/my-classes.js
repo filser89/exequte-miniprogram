@@ -13,19 +13,24 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(options) {
+
+  async onShow() {
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
 
     this.setData({bookings: await getUsersBookings()})
-    console.log("On load", this.data.bookings)
+    // console.log("On load", this.data.bookings)
   },
 
   switchTab({currentTarget}){
     const {selected} = currentTarget.dataset
-    this.setData({selected})
+    Number.parseInt(selected, 10)
+    // console.log('page1', this.data.selected)
+
+    this.setData({selected: Number.parseInt(selected, 10)})
+    // console.log('page', this.data.selected)
   },
   handleLanguageChanged(){
-    this.onLoad()
+    this.onShow()
   }
 })

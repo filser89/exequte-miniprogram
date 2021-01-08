@@ -22,9 +22,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(options) {
-    console.log('profile-update', options)
-    this.setData(options)
+  async onShow() {
     this.initValidate()
     const user = wx.getStorageSync('user')
     console.log('id', user.id)
@@ -32,23 +30,23 @@ Page({
       user: await getUserDetails(user.id)
     })
   },
-  async uploadImage(e){
+  async uploadImage(e) {
     console.log("upload image")
-   const res = await wxp.chooseImage({
+    const res = await wxp.chooseImage({
       count: 1,
-      sizeType: ['original','compressed'],
-      courceType: ['album','camera']
+      sizeType: ['original', 'compressed'],
+      courceType: ['album', 'camera']
     })
     const filePath = res.tempFilePaths[0]
     console.log("url", filePath)
- const response = await uploadUserAvatar(this.data.user.id, filePath)
- console.log('response', response)
- wx.showToast({
-   title: 'Avatar uploaded',
-   icon: 'none',
-   duration: 1500
- })
-},
+    const response = await uploadUserAvatar(this.data.user.id, filePath)
+    console.log('response', response)
+    wx.showToast({
+      title: 'Avatar uploaded',
+      icon: 'none',
+      duration: 1500
+    })
+  },
 
 
 
@@ -144,5 +142,8 @@ Page({
       }
     }
     this.WxValidate = new WxValidate(rules, messages)
+  },
+  handleLanguageChanged() {
+    this.onShow()
   }
 })

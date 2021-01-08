@@ -12,7 +12,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad(){
+  async onShow(){
     wx.setStorageSync('selectedTab', 0)
     console.log('about page', wx.getStorageSync('selectedTab'))
 
@@ -20,9 +20,9 @@ Page({
     const instructors = await getAllInstructors()
     this.setData({info, instructors})
   },
-  onShow() {
-
-
-  },
+  
+  handleLanguageChanged(){
+    this.onShow()
+  }
 
 })

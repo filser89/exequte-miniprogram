@@ -1,5 +1,5 @@
 <!--pages/profile/profile.wxml-->
-<Topbar />
+<Topbar bindlanguagechanged="handleLanguageChanged" />
 <view class='block avatar' style='flex-direction: column'>
   <view class='block'>
     <image class='photo-style ' src="{{user.avatar_url}}"></image>
