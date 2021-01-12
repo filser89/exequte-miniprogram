@@ -14,22 +14,22 @@
   ],
   "tabBar": {
     "custom": false,
-    "color": "black",
+    "color": "white",
     "selectedColor": "#5C0C17",
     "borderStyle": "black",
     "backgroundColor": "#000000",
     "list": [{
       "pagePath": "pages/about/about",
       "iconPath": "images/XQ-logo-white.png",
-      "selectedIconPath": "images/XQ-logo-white.png"
+      "selectedIconPath": "images/XQ-red.png"
     }, {
       "pagePath": "pages/index/index",
       "iconPath": "images/schedule.png",
-      "selectedIconPath": "images/schedule.png"
+      "selectedIconPath": "images/schedule2.png"
     }, {
       "pagePath": "pages/profile/profile",
       "iconPath": "/images/user-xq.png",
-      "selectedIconPath": "/images/user-xq.png"
+      "selectedIconPath": "/images/user-red.png"
     }]
   },
   "window":{
