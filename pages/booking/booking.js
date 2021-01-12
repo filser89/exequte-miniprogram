@@ -77,9 +77,10 @@ Page({
   },
 
   handleMembershipBought(){
-    wx.redirectTo({
-      url: `booking?sessionId=${this.data.session.id}`
-    })
+    // wx.redirectTo({
+    //   url: `booking?sessionId=${this.data.session.id}`
+    // })
+    this.onShow()
   },
 
   handleLanguageChanged(){
