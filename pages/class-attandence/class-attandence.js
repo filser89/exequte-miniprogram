@@ -1,11 +1,13 @@
 // pages/class-attandence/class-attandence.js
-import {getSessionAttendance} from '../../utils/requests/index'
+import {getSessionAttendance, getStrings} from '../../utils/requests/index'
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     session: {},
     options: {}
   },
@@ -18,7 +20,10 @@ onLoad(options) {
 
   },
   async onShow(){
-    this.setData({session: await getSessionAttendance(this.data.options.id)})
+    const session = await getSessionAttendance(this.data.options.id)
+    const strings = await getStrings('class-attandence', this.data.keys)
+
+    this.setData({session, strings})
   },
 
   handleLanguageChanged(){

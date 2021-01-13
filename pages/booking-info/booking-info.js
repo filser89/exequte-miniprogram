@@ -1,11 +1,13 @@
 // pages/booking-info/booking-info.js
-import {getBooking, getInstructor} from "../../utils/requests/index"
+import {getBooking, getInstructor, getStrings} from "../../utils/requests/index"
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     booking: {},
     instructor:{},
     btnPattern: {
@@ -29,9 +31,11 @@ Page({
     console.log(options)
     const booking = await getBooking(options.bookingId)
     const instructor = await getInstructor(options.instructorId)
+    const strings = await getStrings('booking-info', this.data.keys)
     this.setData({
       booking,
-      instructor
+      instructor,
+      strings
     })
 
   },
