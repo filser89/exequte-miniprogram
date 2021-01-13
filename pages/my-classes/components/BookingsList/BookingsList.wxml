@@ -10,7 +10,7 @@
         <!-- left side -->
         <view class="d-flex flex-column space-between flex-grow">
           <!-- header -->
-          <view class="text-size-sheader">{{booking.session.name}}</view>
+          <view style='font-size: 20px'>{{booking.session.name}}</view>
           <!-- header ends -->
           <!-- duration -->
           <view class="text14">
