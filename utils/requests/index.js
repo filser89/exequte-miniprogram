@@ -72,12 +72,21 @@ const getInfo = async () => {
   return request(options)
 }
 
+const deleteFailedPayment = async (controller, id) =>{
+  const options = {
+    method: 'delete',
+    url: `/${controller}/${id}`
+  }
+  return request(options)
+}
+
 
 module.exports = {
   getInfo,
   getStrings,
   useCoupon,
   getCurrentUser,
+  deleteFailedPayment,
   getInstructor,
   getAllInstructors,
   getUserDetails,

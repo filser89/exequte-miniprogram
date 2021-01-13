@@ -2,7 +2,8 @@ import {
   createBooking,
   buyMembership,
   addUserToQueue,
-  cancelBooking
+  cancelBooking,
+  deleteFailedPayment
 } from '../utils/requests/index'
 import {
   promisifyAll
@@ -63,21 +64,21 @@ export default Behavior({
 
     async buyMembership() {
       console.log("buyMembership", this.data.params)
-      const res = await buyMembership(this.data.itemId, this.data.params)
+      const {membership, res} = await buyMembership(this.data.itemId, this.data.params)
       console.log("buyMembership", res)
       try {
         let response = await wxp.requestPayment(res)
         console.log('RESPONSE:', response)
       } catch (e) {
-        console.error(e)
+        // console.error(e)
         wx.showToast({
           title: 'Payment cancelled',
           icon: 'none'
         })
+        deleteFailedPayment('memberships', membership.id)
       } finally {
         this.triggerEvent('membershipbought')
       }
-      this.requestPayment(res, this.triggerEvent('membershipbought'))
     },
 
     async bookClass() {
@@ -145,6 +146,7 @@ export default Behavior({
           title: 'Payment cancelled',
           icon: 'none'
         })
+        deleteFailedPayment('bookings', booking.id)
       } finally {
       }
     },
