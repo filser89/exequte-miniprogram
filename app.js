@@ -5,8 +5,10 @@ const wxp = {}
 App({
   globalData: {
     ApiKey: 'ExeQuteapikey',
-    BASE_URL: 'https://exequte.cn/api/v1',
+
+    // BASE_URL: 'https://exequte.cn/api/v1',
     // BASE_URL: 'http://localhost:3000/api/v1',
+    BASE_URL: 'http://exequte.5gzvip.idcfengye.com/api/v1',
     headers: {
       'API-Key': 'ExeQuteapikey'
     }
@@ -61,7 +63,7 @@ App({
     let headers = page.globalData.headers
     wx.login({
       success: res => {
-        console.log(res)
+        console.log("WX_LOGIN SUCCESS",res)
         console.log(`${page.globalData.BASE_URL}/users/wx_login`)
         wx.request({
           url: `${page.globalData.BASE_URL}/users/wx_login`,
