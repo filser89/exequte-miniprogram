@@ -3,7 +3,7 @@
 
 .topbar{
   position: absolute;
-  top: 20rpx;
+  top: 10rpx;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 
 .language-button-topbar {
   position: absolute;
-	top: 5px; 
+	top: 36rpx; 
   right: 10px; 
   background-color: #555555;
   width: 40px !important;

@@ -9,7 +9,7 @@
 </view>
 
 <view class=" bg-black ">
-  <view class='text-white' style="margin-left: 25px">
+  <view class='text-white' style="margin-left: 30px">
     <view class="text-size-sheader bold">{{session.name}}</view>
     <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
     <view class="db-flex" style="justify-content: space-around">
@@ -19,7 +19,8 @@
         {{session.calories}}{{strings.kcal}}
       </view>
     </view>
-    <view class="coach-card  tl" style="margin-right: 5px; margin-top: 10px">
+  </view>
+    <view class="coach-card  tl text-white">
       <view class="d-flex" >
         <image style="width: 70px; height: 70px; border-radius: 50%; margin: 5px 5px"
           src="{{instructor.image_url}}"></image>
@@ -30,7 +31,7 @@
       </view>
 
     </view>
-  </view>
+
 
   <view style="width: 100%; height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
 
