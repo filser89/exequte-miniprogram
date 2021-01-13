@@ -10,11 +10,15 @@ import {
 
 Page({
   data: {
-    motto: 'Hello World',
+    keys: ['cat'], //add the localization keys here
+    strings: {},
+    user: {},
+    banner: {},
+    sessions: [],
+    dates: [],
     userInfo: {},
     hasUserInfo: false,
-    canIUse: false,
-    keys: ['title', 'dog', 'focus'],
+    canIUse: false
   },
 
   async onShow() {

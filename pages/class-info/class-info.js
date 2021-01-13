@@ -33,10 +33,13 @@ Page({
       sessionId,
       instructorId
     } = this.data.options
+    const session = await getSession(sessionId)
+    const instructor = await getInstructor(instructorId)
+    const strings = await getStrings('class-info', this.data.keys)
     this.setData({
-      session: await getSession(sessionId),
-      instructor: await getInstructor(instructorId),
-      strings: await getStrings('class-info', this.data.keys),
+      session,
+      instructor,
+      strings,
     })
     
     this.setBtnPattern(this.data.session)

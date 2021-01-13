@@ -3,7 +3,8 @@ import WxValidate from '../../utils/WxValidate'
 import {
   getUserDetails,
   updateUser,
-  uploadUserAvatar
+  uploadUserAvatar,
+  getStrings
 } from '../../utils/requests/index'
 
 import {
@@ -17,17 +18,24 @@ Page({
   /**
    * Page initial data
    */
-  data: {},
+  data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
+    user: {}
+  },
 
   /**
    * Lifecycle function--Called when page load
    */
   async onShow() {
     this.initValidate()
-    const user = wx.getStorageSync('user')
-    console.log('id', user.id)
+    const currentUser = wx.getStorageSync('user')
+    console.log('id', currentUser.id)
+    const user = await getUserDetails(currentUser.id)
+    const strings = await getStrings('profile-update', this.data.keys)
     this.setData({
-      user: await getUserDetails(user.id)
+      user,
+      strings
     })
   },
   async uploadImage(e) {

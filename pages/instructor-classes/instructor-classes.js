@@ -1,5 +1,5 @@
 // pages/instructor-classes/instructor-classes.js
-import {getInstructorSessions} from '../../utils/requests/index'
+import {getInstructorSessions, getStrings} from '../../utils/requests/index'
 
 Page({
 
@@ -7,6 +7,8 @@ Page({
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     sessions: [],
     selected: 0
   },
@@ -17,8 +19,9 @@ Page({
   async onShow() {
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
-
-    this.setData({sessions: await getInstructorSessions()})
+    const sessions = await getInstructorSessions()
+    const strings = await getStrings('instructor-classes', this.data.keys)
+    this.setData({sessions, strings})
     console.log("On load", this.data.sessions)
   },
 

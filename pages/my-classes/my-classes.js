@@ -1,4 +1,4 @@
-import {getUsersBookings} from "../../utils/requests/index"
+import {getUsersBookings, getStrings} from "../../utils/requests/index"
 // pages/my-classes/my-classes.js
 Page({
 
@@ -6,6 +6,8 @@ Page({
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     bookings: [],
     selected: 0
   },
@@ -18,7 +20,9 @@ Page({
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
 
-    this.setData({bookings: await getUsersBookings()})
+    const bookings = await getUsersBookings()
+    const strings = await getStrings('my-classes', this.data.keys)
+    this.setData({bookings, strings})
     // console.log("On load", this.data.bookings)
   },
 

@@ -1,11 +1,13 @@
 // pages/profile/profile.js
-import {getUserDetails} from "../../utils/requests/index"
+import {getUserDetails, getStrings} from "../../utils/requests/index"
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     user: {}
   },
 
@@ -15,10 +17,13 @@ Page({
   async onShow(){
     wx.setStorageSync('selectedTab', 2)
     console.log('profile page', wx.getStorageSync('selectedTab'))
-    const user = wx.getStorageSync('user')
-    console.log('id', user.id)
+    const currentUser = wx.getStorageSync('user')
+    console.log('id', currentUser.id)
+    const user = await getUserDetails(currentUser.id)
+    const strings = await getStrings('profile', this.data.keys)
     this.setData({
-      user: await getUserDetails(user.id)
+      user,
+      strings
     })
   },
 

@@ -1,12 +1,15 @@
 // pages/about/about.js
-import {getInfo, getAllInstructors} from "../../utils/requests/index"
+import {getInfo, getAllInstructors, getStrings} from "../../utils/requests/index"
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    keys: ['cat'], //add the localization keys here
+    strings: {},
+    info: {},
+    instructors: []
   },
 
   /**
@@ -18,7 +21,8 @@ Page({
 
     const info = await getInfo()
     const instructors = await getAllInstructors()
-    this.setData({info, instructors})
+    const strings = await getStrings('about', this.data.keys)
+    this.setData({info, instructors, strings})
   },
   
   handleLanguageChanged(){

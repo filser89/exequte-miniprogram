@@ -1,7 +1,8 @@
 // pages/booking/booking.js
 import {
   getSession,
-  getMembershipTypes
+  getMembershipTypes,
+  getStrings
 } from '../../utils/requests/index.js'
 const app = getApp()
 Page({
@@ -10,6 +11,8 @@ Page({
    * Page initial data
    */
   data: {
+    keys: ['cat'], //add the localization keys here
+    strings: {},
     session: {},
     selected: '',
     selectedMembershipTypeId: '',
@@ -37,12 +40,15 @@ Page({
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     const membership = session.usable_membership
+    const strings = await getStrings('booking', this.data.keys)
+
     this.setData({
       session,
       selected,
       membershipDate,
       membershipTypes,
-      membership
+      membership,
+      strings
     })
     this.setBtnPattern(this.data.selected)
   },
