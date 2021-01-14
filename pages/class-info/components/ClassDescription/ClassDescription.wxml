@@ -33,12 +33,12 @@
     </view>
 
 
-  <view style="width: 100%; height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
+  <view style="height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
 
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" />
   </view>
-  <view class="cancel-card text-white tl" style="margin-top: 20px; margin-right: 25px; margin-left: 20px;">
+  <view class="cancel-card text-white tl" style="margin-top: 20px; margin: 20px;">
     <view class="text-size-sbody ml">
       <image src='/images/info.svg' class='icon-time'
         style="margin-right: 5px; margin-top: 15px; margin-left: 5px"> </image>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
