@@ -27,6 +27,10 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  onLoad(options){
+    console.log(options)
+    this.setData({sessionId: options.sessionId})
+  },
   async onShow() {
     this.initValidate()
     const currentUser = wx.getStorageSync('user')
