@@ -4,9 +4,11 @@
 import {
   getStrings,
   getBanner,
-  getSessions,
+  // getSessions,
   getCurrentUser,
+  getDates
 } from '../../utils/requests/index';
+const app = getApp()
 
 Page({
   data: {
@@ -14,7 +16,6 @@ Page({
     strings: {},
     user: {},
     banner: {},
-    sessions: [],
     dates: [],
     userInfo: {},
     hasUserInfo: false,
@@ -32,22 +33,31 @@ Page({
 const strings = await getStrings('index', this.data.keys)
 const user = await getCurrentUser()
 const banner = await getBanner()
-const arr =  await getSessions()
-console.log("SESSIONS", arr)
+// const arr =  await getSessions()
+const rawDates= await getDates()
 
-
-const sessions = arr.sessions
-const dates = arr.dates.map(d => {
-  let sd = d.split(/\s+/)
+const dates = rawDates.map(d => {
+  let date = new Date(d).toString()
+  let sd = date.split(/\s+/)
   return {
     dateW: sd[0],
-    dateD: sd[1],
-    dateM: sd[2]
+    dateD: sd[2],
+    dateM: sd[1]
   }
- })
-Promise.all([strings, user, banner, arr]).then((values) => {
+})
+
+// const sessions = arr.sessions
+// const dates = rawDates.map(d => {
+//   let sd = d.split(/\s+/)
+//   return {
+//     dateW: sd[0],
+//     dateD: sd[1],
+//     dateM: sd[2]
+//   }
+//  })
+Promise.all([strings, user, banner, rawDates]).then((values) => {
   console.log('values', values)
-  this.setData({strings, user, banner, sessions: sessions, dates: dates})
+  this.setData({strings, user, banner,  dates, rawDates})
   wx.hideLoading()
 })
 
@@ -64,6 +74,8 @@ Promise.all([strings, user, banner, arr]).then((values) => {
 
   handleLanguageChanged(){
     this.onShow()
+    this.setData({lang: app.globalData.headers['X-API-Lang']})
+    console.log(this.data.lang)
   },
 
   /**

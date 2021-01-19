@@ -8,6 +8,5 @@
   </view>
   <view wx:else > 
     <view class=" tc" style=" background-color: black; margin-top: 40px ">No sessions today </view>
-  </view>
-  
+  </view>  
 </view>

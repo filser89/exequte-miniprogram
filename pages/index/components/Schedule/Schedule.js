@@ -4,8 +4,9 @@ Component({
    * Component properties
    */
   properties: {
-    sessions: Array,
-    dates: Array
+    rawDates: Array,
+    dates: Array,
+    lang: String
   },
 
   /**
