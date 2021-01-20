@@ -1,4 +1,12 @@
 // pages/index/components/SessionItem/SessionItem.js
+import {
+  promisifyAll,
+  promisify
+} from 'miniprogram-api-promise';
+
+const app = getApp()
+const wxp = {}
+promisifyAll(wx, wxp)
 Component({
   /**
    * Component properties
@@ -15,12 +23,14 @@ Component({
   },
   lifetimes: {
     attached() {
-      const user = wx.getStorageSync('user')
-      this.setData({
-        user
-      })
-      // console.log('sessionItemAttached', this.data.user)
+    this.setUser()
     },
+  },
+
+  pageLifetimes: {
+    show() {
+    this.setUser()
+  }
   },
   /**
    * Component methods
@@ -43,6 +53,12 @@ Component({
         session
       })
       console.log(this.data.session)
+    },
+    setUser(){
+      const user = wx.getStorageSync('user')
+      this.setData({
+        user
+      })
     }
   }
 })

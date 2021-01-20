@@ -1,5 +1,4 @@
 <!--pages/index/components/SessionItem/SessionItem.wxml-->
-<!-- <text>pages/index/components/SessionItem/SessionItem.wxml</text> -->
 <view class="card tl">
   <view class="d-flex" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
     bindtap="navigateToClassInfo">

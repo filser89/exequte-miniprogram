@@ -1,5 +1,21 @@
 import {request} from './request'
 
+const getDates = () => {
+  const options = {
+    method: 'get',
+    url: '/training_sessions',
+  }
+  return request(options)
+}
+
+const getSessionsByDate = (date) => {
+  const options = {
+    method: 'get',
+    url: `/training_sessions/sessions?date=${date}`,
+  }
+  return request(options)
+}
+
 const getInstructorSessions = () => {
   const options = {
     method: 'get',
@@ -56,5 +72,7 @@ module.exports = {
   getSessions,
   addUserToQueue,
   getSessionDates,
-  getSessionAttendance
+  getSessionAttendance,
+  getDates,
+  getSessionsByDate
 }
