@@ -4,7 +4,7 @@
 <BookingDescription session="{{booking.session}}" instructor="{{instructor}}" />
 <!-- <view wx:if="{{booking.can_cancel}}"> -->
   <CancelButton itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}">
-    {{booking.can_cancel ? 'Cancel Class' : 'Cancelled'}}
+    {{booking.can_cancel ? 'Cancel Class' : booking.status}}
   </CancelButton>
 <!-- </view> -->
 <!-- <TabBar /> -->
