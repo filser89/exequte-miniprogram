@@ -13,8 +13,9 @@
     <!-- right side of the card -->
     <view class="d-flex flex-column flex-grow space-around pl">
       <!-- top of the right of the card -->
-      <view class="text-capitalize bold text-lh-copy text-white">
-        {{session.name}}
+      <view class="text-uppercase bold text-lh-copy text-white">
+        <view>{{session.name}}</view>
+        <view class="text-capitalize" wx:if="{{session.subtitle}}">{{session.subtitle}}</view>
       </view>
       <!-- top of the right of the card finished -->
       <!-- bottom of the right card -->
