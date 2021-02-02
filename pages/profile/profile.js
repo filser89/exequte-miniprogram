@@ -27,13 +27,20 @@ Page({
     })
   },
 
-  navigateToClasses(){
-    console.log('clicked')
-    let direction = this.data.user.instructor ? 'instructor' : 'my'
+  navigateToMyClasses(){
+    console.log('clicked my')
     wx.navigateTo({
-      url: `../../pages/${direction}-classes/${direction}-classes`
+      url: `../../pages/my-classes/my-classes`
     })
   },
+  navigateToInstructorClasses(){
+    console.log('clicked instructor')
+    wx.navigateTo({
+      url: `../../pages/instructor-classes/instructor-classes`
+    })
+  },
+
+
   navigateToProfileUpdate(){
     wx.navigateTo({
       url: `../../pages/profile-update/profile-update`
