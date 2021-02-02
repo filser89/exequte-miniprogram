@@ -10,7 +10,7 @@
 <!-- stats -->
 <view class='block' style='margin-top: 15px'>
   <view class=' red-box d-flex flex-column space-between'>
-    <view class='d-flex tc bold content-center pb'> Classes</view>
+    <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-sheader"}}'> Classes</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
         <view class='tc bold'>{{user.attended_classes}}</view>
@@ -22,7 +22,7 @@
       </view>
     </view>
   </view>
-  <view class='red-box d-flex flex-column space-between'>
+  <view wx:if="{{user.has_body_data}}" class='red-box d-flex flex-column space-between'>
     <view class='d-flex bold content-center pb'> Body</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
@@ -62,10 +62,11 @@
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
 <!-- nutrition -->
-<view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
+<block wx:if="{{user.has_body_data}}">
+  <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
 
-<view class=' big-red-box'>
-  <view class='d-flex content-center tc bold' style="padding-bottom: 30rpx">Daily Recommendation</view>
+  <view class=' big-red-box'>
+    <view class='d-flex content-center tc bold' style="padding-bottom: 30rpx">Daily Recommendation</view>
     <view class="grid-nutrition">
       <view>
         <view class='grid-nutrition-item tc bold'>{{user.recommended_bmr || '???'}} </view>
@@ -81,10 +82,12 @@
       </view>
 
     </view>
+  </view>
+</block>
 
-    <!-- </view> -->
+<!-- </view> -->
 
-</view>
+
 <!-- button my classes -->
 <view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
   <view style='margin-left: 20px;'>My Personal Information </view>
