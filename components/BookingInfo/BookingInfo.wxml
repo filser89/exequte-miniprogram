@@ -3,9 +3,10 @@
   <!-- <image src="{{session.image_url}}"></image> -->
 
 <view class='block' style='margin-bottom: 60px;'>
-  <view class='db bold' style="display: flex; flex-direction: column">
-    <text class='text-size-sheader' >{{session.name}} </text>
-    <view class="db" style="margin-top: 15px; ">
+  <view class='db bold space-around' style="display: flex; flex-direction: column">
+    <view class='text-size-sheader' >{{session.name}}</view>
+    <view wx:if="{{session.subtitle}}" class='text-size-stheader' >{{session.subtitle}}</view>
+    <view class="db">
       <image src='/images/time-white.png' class='icon-time-booking'> </image><text style="font-size: 16px;">  {{session.duration}} min</text>
     </view>
   </view>

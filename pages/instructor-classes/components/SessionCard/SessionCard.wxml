@@ -5,7 +5,10 @@
     <!-- left side -->
     <view class="d-flex flex-column space-between flex-grow">
       <!-- header -->
-      <view style='font-size: 20px'>{{session.name}}</view>
+      <view>
+        <view style='font-size: 20px'>{{session.name}}</view>
+        <view wx:if="{{session.subtitle}}" style='font-size: 16px'>{{session.subtitle}}</view>
+      </view>
       <!-- header ends -->
       <!-- duration -->
       <view class="text14">
