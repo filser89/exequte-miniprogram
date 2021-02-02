@@ -47,8 +47,12 @@
   </view>
 </view>
 <!-- button my classes -->
-<view bindtap="navigateToClasses" class='my-classes-btn d-flex'>
+<view bindtap="navigateToMyClasses" class='my-classes-btn d-flex'>
   <view style='margin-left: 20px;'>My Classes </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
+<view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Classes as Instructor </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <!-- membership -->
