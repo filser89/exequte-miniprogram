@@ -19,7 +19,7 @@ Page({
     wx.setStorageSync('selectedTab', 0)
     console.log('about page', wx.getStorageSync('selectedTab'))
 
-    const info = await getInfo()
+    const info = await getInfo('regular')
     const instructors = await getAllInstructors()
     const strings = await getStrings('about', this.data.keys)
     this.setData({info, instructors, strings})
@@ -27,6 +27,11 @@ Page({
   
   handleLanguageChanged(){
     this.onShow()
+  },
+  navigateToTnC(){
+    wx.navigateTo({
+      url: '../../pages/terms-and-conditions/terms-and-conditions'
+    })
   },
 
   /**

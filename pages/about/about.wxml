@@ -31,3 +31,4 @@
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>
+<view style="color: white;" bindtap="navigateToTnC">Terms and conditions</view>
