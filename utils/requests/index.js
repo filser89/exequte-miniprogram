@@ -66,10 +66,10 @@ const useCoupon = async (coupon) => {
   return request(options)
 }
 
-const getInfo = async () => {
+const getInfo = async (scope) => {
   const options = {
     method: 'get',
-    url: '/infos',
+    url: `/infos?scope=${scope}`,
   }
   return request(options)
 }

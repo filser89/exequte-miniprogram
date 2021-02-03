@@ -127,6 +127,12 @@
           "pathName": "pages/instructor-classes/instructor-classes",
           "query": "bookingId=2074&instructorId=90",
           "scene": null
+        },
+        {
+          "name": "pages/terms-and-conditions/terms-and-conditions",
+          "pathName": "pages/terms-and-conditions/terms-and-conditions",
+          "query": "sessionId=3703",
+          "scene": null
         }
       ]
     }

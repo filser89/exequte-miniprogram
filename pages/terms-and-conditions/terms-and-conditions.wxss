@@ -1,0 +1,26 @@
+/* pages/terms-and-conditions/terms-and-conditions.wxss */
+.terms {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 70px;
+  color: white;
+}
+.paragraph {
+  color: white;
+  margin: 20px;
+  text-align: auto;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.btn-back {
+  color: white;
+  padding: 30rpx 50rpx;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 50%;
+  margin: 20rpx auto;
+}
