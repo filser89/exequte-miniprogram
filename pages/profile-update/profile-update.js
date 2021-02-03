@@ -130,6 +130,9 @@ Page({
       },
       emergency_phone: {
         required: true
+      },
+      birthday: {
+        required: true
       }
 
     }
@@ -151,6 +154,9 @@ Page({
       },
       emergency_phone: {
         required: "Emergency Contact  Phone is a required field"
+      },
+      birthday: {
+        required: "Birthday is required"
       }
     }
     this.WxValidate = new WxValidate(rules, messages)

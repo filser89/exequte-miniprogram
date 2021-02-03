@@ -1,7 +1,7 @@
 <!--pages/profile-update/components/BodyTargetForm/BodyTargetForm.wxml-->
 <view>
-  <text> Profession Activity Level</text>
-  <picker name="target" bindchange="bindTargetChange" value="{{targets[index]}}" range="{{targets}}">
+  <text>Weight Goal</text>
+  <picker name="target" bindchange="bindTargetChange" value="{{targets[index]}}" range="{{targets}}"  style="width: 430rpx;">
     <view class="picker">
        {{targets[index]}}
     </view>
@@ -16,7 +16,7 @@
   <text>Target Body Fat %</text>
   <input type="number" name="target_body_fat" value="{{user.target_body_fat}}" />
 </view>
-<view>
+<!-- <view>
   <text>Shapes </text>
   <input type="text" name="target_shapes" value="{{user.target_shapes}}" />
-</view>
+</view> -->

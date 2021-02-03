@@ -11,7 +11,7 @@
   <text>Current Body Fat %</text>
   <input type="number" name="current_body_fat" value="{{user.current_body_fat}}" />
 </view>
-<view>
+<!-- <view>
   <text>Shapes</text>
   <input type="text" name="current_shapes" value="{{user.current_shapes}}" />
-</view>
+</view> -->

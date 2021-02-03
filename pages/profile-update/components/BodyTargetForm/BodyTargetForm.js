@@ -13,7 +13,7 @@ Component({
    * Component initial data
    */
   data: {
-    targets: ['lose', 'gain', 'maintain'],
+    targets: ['', 'lose', 'gain', 'maintain'],
     index: 0
   },
 
