@@ -1,7 +1,7 @@
 // pages/profile-update/components/ProfileForm/ProfileForm.j
 import computedBehavior from 'miniprogram-computed'
 Component({
-  behaviors: ['wx://form-field-group'],
+  behaviors: ['wx://form-field-group', computedBehavior],
   /**
    * Component properties
    */
@@ -9,13 +9,18 @@ Component({
     user: Object,
     birthday: String
   },
-
+  watch: {
+    'user'(user) {
+      // console.log('WATCH', user)
+      this.setPickersValues()
+    }
+  },
   /**
    * Component initial data
    */
   data: {
     activityLevels: ['', 'No activity (0x weekly)', 'Light (1-2x weekly)', 'Moderate (2-3x weekly)', 'High (4-5x weekly)', 'Extreme (5+ weekly)'],
-      activityIndex: 0,
+    activityIndex: 0,
     activityIndex: 0,
     genders: ['', 'Male', 'Female', 'Trance / Non-binary / Other', 'Prefer not to disclose', ],
     genderIndex: 0
@@ -29,10 +34,14 @@ Component({
    * Component methods
    */
   methods: {
-    bindDateChange({detail}) {
+    bindDateChange({
+      detail
+    }) {
       console.log('date-picker', detail.value)
 
-      this.setData({birthday: detail.value})
+      this.setData({
+        birthday: detail.value
+      })
 
     },
     bindActivityLevelChange(e) {
@@ -47,9 +56,12 @@ Component({
         genderIndex: e.detail.value
       })
     },
-    setActivityLevel(){
-      const user = this.properties.user
-      console.log('USER', user)
+    setPickersValues() {
+      console.log('Activity!', this.data.user)
+      const user = this.data.user
+      let activityIndex = this.data.activityLevels.indexOf(user.profession_activity_level)
+      let genderIndex = this.data.genders.indexOf(user.gender)
+      this.setData({activityIndex, genderIndex})
     }
   }
 })
