@@ -8,7 +8,7 @@
   <input name="last_name" value="{{user.last_name}}" />
 </view>
 <view>
-  <text>*Workout Name</text>
+  <text>Workout Nickname</text>
   <input name="workout_name" value="{{user.workout_name}}" />
 </view>
 <view>
@@ -32,9 +32,17 @@
   <picker mode="date"></picker>
 </view>
 <view>
-  <text>Birthday</text>
-  <picker name="birthday" mode="date" value="{{user.birthday}}" start="1940-01-01" end="2021-01-01" bindchange="bindDateChange">
+  <text>*Birthday</text>
+  <picker name="birthday" mode="date" value="{{user.birthday}}" start="1940-01-01" end="2021-01-01" bindchange="bindDateChange" style="width: 430rpx;">
     <view class="picker">{{birthday}}</view> 
+  </picker>
+</view>
+<view>
+  <text> Gender</text>
+  <picker name="gender" bindchange="bindGenderChange" value="{{genders[genderIndex]}}" range="{{genders}}" style="width: 430rpx;">
+    <view class="picker" >
+    {{genders[genderIndex]}}
+    </view>
   </picker>
 </view>
 <view>
@@ -46,10 +54,10 @@
   <input name="profession" value="{{user.profession}}" />
 </view>
 <view>
-  <text> Profession Activity Level</text>
-  <picker name="profession_activity_level" bindchange="bindActivityLevelChange" value="{{activityLevels[index]}}" range="{{activityLevels}}" >
+  <text> Activity Level</text>
+  <picker name="profession_activity_level" bindchange="bindActivityLevelChange" value="{{activityLevels[activityIndex]}}" range="{{activityLevels}}" style="width: 430rpx;">
     <view class="picker" >
-    {{activityLevels[index]}}
+    {{activityLevels[activityIndex]}}
     </view>
   </picker>
 </view>
@@ -58,7 +66,7 @@
   <input name="favorite_song" value="{{user.favorite_song}}" />
 </view>
 <view>
-  <text>Music Styles</text>
+  <text>Favorite Music Styles</text>
   <input name="music_styles" value="{{user.music_styles}}" />
 </view>
 <view>

@@ -27,7 +27,7 @@ input {
 .picker{
   padding: 0px;
  border-radius: 2px;
- width: 150px;
+ width: 100%;
  margin-left: 6px;
  background-color: white;
  height: 36px;
