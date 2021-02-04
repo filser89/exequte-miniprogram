@@ -35,7 +35,7 @@
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#000000",
-    "navigationBarTitleText": "ExeQute",
+    "navigationBarTitleText": "exeQute",
     "navigationBarTextStyle":"white"
   },
   "style": "v2",

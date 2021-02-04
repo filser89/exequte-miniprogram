@@ -7,10 +7,16 @@
   <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.first_name}}
     {{user.last_name}}</view>
 </view>
+
+<!-- button my classes -->
+<view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Personal Information </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
 <!-- stats -->
 <view class='block' style='margin-top: 15px'>
   <view class=' red-box d-flex flex-column space-between'>
-    <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-sheader"}}'> Classes</view>
+    <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-theader"}}'> Classes</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
         <view class='tc bold'>{{user.attended_classes}}</view>
@@ -23,7 +29,7 @@
     </view>
   </view>
   <view wx:if="{{user.has_body_data}}" class='red-box d-flex flex-column space-between'>
-    <view class='d-flex bold content-center pb'> Body</view>
+    <view class='d-flex bold content-center pb'> Body Stats</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
         <view class='bold'>{{user.current_weight}} kg</view>
@@ -36,6 +42,15 @@
     </view>
   </view>
 </view>
+<!-- button my classes -->
+<view bindtap="navigateToMyClasses" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Classes </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
+<view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>My Classes as Instructor </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
 <!-- Vouchers -->
 <view wx:if="{{user.voucher_count}}" class='voucher-box '>
   <view class='bold'> {{user.voucher_count}} Vouchers Available!</view>
@@ -46,15 +61,6 @@
     <view class='bold'> Mind! Nutrition! Move! </view>
   </view>
 </view>
-<!-- button my classes -->
-<view bindtap="navigateToMyClasses" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>My Classes </view>
-  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
-</view>
-<view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>My Classes as Instructor </view>
-  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
-</view>
 <!-- membership -->
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
   <view style="margin-top: 10px">ff{{item.name}}</view>
@@ -63,33 +69,24 @@
 </view>
 <!-- nutrition -->
 <block wx:if="{{user.has_body_data}}">
+  
   <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
-
-  <view class=' big-red-box'>
-    <view class='d-flex content-center tc bold' style="padding-bottom: 30rpx">Daily Recommendation</view>
-    <view class="grid-nutrition">
-      <view>
-        <view class='grid-nutrition-item tc bold'>{{user.recommended_bmr || '???'}} </view>
-        <view class='grid-nutrition-item tc'>BMR kCals</view>
+  <view class='block' style='margin-top: 15px'>
+  <view class=' red-box d-flex flex-column space-between'>
+    <view class='d-flex tc bold content-center pb text-size-theader'> Daily Recommendation</view>
+    <view class='d-flex flex-column space-between flex-grow'>
+      <view class='text-grid tc'>
+        <view class='tc bold'>{{user.recommended_bmr || '???'}} </view>
+        <view class='tc bold'>{{user.recommended_kcals || '???'}}</view>
       </view>
-      <view>
-        <view class='grid-nutrition-item tc bold'>{{user.recommended_kcals || '???'}}</view>
-        <view class='grid-nutrition-item tc'>Target kCals</view>
+      <view class='text-grid tc'>
+        <view class='tc'>BMR kCals</view>
+        <view class='tc'>Target kCals</view>
       </view>
-      <view>
-        <view class='grid-nutrition-item tc bold'>{{user.carb_prot_fat || '???'}}</view>
-        <view class='grid-nutrition-item tc'>Carbs/Prot/Fat %</view>
-      </view>
-
     </view>
   </view>
+  </view>
+ 
 </block>
 
 <!-- </view> -->
-
-
-<!-- button my classes -->
-<view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>My Personal Information </view>
-  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
-</view>

@@ -3,6 +3,6 @@
     "Banner": "./components/Banner/Banner",
     "Schedule": "./components/Schedule/Schedule",
     "TabBar": "../../components/TabBar/TabBar",
-    "Topbar": "/components/Topbar/Topbar"
+    "Topbar3": "/components/Topbar3/Topbar3"
   }
 }

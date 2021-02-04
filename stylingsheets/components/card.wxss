@@ -33,11 +33,12 @@
   /* box-shadow:2px 2px 20px rgba(0,0,0,0.1); */
   /* border-radius:5px; */
   margin-bottom: 10px;
+
 }
 
 .card-image {
-  width: 100px;
-  height: 100px;
+  width: 105px;
+  height: 105px;
   border-radius: 10px;
   background-size:cover;
   background-repeat: no-repeat;
