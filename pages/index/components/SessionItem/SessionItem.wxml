@@ -11,7 +11,7 @@
     </view>
     <!-- left side finished -->
     <!-- right side of the card -->
-    <view class="d-flex flex-column flex-grow space-around pl">
+    <view class="d-flex flex-column flex-grow space-around pl ml">
       <!-- top of the right of the card -->
       <view class="text-uppercase bold text-lh-copy text-white">
         <view>{{session.name}}</view>
@@ -42,7 +42,7 @@
             <view class="d-flex flex-column">
               <view class="text-capitalize bold"> {{session.btn_pattern.text}}</view>
               <view wx:if="{{!session.btn_pattern.disabled}}" class="text-size-sbody">
-                {{session.btn_pattern.disabled ? "" : (session.price + "RMB")}} </view>
+                {{session.btn_pattern.disabled ? "" : ""}} </view>
             </view>
           </ActionButtonSmall>
 
@@ -51,7 +51,7 @@
         <view wx:else>
           <view class="text-capitalize bold">
             <GetInfoButtonSmall itemId="{{session.id}}">
-              Sign Up
+              SIGN UP
             </GetInfoButtonSmall>
           </view>
         </view>

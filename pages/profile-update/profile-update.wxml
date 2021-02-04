@@ -1,7 +1,6 @@
 <!--pages/profile-update/profile-update.wxml-->
-<Topbar bindlanguagechanged="handleLanguageChanged" />
-<view></view>
-<view class="white tc bold" style="margin: 0px; margin-top: 75px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
+<Topbar2 bindlanguagechanged="handleLanguageChanged" />
+<view class="white tc bold" style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
   My Personal Information
 </view>  
 <view style="background-color: black; margin: 0; color: white">

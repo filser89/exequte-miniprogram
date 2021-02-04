@@ -2,22 +2,30 @@
 @import "/app.wxss";
 
 .topbar{
+  position: absolute;
+  top: 10rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
   box-sizing: border-box;
-  display: block;
-  margin: 10px;
 }
 
 .language-button-topbar {
-  float: right;
+  position: absolute;
+	top: 36rpx; 
+  right: 10px; 
   background-color: #555555;
   width: 40px !important;
   height: 25px;
   border-radius: 10px;
   color: white;
   padding: 3px;
+  padding-top: 3px;
   font-weight: bold;
   text-align: center;
+  position: center;
   justify-content: center;
   align-items: center;
-  margin: 10px;
 }

@@ -113,17 +113,20 @@ button cover-view {
   text-align: center;
   border-radius: 10px;
   color: white;
-  padding: 3px;
+  padding: 5px;
   font-weight: bold;
-  
+  margin: 3px;
+
 }
 
 .calendar-button{
   text-align: center;
   border-radius: 10px;
+  /* border: 1px solid; */
   color: white;
   padding: 3px;
   font-weight: bold;
+  margin: 3px;
 }
 
 .book-button {

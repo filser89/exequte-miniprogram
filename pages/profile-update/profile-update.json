@@ -3,7 +3,7 @@
     "ProfileForm": "./components/ProfileForm/ProfileForm",
     "BodyNowForm": "./components/BodyNowForm/BodyNowForm",
     "BodyTargetForm": "./components/BodyTargetForm/BodyTargetForm",
-    "Topbar": "/components/Topbar/Topbar"
+    "Topbar2": "/components/Topbar2/Topbar2"
 
   }
 }

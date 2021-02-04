@@ -119,9 +119,9 @@
 }
 
 .valid {
-  height: 14px;
+  height: 24px;
   width: 100%;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   justify-content: center;
   margin-top: 10px;
@@ -131,6 +131,7 @@
   display: flex;
   align-items: center;
   background-color: #1FDE8D;
+  color: black;
 
 
 }
