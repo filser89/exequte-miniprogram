@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     booking: {},
     instructor:{},
@@ -31,7 +30,7 @@ Page({
     console.log(options)
     const booking = await getBooking(options.bookingId)
     const instructor = await getInstructor(options.instructorId)
-    const strings = await getStrings('booking-info', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({
       booking,
       instructor,

@@ -8,6 +8,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     date: String,
     lang: String
   },

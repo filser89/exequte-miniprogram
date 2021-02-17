@@ -1,21 +1,21 @@
 <!--pages/booking/booking.wxml-->
 <!-- <page> -->
   <Topbar2 bindlanguagechanged="handleLanguageChanged"/>
-  <BookingInfo session="{{session}}" />
-  <AccessOptions bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
+  <BookingInfo strings="{{strings}}" session="{{session}}" />
+  <AccessOptions strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" membership="{{membership}}" />
   <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
-    <PromoCode bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
+    <PromoCode strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
   </view>
   <view wx:if="{{selected == 'buy-membership'}}">
-    <DateForm dates="{{session.dates_array}}" binddatechanged="handleDateChange" />
+    <DateForm strings="{{strings}}" dates="{{session.dates_array}}" binddatechanged="handleDateChange" />
   </view>
 
   <!-- bottom -->
   
 <view class="d-flex space-between bottom" >
   <view class="text-white d-flex item-center content-center text-left">Total: ¥{{btnPattern.price || 0}}</view>
-  <PayButton bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
+  <PayButton strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
     action="{{btnPattern.action}}" params="{{btnPattern.params}}"
     itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
     {{btnPattern.text}}

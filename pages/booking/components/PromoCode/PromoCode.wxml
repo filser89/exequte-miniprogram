@@ -3,8 +3,9 @@
 <form bindsubmit="formSubmit">
   <!-- <view class='bold text-white ' style='margin: 10px; margin-left: 30px; color: white; font-size: 16px;'>Add Promo Code +</view>
   <view class='line'></view> -->
-  <view class="d-flex space-between " style='margin-top: 20px; margin-bottom: 20px' >
-  <PromoCodeInput name="promoCode"></PromoCodeInput>
-  <button form-type="submit" class='bg-white {{couponUsed ? "text-disabled" : "text-xq-grey"}}' style='width: 150px; height: 38px'>Apply</button>
-</view>
+  <view class="d-flex space-between " style='margin-top: 20px; margin-bottom: 20px'>
+    <PromoCodeInput strings="{{strings}}" name="promoCode"></PromoCodeInput>
+    <button form-type="submit" class='bg-white {{couponUsed ? "text-disabled" : "text-xq-grey"}}'
+      style='width: 150px; height: 38px'>Apply</button>
+  </view>
 </form>

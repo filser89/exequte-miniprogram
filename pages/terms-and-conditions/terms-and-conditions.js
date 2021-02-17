@@ -7,14 +7,13 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     terms: {}
   },
 
   async onShow(){
     const terms = await getInfo('terms')
-    const strings = await getStrings('about', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({terms, strings})
   },
   handleLanguageChanged(){

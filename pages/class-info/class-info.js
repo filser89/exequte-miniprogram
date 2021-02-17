@@ -10,7 +10,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['min', 'kcal', 'coach', 'cancellation_1', 'cancellation_2', 'date', 'price', 'time'],
     strings: {},
     session: {},
     instructor: {},
@@ -35,7 +34,7 @@ Page({
     } = this.data.options
     const session = await getSession(sessionId)
     const instructor = await getInstructor(instructorId)
-    const strings = await getStrings('class-info', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({
       session,
       instructor,

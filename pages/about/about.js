@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     info: {},
     instructors: []
@@ -21,7 +20,7 @@ Page({
 
     const info = await getInfo('regular')
     const instructors = await getAllInstructors()
-    const strings = await getStrings('about', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({info, instructors, strings})
   },
   

@@ -1,21 +1,27 @@
 <!--pages/profile-update/profile-update.wxml-->
 <Topbar2 bindlanguagechanged="handleLanguageChanged" />
-<view class="white tc bold" style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
+<view class="white tc bold"
+  style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
   My Personal Information
-</view>  
+</view>
 <view style="background-color: black; margin: 0; color: white">
-<form bindsubmit="formSubmit" >
-  
-  <ProfileForm user="{{user}}" birthday="{{user.birthday}}" />
-  <view style="justify-content: center; margin-top: 5px">My Body Now</view>
-  <BodyNowForm user="{{user}}" />
-  <view style="justify-content: center; margin-top: 5px">My Body Targets</view>
-  <BodyTargetForm user="{{user}}" />
-  <view>
-  <text>Avatar</text>
-  <view bindtap="uploadImage" style="border-radius: 2px; background-color: white; color: #555555; width: 50px; height: 50px; font-size: 28px; justify-content: center; margin-left: 5px;">+</view>
-  </view>
-  <view style="margin-left: 10px; font-size: 14px; display: block;">By saving this form you agree with the <navigator style="display: inline; text-decoration: underline;" url="../../pages/terms-and-conditions/terms-and-conditions">terms and conditions</navigator> of exeQute.</view>
-  <button style="background-color: #5C0C17; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white" form-type="submit">SAVE</button>
-</form>
+  <form bindsubmit="formSubmit">
+
+    <ProfileForm strings="{{strings}}" user="{{user}}" birthday="{{user.birthday}}" />
+    <view style="justify-content: center; margin-top: 5px">My Body Now</view>
+    <BodyNowForm strings="{{strings}}" user="{{user}}" />
+    <view style="justify-content: center; margin-top: 5px">My Body Targets</view>
+    <BodyTargetForm strings="{{strings}}" user="{{user}}" />
+    <view>
+      <text>Avatar</text>
+      <view bindtap="uploadImage"
+        style="border-radius: 2px; background-color: white; color: #555555; width: 50px; height: 50px; font-size: 28px; justify-content: center; margin-left: 5px;">
+        +</view>
+    </view>
+    <view style="margin-left: 10px; font-size: 14px; display: block;">By saving this form you agree with the <navigator
+        style="display: inline; text-decoration: underline;"
+        url="../../pages/terms-and-conditions/terms-and-conditions">terms and conditions</navigator> of exeQute.</view>
+    <button style="background-color: #5C0C17; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white"
+      form-type="submit">SAVE</button>
+  </form>
 </view>

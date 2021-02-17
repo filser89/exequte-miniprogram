@@ -6,7 +6,7 @@ Component({
    * Component properties
    */
   properties: {
-
+    
   },
 
 })

@@ -5,6 +5,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings:Object,
     bookings: Array
   },
 

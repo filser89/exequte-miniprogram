@@ -7,6 +7,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     couponBtnDisabled: Boolean
   },
 

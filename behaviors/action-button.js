@@ -13,6 +13,7 @@ promisifyAll(wx, wxp)
 
 export default Behavior({
   properties: {
+    strings: Object,
     action: String,
     itemId: Number,
     btnDisabled: {
