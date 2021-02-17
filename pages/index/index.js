@@ -12,7 +12,6 @@ const app = getApp()
 
 Page({
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     user: {},
     banner: {},
@@ -30,7 +29,7 @@ Page({
         title: 'Just a sec..',
       })
 
-const strings = await getStrings('index', this.data.keys)
+const strings = await getStrings(this.route.split('/')[2])
 const user = await getCurrentUser()
 const banner = await getBanner()
 // const arr =  await getSessions()
@@ -46,15 +45,6 @@ const dates = rawDates.map(d => {
   }
 })
 
-// const sessions = arr.sessions
-// const dates = rawDates.map(d => {
-//   let sd = d.split(/\s+/)
-//   return {
-//     dateW: sd[0],
-//     dateD: sd[1],
-//     dateM: sd[2]
-//   }
-//  })
 Promise.all([strings, user, banner, rawDates]).then((values) => {
   console.log('values', values)
   this.setData({strings, user, banner,  dates, rawDates})

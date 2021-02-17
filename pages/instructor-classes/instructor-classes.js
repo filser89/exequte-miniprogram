@@ -7,7 +7,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     sessions: [],
     selected: 0
@@ -20,7 +19,7 @@ Page({
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const sessions = await getInstructorSessions()
-    const strings = await getStrings('instructor-classes', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({sessions, strings})
     console.log("On load", this.data.sessions)
   },

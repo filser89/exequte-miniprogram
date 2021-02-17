@@ -11,7 +11,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     session: {},
     selected: '',
@@ -40,7 +39,7 @@ Page({
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     const membership = session.usable_membership
-    const strings = await getStrings('booking', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
 
     this.setData({
       session,

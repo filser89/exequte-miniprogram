@@ -8,7 +8,7 @@
     <view bindtap="switchTab" data-selected="1" class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>History</view>
   </view>
   <view wx:if="{{sessions[selected].length}}">
-    <SessionsList selected="selected" sessions="{{sessions[selected]}}" />
+    <SessionsList strings="{{strings}}" selected="selected" sessions="{{sessions[selected]}}" />
   </view>
   <view wx:else class="no-classes">
     <view class="tc">You have no classes... Yet</view>

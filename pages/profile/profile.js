@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     user: {}
   },
@@ -20,7 +19,7 @@ Page({
     const currentUser = wx.getStorageSync('user')
     console.log('id', currentUser.id)
     const user = await getUserDetails(currentUser.id)
-    const strings = await getStrings('profile', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
     this.setData({
       user,
       strings

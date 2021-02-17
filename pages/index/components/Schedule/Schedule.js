@@ -4,6 +4,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     rawDates: Array,
     dates: Array,
     lang: String

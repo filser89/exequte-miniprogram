@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     session: {},
     options: {}
@@ -21,7 +20,7 @@ onLoad(options) {
   },
   async onShow(){
     const session = await getSessionAttendance(this.data.options.id)
-    const strings = await getStrings('class-attandence', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
 
     this.setData({session, strings})
   },

@@ -1,6 +1,9 @@
 // pages/booking/components/PromoCodeInput/PromoCodeInput.js
 Component({
   behaviors: ['wx://form-field'],
+  properties: {
+    strings: Object,
+  },
   data: {
     value: ''
   },

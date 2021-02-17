@@ -4,6 +4,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     session: Object,
     selected: Number
   },

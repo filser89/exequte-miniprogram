@@ -10,7 +10,7 @@
 </view>
 
   <view class="db" style="background-color: black; color: white">
-    <Schedule dates="{{dates}}" rawDates="{{rawDates}}" lang="{{lang}}" />
+    <Schedule strings="{{strings}}" dates="{{dates}}" rawDates="{{rawDates}}" lang="{{lang}}" />
   </view>
 </view>
 <!-- 

@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    keys: ['cat'], //add the localization keys here
     strings: {},
     options: {}
   },
@@ -21,7 +20,7 @@ Page({
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const booking = await getBooking(this.data.options.bookingId)
-    const strings = await getStrings('booking-confirmation', this.data.keys)
+    const strings = await getStrings(this.route.split('/')[2])
 
     this.setData({booking, strings})
   },

@@ -36,12 +36,11 @@ import {
 
 } from './users.js'
 
-const getStrings = (page, keys) => {
+const getStrings = (page) => {
   const options = {
     method: 'post',
     url: '/pages',
     data: {
-      keys,
       page
     }
   }

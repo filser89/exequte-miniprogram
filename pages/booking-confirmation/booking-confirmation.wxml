@@ -1,10 +1,10 @@
 <!--pages/booking-confirmation/booking-confirmation.wxml-->
 <Topbar2 bindlanguagechanged="handleLanguageChanged"/>
-<BookingInfo session="{{booking.session}}" />
+<BookingInfo strings="{{strings}}" session="{{booking.session}}" />
 <view class='white-square db'>
   <view class='bold text-black tc'>Class Booked!</view>
   <view class='bold text-black tc' style='margin-top: 20px'>Please come 15 min in advance!</view>
 </view>
-<ActionButton action="reLaunchToMyClasses">
+<ActionButton strings="{{strings}}" action="reLaunchToMyClasses">
   Go to my classes
 </ActionButton>

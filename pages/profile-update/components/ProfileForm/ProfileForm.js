@@ -6,6 +6,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     user: Object,
     birthday: String
   },

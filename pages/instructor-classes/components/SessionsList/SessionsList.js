@@ -8,6 +8,7 @@ Component({
    * Component properties
    */
   properties: {
+    strings: Object,
     sessions: Array,
     selected: Number
   },
