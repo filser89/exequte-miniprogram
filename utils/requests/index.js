@@ -32,7 +32,8 @@ import {
   getUserDetails,
   updateUser,
   saveUserAvatar,
-  uploadUserAvatar
+  uploadUserAvatar,
+  processUserInfo
 
 } from './users.js'
 
@@ -94,6 +95,7 @@ module.exports = {
   updateUser,
   saveUserAvatar,
   uploadUserAvatar,
+  processUserInfo,
   getMembershipTypes,
   buyMembership,
   addUserToQueue,

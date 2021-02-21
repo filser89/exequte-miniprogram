@@ -2,7 +2,7 @@ import {
   promisifyAll
 } from 'miniprogram-api-promise';
 
-import {saveUserAvatar} from '../utils/requests/index'
+import {processUserInfo} from '../utils/requests/index'
 const wxp = {}
 promisifyAll(wx, wxp)
 
@@ -27,12 +27,12 @@ export default Behavior ({
       // console.log('GetUserInfo', e)
       console.log(e.detail.userInfo)
       const data = await wxp.getUserInfo({
-        lang: "en"
+        lang: "en",
+        withCredentials: true
       })
-      console.log('GetUserInfo', data.userInfo)
+      console.log('GetUserInfo', data)
       const user = wx.getStorageSync('user')
-      const avatarUrl = data.userInfo.avatarUrl
-      saveUserAvatar(user.id, {avatarUrl})
+      processUserInfo(user.id, data)
       
     },
 

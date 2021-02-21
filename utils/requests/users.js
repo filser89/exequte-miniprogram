@@ -59,6 +59,15 @@ const uploadUserAvatar = async (userId, filePath) => {
   return upload(options)
 }
 
+const processUserInfo = async (id, data) => {
+  const  options = {
+    method: 'put',
+    url: `/users/${id}/process_wx_info`,
+    data
+  }
+  return request(options)
+}
+
 module.exports = {
   getCurrentUser,
   getInstructor,
@@ -66,5 +75,6 @@ module.exports = {
   getUserDetails,
   updateUser,
   saveUserAvatar,
-  uploadUserAvatar
+  uploadUserAvatar,
+  processUserInfo
 }
