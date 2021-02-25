@@ -53,7 +53,7 @@
 </view>
 <!-- Vouchers -->
 <view wx:if="{{user.voucher_count}}" class='voucher-box '>
-  <view class='bold'> {{user.voucher_count}} Vouchers Available!</view>
+  <view class='bold'> {{user.voucher_count}} Voucher Available!</view>
   <view style='margin-top: 20px;'>Each voucher is equal to one class.</view>
 </view>
 <view wx:else>

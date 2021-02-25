@@ -31,4 +31,6 @@
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>
-<view style="color: white;" bindtap="navigateToTnC">Terms and conditions</view>
+<view class='paragraph'> Please kindly read XQ Terms and conditions
+  <text class='tanc' style="color: white;" bindtap="navigateToTnC"> here</text>.
+</view>
