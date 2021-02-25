@@ -4,7 +4,7 @@
 <view class='about'>
   {{info.title_one}}
 </view>
-<view class='gym-photo' style="background-image: url('/images/gym1.png')"></view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
 <view class='paragraph'>
   {{info.paragraph_one}}</view>
 <view class='paragraph'>
@@ -17,7 +17,7 @@
 </view>
 <view class='paragraph'>
   {{info.paragraph_three}}</view>
-<view class='gym-photo' style="background-image: url('/images/gym2.png')">
+<view class='gym-photo' style="background-image: url('info.image_url_2')">
 </view>
 <view class='team'>
   {{info.title_two}}
@@ -31,4 +31,6 @@
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>
-<view style="color: white;" bindtap="navigateToTnC">Terms and conditions</view>
+<view class='paragraph'> Please kindly read XQ Terms and conditions
+  <text class='tanc' style="color: white;" bindtap="navigateToTnC"> here</text>.
+</view>

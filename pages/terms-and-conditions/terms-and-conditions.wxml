@@ -2,4 +2,10 @@
 <Topbar bindlanguagechanged="handleLanguageChanged" />
 <view class="terms">{{terms.title_one}}</view>
 <view class="paragraph">{{terms.paragraph_one}}</view>
+<view class="terms">{{terms.title_two}}</view>
+<view class="paragraph">{{terms.paragraph_two}}</view>
+<view class="terms">{{terms.title_three}}</view>
+<view class="paragraph">{{terms.paragraph_three}}</view>
+<view class="terms">{{terms.title_four}}</view>
+<view class="paragraph">{{terms.paragraph_four}}</view>
 <view bindtap="navigateBack" class="btn-back">Back</view>
