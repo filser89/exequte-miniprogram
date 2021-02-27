@@ -10,6 +10,12 @@
   color: white;
 }
 
+.block {
+  color: white;
+  margin: 20px;
+  text-align: auto;
+}
+
 .team {
   font-size: 24px;
   font-weight: bold;
@@ -42,7 +48,7 @@
 .gym-photo {
   height: 200px;
   margin-top: 10px;
-
+  background-size: cover;
 }
 
 .instructor-card {

@@ -1,0 +1,4 @@
+<!--pages/about/components/InfoItem/InfoItem.wxml-->
+<view class="white {{item.title ? 'title' : 'par'}}" style="margin-bottom: {{item.margin_bottom}}rpx; font-size: {{item.font_size}}rpx; margin-top: {{item.margin_top}}rpx; margin-left: {{item.margin_left}}rpx; text-align: {{item.text_align}}; text_transform: {{item.text_transform}}; {{item.italic ? 'font-style: italic' : ''}}">
+  {{item.item_text}}
+</view>

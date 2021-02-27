@@ -1,6 +1,43 @@
 <!--pages/about/about.wxml-->
 <Topbar bindlanguagechanged="handleLanguageChanged" />
-
+<block wx:if="{{info.has_items}}">
+<!-- 'before_photo_1'-->
+<view class="block" wx:for="{{info.items.before_photo_1}}" wx:key="unique">
+  <InfoItem item="{{item}}" />
+</view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
+<!-- after_photo_1' -->
+<view class="block" wx:for="{{info.items.after_photo_1}}" wx:key="unique">
+  <InfoItem item="{{item}}" />
+</view>
+<view class='address' style="background-image: url('/images/direction.png')">
+  <view class='address-text'>
+    <view class='bold'>Address:</view> 425 Yanping Road, 1st floor.
+    Few minutes walk from Line 7 Changping Rd. Exit 5.
+  </view>
+</view>
+<!-- 'after_address' -->
+<view class="block" wx:for="{{info.items.after_address}}" wx:key="unique">
+  <InfoItem item="{{item}}" />
+</view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_2}}')"></view>
+<!-- 'after_photo 2' -->
+<view class="block" wx:for="{{info.items.after_photo_2}}" wx:key="unique">
+  <InfoItem item="{{item}}" />
+</view>
+<view wx:for="{{instructors}}" wx:key="unique">
+  <view class='instructor-card'>
+    <image class='instructor-photo' src="{{item.image_url}}"></image>
+    <view class='instructor-name'>Coach {{item.first_name}}</view>
+  </view>
+  <view class='paragraph'>{{item.bio}}</view>
+</view>
+<!-- 'after_instructors' -->
+<view class="block" wx:for="{{info.items.after_instructors}}" wx:key="unique">
+  <InfoItem item="{{item}}" />
+</view>
+</block>
+<block wx:else>
 <view class='about'>
   {{info.title_one}}
 </view>
@@ -31,6 +68,7 @@
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>
+</block>
 <view class='paragraph'> Please kindly read XQ Terms and conditions
   <text class='tanc' style="color: white;" bindtap="navigateToTnC"> here</text>.
 </view>
