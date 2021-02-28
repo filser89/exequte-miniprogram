@@ -1,0 +1,11 @@
+/* pages/about/components/InfoItem/InfoItem.wxss */
+@import "/app.wxss";
+
+.title{
+  font-size: 40rpx;
+
+}
+
+.par{
+  font-size: 28rpx;
+}

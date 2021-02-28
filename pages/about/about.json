@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "TabBar": "../../components/TabBar/TabBar",
-    "Topbar": "/components/Topbar/Topbar"
+    "Topbar": "/components/Topbar/Topbar",
+    "InfoItem": "./components/InfoItem/InfoItem"
 
   }
 }
