@@ -33,7 +33,7 @@
 }
 
 .address {
-  height: 130px;
+  height: 120px;
 }
 
 .address-text {

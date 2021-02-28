@@ -22,7 +22,7 @@
 <view class="block" wx:for="{{info.items.after_address}}" wx:key="unique">
   <InfoItem item="{{item}}" />
 </view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_2}}')"></view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_2}}'); "></view>
 <!-- 'after_photo 2' -->
 <view class="block" wx:for="{{info.items.after_photo_2}}" wx:key="unique">
   <InfoItem item="{{item}}" />
@@ -44,14 +44,16 @@
   {{info.title_one}}
 </view>
 <view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
-<view class='paragraph'>{{info.paragraph_one}}</view>
-
-<view class='address' style="background-image: url('/images/direction.png')">
-  <view class='address-text'> {{info.paragraph_two}}</view>
-</view>
 <view class='paragraph'>
-  {{info.paragraph_three}}</view>
-<view class='gym-photo' style="background-image: url('info.image_url_2')">
+  {{info.paragraph_one}}</view>
+<view class='paragraph'>
+  {{info.paragraph_two}}</view>
+<view class='address' style="background-color: white; color:">
+  <view class='address-text'>
+    <view >{{info.paragraph_three}}</view>
+</view>
+</view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_2}}')">
 </view>
 <view class='team'>
   {{info.title_two}}
