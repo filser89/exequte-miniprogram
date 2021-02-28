@@ -26,18 +26,20 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad(options){
+  async onLoad(options){
     console.log(options)
     this.setData({sessionId: options.sessionId})
-  },
-  async onShow() {
-    this.initValidate()
     const currentUser = wx.getStorageSync('user')
     console.log('id', currentUser.id)
     const user = await getUserDetails(currentUser.id)
+    this.setData({user})
+  },
+  async onShow() {
+    console.log('ON SHOW CALLED')
+    this.initValidate()
+
     const strings = await getStrings(this.route.split('/')[2])
     this.setData({
-      user,
       strings
     })
   },

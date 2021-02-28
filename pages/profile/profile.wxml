@@ -63,7 +63,7 @@
 </view>
 <!-- membership -->
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
-  <view style="margin-top: 10px">ff{{item.name}}</view>
+  <view style="margin-top: 10px">{{item.name}}</view>
   <view wx:if="{{item.smoothie}}"> + smoothies </view>
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
