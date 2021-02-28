@@ -2,7 +2,7 @@
 <Topbar bindlanguagechanged="handleLanguageChanged" />
 <view class='block avatar' style='flex-direction: column'>
   <view class='block'>
-    <image class='photo-style ' src="{{user.avatar_url}}"></image>
+    <image class='photo-style' src="{{user.avatar_url}}"></image>
   </view>
   <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.first_name}}
     {{user.last_name}}</view>
@@ -68,7 +68,7 @@
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
 <!-- nutrition -->
-<block wx:if="{{user.has_body_data}}">
+<!-- <block wx:if="{{user.has_body_data}}">
   
   <view class='bold' style="font-size: 20px; color: white; margin: 10px 30px; ">My Nutrition</view>
   <view class='block' style='margin-top: 15px'>
@@ -87,6 +87,6 @@
   </view>
   </view>
  
-</block>
+</block> -->
 
 <!-- </view> -->

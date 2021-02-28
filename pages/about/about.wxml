@@ -5,17 +5,19 @@
 <view class="block" wx:for="{{info.items.before_photo_1}}" wx:key="unique">
   <InfoItem item="{{item}}" />
 </view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
+<view class='gym-photo' style="background-image: url('{{info.image_url_1}}'); "></view>
 <!-- after_photo_1' -->
 <view class="block" wx:for="{{info.items.after_photo_1}}" wx:key="unique">
   <InfoItem item="{{item}}" />
 </view>
-<view class='address' style="background-image: url('/images/direction.png')">
+<!-- <view class='address' style="background-color: white">
   <view class='address-text'>
-    <view class='bold'>Address:</view> 425 Yanping Road, 1st floor.
-    Few minutes walk from Line 7 Changping Rd. Exit 5.
+    <view class='bold'>Address:</view> 
+    <view>425 Yanping Road, Street Front 1F</view>
+    <view> Metro: Changping Road Station Line 7, Exit 5</view>
+    <view>DiDi: exeQute</view>
   </view>
-</view>
+</view> -->
 <!-- 'after_address' -->
 <view class="block" wx:for="{{info.items.after_address}}" wx:key="unique">
   <InfoItem item="{{item}}" />
@@ -42,15 +44,10 @@
   {{info.title_one}}
 </view>
 <view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
-<view class='paragraph'>
-  {{info.paragraph_one}}</view>
-<view class='paragraph'>
-  {{info.paragraph_two}}</view>
+<view class='paragraph'>{{info.paragraph_one}}</view>
+
 <view class='address' style="background-image: url('/images/direction.png')">
-  <view class='address-text'>
-    <view class='bold'>Address:</view> 425 Yanping Road, 1st floor.
-    Few minutes walk from Line 7 Changping Rd. Exit 5.
-  </view>
+  <view class='address-text'> {{info.paragraph_two}}</view>
 </view>
 <view class='paragraph'>
   {{info.paragraph_three}}</view>
