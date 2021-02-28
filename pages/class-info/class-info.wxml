@@ -9,7 +9,8 @@
 <view wx:if="{{user.first_name}}">
   <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
     btnDisabled="{{session.btn_pattern.disabled}}">
-    {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}}
+    <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
+    {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : ""}}
   </ActionButton>
 </view>
 <view wx:else>

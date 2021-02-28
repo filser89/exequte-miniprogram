@@ -10,6 +10,10 @@
   color: white;
 }
 
+text-bold {
+font-weight: bold;
+}
+
 .block {
   color: white;
   margin: 20px;
@@ -39,9 +43,9 @@
 .address-text {
   color: black;
   font-size: 14px;
-  width: 80%;
+  /* width: 90%; */
   justify-content: center;
-  margin-left: 30px;
+  margin-left: 20px;
   padding-top: 30px;
 }
 
