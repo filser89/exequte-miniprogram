@@ -8,14 +8,8 @@ promisifyAll(wx, wxp)
 
 export default Behavior ({
   properties: {
-    itemId: Number
-  },
-
-  /**
-   * Component initial data
-   */
-  data: {
-
+    itemId: Number,
+    profileFilled: Boolean
   },
 
   /**
@@ -24,22 +18,53 @@ export default Behavior ({
   methods: {
 
     async bindGetUserInfo (e) {
-      // console.log('GetUserInfo', e)
+      console.log('GetUserInfo', e)
+      const page = this
       console.log(e.detail.userInfo)
-      const data = await wxp.getUserInfo({
+      wxp.getUserInfo({
         lang: "en",
-        withCredentials: true
+        withCredentials: true,
+        async success(res){
+          console.log(res)
+          let user = wx.getStorageSync('user')
+          if (!user.has_wx_info) page.saveWxInfo(user.id, res)
+          
+          if (page.data.profileFilled) {
+            page.navigateToBooking()
+          } else {
+            page.navigateToProfileUpdate()
+          }
+        },
+        fail(){
+          wx.showToast({
+            title: 'Please Authorize',
+            icon: 'none'
+          })
+        }
       })
-      console.log('GetUserInfo', data)
-      const user = wx.getStorageSync('user')
-      processUserInfo(user.id, data)
-      
     },
 
     navigateToProfileUpdate(){
+      console.log('WE ARE NAVIGATING TO PROFILE')
+      let sessionQuery = this.data.itemId ? `?sessionId=${this.data.itemId}` : ''
       wx.navigateTo({
-        url: `../../pages/profile-update/profile-update?sessionId=${this.data.itemId}`
+        url: `../../pages/profile-update/profile-update${sessionQuery}`
       })
+    },
+    navigateToBooking(){
+      console.log('WE ARE NAVIGATING TO BOOKING')
+      wx.navigateTo({
+        url: `../../pages/booking/booking?sessionId=${this.data.itemId}`,
+      })
+    },
+    async saveWxInfo(id, data){
+      console.log("UserID", id)
+          let updatedUser = await processUserInfo(id, data)
+          console.log("After info processed", updatedUser)
+          wx.setStorageSync('user', updatedUser)
+    },
+    doNothing(){
+      console.log("Doing nothing")
     }
   }
 })

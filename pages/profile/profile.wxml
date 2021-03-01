@@ -4,15 +4,21 @@
   <view class='block'>
     <image class='photo-style' src="{{user.avatar_url}}"></image>
   </view>
-  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.first_name}}
-    {{user.last_name}}</view>
+  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.has_wx_info ? user.first_name : 'Welcome to exeQute'}}
+    {{user.has_wx_info ? user.last_name : ''}}</view>
 </view>
 
-<!-- button my classes -->
-<view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
+<!-- button my personal information -->
+<!-- <view bindtap="navigateToProfileUpdate" class='my-classes-btn d-flex'>
   <view style='margin-left: 20px;'>My Personal Information </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
-</view>
+</view> -->
+<GetInfoProfileButton>
+   <view class="d-flex item-center">
+    <view>{{user.has_wx_info? 'My Personal Information' : 'Sign Up'}}</view>
+    <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+   </view>
+  </GetInfoProfileButton>
 <!-- stats -->
 <view class='block' style='margin-top: 15px'>
   <view class=' red-box d-flex flex-column space-between'>

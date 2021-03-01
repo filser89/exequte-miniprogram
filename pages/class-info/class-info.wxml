@@ -6,7 +6,7 @@
 <view style="height: 20px; background-color: black"></view>
 
 
-<view wx:if="{{user.first_name}}">
+<view wx:if="{{user.has_wx_info && user.profile_filled}}">
   <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
     btnDisabled="{{session.btn_pattern.disabled}}">
     <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
@@ -14,7 +14,7 @@
   </ActionButton>
 </view>
 <view wx:else>
-  <GetInfoButton itemId="{{session.id}}" style="color: white">
+  <GetInfoButton profileFilled="{{user.profile_filled}}" itemId="{{session.id}}" style="color: white">
     SIGN UP
   </GetInfoButton>
 </view>
