@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "TabBar": "../../components/TabBar/TabBar",
-    "Topbar": "/components/Topbar/Topbar"
+    "Topbar": "/components/Topbar/Topbar",
+    "GetInfoProfileButton": "./components/GetInfoProfileButton/GetInfoProfileButton"
 
   }
 }
