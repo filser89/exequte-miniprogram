@@ -1,6 +1,6 @@
 <!--pages/profile/components/GetInfoProfileButton/GetInfoProfileButton.wxml-->
 <view class="text-capitalize class-info-book-button text-white" >
-  <button style="background-color: #D8D8D8; height: 40px; border-radius: 10px; text-align: left; font-size: 18px; align-items: center; margin: 15px 10px; font-weight: bold; width: 95%" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" catchtap="navigateToProfileUpdate" >
+  <button style="background-color: #D8D8D8; height: 40px; border-radius: 10px; text-align: left; font-size: 18px; align-items: center; margin: 15px 10px; font-weight: bold; width: 95%" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
   <slot />
   </button>
 </view>
