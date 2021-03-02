@@ -16,6 +16,13 @@ Component({
       this.setPickersValues()
     }
   },
+  // lifetimes
+  lifetimes:{
+    attached(){
+      let today = new Date().toLocaleDateString("cn-Zh").split("/").reverse().join("-")
+      this.setData({today})
+    }
+  },
   /**
    * Component initial data
    */
@@ -23,7 +30,7 @@ Component({
     activityLevels: ['', 'No activity (0x weekly)', 'Light (1-2x weekly)', 'Moderate (2-3x weekly)', 'High (4-5x weekly)', 'Extreme (5+ weekly)'],
     activityIndex: 0,
     activityIndex: 0,
-    genders: ['', 'Male', 'Female', 'Trance / Non-binary / Other', 'Prefer not to disclose', ],
+    genders: ['', 'Male', 'Female', 'Trans / Non-binary / Other', 'Prefer not to disclose', ],
     genderIndex: 0
     // genders: {
     //   array: ['', 'Male', 'Female', 'Trance / Non-binary / Other', 'Prefer not to disclose'],
