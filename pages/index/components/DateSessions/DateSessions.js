@@ -26,6 +26,13 @@ Component({
      this.setData({sessions})
     }
   },
+
+  pageLifetimes:{
+   async show(){
+    let sessions  = await getSessionsByDate(this.data.date)
+     this.setData({sessions})
+    }
+  },
   
   /**
    * Component methods
