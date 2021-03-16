@@ -29,7 +29,10 @@ Component({
 
   pageLifetimes:{
    async show(){
-    let sessions  = await getSessionsByDate(this.data.date)
+
+    let date = this.data.date == "" ? this.todayDateString() : this.data.date
+    console.log("DATE", date)
+    let sessions  = await getSessionsByDate(date)
      this.setData({sessions})
     }
   },
@@ -38,6 +41,10 @@ Component({
    * Component methods
    */
   methods: {
-
+    todayDateString() {
+      let date = new Date
+      date = date.toJSON().replace(/(?<=T).*/, "00:00:00.000+08:00")
+      return date
+    }
   }
 })
