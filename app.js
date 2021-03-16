@@ -33,6 +33,7 @@ App({
       this.globalData.user = data.user,
       this.globalData.headers['X-Auth-Token'] = data.token.auth_token
     } else {
+      console.log('logging in')
       this.login()
     }
     this.getPhoneLanguage()
@@ -84,8 +85,18 @@ App({
     console.log(data)
     this.globalData.current_user = data.user,
     this.globalData.headers['X-Auth-Token'] = data.auth_token.auth_token
+    let pages  = getCurrentPages()
+
+    let p = pages[pages.length -1]
+    let url = "/" + p.route
+    if (Object.keys(p.options).length !== 0) {
+      url += "?"
+      Object.entries(p.options).forEach((e) => url += `${e[0]}=${e[1]}&`)
+      url = url.slice(0, -1)
+    }
+    console.log("Redirect URL", url)
     wx.reLaunch({
-      url: '/pages/index/index',
+      url
     })
   },
   // get the user's phone language
