@@ -5,7 +5,8 @@
 <view class="block" wx:for="{{info.items.before_photo_1}}" wx:key="unique">
   <InfoItem item="{{item}}" />
 </view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_1}}'); "></view>
+<!-- <view class='gym-photo' style="background-image: url('{{info.image_url_1}}'); "></view> -->
+<image class="gym-image" src="{{info.image_url_1}}"></image>
 <!-- after_photo_1' -->
 <view class="block" wx:for="{{info.items.after_photo_1}}" wx:key="unique">
   <InfoItem item="{{item}}" />
@@ -21,7 +22,8 @@
 <view class="block" wx:for="{{info.items.after_address}}" wx:key="unique">
   <InfoItem item="{{item}}" />
 </view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_2}}'); "></view>
+<!-- <view class='gym-photo' style="background-image: url('{{info.image_url_2}}'); "></view> -->
+<image class="gym-image" src="{{info.image_url_2}}"></image>
 <!-- 'after_photo 2' -->
 <view class="block" wx:for="{{info.items.after_photo_2}}" wx:key="unique">
   <InfoItem item="{{item}}" />
@@ -42,7 +44,8 @@
 <view class='about'>
   {{info.title_one}}
 </view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view>
+<!-- <view class='gym-photo' style="background-image: url('{{info.image_url_1}}')"></view> -->
+<image class="gym-image" src="{{info.image_url_1}}"></image>
 <view class='paragraph'>
   {{info.paragraph_one}}</view>
 <view class='paragraph'>
@@ -56,8 +59,8 @@
 </view>
 <view class='paragraph'>
   {{info.paragraph_three}}</view>
-<view class='gym-photo' style="background-image: url('{{info.image_url_2}}')">
-</view>
+<!-- <view class='gym-photo' style="background-image: url('{{info.image_url_2}}')"></view> -->
+<image class="gym-image" src="{{info.image_url_2}}"></image>
 <view class='team'>
   {{info.title_two}}
 </view>
