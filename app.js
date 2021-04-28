@@ -65,7 +65,7 @@ App({
     wx.login({
       success: res => {
         console.log("WX_LOGIN SUCCESS",res)
-        console.log(`${page.globalData.BASE_URL}/users/wx_login`)
+        // console.log(`${page.globalData.BASE_URL}/users/wx_login`)
         wx.request({
           url: `${page.globalData.BASE_URL}/users/wx_login`,
           method: 'post',
@@ -85,14 +85,16 @@ App({
     console.log(data)
     this.globalData.current_user = data.user,
     this.globalData.headers['X-Auth-Token'] = data.auth_token.auth_token
+    let url = './pages/index/index'
     let pages  = getCurrentPages()
-
-    let p = pages[pages.length -1]
-    let url = "/" + p.route
-    if (Object.keys(p.options).length !== 0) {
-      url += "?"
-      Object.entries(p.options).forEach((e) => url += `${e[0]}=${e[1]}&`)
-      url = url.slice(0, -1)
+    if (pages){
+      let p = pages[pages.length -1]
+      url = "/" + p.route
+      if (Object.keys(p.options).length !== 0) {
+        url += "?"
+        Object.entries(p.options).forEach((e) => url += `${e[0]}=${e[1]}&`)
+        url = url.slice(0, -1)
+      }
     }
     console.log("Redirect URL", url)
     wx.reLaunch({
