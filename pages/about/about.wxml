@@ -74,6 +74,6 @@
   <view class='paragraph'>{{item.bio}}</view>
 </view>
 </block>
-<view class='paragraph'> Please kindly read XQ Terms and conditions
+<!-- <view class='paragraph'> Please kindly read XQ Terms and conditions
   <text class='tanc' style="color: white;" bindtap="navigateToTnC"> here</text>.
-</view>
+</view> -->
