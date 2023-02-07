@@ -1,13 +1,29 @@
 /* BANNER */
 .banner {
-  background-size:cover !important;
-  background-position:center;
+  /* background-size:cover !important;
+  background-position:center; */
+
   /* text-shadow:0 1px 3px rgba(0,0,0,0.6); */
   height:500rpx;
   width:100%;
   position: relative;
   /* border-radius:5px; */
   /* margin-bottom:20px; */
+}
+
+.screen-swiper { 
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-item image,
+.swiper-item video {
+  width: 100%;
+  display: block;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
 }
 
 .profile-banner {

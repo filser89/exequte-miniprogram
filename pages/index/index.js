@@ -14,7 +14,7 @@ Page({
   data: {
     strings: {},
     user: {},
-    banner: {},
+    banner: [],
     dates: [],
     userInfo: {},
     hasUserInfo: false,
@@ -47,7 +47,7 @@ const dates = rawDates.map(d => {
 
 Promise.all([strings, user, banner, rawDates]).then((values) => {
   console.log('values', values)
-  this.setData({strings, user, banner,  dates, rawDates})
+  this.setData({strings, user, banner, dates, rawDates})
   wx.hideLoading()
 })
 
