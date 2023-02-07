@@ -1,0 +1,7 @@
+<!--pages/customer-service/customer-service.wxml-->
+<Topbar bindlanguagechanged="handleLanguageChanged" />
+<view class="terms">{{strings.scan || "Press and hold to add our customer service"}}</view>
+<view class="qr-code-box">
+<image show-menu-by-longpress="true" src="../../images/xq-qrcode-cs.jpeg" mode="aspectFit"></image>
+</view>
+<view bindtap="navigateBack" class="btn-back">Back</view>

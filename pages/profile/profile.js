@@ -45,6 +45,14 @@ Page({
       url: `../../pages/profile-update/profile-update`
     })
   },
+
+  navigateToCustomerService(){
+    console.log('clicked cs')
+    wx.navigateTo({
+      url: `../../pages/customer-service/customer-service`
+    })
+  },
+
   handleLanguageChanged(){
     this.onShow()
   },

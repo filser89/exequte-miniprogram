@@ -1,3 +1,4 @@
+
 {
   "pages":[
     "pages/index/index",
@@ -11,7 +12,8 @@
     "pages/booking-confirmation/booking-confirmation",
     "pages/booking-info/booking-info",
     "pages/instructor-classes/instructor-classes",
-    "pages/terms-and-conditions/terms-and-conditions"
+    "pages/terms-and-conditions/terms-and-conditions",
+    "pages/customer-service/customer-service"
   ],
   "tabBar": {
     "custom": false,
@@ -21,14 +23,17 @@
     "backgroundColor": "#000000",
     "list": [{
       "pagePath": "pages/about/about",
+      "text": "",
       "iconPath": "images/XQ-logo-white.png",
       "selectedIconPath": "images/XQ-red.png"
     }, {
       "pagePath": "pages/index/index",
+      "text": "",
       "iconPath": "images/schedule.png",
       "selectedIconPath": "images/schedule2.png"
     }, {
       "pagePath": "pages/profile/profile",
+      "text": "",
       "iconPath": "/images/user-xq.png",
       "selectedIconPath": "/images/user-red.png"
     }]

@@ -102,7 +102,17 @@
   font-weight: bold;
 
 }
+.cs-btn {
+  background-color: #D8D8D8;
+  height: 40px;
+  border-radius: 10px;
+  text-align: left !important;
+  font-size: 18px;
+  align-items: center;
+  margin: 15px 10px;
+  font-weight: bold;
 
+}
 .membership-box {
   display: flex;
   flex-direction: column;
