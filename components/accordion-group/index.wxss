@@ -1,0 +1,5 @@
+.wux-accordion-group {
+  position: relative;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}

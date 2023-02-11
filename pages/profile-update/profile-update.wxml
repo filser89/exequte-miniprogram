@@ -1,6 +1,25 @@
 <!--pages/profile-update/profile-update.wxml-->
 <Topbar2 bindlanguagechanged="handleLanguageChanged" />
 <view class="white tc bold"
+  style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white;"> 
+  <wux-accordion-group isOpen="{{!isWaiverSigned}}" class="consent-form">
+    <wux-accordion key="first" class="consent-form-title" title="{{strings.waiver_title || 'Informed Consent Form'}}">
+      <rich-text class="waiver-text" nodes="{{strings.waiver_form || waiver_default}}" >
+      
+      </rich-text>
+      <view class="confirm-waiver-box">
+        <view class="confirm-waiver">{{strings.waiver_confirm || "I HEREBY AFFIRM THAT I HAVE READ AND FULLY UNDERSTAND THE ABOVE STATEMENTS."}}</view>
+        <checkbox-group name="waiver" bindchange="updateWaiver" >
+          <label class="checkbox">
+            <checkbox value="waiver_signed" color="black" checked="{{user.waiver_signed}}"/>
+          </label>
+      </checkbox-group>
+      </view>
+		</wux-accordion>
+  </wux-accordion-group>
+</view>
+
+<view class="white tc bold"
   style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
   My Personal Information
 </view>

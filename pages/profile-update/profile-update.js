@@ -20,7 +20,35 @@ Page({
    */
   data: {
     strings: {},
-    user: {}
+    user: {},
+    showWaiver: true,
+    isWaiverSigned: false,
+    /*waiver_default: "I, the participant named below, have agreed to participate in the ExeQute workouts"
+    */
+  
+    waiver_default: "I, the participant named below, have agreed to participate in the ExeQute workouts,\
+    exercise and training programs (“Workouts”).\
+    I acknowledge and agree that the Workouts:\
+    • are a recreational sport activity; and\
+    • may involve strenuous physical activity including, but not limited to, muscle\
+    strength and endurance training, cardiovascular conditioning and training, and \
+    other various fitness activities.\
+    I hereby affirm, and I affirm each time I participate in a Workout, that:\
+    • I am in good physical condition and do not suffer from any known disability or\
+    condition which would prevent or limit my participation in this exercise\
+    program; and\
+    • I am participating in the Workouts voluntarily and at my own risk.\
+    I hereby release ExeQute and their officers,\
+    agents and employees (the “Released Parties”) from any claims, demands, and\
+    causes of action as a result of my voluntary participation in the Workouts, to the\
+    extent permitted by law.\
+    I fully understand that I may injure myself as a result of my participation in the\
+    workouts and I hereby release the Released Parties from any liability now or in the\
+    future for conditions that I may obtain directly or indirectly from participating in the\
+    Workouts, to the fullest extent permitted by law. These conditions may include, but\
+    are not limited to, heart attacks, muscle strains, muscle pulls, muscle tears, broken\
+    bones, shin splints, heat prostration, injuries to knees, injuries to back, injuries to\
+    foot, or any other illness or soreness that I may incur, including death."
   },
 
   /**
@@ -32,7 +60,11 @@ Page({
     const currentUser = wx.getStorageSync('user')
     console.log('id', currentUser.id)
     const user = await getUserDetails(currentUser.id)
-    this.setData({user})
+    let isWaiverSigned = false
+    if (user.waiver_signed){
+      isWaiverSigned = true
+    }
+    this.setData({user, isWaiverSigned})
   },
   async onShow() {
     console.log('ON SHOW CALLED')
@@ -69,7 +101,7 @@ Page({
     console.info('value:', detail.value)
     const params = detail.value
     // validation     
-    if (!this.WxValidate.checkForm(params)) {
+    if (!this.WxValidate.checkForm(params)) { 
       this.handleValidationFailure()
       return false
     }
@@ -198,7 +230,20 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
 
+  /* form methods */
+  async updateWaiver(e) {
+    let params = {}
+    if (e.detail && e.detail.value && e.detail.value[0]){
+      params.waiver_signed = true
+    } else {
+      params.waiver_signed = false
+    }
+    params.waiver_signed_at = new Date()
+    const res = await updateUser(this.data.user.id, params)
+    console.log("RES", res)
+    wx.setStorageSync('user', res.user)
+  }
 
 })

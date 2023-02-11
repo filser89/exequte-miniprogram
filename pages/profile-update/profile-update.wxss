@@ -12,3 +12,17 @@ view {
   margin: 0; 
   color: white
 } */
+
+.waiver-text {
+  color: #fff;
+}
+.consent-form {
+  margin: -105rpx !important;
+}
+.confirm-waiver {
+  color: #fff;
+}
+.wux-accordion {
+  display: flex !important;
+  flex-direction: column !important;
+}

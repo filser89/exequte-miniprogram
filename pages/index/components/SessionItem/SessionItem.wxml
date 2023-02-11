@@ -37,7 +37,7 @@
         <!-- button -->
        <view style="height: 100%;">
         <view wx:if="{{user.has_wx_info && user.profile_filled}}">
-          <ActionButtonSmall bindqueuedup="handleQueuedUp" itemId="{{session.id}}"
+          <ActionButtonSmall bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
             action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
             <view class="d-flex flex-column">
               <view class="text-capitalize bold"> {{session.btn_pattern.text}}</view>

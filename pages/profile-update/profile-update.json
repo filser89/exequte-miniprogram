@@ -3,7 +3,9 @@
     "ProfileForm": "./components/ProfileForm/ProfileForm",
     "BodyNowForm": "./components/BodyNowForm/BodyNowForm",
     "BodyTargetForm": "./components/BodyTargetForm/BodyTargetForm",
-    "Topbar2": "/components/Topbar2/Topbar2"
+    "Topbar2": "/components/Topbar2/Topbar2",
+    "wux-accordion-group": "/components/accordion-group/index",
+    "wux-accordion": "/components/accordion/index"
 
   }
 }

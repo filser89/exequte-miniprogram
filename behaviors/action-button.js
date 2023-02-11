@@ -3,7 +3,8 @@ import {
   buyMembership,
   addUserToQueue,
   cancelBooking,
-  deleteFailedPayment
+  deleteFailedPayment,
+  updateUser
 } from '../utils/requests/index'
 import {
   promisifyAll
@@ -16,6 +17,8 @@ export default Behavior({
     strings: Object,
     action: String,
     itemId: Number,
+    userId: Number,
+    waiverSigned: Boolean,
     btnDisabled: {
       value: false,
       type: Boolean
@@ -99,10 +102,33 @@ export default Behavior({
       this.triggerEvent('queuedup', session)
     },
 
-    navigateToBooking() {
-      wx.navigateTo({
-        url: `../../pages/booking/booking?sessionId=${this.properties.itemId}`,
-      })
+    async navigateToBooking() {
+      if (this.properties.waiverSigned) {
+        wx.navigateTo({
+          url: `../../pages/booking/booking?sessionId=${this.properties.itemId}`,
+        }) 
+      } else {
+        let res = await wxp.showModal({
+          title: "By booking this class, you confirm that you are in good health, and you agree to our “Informed Consent Form”.",
+          cancelText: "Form",
+          confirmText: "Agree",
+        })
+        if (res.confirm) {
+          let params = {}
+          params.waiver_signed = true
+          params.waiver_signed_at = new Date()
+          const res = await updateUser(this.properties.userId, params)
+          console.log("RES", res)
+          wx.setStorageSync('user', res.user)
+          wx.navigateTo({
+            url: `../../pages/booking/booking?sessionId=${this.properties.itemId}`,
+          }) 
+        }  else {
+          wx.navigateTo({
+            url: `../../pages/profile-update/profile-update`,
+          }) 
+        }
+      }
     },
 
     reLaunchToMyClasses() {
