@@ -7,7 +7,7 @@
 
 
 <view wx:if="{{user.has_wx_info && user.profile_filled}}">
-  <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" action="{{session.btn_pattern.action}}"
+  <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}"
     btnDisabled="{{session.btn_pattern.disabled}}">
     <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : ""}}

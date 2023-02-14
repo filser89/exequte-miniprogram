@@ -14,6 +14,12 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+//check if the current time counts as late cancellation (if its less than the hours in advance allowed to cancel)
+const isLateCancellation = (classBeginDate, hoursAllowed) => {
+  return (new Date(classBeginDate) - new Date()) < hoursAllowed * 3600000
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  isLateCancellation: isLateCancellation
 }

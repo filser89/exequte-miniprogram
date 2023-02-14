@@ -19,6 +19,8 @@ export default Behavior({
     itemId: Number,
     userId: Number,
     waiverSigned: Boolean,
+    isLateCancel: Boolean,
+    enforceCancellationPolicy: Boolean,
     btnDisabled: {
       value: false,
       type: Boolean
@@ -109,9 +111,12 @@ export default Behavior({
         }) 
       } else {
         let res = await wxp.showModal({
-          title: "By booking this class, you confirm that you are in good health, and you agree to our “Informed Consent Form”.",
-          cancelText: "Form",
-          confirmText: "Agree",
+          title: this.properties.strings && this.properties.strings.booking_waiver_title 
+          || "By booking this class, you confirm that you are in good health, and you agree to our “Informed Consent Form”.",
+          cancelText: this.properties.strings && this.properties.strings.booking_waiver_cancel
+          || "Form",
+          confirmText: this.properties.strings && this.properties.strings.booking_waiver_confirm
+          || "Agree",
         })
         if (res.confirm) {
           let params = {}
@@ -142,10 +147,17 @@ export default Behavior({
       })
     },
     async cancelBooking() {
+      let modalTitle = this.properties.strings && this.properties.strings.cancel_booking_normal_title || "Are you sure?"
+      if (this.properties.isLateCancel && this.properties.enforceCancellationPolicy){
+        modalTitle = this.properties.strings && this.properties.strings.cancel_booking_late_title ||  "Please note that this counts as late cancellation, providing no voucher refund / substracting one day from your current membership.Are you sure?"
+      }
+      
       let res = await wxp.showModal({
-        title: "Are you sure?",
-        cancelText: "No",
-        confirmText: "Yes",
+        title: modalTitle,
+        cancelText: this.properties.strings && this.properties.strings.cancel_booking_cancel 
+        || "No",
+        confirmText: this.properties.strings && this.properties.strings.cancel_booking_confirm 
+        || "Yes",
       })
       if (res.confirm) {
         this.handleCancelled()

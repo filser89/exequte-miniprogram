@@ -1,5 +1,6 @@
 // pages/booking-info/booking-info.js
 import {getBooking, getInstructor, getStrings} from "../../utils/requests/index"
+import {isLateCancellation} from "../../utils/util"
 Page({
 
   /**
@@ -8,6 +9,8 @@ Page({
   data: {
     strings: {},
     booking: {},
+    isLateCancel: false,
+    enforceCancellationPolicy: true,
     instructor:{},
     btnPattern: {
       disabled: false,
@@ -31,6 +34,14 @@ Page({
     const booking = await getBooking(options.bookingId)
     const instructor = await getInstructor(options.instructorId)
     const strings = await getStrings(this.route.split('/')[2])
+    if (booking && booking.session && booking.session.begins_at){
+        const isLateCancel = isLateCancellation(booking.session.begins_at, booking.session.cancel_before)
+        const enforceCancellationPolicy = booking.session.enforce_cancellation_policy
+        this.setData({
+          isLateCancel,
+          enforceCancellationPolicy
+        })
+    }
     this.setData({
       booking,
       instructor,
