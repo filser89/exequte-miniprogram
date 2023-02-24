@@ -1,7 +1,8 @@
 {
-  "description": "Project configuration file",
+  "description": "Project configuration file, more information: https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "setting": {
     "urlCheck": false,
@@ -37,104 +38,23 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "lazyloadPlaceholderEnable": false,
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "minifyWXML": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
   "appid": "wx7a6bff71d529bd0e",
   "projectname": "ExeQute",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
-  "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/class-info/class-info",
-          "pathName": "pages/class-info/class-info",
-          "query": "sessionId=3978&instructorId=133",
-          "scene": null
-        },
-        {
-          "name": "pages/booking/booking",
-          "pathName": "pages/booking/booking",
-          "query": "sessionId=3703",
-          "scene": null
-        },
-        {
-          "name": "pages/booking-confirmation/booking-confirmation",
-          "pathName": "pages/booking-confirmation/booking-confirmation",
-          "query": "bookingId=1549",
-          "scene": null
-        },
-        {
-          "name": "pages/my-classes/my-classes",
-          "pathName": "pages/my-classes/my-classes",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/profile-update/profile-update",
-          "pathName": "pages/profile-update/profile-update",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/profile/profile",
-          "pathName": "pages/profile/profile",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/class-attandence/class-attandence",
-          "pathName": "pages/class-attandence/class-attandence",
-          "query": "sessionId=699&instructorId=1",
-          "scene": null
-        },
-        {
-          "name": "pages/class-attandence/class-attandence",
-          "pathName": "pages/class-attandence/class-attandence",
-          "query": "id=50",
-          "scene": null
-        },
-        {
-          "name": "pages/booking-info/booking-info",
-          "pathName": "pages/booking-info/booking-info",
-          "query": "bookingId=2074&instructorId=90",
-          "scene": null
-        },
-        {
-          "name": "pages/about/about",
-          "pathName": "pages/about/about",
-          "query": "bookingId=141&instructorId=6",
-          "scene": null
-        },
-        {
-          "name": "pages/instructor-classes/instructor-classes",
-          "pathName": "pages/instructor-classes/instructor-classes",
-          "query": "bookingId=2074&instructorId=90",
-          "scene": null
-        },
-        {
-          "name": "pages/terms-and-conditions/terms-and-conditions",
-          "pathName": "pages/terms-and-conditions/terms-and-conditions",
-          "query": "sessionId=3703",
-          "scene": null
-        }
-      ]
-    }
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
   }
 }

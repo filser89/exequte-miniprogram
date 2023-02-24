@@ -15,3 +15,25 @@
   border-radius: 10px;
   margin: 10px;
 }
+
+.capacity-container {
+  padding: 30rpx;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 20rpx;
+  display: flex;
+  width: 50%;
+}
+
+.decrease {
+  width: fit-content !important;
+}
+
+.increase {
+  width: fit-content !important;
+}
+
+.capacity {
+  color: white;
+}

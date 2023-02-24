@@ -71,6 +71,14 @@ const cancelSession = (id, note) => {
   }
   return request(options)
 }
+
+const changeCapacity = (id, capacity) => {
+  const options = {
+    method: 'put',
+    url: `/training_sessions/${id}/change_capacity?capacity=${capacity}`,
+  }
+  return request(options)
+}
 // /training_sessions/:id/session_attendance
 
 module.exports = {
@@ -82,5 +90,6 @@ module.exports = {
   getSessionAttendance,
   getDates,
   getSessionsByDate,
-  cancelSession
+  cancelSession,
+  changeCapacity
 }

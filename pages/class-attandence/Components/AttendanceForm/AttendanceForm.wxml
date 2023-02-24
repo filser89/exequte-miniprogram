@@ -1,5 +1,10 @@
 <!--pages/class-attandence/AttendanceForm/AttendanceForm.wxml-->
 <form bindsubmit="formSubmit">
+  <view class="capacity-container">
+    <button class='decrease' bindtap="decreaseCapacity">-</button>
+    <view class="capacity">{{bookings.length}}/{{capacity ? capacity : session.capacity}}</view>
+    <button class='increase' bindtap="increaseCapacity">+</button>
+  </view>
   <view wx:for="{{bookings}}" wx:key="unique">
    <AttendanceCard strings="{{strings}}" item="{{item}}"/>
   </view>

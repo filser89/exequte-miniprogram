@@ -11,7 +11,7 @@
       <view>{{session.date}}</view>
     </view>
   </view>
-  <AttendanceForm strings="{{strings}}" bookings="{{session.bookings}}" />
+  <AttendanceForm strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
   <CancelForm strings="{{strings}}" session="{{session}}" />
 
 
