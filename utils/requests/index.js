@@ -8,7 +8,8 @@ import {
   getSessionDates,
   getSessionAttendance,
   getDates,
-  getSessionsByDate
+  getSessionsByDate,
+  cancelSession
 } from './sessions'
 
 import {
@@ -112,5 +113,6 @@ module.exports = {
   getSessionDates,
   getSessionAttendance,
   getDates,
-  getSessionsByDate
+  getSessionsByDate,
+  cancelSession
 }

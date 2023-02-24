@@ -64,6 +64,13 @@ const getSessionAttendance = (id) =>{
   return request(options)
 }
 
+const cancelSession = (id, note) => {
+  const options = {
+    method: 'put',
+    url: `/training_sessions/${id}/cancel?note=${note}`,
+  }
+  return request(options)
+}
 // /training_sessions/:id/session_attendance
 
 module.exports = {
@@ -74,5 +81,6 @@ module.exports = {
   getSessionDates,
   getSessionAttendance,
   getDates,
-  getSessionsByDate
+  getSessionsByDate,
+  cancelSession
 }

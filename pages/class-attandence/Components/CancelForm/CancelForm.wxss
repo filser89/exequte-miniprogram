@@ -1,0 +1,18 @@
+/* pages/class-attandence/CancelForm/CancelForm.wxss */
+
+.update {
+  height: 50px;
+  background-color: #5C0C17;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+
