@@ -24,6 +24,14 @@ const getInstructorSessions = () => {
   return request(options)
 }
 
+const getAdminSessions = () => {
+  const options = {
+    method: 'get',
+    url: '/training_sessions/admin_sessions',
+  }
+  return request(options)
+}
+
 const getSession = (id) => {
   const options = {
     method: 'get',
@@ -83,6 +91,7 @@ const changeCapacity = (id, capacity) => {
 
 module.exports = {
   getInstructorSessions,
+  getAdminSessions,
   getSession,
   getSessions,
   addUserToQueue,

@@ -38,7 +38,12 @@ Page({
       url: `../../pages/instructor-classes/instructor-classes`
     })
   },
-
+  navigateToAdminClasses(){
+    console.log('clicked admin')
+    wx.navigateTo({
+      url: `../../pages/instructor-classes/instructor-classes?admin=true`
+    })
+  },
 
   navigateToProfileUpdate(){
     wx.navigateTo({

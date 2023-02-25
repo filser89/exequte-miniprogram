@@ -1,7 +1,7 @@
 <!--pages/class-attandence/Components/AttendanceCard/AttendanceCard.wxml-->
 <checkbox-group name="{{item.id}}">
       <label class="checkbox attend">
-        <image class='photo' src="{{item.avatar_url}}"></image>
+        <image data-user-id="{{item.user_id}}" bindtap="goToUserProfile" class='photo' src="{{item.avatar_url}}"></image>
         <view class='check-text'>{{item.first_name}} {{item.last_name}}</view> 
         <checkbox class='check-text' value="{{item.id}}" checked="{{item.attended}}" />
       </label>

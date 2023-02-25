@@ -57,9 +57,18 @@ Page({
   async onLoad(options){
     console.log(options)
     this.setData({sessionId: options.sessionId})
-    const currentUser = wx.getStorageSync('user')
-    console.log('id', currentUser.id)
-    const user = await getUserDetails(currentUser.id)
+    let userId
+    if (options.userId){
+      console.log('view other user profile')
+      this.setData({isOtherUser: true})
+      userId = options.userId
+    } else {
+      this.setData({isOtherUser: false})
+      const currentUser = wx.getStorageSync('user')
+      console.log('id', currentUser.id)
+      userId = currentUser.id
+    }
+    const user = await getUserDetails(userId)
     let isWaiverSigned = false
     if (user.waiver_signed){
       isWaiverSigned = true

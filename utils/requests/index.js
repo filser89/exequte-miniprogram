@@ -2,6 +2,7 @@ import {request} from './request'
 
 import {
   getInstructorSessions,
+  getAdminSessions,
   getSession,
   getSessions,
   addUserToQueue,
@@ -102,6 +103,7 @@ module.exports = {
   buyMembership,
   addUserToQueue,
   getInstructorSessions,
+  getAdminSessions,
   getBooking,
   getAttendanceList,
   createBooking,

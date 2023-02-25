@@ -21,6 +21,14 @@ Component({
    * Component methods
    */
   methods: {
-
+    goToUserProfile(e) {
+      const {
+        userId
+      } = e.currentTarget.dataset
+      console.log(userId)
+      wx.navigateTo({
+        url: `../../pages/profile-update/profile-update?userId=${userId}`,
+      }) 
+    },
   }
 })

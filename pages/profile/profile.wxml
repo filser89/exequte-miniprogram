@@ -57,6 +57,10 @@
   <view style='margin-left: 20px;'>My Classes as Instructor </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
+<view wx:if="{{user.admin}}" bindtap="navigateToAdminClasses" class='my-classes-btn d-flex'>
+  <view style='margin-left: 20px;'>All Classes </view>
+  <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+</view>
 <view bindtap="navigateToCustomerService" class='cs-btn d-flex'>
   <view style='margin-left: 20px;'>{{strings.customer_service || "Contact Us!"}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
