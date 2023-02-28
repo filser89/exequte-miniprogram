@@ -24,3 +24,11 @@
   margin-top: 12px;
 
 }
+
+.first-booking {
+  margin-top: 12px;
+  text-align: center;
+  
+  justify-content: center;
+  color: #1FDE8D;
+}

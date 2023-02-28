@@ -2,7 +2,8 @@
 <checkbox-group name="{{item.id}}">
       <label class="checkbox attend">
         <image data-user-id="{{item.user_id}}" bindtap="goToUserProfile" class='photo' src="{{item.avatar_url}}"></image>
-        <view class='check-text'>{{item.first_name}} {{item.last_name}}</view> 
+        <view class='check-text'>{{item.first_name}} {{item.last_name}}</view>
+        <view class="first-booking" wx:if="{{item.first_booking}}">New</view> 
         <checkbox class='check-text' value="{{item.id}}" checked="{{item.attended}}" />
       </label>
 </checkbox-group>
