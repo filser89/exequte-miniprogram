@@ -8,6 +8,7 @@ Component({
     session: Object,
     membershipTypes: Array,
     membership: Object,
+    classpack: Object,
     selected: String
   },
 

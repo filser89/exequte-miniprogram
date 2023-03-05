@@ -16,6 +16,16 @@
     <view class="d-flex items-center">Voucher</view>
     <view class="d-flex items-center">FREE</view>
   </view>
+  <view bindtap="chooseOption" data-booking-type="classpack" data-membership-id="{{session.usable_classpack.id}}"
+    wx:if="{{session.access_options.classpack == 'classpack'}}" data-index="{{i}}"
+    class="{{selected == 'classpack' ? 'button-option-active' : 'button-option'}}">
+    <view  class="d-flex flex-column content-center items-start">
+      <view>{{classpack.name}}</view>
+      <view class="sm-text" >valid till {{classpack.end_date}}</view>
+      <view class="sm-text red-text" >{{classpack.vouchers}} classes left</view>
+    </view>
+    <view class="d-flex items-center" >FREE</view>
+  </view>
   <view wx:if="{{session.access_options.membership == 'buy-membership'}}">
     <view wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
       <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership"

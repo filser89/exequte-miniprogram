@@ -3,7 +3,7 @@
   <Topbar2 bindlanguagechanged="handleLanguageChanged"/>
   <BookingInfo strings="{{strings}}" session="{{session}}" />
   <AccessOptions strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
-    selected="{{selected}}" membership="{{membership}}" />
+    selected="{{selected}}" membership="{{membership}}" classpack="{{classpack}}" />
   <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
     <PromoCode strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
   </view>

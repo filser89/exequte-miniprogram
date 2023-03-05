@@ -79,6 +79,9 @@
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
   <view style="margin-top: 10px">{{item.name}}</view>
   <view wx:if="{{item.smoothie}}"> + smoothies </view>
+  <block wx:if="{{item.is_class_pack}}">
+    <view>{{item.vouchers}} classes left</view>
+  </block>
   <view class='valid'>Active until {{item.end_date}}</view>
 </view>
 <!-- nutrition -->

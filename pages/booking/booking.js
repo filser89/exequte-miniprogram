@@ -19,6 +19,7 @@ Page({
     btnPattern: {},
     membershipDate: '',
     membership: {},
+    classpack: {},
     discount: 0,
     couponCode: null,
     couponBtnDisabled: false
@@ -39,6 +40,7 @@ Page({
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     const membership = session.usable_membership
+    const classpack = session.usable_classpack
     const strings = await getStrings(this.route.split('/')[2])
 
     this.setData({
@@ -47,6 +49,7 @@ Page({
       membershipDate,
       membershipTypes,
       membership,
+      classpack,
       strings
     })
     this.setBtnPattern(this.data.selected)
@@ -169,6 +172,19 @@ Page({
             }
           }
         })
+        break;
+      case 'classpack':
+        this.setData({
+          btnPattern: {
+            action: 'bookClass',
+            text: 'Book Class',
+            params: {
+              booked_with: 'class-pack',
+              membership_id: this.data.session.usable_classpack.id
+            }
+          }
+        })
+        break;
     }
     console.log('btnPattern', this.data.btnPattern)
   },
