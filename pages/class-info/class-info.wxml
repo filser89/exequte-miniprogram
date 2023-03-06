@@ -7,11 +7,18 @@
 
 
 <view wx:if="{{user.has_wx_info && user.profile_filled}}">
-  <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}"
+  <view wx:if="{{session.btn_pattern.booking}}">
+    <ActionButton strings="{{strings}}" itemId="{{session.btn_pattern.booking.id}}" action="{{session.btn_pattern.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!session.btn_pattern.can_cancel}}" isLateCancel="{{isLateCancel}}" enforceCancellationPolicy="{{enforceCancellationPolicy}}"  waiverSigned="{{user.waiver_signed}}">
+    {{session.btn_pattern.can_cancel ? 'Cancel Class' : session.btn_pattern.booking.status}}
+    </ActionButton>
+  </view>
+  <view wx:else>
+    <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}" 
     btnDisabled="{{session.btn_pattern.disabled}}">
     <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
     {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : ""}}
   </ActionButton>
+  </view>
 </view>
 <view wx:else>
   <GetInfoButton profileFilled="{{user.profile_filled}}" itemId="{{session.id}}" style="color: white">

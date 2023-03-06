@@ -169,7 +169,8 @@ export default Behavior({
       console.log(result)
       wx.showToast({
         title: result.msg,
-        icon: 'none'
+        icon: 'none',
+        duration: 2500
       })
       this.triggerEvent('classcancelled', {})
     },

@@ -4,6 +4,8 @@ import {
   getInstructor,
   getStrings
 } from '../../utils/requests/index'
+import {isLateCancellation} from "../../utils/util"
+
 Page({
 
   /**
@@ -13,6 +15,8 @@ Page({
     strings: {},
     session: {},
     instructor: {},
+    isLateCancel: false,
+    enforceCancellationPolicy: true,
     btnPattern: {},
     options:{}
   },
@@ -35,6 +39,14 @@ Page({
     const session = await getSession(sessionId)
     const instructor = await getInstructor(instructorId)
     const strings = await getStrings(this.route.split('/')[2])
+    if (session && session.begins_at){
+      const isLateCancel = isLateCancellation(session.begins_at, session.cancel_before)
+      const enforceCancellationPolicy = session.enforce_cancellation_policy
+      this.setData({
+        isLateCancel,
+        enforceCancellationPolicy
+      })
+    }
     this.setData({
       session,
       instructor,
@@ -69,6 +81,10 @@ Page({
     })
     console.log(this.data.session)
     this.setBtnPattern(this.data.session)
+  },
+
+  async handleClassCancelled (){
+    this.onShow()
   },
 
   setBtnPattern(session) {
