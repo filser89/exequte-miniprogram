@@ -42,6 +42,7 @@
     <view  class="d-flex flex-column content-center items-start">
       <view>{{membership.name}}</view>
       <view class="sm-text" >valid till {{membership.end_date}}</view>
+      <view class="sm-text red-text" wx:if="{{!membership.unlimited}}">{{membership.sessions_left}} booking left for this day</view>
     </view>
     <view class="d-flex items-center" >FREE</view>
   </view>
