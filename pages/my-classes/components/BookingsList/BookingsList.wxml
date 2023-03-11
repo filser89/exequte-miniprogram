@@ -17,12 +17,12 @@
           <!-- header ends -->
           <!-- duration -->
           <view class="text14">
-            <image src='/images/time-white.png' class='icon-time-booking'> </image> {{booking.session.duration}} min
+            <image src='/images/time-white.png' class='icon-time-booking'> </image> {{booking.session.duration}} {{strings.min}}
           </view>
           <!-- duration ends -->
           <!-- date time -->
           <view class="d-flex space-between text14">
-            <view>{{booking.session.date}}</view>
+            <view>{{booking.session.date_locale_short}}</view>
             <view>{{booking.session.from}} - {{booking.session.to}}</view>
           </view>
           <!-- date time ends -->
@@ -34,7 +34,7 @@
       </view>
       <!-- card ends -->
       <view wx:if="{{selected == 1}}" class="status {{booking.attended ? 'green-status' : 'red-status'}}">
-        {{booking.status}}
+        {{booking.status_locale}}
       </view>
     </view>
   </view>

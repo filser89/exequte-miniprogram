@@ -13,9 +13,9 @@
 </view>
 <view class='address' style="background-color: white">
   <view class='address-text'>
-    <view ><text-bold>Address: </text-bold>425 Yanping Road, Street Front 1F</view>
-    <view style='margin-top:5px; margin-bottom: 5px'><text-bold>Metro: </text-bold> Changping Road Station Line 7, Exit 5</view>
-    <view><text-bold>DiDi: </text-bold>exeQute</view>
+    <view><text-bold>{{strings.address}}</text-bold>{{strings.address1}}</view>
+    <view style='margin-top:5px; margin-bottom: 5px'><text-bold>{{strings.address2}}</text-bold>{{strings.address3}}</view>
+    <view><text-bold>{{strings.address4}}</text-bold>{{strings.address5}}</view>
   </view>
 </view>
 <!-- 'after_address' -->
@@ -31,7 +31,7 @@
 <view wx:for="{{instructors}}" wx:key="unique">
   <view class='instructor-card'>
     <image class='instructor-photo' src="{{item.image_url}}"></image>
-    <view class='instructor-name'>Coach {{item.first_name}}</view>
+    <view class='instructor-name'>{{strings.coach}} {{item.first_name}}</view>
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>
@@ -52,9 +52,9 @@
   {{info.paragraph_two}}</view>
 <view class='address' style="background-color: white; ">
   <view class='address-text'>
-    <view><text-bold>Address: </text-bold>425 Yanping Road, Street Front 1F</view>
-    <view style='margin-top:5px; margin-bottom: 5px'><text-bold>Metro: </text-bold> Changping Road Station Line 7, Exit 5</view>
-    <view><text-bold>DiDi: </text-bold>exeQute</view>
+    <view><text-bold>{{strings.address}}</text-bold>{{strings.address1}}</view>
+    <view style='margin-top:5px; margin-bottom: 5px'><text-bold>{{strings.address2}}</text-bold>{{strings.address3}}</view>
+    <view><text-bold>{{strings.address4}}</text-bold>{{strings.address5}}</view>
 </view>
 </view>
 <view class='paragraph'>
@@ -69,7 +69,7 @@
 <view wx:for="{{instructors}}" wx:key="unique">
   <view class='instructor-card'>
     <image class='instructor-photo' src="{{item.image_url}}"></image>
-    <view class='instructor-name'>Coach {{item.first_name}}</view>
+    <view class='instructor-name'>{{strings.coach}} {{item.first_name}}</view>
   </view>
   <view class='paragraph'>{{item.bio}}</view>
 </view>

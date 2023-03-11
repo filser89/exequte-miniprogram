@@ -1,5 +1,5 @@
 <!--components/Topbar/Topbar.wxml-->
 <view class="topbar">
   <image src='/images/logo.png' class="icon-lg" />
-  <!-- <view class="language-button-topbar" catchtap="toggleLang" style=''>{{ lang == 'en' ? '中文' : 'EN'}}</view> -->
+  <view class="language-button-topbar" catchtap="toggleLang" style=''>{{ lang == 'en' ? '中文' : 'EN'}}</view>
 </view>

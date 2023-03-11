@@ -4,11 +4,11 @@
   <view class='class-about'>
 
     <view style='font-size: 20px; margin:10px'>{{session.name}}</view>
-    <view style='display: flex; flex-direction: row; margin:10px'>
+    <view style='display: flex; flex-direction: row; margin:10px; gap: 30rpx'>
       <view>
         <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.from}}
       </view>
-      <view>{{session.date}}</view>
+      <view>{{session.date_locale}}</view>
     </view>
   </view>
   <AttendanceForm strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />

@@ -7,6 +7,6 @@
     </view>
   </view>
   <view wx:else > 
-    <view class=" tc" style=" background-color: black; margin-top: 40px ">No sessions today </view>
+    <view class=" tc" style=" background-color: black; margin-top: 40px ">{{strings.no_sessions_today}}</view>
   </view>  
 </view>

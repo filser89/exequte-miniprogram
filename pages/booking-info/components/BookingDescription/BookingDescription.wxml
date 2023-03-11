@@ -14,9 +14,9 @@
     <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
     <view class="db-flex" style="justify-content: space-around">
       <view class="text-size-sbody" style="margin-top: 20px; display:flex">
-        <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} min
+        <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} {{strings.min}}
         <image src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
-        {{session.calories}} kCal
+        {{session.calories}} {{strings.kcal}}
       </view>
     </view>
   </view>
@@ -24,10 +24,10 @@
       <view>
         <image style="width: 60px; height: 60px; radius: 50%; z-index: 1; margin-right: 20px"
           src="{{instructor.image_url}}"></image>
-        Coach {{instructor.first_name}}
+          {{strings.coach}} {{instructor.first_name}}
       </view>
       <!-- Last Name: {{instructor.last_name}} -->
-      <view class='text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px"> Bio: {{instructor.bio}}
+      <view class='text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px"> {{strings.bio}} {{instructor.bio}}
       </view>
 
     </view>
@@ -36,12 +36,11 @@
 
   <view class="coach-card text-white tl">
     <view class="text-size-sbody ml">
-      <image src='/images/information.png' class='icon-time' style="margin-right: 5px; "> </image>Free cancellation
-      {{session.cancel_before}} hours inadvance.
+      <image src='/images/information.png' class='icon-time' style="margin-right: 5px; "> </image>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
     </view>
-    <view class="text-size-sbody ml"> Price: {{session.price}}</view>
+    <view class="text-size-sbody ml"> {{strings.price}}{{session.price}}{{strings.currency}}</view>
     <view class="text-size-sbody ml"> {{session.from}}-{{session.to}}</view>
-    <view class="text-size-sbody ml"> Date: {{session.date}}</view>
+    <view class="text-size-sbody ml"> {{strings.date}}{{session.date_locale}}</view>
   </view>
 
 

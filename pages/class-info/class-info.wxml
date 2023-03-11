@@ -9,19 +9,22 @@
 <view wx:if="{{user.has_wx_info && user.profile_filled}}">
   <view wx:if="{{session.btn_pattern.booking}}">
     <ActionButton strings="{{strings}}" itemId="{{session.btn_pattern.booking.id}}" action="{{session.btn_pattern.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!session.btn_pattern.can_cancel}}" isLateCancel="{{isLateCancel}}" enforceCancellationPolicy="{{enforceCancellationPolicy}}"  waiverSigned="{{user.waiver_signed}}">
-    {{session.btn_pattern.can_cancel ? 'Cancel Class' : session.btn_pattern.booking.status}}
+    {{session.btn_pattern.can_cancel ? strings.cancel_class : session.btn_pattern.booking.status_locale}}
     </ActionButton>
   </view>
   <view wx:else>
     <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}" 
     btnDisabled="{{session.btn_pattern.disabled}}">
     <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
-    {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : ""}}
+    <view wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
+    <view wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>
+    <view wx:elif="{{session.btn_pattern.text  == 'IN QUEUE'}}"> {{strings.in_queue}}</view>
+    <view wx:elif="{{session.btn_pattern.text  == 'QUEUE UP'}}"> {{strings.queue_up}}</view>           
   </ActionButton>
   </view>
 </view>
 <view wx:else>
   <GetInfoButton profileFilled="{{user.profile_filled}}" itemId="{{session.id}}" style="color: white">
-    SIGN UP
+    {{strings.sign_up}}
   </GetInfoButton>
 </view>

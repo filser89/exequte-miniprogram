@@ -1,6 +1,6 @@
 <!--pages/profile-update/components/BodyTargetForm/BodyTargetForm.wxml-->
 <view>
-  <text>Weight Goal</text>
+  <text>{{strings.goal}}</text>
   <picker name="target" bindchange="bindTargetChange" value="{{targets[index]}}" range="{{targets}}"  style="width: 430rpx;">
     <view class="picker">
        {{targets[index]}}
@@ -9,11 +9,11 @@
 </view>
 
 <view>
-  <text>Target Weight </text>
+  <text>{{strings.t_weight}}</text>
   <input type="number" name="target_weight" value="{{user.target_weight}}" />
 </view>
 <view>
-  <text>Target Body Fat %</text>
+  <text>{{strings.t_fat}} %</text>
   <input type="number" name="target_body_fat" value="{{user.target_body_fat}}" />
 </view>
 <!-- <view>

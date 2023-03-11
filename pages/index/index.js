@@ -35,9 +35,43 @@ const banner = await getBanner()
 // const arr =  await getSessions()
 const rawDates= await getDates()
 
+let currentLang = 'en'
+if (app && app.globalData && app.globalData.headers && app.globalData.headers['X-API-Lang']){
+  currentLang = app.globalData.headers['X-API-Lang']
+}
+
 const dates = rawDates.map(d => {
   let date = new Date(d).toString()
   let sd = date.split(/\s+/)
+  if (currentLang == "zh-CN"){
+    switch (sd[0]) {
+      case 'Mon':
+        sd[0] = '周一';
+        break;
+      case 'Tue':
+        sd[0] = '周二';
+        break;
+      case 'Wed':
+        sd[0] = '周三';
+        break;
+      case 'Thu':
+        sd[0] = '周四';
+        break;
+      case 'Fri':
+        sd[0] = '周五';
+        break;
+      case 'Sat':
+        sd[0] = '周六';
+        break;
+      case 'Sun':
+        sd[0] = '周日';
+        break;        
+      default:
+        break;
+    }
+    sd[2] += '日'
+   sd[1] = new Date(d).getMonth() + 1 + "月"
+  } 
   return {
     dateW: sd[0],
     dateD: sd[2],

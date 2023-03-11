@@ -113,7 +113,7 @@ button cover-view {
   text-align: center;
   border-radius: 10px;
   color: white;
-  padding: 5px;
+  padding: 5px 0px 5px 0px;
   font-weight: bold;
   margin: 3px;
 

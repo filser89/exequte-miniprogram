@@ -2,7 +2,7 @@
 @import "/app.wxss";
 
 .topbar{
-  position: absolute;
+  /* position: absolute; */
   top: 10rpx;
   width: 100%;
   display: flex;

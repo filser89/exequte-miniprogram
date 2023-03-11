@@ -14,7 +14,7 @@
   <!-- bottom -->
   
 <view class="d-flex space-between bottom" >
-  <view class="text-white d-flex item-center content-center text-left">Total: ¥{{btnPattern.price || 0}}</view>
+  <view class="text-white d-flex item-center content-center text-left">{{strings.total_price}} {{btnPattern.price || 0}} {{strings.currency}}</view>
   <PayButton strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
     action="{{btnPattern.action}}" params="{{btnPattern.params}}"
     itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >

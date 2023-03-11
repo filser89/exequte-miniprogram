@@ -1,5 +1,5 @@
 <!--pages/class-attandence/CancelForm/CancelForm.wxml-->
-  <button class='update' style="width: 100%" bindtap="showCancelNotePrompt">CANCEL SESSION</button>
+  <button class='update' style="width: 100%" bindtap="showCancelNotePrompt">{{strings.cancel_session}}</button>
 <prompt id="prompt" 
     title='{{strings.cancel_session_reason_popup_title || "Cancel Reason"}}' 
     btn_certain='{{strings.confirm || "Submit"}}' 

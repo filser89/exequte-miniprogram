@@ -4,9 +4,9 @@
 <view class=" text-white" style='margin-top: 70px'>
   <view class='btn-tabs bold '>
     <view bindtap="switchTab" data-selected="0"
-      class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>Upcoming</view>
+      class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>{{strings.upcoming || "Upcoming"}}</view>
     <view bindtap="switchTab" data-selected="1"
-      class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>History</view>
+      class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>{{strings.history || "History"}}</view>
   </view>
   <view wx:if="{{bookings[selected].length}}">
     <!-- <BookingsList selected="0" bookings="{{bookings[0]}}" wx:if="{{selected == 0}}"/> -->
@@ -16,9 +16,9 @@
     </block>
   </view>
   <view wx:else class="no-classes">
-    <view class="tc">What are you waiting for...</view>
+    <view class="tc">{{strings.no_classes || "What are you waiting for..."}}</view>
     <BookNowButton action="reLaunchToIndexPage">
-      BOOK NOW
+      {{strings.book_now || "BOOK NOW"}}  
     </BookNowButton>
   </view>
 </view>

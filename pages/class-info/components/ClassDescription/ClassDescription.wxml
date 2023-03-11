@@ -37,7 +37,7 @@
   <view style="height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
 
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
-      selectedInstructorId="{{session.instructor_id}}" />
+      selectedInstructorId="{{session.instructor_id}}" strings="{{strings}}" />
   </view>
   <view class="cancel-card text-white tl" style="margin-top: 20px; margin: 20px;">
     <view class="text-size-sbody ml">
@@ -46,7 +46,7 @@
     </view>
     <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.price}}{{session.price}}</view>
     <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.time}}{{session.from}}-{{session.to}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date_locale}}</view>
   </view>
 
 

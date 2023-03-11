@@ -7,7 +7,8 @@ Component({
   properties: {
     session: Object,
     selectedDateId: Number,
-    selectedInstructorId: Number
+    selectedInstructorId: Number,
+    strings: Object
   },
 
   /**

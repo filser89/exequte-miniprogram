@@ -4,4 +4,4 @@
 <view class="qr-code-box">
 <image show-menu-by-longpress="true" src="../../images/xq-qrcode-cs.jpeg" mode="aspectFit"></image>
 </view>
-<view bindtap="navigateBack" class="btn-back">Back</view>
+<view bindtap="navigateBack" class="btn-back">{{strings.back}}</view>

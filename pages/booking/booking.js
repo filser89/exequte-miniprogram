@@ -110,7 +110,7 @@ Page({
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'JOIN FOR FREE',
+            text: this.properties.strings && this.properties.strings.join_for_free || 'JOIN FOR FREE',
             params: {
               booked_with: 'free'
             }
@@ -125,7 +125,7 @@ Page({
           btnPattern: {
             price,
             action: 'bookClass',
-            text: `Pay`,
+            text: this.properties.strings && this.properties.strings.pay || `Pay`,
             params: {
               booked_with: 'drop-in',
               price_cents: price * 100,
@@ -140,7 +140,7 @@ Page({
           btnPattern: {
             price,
             action: 'buyMembership',
-            text: `Pay`,
+            text: this.properties.strings && this.properties.strings.pay  || `Pay`,
             params: {
               start_date: this.data.membershipDate,
               price_cents: price * 100,
@@ -154,7 +154,7 @@ Page({
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'Use Voucher',
+            text: this.properties.strings && this.properties.strings.use_voucher  || 'Use Voucher',
             params: {
               booked_with: 'voucher'
             }
@@ -165,7 +165,7 @@ Page({
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'Book Class',
+            text: this.properties.strings && this.properties.strings.book_class  || 'Book Class',
             params: {
               booked_with: 'membership',
               membership_id: this.data.session.usable_membership.id
@@ -177,7 +177,7 @@ Page({
         this.setData({
           btnPattern: {
             action: 'bookClass',
-            text: 'Book Class',
+            text: this.properties.strings && this.properties.strings.book_class  || 'Book Class',
             params: {
               booked_with: 'class-pack',
               membership_id: this.data.session.usable_classpack.id

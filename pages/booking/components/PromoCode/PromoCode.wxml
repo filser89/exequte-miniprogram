@@ -6,6 +6,6 @@
   <view class="d-flex space-between " style='margin-top: 20px; margin-bottom: 20px'>
     <PromoCodeInput strings="{{strings}}" name="promoCode"></PromoCodeInput>
     <button form-type="submit" class='bg-white {{couponUsed ? "text-disabled" : "text-xq-grey"}}'
-      style='width: 150px; height: 38px'>Apply</button>
+      style='width: 150px; height: 38px'>{{strings.apply}}</button>
   </view>
 </form>

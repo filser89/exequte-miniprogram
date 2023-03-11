@@ -78,7 +78,8 @@ export default Behavior({
       } catch (e) {
         // console.error(e)
         wx.showToast({
-          title: 'Payment cancelled',
+          title: this.properties.strings && this.properties.strings.payment_cancelled 
+          || "Payment cancelled",
           icon: 'none'
         })
         deleteFailedPayment('memberships', membership.id)
@@ -168,7 +169,8 @@ export default Behavior({
       const result = await cancelBooking(this.data.itemId)
       console.log(result)
       wx.showToast({
-        title: result.msg,
+        title: this.properties.strings && this.properties.strings.booking_cancelled 
+        || "Booking cancelled",
         icon: 'none',
         duration: 2500
       })
@@ -183,7 +185,8 @@ export default Behavior({
         this.redirectToBookingConfirmation(booking)
       } catch (e) {
         wx.showToast({
-          title: 'Payment cancelled',
+          title: this.properties.strings && this.properties.strings.payment_cancelled 
+          || "Payment cancelled",
           icon: 'none'
         })
         deleteFailedPayment('bookings', booking.id)

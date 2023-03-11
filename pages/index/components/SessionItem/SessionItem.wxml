@@ -26,11 +26,11 @@
             {{session.from}}-{{session.to}}
           </view>
           <view class="text-size-sbody mb1">
-            <image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} min
+            <image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} {{strings.min}}
           </view>
           <view class="text-size-sbody mb1">
             <image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}}
-            kCals
+            {{strings.kcal}}
           </view>
         </view>
         <!-- details finished -->
@@ -40,7 +40,10 @@
           <ActionButtonSmall bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
             action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
             <view class="d-flex flex-column">
-              <view class="text-capitalize bold"> {{session.btn_pattern.text}}</view>
+              <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
+              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>
+              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'IN QUEUE'}}"> {{strings.in_queue}}</view>
+              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'QUEUE UP'}}"> {{strings.queue_up}}</view> 
               <view wx:if="{{!session.btn_pattern.disabled}}" class="text-size-sbody">
                 {{session.btn_pattern.disabled ? "" : ""}} </view>
             </view>
@@ -51,7 +54,7 @@
         <view wx:else>
           <view class="text-capitalize bold">
             <GetInfoButtonSmall profileFilled="{{user.profile_filled}}" itemId="{{session.id}}">
-              SIGN UP
+              {{strings.sign_up}}
             </GetInfoButtonSmall>
           </view>
         </view>

@@ -4,7 +4,7 @@
   <view class='block'>
     <image class='photo-style' src="{{user.avatar_url}}"></image>
   </view>
-  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.has_wx_info && user.profile_filled  ? user.first_name : 'Welcome to exeQute'}}
+  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.has_wx_info && user.profile_filled  ? user.first_name : strings.welcome}}
     {{user.has_wx_info && user.profile_filled ? user.last_name : ''}}</view>
 </view>
 
@@ -15,50 +15,50 @@
 </view> -->
 <GetInfoProfileButton>
    <view class="d-flex item-center">
-    <view>{{user.has_wx_info && user.profile_filled ? 'My Personal Information' : 'Sign Up'}}</view>
+    <view>{{user.has_wx_info && user.profile_filled ? strings.personal_info : strings.sign_up}}</view>
     <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
    </view>
   </GetInfoProfileButton>
 <!-- stats -->
 <view class='block' style='margin-top: 15px'>
   <view class=' red-box d-flex flex-column space-between'>
-    <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-theader"}}'> Classes</view>
+    <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-theader"}}'> {{strings.classes}}</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
         <view class='tc bold'>{{user.attended_classes}}</view>
         <view class='tc bold'>{{user.average_attendence}}</view>
       </view>
       <view class='text-grid tc'>
-        <view class='tc'>Since joining</view>
-        <view class='tc'>4 weeks av.</view>
+        <view class='tc'>{{strings.since_joining}}</view>
+        <view class='tc'>{{strings.average}}</view>
       </view>
     </view>
   </view>
   <view wx:if="{{user.has_body_data}}" class='red-box d-flex flex-column space-between'>
-    <view class='d-flex bold content-center pb'> Body Stats</view>
+    <view class='d-flex bold content-center pb'> {{strings.body_stats}}</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
-        <view class='bold'>{{user.current_weight}} kg</view>
+        <view class='bold'>{{user.current_weight}} {{strings.kg}}</view>
         <view class='tc bold'>{{user.current_body_fat}} %</view>
       </view>
       <view class='text-grid tc'>
-        <view class=''>Weight</view>
-        <view class=''>Fat</view>
+        <view class=''>{{strings.weight}}</view>
+        <view class=''>{{strings.fat}}</view>
       </view>
     </view>
   </view>
 </view>
 <!-- button my classes -->
 <view bindtap="navigateToMyClasses" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>My Classes </view>
+  <view style='margin-left: 20px;'>{{strings.my_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>My Classes as Instructor </view>
+  <view style='margin-left: 20px;'>{{strings.instructor_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <view wx:if="{{user.admin}}" bindtap="navigateToAdminClasses" class='my-classes-btn d-flex'>
-  <view style='margin-left: 20px;'>All Classes </view>
+  <view style='margin-left: 20px;'>{{strings.all_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <view bindtap="navigateToCustomerService" class='cs-btn d-flex'>
@@ -67,24 +67,24 @@
 </view>
 <!-- Vouchers -->
 <view wx:if="{{user.voucher_count}}" class='voucher-box '>
-  <view class='bold'> {{user.voucher_count}} Voucher Available!</view>
-  <view style='margin-top: 20px;'>Each voucher is equal to one class.</view>
+  <view class='bold'> {{user.voucher_count}} {{strings.voucher_available}}</view>
+  <view style='margin-top: 20px;'>{{strings.voucher_desc}}</view>
 </view>
 <view wx:else>
   <view class='no-voucher-box'>
-    <view class='bold'> Mind! Nutrition! Move! </view>
+    <view class='bold'> {{strings.slogan}} </view>
   </view>
 </view>
 <!-- membership -->
 <view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
   <view style="margin-top: 10px">{{item.name}}</view>
   <block wx:if="{{item.is_class_pack}}">
-    <view>{{item.vouchers}} classes left</view>
+    <view>{{item.vouchers}} {{strings.classes_left}}</view>
   </block>
   <block wx:if="{{!item.unlimited}}">
-    <view>{{item.bookings_per_day}} bookings per day</view>
+    <view>{{item.bookings_per_day}} {{strings.classes_left_today}}</view>
   </block>
-  <view class='valid'>Active until {{item.end_date}}</view>
+  <view class='valid'>{{strings.active_until}} {{item.end_date_locale}}</view>
 </view>
 <!-- nutrition -->
 <!-- <block wx:if="{{user.has_body_data}}">

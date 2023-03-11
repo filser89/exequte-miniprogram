@@ -12,12 +12,12 @@
       <!-- header ends -->
       <!-- duration -->
       <view class="text14">
-        <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.duration}} min
+        <image src='/images/time-white.png' class='icon-time-booking'> </image> {{session.duration}} {{strings.min}}
       </view>
       <!-- duration ends -->
       <!-- date time -->
       <view class="d-flex space-between text14">
-        <view>{{session.date}}</view>
+        <view>{{session.date_locale_short}}</view>
         <view>{{session.from}} - {{session.to}}</view>
       </view>
       <!-- date time ends -->
