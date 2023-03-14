@@ -7,7 +7,8 @@ Component({
   properties: {
     strings:Object,
     bookings: Array,
-    session:Object
+    session:Object,
+    isUserAdmin: Boolean
   },
 
   /**

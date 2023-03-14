@@ -1,6 +1,6 @@
 <!--pages/instructor-classes/components/SessionsList/SessionsList.wxml-->
 <view wx:for="{{sessions}}" wx:key="unique">
   <view>
-    <SessionCard strings="{{strings}}" session="{{item}}" selected="selected" />
+    <SessionCard isUserAdmin="{{isUserAdmin}}" strings="{{strings}}" session="{{item}}" selected="selected" />
   </view>
 </view>

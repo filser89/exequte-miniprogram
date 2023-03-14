@@ -33,13 +33,15 @@ Page({
     })
   },
   navigateToInstructorClasses(){
-    console.log('clicked instructor')
+    let isUserAdmin = false
+    if (this.data && this.data.user && this.data.user.admin)
+      isUserAdmin = true
+    console.log("is_user_admin" + isUserAdmin)
     wx.navigateTo({
-      url: `../../pages/instructor-classes/instructor-classes`
+      url: `../../pages/instructor-classes/instructor-classes?is_user_admin=` + isUserAdmin
     })
   },
   navigateToAdminClasses(){
-    console.log('clicked admin')
     wx.navigateTo({
       url: `../../pages/instructor-classes/instructor-classes?admin=true`
     })

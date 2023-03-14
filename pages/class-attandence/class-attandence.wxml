@@ -11,8 +11,8 @@
       <view>{{session.date_locale}}</view>
     </view>
   </view>
-  <AttendanceForm strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
-  <CancelForm strings="{{strings}}" session="{{session}}" />
+  <AttendanceForm isUserAdmin="{{isUserAdmin}}" strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
+  <CancelForm strings="{{strings}}" session="{{session}}" wx:if="{{isUserAdmin}}"/>
 
 
 </view>

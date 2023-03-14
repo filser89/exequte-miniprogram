@@ -27,9 +27,22 @@ Page({
     if (this.data.options && this.data.options.admin){
       console.log('admin, get all sessions')
       sessions = await getAdminSessions()
+      this.setData({
+        isUserAdmin: true
+      })
     } else {
       console.log('instructor, get instructor sessions')
       sessions = await getInstructorSessions()
+      this.setData({
+        isUserAdmin: false
+      })
+    }
+    if (this.data.options && this.data.options.is_user_admin == "true"){
+      console.log('>>is admin')
+      console.log(this.data.options.is_user_admin)
+      this.setData({
+        isUserAdmin: true
+      })
     }
     const strings = await getStrings(this.route.split('/')[2])
     this.setData({sessions, strings})

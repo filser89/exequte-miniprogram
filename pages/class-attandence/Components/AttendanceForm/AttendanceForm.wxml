@@ -1,6 +1,6 @@
 <!--pages/class-attandence/AttendanceForm/AttendanceForm.wxml-->
 <form bindsubmit="formSubmit">
-  <view class="capacity-container">
+  <view class="capacity-container" wx:if="{{isUserAdmin}}">
     <button class='decrease' bindtap="decreaseCapacity">-</button>
     <view class="capacity">{{bookings.length}}/{{capacity ? capacity : session.capacity}}</view>
     <button class='increase' bindtap="increaseCapacity">+</button>

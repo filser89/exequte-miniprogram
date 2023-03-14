@@ -22,7 +22,11 @@ onLoad(options) {
     const session = await getSessionAttendance(this.data.options.id)
     const strings = await getStrings(this.route.split('/')[2])
 
-    this.setData({session, strings})
+    let isUserAdmin = false
+    if (this.data && this.data.options && this.data.options.is_user_admin == "true"){
+      isUserAdmin = true 
+    }
+    this.setData({session, strings, isUserAdmin})
   },
 
   handleLanguageChanged(){

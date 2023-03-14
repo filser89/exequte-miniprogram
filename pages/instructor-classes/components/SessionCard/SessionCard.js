@@ -6,7 +6,8 @@ Component({
   properties: {
     strings: Object,
     session: Object,
-    selected: Number
+    selected: Number,
+    isUserAdmin: Boolean
   },
 
   /**
@@ -21,8 +22,11 @@ Component({
    */
   methods: {
     navigateToClassAttendance(){
+      let isUserAdmin = false
+      if (this.data && this.data.isUserAdmin)
+        isUserAdmin = true
       wx.navigateTo({
-        url: `/pages/class-attandence/class-attandence?id=${this.data.session.id}`
+        url: `/pages/class-attandence/class-attandence?id=${this.data.session.id}&is_user_admin=${isUserAdmin}`
       })
     }
   },

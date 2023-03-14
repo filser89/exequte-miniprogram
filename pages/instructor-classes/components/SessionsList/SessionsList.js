@@ -10,7 +10,8 @@ Component({
   properties: {
     strings: Object,
     sessions: Array,
-    selected: Number
+    selected: Number,
+    isUserAdmin: Boolean
   },
 
   computed: {
