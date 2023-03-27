@@ -1,7 +1,8 @@
 // pages/booking/booking.js
 import {
   getSession,
-  getMembershipTypes,
+  // getMembershipTypes,
+  getMembershipTypesBySession,
   getStrings
 } from '../../utils/requests/index.js'
 const app = getApp()
@@ -35,7 +36,8 @@ Page({
   async onShow(){
     const sessionId = this.data.options.sessionId
     const session = await getSession(sessionId)
-    const membershipTypes = await getMembershipTypes()
+    //const membershipTypes = await getMembershipTypes()
+    const membershipTypes = await getMembershipTypesBySession(sessionId)
     const selected = this.setSelected(session.access_options)
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date

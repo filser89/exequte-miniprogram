@@ -25,6 +25,7 @@ import {
 
 import {
   getMembershipTypes,
+  getMembershipTypesBySession,
   buyMembership
 } from './memberships.js'
 
@@ -100,6 +101,7 @@ module.exports = {
   uploadUserAvatar,
   processUserInfo,
   getMembershipTypes,
+  getMembershipTypesBySession,
   buyMembership,
   addUserToQueue,
   getInstructorSessions,

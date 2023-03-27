@@ -8,6 +8,14 @@ const getMembershipTypes = () => {
   return request(options)
 }
 
+const getMembershipTypesBySession = (sessionId) => {
+  const options = {
+    method: 'get',
+    url: `/membership_types?session_id=${sessionId}`,
+  }
+  return request(options)
+}
+
 const buyMembership = (membershipTypeId, params) => {
   const options = {
     method: 'post',
@@ -21,5 +29,6 @@ const buyMembership = (membershipTypeId, params) => {
 
 module.exports = {
   getMembershipTypes,
+  getMembershipTypesBySession,
   buyMembership
 }
