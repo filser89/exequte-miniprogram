@@ -1,5 +1,11 @@
 // pages/booking-confirmation/booking-confirmation.js
 import {getBooking, getStrings} from '../../utils/requests/index.js'
+import {
+  promisifyAll
+} from 'miniprogram-api-promise'
+const wxp = {}
+promisifyAll(wx, wxp)
+
 Page({
 
   /**
@@ -16,13 +22,27 @@ Page({
   onLoad(options){
     this.setData({options})
   },
+  async showFollowAccountModal() {
+    let modalTitle = this.strings && this.strings.follow_account || "Follow the official account to receive class notifications for bookings!"
+    let res = await wxp.showModal({
+      title: modalTitle,
+      confirmText: this.properties.strings && this.properties.strings.ok 
+      || "Ok",
+      cancelText: this.properties.strings && this.properties.strings.close 
+      || "Close"
+    })
+    if (res.confirm) {
+      //    
+    } else {
+    }
+  },
   async onShow() {
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const booking = await getBooking(this.data.options.bookingId)
     const strings = await getStrings(this.route.split('/')[2])
-
     this.setData({booking, strings})
+    this.showFollowAccountModal()
   },
   handleLanguageChanged(){
     this.onShow()

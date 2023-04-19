@@ -12,7 +12,7 @@ page {
   color: black; 
   justify-content: center;
   font-weight: bold;
-  height: 80px;
+  height: auto;
   width: 250px;
   padding: 25px;
   border-radius: 15px;
@@ -23,4 +23,10 @@ page {
   margin-top: 20px;
   margin-bottom: 20px;
 
+}
+
+.center {
+  height: 200rpx;
+  justify-content: center;
+  align-items: center;
 }
