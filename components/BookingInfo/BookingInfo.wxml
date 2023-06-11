@@ -29,6 +29,6 @@
 </view>
 <view class="block" style='margin-top: 10px'>
   <!-- <image src='/images/information.png' class='icon-time' style="margin-right: 5px;  margin-left: 5px; width: 5%"> </image> -->
-  <text style='width: 100%; '>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}</text>
+  <text style='width: 100%; font-size: 25px;'>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}</text>
 </view>
 </view>

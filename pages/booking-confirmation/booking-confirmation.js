@@ -23,7 +23,14 @@ Page({
     this.setData({options})
   },
   async showFollowAccountModal() {
-    let modalTitle = this.strings && this.strings.follow_account || "Follow the official account to receive class notifications for bookings!"
+    let modalTitle = this.strings && this.strings.follow_account || "Please remember that this class can be cancelled for free ONLY PLACEHOLDER hours in advance. Later cancellations will incur in one day penalty/no refund.Follow the official account to receive class notifications for bookings!"
+  try {
+      let cancelBefore = 6
+      if (this.data && this.data.booking && this.data.booking.session && this.data.booking.session.cancel_before){
+        cancelBefore = this.data.booking.session.cancel_before
+      }
+      modalTitle = modalTitle.replace("PLACEHOLDER", cancelBefore)
+    } catch (e){}
     let res = await wxp.showModal({
       title: modalTitle,
       confirmText: this.properties.strings && this.properties.strings.ok 
