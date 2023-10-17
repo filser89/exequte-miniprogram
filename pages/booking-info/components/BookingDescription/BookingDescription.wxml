@@ -43,5 +43,15 @@
     <view class="text-size-sbody ml"> {{strings.date}}{{session.date_locale}}</view>
   </view>
 
+  <view wx:if="{{session.photos_urls && session.photos_urls.length}}" class="coach-card text-white tl">
+    <view wx:for="{{session.photos_urls}}" wx:for-item="photo" wx:for-index="i" wx:key="unique"  >
+      <image show-menu-by-longpress="true"src="{{photo}}"></image>
+    </view>
+  </view>
+  <view wx:if="{{session.videos_urls && session.videos_urls.length}}" class="coach-card text-white tl">
+    <view wx:for="{{session.videos_urls}}" wx:for-item="video" wx:for-index="i" wx:key="unique"  >
+      <video src="{{video}}"></video>
+    </view>
+  </view>
 
 </view>
