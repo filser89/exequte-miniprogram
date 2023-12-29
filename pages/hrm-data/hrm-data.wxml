@@ -1,0 +1,63 @@
+<!--pages/hrm-data/hrm-data.wxml-->
+<view wx:if="{{ booking.hrm }}" class="{{studio}}">
+  <view class="coach-card tl text-white top-card {{studio}}-card">
+      <view class="d-flex content-center item-center" >
+        <view bindtap="refreshHrmData" class="btn-card {{studio}}-card-active" >{{ strings.refresh_hrm || "SHOW" }}</view> 
+        <image style="width: 60px; height: 60px;"
+          src="/images/hrm-white.svg"></image>
+        <view class="btn-card {{studio}}-card-active" >{{ booking.hrm.display_name }}</view> 
+      </view>
+      <view class="hrm-note text-size-sbody">{{strings.hrm_checkin}}</view>
+    </view>
+    <view wx:if="{{ hrmCombinedGraph.imageUrl}}" class="flex-box">
+    <view bindtap="refreshHrmDataForce" class="btn-refresh" >{{ "⟳" }}</view> 
+    </view>
+    <view wx:if="{{ hrmCombinedGraph.imageUrl }}" class="hrm-pic-container">
+      <image catchtap='preview_img' class="hrm-pic" mode="aspectFit" show-menu-by-longpress="true" src="{{hrmCombinedGraph.imageUrl }}"/>
+    </view>
+
+
+    <view wx:if="{{ hrmData.avg_hr }}" class="hrm-data-container {{studio}}-card">
+      <view class="block">
+        <text class="title-gray">{{strings.avg_hr || "AVG BPM"}}</text>
+        <text class="value-white">{{hrmData.avg_hr}}</text>
+      </view>
+      <view class="divider"></view>
+      <view class="block">
+        <text class="title-gray">{{strings.max_hr || "MAX BPM"}}</text>
+        <text class="value-white">{{hrmData.max_hr}}</text>
+      </view>
+      <view class="divider"></view>
+      <view class="block no-divider">
+        <text class="title-gray">{{strings.calories || "CALORIES"}}</text>
+        <text class="value-white">{{hrmData.calories_burned}} cal</text>
+      </view>
+    </view>
+    <view wx:if="{{ hrmData.avg_hr }}" class="ranking-container">
+      <view class="trophy-wrapper">
+      <view class="ranking-text">{{hrmData.ranking || 1}}</view>
+      <image class="trophy-img {{studio}}-trophy" src="/images/trophy.svg"></image>
+      <view class="bottom-caption">{{strings.ranking || "RANKING"}}</view>
+      </view>
+    </view>
+    <view wx:if="{{ hrmData.avg_hr }}" class="full-ranking-container">
+      <view wx:for="{{ranking}}" wx:key="item" class="rank_block">
+        <view class="rank-item">
+          <!--头像-->
+          <view class="rank-img">
+            <image src="{{item.avatarUrl}}"></image>
+          </view>
+          <!--展示昵称,以及贡献值-->
+          <block>
+            <view class="rank-name">{{item.name}}</view>
+            <view class="rank-price">Calories：{{item.calories}} cal</view>
+          </block>
+          <!--排名-->
+          <view class="rank-uv">
+            <text wx:if="{{item.rank>3}}">第 {{item.rank}} 名</text>
+            <image src="/images/rank{{item.rank}}.png" wx:if="{{item.rank<=3}}" />
+          </view>
+          </view>
+        </view>
+    </view>
+  </view>

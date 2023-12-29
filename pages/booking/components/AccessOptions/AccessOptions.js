@@ -9,7 +9,8 @@ Component({
     membershipTypes: Array,
     membership: Object,
     classpack: Object,
-    selected: String
+    selected: String,
+    studio: String
   },
 
   /**

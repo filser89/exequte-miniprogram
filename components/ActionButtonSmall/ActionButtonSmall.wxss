@@ -2,7 +2,7 @@
 /* @import "../../app.wxss"; */
 
 /* .class-info-book-button {
-  background-color: #5C0C17; 
+  background-color: #97daf540; 
   padding: 12px; 
   text-align: center;
   position: center;
@@ -13,10 +13,17 @@
   border-radius: 10px;
 } */
 
+.glam-action-btn.action-btn{
+  background-color: #af6e4840 !important;
+}
+.reshape-action-btn.action-btn{
+  background-color: #97daf540 !important;
+}
+
 .action-btn{
   width:115px;
   height: 50px;
-  background-color: #5C0C17;
+  background-color: #97daf540;
   text-align: center;
   position: center;
   color: white;

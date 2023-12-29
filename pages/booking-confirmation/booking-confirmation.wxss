@@ -2,14 +2,17 @@
 
 @import "/app.wxss";
 
+.glam-square.square {
+  background-color: #21212191 !important;
+}
 
-page {
-  background-color: black;
-}  
-.white-square {
-  background-color: white;
+.reshape-square.square {
+  background-color: #97daf540 !important;
+}
+
+.square {
   display: block;
-  color: black; 
+  color: whitesmoke; 
   justify-content: center;
   font-weight: bold;
   height: auto;

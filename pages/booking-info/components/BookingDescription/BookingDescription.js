@@ -6,7 +6,9 @@ Component({
   properties: {
     strings: Object,
     session: Object,
-    instructor: Object
+    booking: Object,
+    instructor: Object,
+    studio: String
   },
 
   /**
@@ -20,6 +22,14 @@ Component({
    * Component methods
    */
   methods: {
+
+    navigateToHrmData({currentTarget}){
+      const {bookingId,hrmId} = currentTarget.dataset
+      console.log('clicked hrm-view')
+      wx.navigateTo({
+        url: `../../pages/hrm-data/hrm-data?&bookingId=${bookingId}&hrmId=${hrmId}`
+      })
+    }
 
   }
 })

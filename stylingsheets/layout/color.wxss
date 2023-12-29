@@ -8,7 +8,7 @@
 }
 
 .text-red {
-  color: #5C0C17;
+  color: #97daf540;
 }
 
 
@@ -61,7 +61,7 @@
   background-color: white;
 }
 .bg-xq-red {
-  background-color: #5C0C17;
+  background-color: #97daf540;
 }
 
 .bg-xq-green {
@@ -101,7 +101,7 @@
 }
 
 .bg-red {
-  background-color: #5C0C17;
+  background-color: #97daf540;
 }
 
 .bg-purple {
@@ -187,4 +187,12 @@
 
 .border-green {
   border-color: #00CEA4;
+}
+
+.glam-orange-active {
+  color: #af6e48;
+}
+
+.reshape-blu-active {
+  color: #97daf5;
 }

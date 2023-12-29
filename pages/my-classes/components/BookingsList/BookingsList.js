@@ -1,4 +1,5 @@
 // pages/my-classes/components/BookingCard/BookingsList/BookingsList.js
+const app = getApp()
 
 Component({
   /**
@@ -7,14 +8,10 @@ Component({
   properties: {
     strings: Object,
     bookings: Array,
-    selected: Number
+    selected: Number,
+    studio: String
   },
 
-  /**
-   * Component initial data
-   */
-  data: {
-  },
 
   /**
    * Component methods

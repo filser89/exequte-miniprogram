@@ -1,2 +1,24 @@
 /* pages/booking-info/components/BookingDescription/BookingDescription.wxss */
 @import "/app.wxss";
+
+.booking-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -40rpx;
+}
+
+.booking-description {
+  padding-top: 30rpx;
+}
+
+.instructor-container {
+  display: flex;
+  align-items: center;
+}
+.instructor-img {
+
+}
+.instructor-name {
+
+}

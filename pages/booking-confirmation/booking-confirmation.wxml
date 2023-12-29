@@ -1,16 +1,27 @@
 <!--pages/booking-confirmation/booking-confirmation.wxml-->
-<Topbar2 bindlanguagechanged="handleLanguageChanged"/>
-<BookingInfo strings="{{strings}}" session="{{booking.session}}" />
-<view class='white-square db'>
+<view class="{{studio}}">
+<Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
+<BookingInfo studio="{{studio}}"strings="{{strings}}" session="{{booking.session}}" />
+<view class='{{studio}}-square square db'>
+  <view class='bold text-black tc'>
+    <view class="d-flex content-center item-center" >
+        <image style="width: 100px; height: 100px;"
+          src="/images/hrm-red.svg"></image>
+        <view class="btn-card" >{{ booking.hrm.display_name }}</view> 
+      </view>
+  </view>
+</view>
+<view class='{{studio}}-square square db'>
   <view class='bold text-black tc'>
   <image class="center" show-menu-by-longpress="true" src="../../images/xQ_online_QR.png" mode="heightFix"></image></view>
   <view class="bold text-black tc">{{strings.scan || "Press and hold to follow the account"}}</view>
 </view>
-<view class='white-square db'>
+<view class='{{studio}}-square square db'>
   <view class='bold text-black tc'>{{strings.class_booked}}</view>
   <view class='bold text-black tc' style='margin-top: 20px'>{{strings.come_in_advance}}</view>
 </view>
 
-<ActionButton strings="{{strings}}" action="reLaunchToMyClasses">
+<ActionButton studio="{{studio}}" strings="{{strings}}" action="reLaunchToMyClasses">
   {{strings.go_to_my_classes}}
 </ActionButton>
+</view>

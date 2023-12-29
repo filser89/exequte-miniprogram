@@ -8,6 +8,7 @@ import {
   getCurrentUser,
   getDates
 } from '../../utils/requests/index';
+import { updateBarColors } from '../../utils/util'
 const app = getApp()
 
 Page({
@@ -18,10 +19,13 @@ Page({
     dates: [],
     userInfo: {},
     hasUserInfo: false,
-    canIUse: false
+    canIUse: false,
+    showSplash: true
   },
 
   async onShow() {
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
     wx.setStorageSync('selectedTab', 1)
     console.log('index page', wx.getStorageSync('selectedTab'))
 
@@ -101,7 +105,10 @@ Promise.all([strings, user, banner, rawDates]).then((values) => {
     this.setData({lang: app.globalData.headers['X-API-Lang']})
     console.log(this.data.lang)
   },
-
+  handleStudioChanged(){
+    this.onShow()
+    this.setData({studio: app.globalData.studio})
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -143,6 +150,10 @@ Promise.all([strings, user, banner, rawDates]).then((values) => {
    */
   onShareAppMessage: function () {
 
+  },
+
+  onLoad: function(){
+    
   }
 
 

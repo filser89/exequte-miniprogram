@@ -1,6 +1,22 @@
 /* pages/booking/components/AccessOptions/AccessOptions.wxss */
 @import "/app.wxss";
 
+.glam-btn.button-option{
+  background-color: #2121213d !important;
+  color: whitesmoke;
+}
+.reshape-btn.button-option{
+  background-color: #d9d9de12 !important; 
+  color: whitesmoke;
+}
+.glam-btn.button-option-active{
+  background-color: #af6e48 !important;
+  color: whitesmoke;
+}
+.reshape-btn.button-option-active{
+  background-color: #97daf5b3 !important;
+  color: whitesmoke;
+}
 .button-option {
   background-color: #D8D8D8;
   color: #000000;
@@ -15,7 +31,7 @@
 }
 
 .button-option-active {
-  background-color: #5C0C17;
+  background-color: #97daf540;
   color: white;
   border: 2px solid white;
   display: grid;

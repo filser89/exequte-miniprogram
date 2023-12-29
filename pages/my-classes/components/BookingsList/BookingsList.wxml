@@ -3,7 +3,7 @@
 
   <!-- <BookingCard booking="{{item}}" selected="tab" /> -->
   <view>
-    <view bindtap="navigateToBookingInfo" class="class-card" data-booking-id="{{booking.id}}"
+    <view bindtap="navigateToBookingInfo" class="class-card {{studio}}-card-light" data-booking-id="{{booking.id}}"
       data-instructor-id="{{booking.session.instructor_id}}">
       <!-- card -->
       <view class="bold d-flex space-between pa">
@@ -19,6 +19,9 @@
           <view class="text14">
             <image src='/images/time-white.png' class='icon-time-booking'> </image> {{booking.session.duration}} {{strings.min}}
           </view>
+          <view wx:if="{{ booking.hrm}}" class="d-flex">
+            <image src='/images/hrm-white.svg' class='icon-hrm-booking'> </image> <view class="text14">HRM #{{booking.hrm.display_name}}</view>
+          </view>
           <!-- duration ends -->
           <!-- date time -->
           <view class="d-flex space-between text14">
@@ -33,7 +36,7 @@
         <!-- image ends -->
       </view>
       <!-- card ends -->
-      <view wx:if="{{selected == 1}}" class="status {{booking.attended ? 'green-status' : 'red-status'}}">
+      <view wx:if="{{selected == 1}}" class="{{studio + '-status'}} status {{booking.attended ? 'green-status' : 'blue-status'}}">
         {{booking.status_locale}}
       </view>
     </view>

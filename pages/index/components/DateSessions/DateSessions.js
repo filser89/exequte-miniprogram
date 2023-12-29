@@ -10,7 +10,8 @@ Component({
   properties: {
     strings: Object,
     date: String,
-    lang: String
+    lang: String,
+    studio: String
   },
 
   /**
@@ -20,9 +21,20 @@ Component({
 
   },
   watch: {
-    async'date, lang'(date){
+    async'date, lang, studio'(date){
     // console.log("COMPUTED SESSIONS")
      let sessions  = await getSessionsByDate(date)
+     try {
+      let currentStudio = getApp().globalData.studio
+      if (!currentStudio || currentStudio  == ""){
+        console.log("current studio null, setting it to reshape");
+        currentStudio = "reshape";
+      }
+      console.log("current studio for filter:" + currentStudio);
+      sessions = sessions.filter(session => session.location === currentStudio);
+      console.log('filtered sessions:');
+      console.log(sessions);
+     } catch(e){console.log(e)}
      this.setData({sessions})
     }
   },

@@ -2,11 +2,6 @@
 
 @import "/app.wxss";
 
-
-/* page {
-  background-color: black;
-} */
-
 .bottom {
   font-size: 18px;
   /* position: fixed; */

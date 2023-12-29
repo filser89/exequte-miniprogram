@@ -1,6 +1,6 @@
 <!--pages/instructor-classes/instructor-classes.wxml-->
 
-<Topbar bindlanguagechanged="handleLanguageChanged" />
+<Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
 
 <view class=" text-white" style='margin-top: 70px'>
   <view class='btn-tabs bold '>

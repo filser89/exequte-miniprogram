@@ -1,24 +1,26 @@
 <!--pages/my-classes/my-classes.wxml-->
-<Topbar bindlanguagechanged="handleLanguageChanged" />
+<view class="{{studio}}">
+<Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
 
-<view class=" text-white" style='margin-top: 70px'>
+<view class="page-background text-white" style='margin-top: 70px'>
   <view class='btn-tabs bold '>
     <view bindtap="switchTab" data-selected="0"
-      class='{{selected == 0 ? "button-my-classes-active" : "button-my-classes"}}'>{{strings.upcoming || "Upcoming"}}</view>
+      class='{{selected == 0 ? "button-my-classes-active " + studio + "-card-active" : "button-my-classes " + studio + "-card-inactive" }}'>{{strings.upcoming || "Upcoming"}}</view>
     <view bindtap="switchTab" data-selected="1"
-      class='{{selected == 1 ? "button-my-classes-active" : "button-my-classes"}}'>{{strings.history || "History"}}</view>
+      class='{{selected == 1 ? "button-my-classes-active " + studio + "-card-active" : "button-my-classes " + studio + "-card-inactive" }}'>{{strings.history || "History"}}</view>
   </view>
   <view wx:if="{{bookings[selected].length}}">
     <!-- <BookingsList selected="0" bookings="{{bookings[0]}}" wx:if="{{selected == 0}}"/> -->
     <!-- <BookingsList selected="1" bookings="{{bookings[1]}}" wx:if="{{selected == 1}}" /> -->
     <block wx:for="{{bookings}}" wx:key="unique">
-      <BookingsList strings="{{strings}}" selected="{{index}}" bookings="{{bookings[index]}}" wx:if="{{selected == index}}" />
+      <BookingsList studio="{{studio}}" strings="{{strings}}" selected="{{index}}" bookings="{{bookings[index]}}" wx:if="{{selected == index}}" />
     </block>
   </view>
   <view wx:else class="no-classes">
     <view class="tc">{{strings.no_classes || "What are you waiting for..."}}</view>
-    <BookNowButton action="reLaunchToIndexPage">
+    <BookNowButton studio="{{studio}}" action="reLaunchToIndexPage">
       {{strings.book_now || "BOOK NOW"}}  
     </BookNowButton>
   </view>
+</view>
 </view>

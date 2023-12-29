@@ -56,6 +56,9 @@ Page({
   
   handleLanguageChanged(){
     this.onShow()
+  },
+  handleStudioChanged(){
+    this.onShow()
   }
 
 })

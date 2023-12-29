@@ -19,6 +19,9 @@ Page({
   handleLanguageChanged(){
     this.onShow()
   },
+  handleStudioChanged(){
+    this.onShow()
+  },
   navigateBack(){
     wx.navigateBack({
       delta: 0

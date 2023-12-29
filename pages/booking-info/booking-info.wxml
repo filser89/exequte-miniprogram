@@ -1,10 +1,12 @@
 <!--pages/booking-info/booking-info.wxml-->
-<Topbar bindlanguagechanged="handleLanguageChanged" />
+<view class="{{studio}}">
+<Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
 
-<BookingDescription strings="{{strings}}" session="{{booking.session}}" instructor="{{instructor}}" />
+<BookingDescription studio="{{studio}}" booking="{{booking}}" strings="{{strings}}" session="{{booking.session}}" instructor="{{instructor}}" />
 <!-- <view wx:if="{{booking.can_cancel}}"> -->
-  <CancelButton strings="{{strings}}" itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}" isLateCancel="{{isLateCancel}}" enforceCancellationPolicy="{{enforceCancellationPolicy}}">
+  <CancelButton studio="{{studio}}" strings="{{strings}}" itemId="{{booking.id}}" action="{{booking.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!booking.can_cancel}}" isLateCancel="{{isLateCancel}}" enforceCancellationPolicy="{{enforceCancellationPolicy}}">
     {{booking.can_cancel ? strings.cancel_class : booking.status_locale}}
   </CancelButton>
 <!-- </view> -->
 <!-- <TabBar /> -->
+</view>

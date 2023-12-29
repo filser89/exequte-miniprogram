@@ -1,0 +1,7 @@
+<!--pages/splash/splash.wxml-->
+<view>
+  <view class="reshape-btn" bindtap="handleReshape"></view>
+  <view class="glam-btn" bindtap="handleGlam"></view>
+  <view class="pt-btn" bindtap="handlePt"></view>
+  <image src="/images/splash-bg.jpeg" class="background-image" />
+</view>

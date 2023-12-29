@@ -13,7 +13,7 @@
   height: 30px;
   background-color: #D8D8D8;
   text-align: center;
-  color: #5C0C17;
+  color: #97daf540;
   font-weight: bold;
   font-size: 20px;
   display: flex;
@@ -24,6 +24,15 @@
   border-radius: 15px;
 }
 
+.reshape-card {
+  background-color: #97daf5b3 !important;
+  color: whitesmoke;
+}
+
+.glam-card {
+  background-color: #af6e48b3 !important;
+  color: whitesmoke;
+}
 
 .btn-container {
   display: flex;

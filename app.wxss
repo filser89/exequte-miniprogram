@@ -5,10 +5,7 @@
 @import 'fa.wxss';
 
 page {
-  font-family: Nunito, Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  height: 100%;
-  background-color: black;
 }
 .container {
   height: 100%;

@@ -1,19 +1,19 @@
 <!--pages/class-info/class-info.wxml-->
-  <Topbar bindlanguagechanged="handleLanguageChanged" />
+  <Topbar disableStudioChange="true" bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
 <ClassDescription strings="{{strings}}" session="{{session}}" instructor="{{instructor}}" bindchangeddate="handleChangedDate">
 <Topbar />
 </ClassDescription>
 <view style="height: 20px; background-color: black"></view>
 
 
-<view wx:if="{{user.has_wx_info && user.profile_filled}}">
+<view wx:if="{{user.profile_filled}}">
   <view wx:if="{{session.btn_pattern.booking}}">
     <ActionButton strings="{{strings}}" itemId="{{session.btn_pattern.booking.id}}" action="{{session.btn_pattern.can_cancel ? 'cancelBooking' : false}}" bindclasscancelled="handleClassCancelled" btnDisabled="{{!session.btn_pattern.can_cancel}}" isLateCancel="{{isLateCancel}}" enforceCancellationPolicy="{{enforceCancellationPolicy}}"  waiverSigned="{{user.waiver_signed}}">
     {{session.btn_pattern.can_cancel ? strings.cancel_class : session.btn_pattern.booking.status_locale}}
     </ActionButton>
   </view>
   <view wx:else>
-    <ActionButton bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}" 
+    <ActionButton studio="{{studio}}" bindqueuedup="handleQueuedUp" itemId="{{session.id}}" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" action="{{session.btn_pattern.action}}" 
     btnDisabled="{{session.btn_pattern.disabled}}">
     <!-- {{session.btn_pattern.text}} {{session.btn_pattern.disabled ? "" : session.price}} -->
     <view wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>

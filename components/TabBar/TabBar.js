@@ -3,7 +3,7 @@ Component({
   data: {
     selected: 1,
     color: "#FFFFFF",
-    selectedColor: "#5C0C17",
+    selectedColor: "#97daf540",
     list: [{
       pagePath: "../../pages/about/about",
       iconPath: "../../images/XQ1.svg",

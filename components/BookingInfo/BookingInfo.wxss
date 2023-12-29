@@ -47,3 +47,20 @@ input {
   width: 15px;
   margin-right: 5px;
 }
+
+.glam-title {
+  /* color: #af6e48; */
+  color: #fdccb0;
+}
+
+.reshape-title {
+  color: #97daf5;
+}
+
+.glam-card-booking{
+  background-color: #21212166 !important;
+}
+
+.reshape-card-booking{
+  background-color: #d9d9de12 !important; 
+}

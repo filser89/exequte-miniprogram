@@ -1,7 +1,7 @@
 <!--pages/my-classes/components/BookNowButton/BookNowButton.wxml-->
 <view class="text-capitalize text-white btn-container">
 
-  <view class="action-btn" data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction">
+  <view class="action-btn {{studio}}-card-active" data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction">
     <slot />
   </view>
 </view>

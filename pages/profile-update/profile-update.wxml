@@ -1,5 +1,5 @@
 <!--pages/profile-update/profile-update.wxml-->
-<Topbar2 bindlanguagechanged="handleLanguageChanged" />
+<Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
 <view class="white tc bold"
   style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white;"> 
   <wux-accordion-group isOpen="{{!isWaiverSigned}}" class="consent-form">
@@ -40,7 +40,7 @@
     <view style="margin-left: 10px; font-size: 14px; display: block;">{{strings.save1}} <navigator
         style="display: inline; text-decoration: underline;"
         url="../../pages/terms-and-conditions/terms-and-conditions">{{strings.save2}}</navigator> {{strings.save3}}</view>
-    <button style="background-color: #5C0C17; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white"
+    <button style="background-color: #97daf540; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white"
       form-type="submit">{{strings.save}}</button>
   </form>
 </view>

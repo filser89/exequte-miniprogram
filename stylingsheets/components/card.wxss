@@ -10,7 +10,7 @@
   padding: 10px;
 }
 
-.coach-card {
+.hrm-card, .coach-card, .hrm-card {
   /* width: 90%; */
   height: 100%;
   margin: 20px;
@@ -48,7 +48,7 @@
 
 .status {
   position: absolute;
-  bottom: 5px;
+  /* bottom: 5px; */
   text-align: center;
   color: white;
   padding: 5px;
@@ -72,4 +72,39 @@
   background-position:center;
   margin-bottom: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.btn-card {
+  padding: 10px;
+  width: 20%;
+  border-radius: 10px;
+  height: 50px;
+  background-color: #97daf540;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* custom statuses */
+
+.reshape-status.status.blue-status {
+  background-color: #97daf540;
+}
+
+.reshape-status.status.green-status {
+  background-color: #97daf540;
+}
+
+.glam-status.status.blue-status {
+  background-color: #af704c94;
+}
+
+.glam-status.status.green-status {
+  background-color: #af704c94;
 }

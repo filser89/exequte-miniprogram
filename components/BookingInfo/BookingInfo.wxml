@@ -1,28 +1,28 @@
 <!--pages/booking/components/BookingInfo/BookingInfo.wxml-->
-<view class='card-booking'>
+<view class='card-booking {{studio}}-card-booking'>
   <!-- <image src="{{session.image_url}}"></image> -->
 
 <view class='block' >
   <view class='db bold space-around' style="display: flex; flex-direction: column">
-    <view class='text-size-theader' >{{session.name}}</view>
+    <view class='text-size-theader {{studio}}-title' >{{session.name}}</view>
     <view wx:if="{{session.subtitle}}" class='text-size-stheader' >{{session.subtitle}}</view>
     <view class="db">
       <image src='/images/time-white.png' class='icon-time-booking'> </image><text style="font-size: 16px;">  {{session.duration}} {{strings.min}}</text>
     </view>
   </view>
-  <image class="card-image-booking " src="/images/banner.png"></image>
+  <image class="card-image-booking " src="{{session.image_url}}"></image>
 
 </view>
 <view class="block" style='margin-top: 15px'>
-  <text style='width: 60%; color: #9B9B9B;'>{{strings.date}}</text>
-  <text style='width: 30%; color: #9B9B9B;'>{{strings.time}}</text>
+  <text class="{{studio}}-title" style='width: 60%;'>{{strings.date}}</text>
+  <text class="{{studio}}-title" style='width: 30%'>{{strings.time}}</text>
 </view>
 <view class="block" style='margin-top: 15px'>
   <text style='width: 60%; '>{{session.date_locale}} </text>
   <text style='width: 30%; '>{{session.from}} -  {{session.to}}</text>
 </view>
 <view class="block" style='margin-top: 15px'>
-  <text style='width: 60%; color: #9B9B9B;'>{{strings.address}}</text>
+  <text class="{{studio}}-title" style='width: 60%;'>{{strings.address}}</text>
 </view>
 <view class="block" style='margin-top: 15px'>
   <text style='width: 100%; '>{{strings.xq_address}}</text>

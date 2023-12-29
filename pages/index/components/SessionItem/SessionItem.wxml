@@ -1,5 +1,5 @@
 <!--pages/index/components/SessionItem/SessionItem.wxml-->
-<view class="card tl">
+<view class="card tl {{studio}}-card-light">
   <view class="d-flex" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
     bindtap="navigateToClassInfo">
     <!-- left sede of the card -->
@@ -7,7 +7,7 @@
       <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px;">
         <image class="card-image" src="{{session.image_url}}" />
       </view>
-      <!-- <view class=" status text-white " style="background-color: #5C0C17" >FULL</view> -->
+      <!-- <view class=" status text-white " style="background-color: #97daf540" >FULL</view> -->
     </view>
     <!-- left side finished -->
     <!-- right side of the card -->
@@ -36,8 +36,8 @@
         <!-- details finished -->
         <!-- button -->
        <view style="height: 100%;">
-        <view wx:if="{{user.has_wx_info && user.profile_filled}}">
-          <ActionButtonSmall bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
+        <view wx:if="{{user.profile_filled}}">
+          <ActionButtonSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
             action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
             <view class="d-flex flex-column">
               <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
@@ -53,7 +53,7 @@
 
         <view wx:else>
           <view class="text-capitalize bold">
-            <GetInfoButtonSmall profileFilled="{{user.profile_filled}}" itemId="{{session.id}}">
+            <GetInfoButtonSmall studio="{{studio}}" profileFilled="{{user.profile_filled}}" itemId="{{session.id}}">
               {{strings.sign_up}}
             </GetInfoButtonSmall>
           </view>

@@ -1,11 +1,17 @@
 <!--pages/profile/profile.wxml-->
-<Topbar bindlanguagechanged="handleLanguageChanged" />
+<view class="{{studio}}">
+<Topbar3 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
+<view class="privacy-popup" wx:if="{{showPrivacy}}">
+  <view>{{ string.privacy || "We need your permission to send you notifications for important class updates. Please click Agree to not miss any beat!" }} </view>
+  <view class="privacy-btns"><button class="{{studio}}-card-active" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">{{ strings.agree || "Agree" }}</button>
+  <button class="{{studio}}-card-inactive" id="close-btn" bind:tap="closePrivacyPopup">{{ strings.close || "Close" }}</button></view>  
+</view>
 <view class='block avatar' style='flex-direction: column'>
   <view class='block'>
     <image class='photo-style' src="{{user.avatar_url}}"></image>
   </view>
-  <view class='bold block' style="font-size: 20px; margin-top: 10px; color: white">{{user.has_wx_info && user.profile_filled  ? user.first_name : strings.welcome}}
-    {{user.has_wx_info && user.profile_filled ? user.last_name : ''}}</view>
+  <view class='bold block' style="font-size: 20px; margin-top: 10px;">{{user.profile_filled  ? user.first_name : strings.welcome}}
+    {{user.profile_filled ? user.last_name : ''}}</view>
 </view>
 
 <!-- button my personal information -->
@@ -15,13 +21,13 @@
 </view> -->
 <GetInfoProfileButton>
    <view class="d-flex item-center">
-    <view>{{user.has_wx_info && user.profile_filled ? strings.personal_info : strings.sign_up}}</view>
+    <view>{{user.profile_filled ? strings.personal_info : strings.sign_up}}</view>
     <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
    </view>
   </GetInfoProfileButton>
 <!-- stats -->
 <view class='block' style='margin-top: 15px'>
-  <view class=' red-box d-flex flex-column space-between'>
+  <view class=' blu-box d-flex flex-column space-between {{studio + "-card"}}'>
     <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-theader"}}'> {{strings.classes}}</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
@@ -34,7 +40,7 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{user.has_body_data}}" class='red-box d-flex flex-column space-between'>
+  <view wx:if="{{user.has_body_data}}" class='red-box d-flex flex-column space-between {{studio + "-card"}}'>
     <view class='d-flex bold content-center pb'> {{strings.body_stats}}</view>
     <view class='d-flex flex-column space-between flex-grow'>
       <view class='text-grid tc'>
@@ -49,24 +55,24 @@
   </view>
 </view>
 <!-- button my classes -->
-<view bindtap="navigateToMyClasses" class='my-classes-btn d-flex'>
+<view bindtap="navigateToMyClasses" class='my-classes-btn d-flex {{studio + "-card"}}'>
   <view style='margin-left: 20px;'>{{strings.my_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
-<view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex'>
+<view wx:if="{{user.instructor}}" bindtap="navigateToInstructorClasses" class='my-classes-btn d-flex {{studio + "-card"}}'>
   <view style='margin-left: 20px;'>{{strings.instructor_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
-<view wx:if="{{user.admin}}" bindtap="navigateToAdminClasses" class='my-classes-btn d-flex'>
+<view wx:if="{{user.admin}}" bindtap="navigateToAdminClasses" class='my-classes-btn d-flex {{studio + "-card"}}'>
   <view style='margin-left: 20px;'>{{strings.all_classes}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
-<view bindtap="navigateToCustomerService" class='cs-btn d-flex'>
+<view bindtap="navigateToCustomerService" class='cs-btn d-flex {{studio + "-card"}}'>
   <view style='margin-left: 20px;'>{{strings.customer_service || "Contact Us!"}} </view>
   <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
 </view>
 <!-- Vouchers -->
-<view wx:if="{{user.voucher_count}}" class='voucher-box '>
+<!-- <view wx:if="{{user.voucher_count}}" class='voucher-box {{studio + "-card"}}'>
   <view class='bold'> {{user.voucher_count}} {{strings.voucher_available}}</view>
   <view style='margin-top: 20px;'>{{strings.voucher_desc}}</view>
 </view>
@@ -74,9 +80,9 @@
   <view class='no-voucher-box'>
     <view class='bold'> {{strings.slogan}} </view>
   </view>
-</view>
+</view> -->
 <!-- membership -->
-<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box'>
+<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box {{studio + "-card"}}'>
   <view style="margin-top: 10px">{{item.name}}</view>
   <block wx:if="{{item.is_class_pack}}">
     <view>{{item.vouchers}} {{strings.classes_left}}</view>
@@ -84,7 +90,8 @@
   <block wx:if="{{!item.unlimited}}">
     <view>{{item.bookings_per_day}} {{strings.classes_left_today}}</view>
   </block>
-  <view class='valid'>{{strings.active_until}} {{item.end_date_locale}}</view>
+  <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{item.end_date_locale}}</view>
+</view>
 </view>
 <!-- nutrition -->
 <!-- <block wx:if="{{user.has_body_data}}">

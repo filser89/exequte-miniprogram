@@ -4,7 +4,7 @@
 }
 
 .action-btn{
-  background-color: #5C0C17;
+  background-color: #97daf540;
   padding: 10px 40px;
   text-align: center;
   position: center;
@@ -24,4 +24,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.glam-btn {
+  background-color: #af6e48 !important;
+}
+
+.reshape-btn {
+  background-color: #97daf5b3 !important;
 }

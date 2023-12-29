@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     strings: Object,
-    dates: Array
+    dates: Array,
+    studio: String
   },
 
   /**

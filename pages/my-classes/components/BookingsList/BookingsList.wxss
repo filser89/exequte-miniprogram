@@ -2,9 +2,7 @@
 @import "/app.wxss";
 
 .class-card {
-  background-color: #18181D;
-  border-radius: 10px;
-  width: 90%;
+  /* border-radius: 10px; */
   margin: 20px auto 0 auto;
   
 }
@@ -22,6 +20,13 @@
   height: 15px;
   width: 15px;
   margin-right: 5px;
+}
+
+.icon-hrm-booking {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  margin-left: -3px;
 }
 
 .status {
@@ -42,5 +47,9 @@
 }
 
 .red-status {
-  background-color: #5C0C17;
+  background-color: #97daf540;
+}
+
+.blue-status {
+  background-color: #97daf540;
 }

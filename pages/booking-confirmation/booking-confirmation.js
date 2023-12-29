@@ -1,5 +1,7 @@
 // pages/booking-confirmation/booking-confirmation.js
 import {getBooking, getStrings} from '../../utils/requests/index.js'
+import { updateBarColors } from '../../utils/util'
+
 import {
   promisifyAll
 } from 'miniprogram-api-promise'
@@ -13,7 +15,8 @@ Page({
    */
   data: {
     strings: {},
-    options: {}
+    options: {},
+    studio: ""
   },
 
   /**
@@ -44,6 +47,8 @@ Page({
     }
   },
   async onShow() {
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+  updateBarColors(getApp().globalData.studio)
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const booking = await getBooking(this.data.options.bookingId)
@@ -52,6 +57,9 @@ Page({
     this.showFollowAccountModal()
   },
   handleLanguageChanged(){
+    this.onShow()
+  },
+  handleStudioChanged(){
     this.onShow()
   },
 

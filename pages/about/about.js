@@ -1,5 +1,7 @@
 // pages/about/about.js
 import {getInfo, getAllInstructors, getStrings} from "../../utils/requests/index"
+import { updateBarColors } from '../../utils/util'
+
 Page({
 
   /**
@@ -8,13 +10,16 @@ Page({
   data: {
     strings: {},
     info: {},
-    instructors: []
+    instructors: [],
+    studio: {}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   async onShow(){
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
     wx.setStorageSync('selectedTab', 0)
     console.log('about page', wx.getStorageSync('selectedTab'))
 
@@ -25,6 +30,9 @@ Page({
   },
   
   handleLanguageChanged(){
+    this.onShow()
+  },
+  handleStudioChanged(){
     this.onShow()
   },
   navigateToTnC(){

@@ -1,1 +1,11 @@
 /* pages/profile/components/GetInfoProfileButton/GetInfoProfileButton.wxss */
+
+.reshape-card {
+  background-color: #97daf540 !important;
+  color: whitesmoke;
+}
+
+.glam-card {
+  background-color: #21212191 !important;
+  color: whitesmoke;
+}

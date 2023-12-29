@@ -1,0 +1,31 @@
+/* pages/splash/splash.wxss */
+
+
+.reshape-btn {
+  position: absolute;
+  width: 40vh;
+  height: 15vh;
+  top: 65vh;
+  left: 10vh;
+  z-index: 2;
+}
+.glam-btn {
+  position: absolute;
+  width: 40vh;
+  height: 15vh;
+  top: 40vh;
+  left: 10vh;
+  z-index: 2;
+}
+.pt-btn {
+  position: absolute;
+  width: 40vh;
+  height: 10vh;
+  bottom: 5vh;
+  left: 20vh;
+  z-index: 2;
+}
+.background-image {
+  width: 100%; /* Make sure the image takes the full width of the container */
+  height: 100vh; /* Maintain aspect ratio */
+}

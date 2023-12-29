@@ -5,6 +5,9 @@
     "include": []
   },
   "setting": {
+    "lazyCodeLoading": "requiredComponents",
+    "ignoreDevUnusedFiles": false,
+    "ignoreUploadUnusedFiles": false,
     "urlCheck": false,
     "es6": true,
     "enhance": true,

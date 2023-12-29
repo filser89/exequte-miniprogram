@@ -1,0 +1,304 @@
+/* pages/hrm-data/hrm-data.wxss */
+@import "/app.wxss";
+
+.block {
+  display: flex;
+  align-items: center;
+  /* margin: 10rpx; */
+}
+
+.reshape {
+  padding-top: 30rpx;
+}
+
+.glam {
+  padding-top: 30rpx;
+}
+
+.avatar {
+  margin-top: 35px;
+}
+
+.photo-style {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.red-box {
+  box-sizing: border-box;
+  background-color: #97daf540;
+  width: 100%;
+  height: 130px;
+  color: white;
+  border-radius: 10px;
+  padding: 20rpx;
+  margin: 20px;
+
+}
+
+.blu-box {
+  box-sizing: border-box;
+  background-color: #0b536f;
+  width: 100%;
+  height: 130px;
+  color: white;
+  border-radius: 10px;
+  padding: 20rpx;
+  margin: 20px;
+
+}
+.text-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hrm-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-refresh {
+  padding: 0px 2px 3px 3px;
+  width: 20px;
+  border-radius: 10px;
+  height: 20px;
+  background-color: #97daf540;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-red-box {
+  box-sizing: border-box;
+  background-color: #97daf540;
+  height: 130px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+  flex-direction: column;
+  display: flex; 
+  justify-content: space-around;
+  padding: 40rpx;
+  /* align-items: center; */
+
+}
+/* 
+.hrm-graph {
+  height: 15rem;
+  width: auto;
+}
+
+.hrm-zone-graph {
+  height: 15rem;
+  width: auto;
+} */
+
+.btn-card {
+  height: 20px !important;
+}
+
+.flex-box {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.hrm-pic {
+  width: 90%;
+}
+
+.hrm-pic-container {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+/* calories values */
+
+.hrm-data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx; /* Adjust margin as needed */
+  background-color: #97daf540; /* Set background color */
+}
+
+.block {
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  padding: 10rpx; /* Adjust padding as needed */
+}
+
+.title-gray {
+  color: #808080; /* Gray color for title */
+}
+
+.value-white {
+  color: #ffffff; /* White color for value */
+}
+
+.divider {
+  width: 1rpx; /* Thin line for divider */
+  height: 60%; /* Adjust height as needed */
+  background-color: #808080; /* Divider color */
+}
+
+/* Remove divider for the last block */
+.no-divider {
+  border-right: none;
+}
+
+/* ranking */
+
+.ranking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.trophy-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Adjusted for vertical layout */
+}
+
+.ranking-text {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Set the color of the ranking text */
+  font-size: 46rpx; /* Set the font size of the ranking text */
+  font-weight: bolder;
+}
+
+.trophy-img {
+  width: 220rpx;
+  height: 220rpx;
+  margin-top: 20rpx; /* Adjusted for spacing between trophy and caption */
+}
+
+.bottom-caption {
+  color: #808080; /* Set the color of the bottom caption to gray */
+  font-size: 26rpx; /* Set the font size of the bottom caption */
+  margin-top: 10rpx; /* Adjusted for spacing between caption and trophy */
+}
+
+
+
+
+
+.full-ranking-container {
+  width: 100%;
+  margin-bottom: 80rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rank-item {
+  height: 135rpx;
+width: 750rpx;
+background: #71686921;
+margin-bottom: 8rpx;
+padding: 20rpx 20rpx 20rpx 50rpx;
+box-sizing: border-box;
+position: relative;
+  
+}
+
+.rank-item .rank-img {
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  margin-right: 50rpx;
+  position: relative;
+}
+
+.rank-item .rank-img image {
+  position: absolute;
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  top: 0;
+  left: 0;
+}
+
+.rank-item .rank-name {
+  font-size: 32rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffffb3;
+  font-weight: bold;
+}
+
+.rank-item .rank-full {
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #4e5b65;
+}
+
+.rank-item .rank-price {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #ffffff57;
+}
+
+.rank-item .rank-uv text {
+  font-size: 38rpx;
+  position: absolute;
+  height: 100rpx;
+  line-height: 100rpx;
+  bottom: 20rpx;
+  right: 20rpx;
+  color: #777;
+}
+
+.rank-item .rank-uv image {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+
+.rank_block{
+  margin-top: 10rpx;
+}
+
+
+.glam-card .title-gray {
+  color: #333333 !important;
+}
+
+.reshape-card .title-gray {
+  color: #808080 !important;
+}
+
+.reshape-trophy {
+
+}
+
+.glam-trophy {
+  filter: brightness(99) invert(1);
+}

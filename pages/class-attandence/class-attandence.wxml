@@ -1,5 +1,5 @@
 <!--pages/class-attandence/class-attandence.wxml-->
-<Topbar2 bindlanguagechanged="handleLanguageChanged"/>
+<Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
 <view class='back'>
   <view class='class-about'>
 

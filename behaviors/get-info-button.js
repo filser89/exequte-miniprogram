@@ -4,14 +4,25 @@ import {
 
 import {processUserInfo} from '../utils/requests/index'
 const wxp = {}
+const app = getApp()
 promisifyAll(wx, wxp)
 
 export default Behavior ({
   properties: {
     itemId: Number,
-    profileFilled: Boolean
+    profileFilled: Boolean,
+    studio: String
   },
-
+  data: {
+    studio: 'reshape'
+  },
+  lifetimes: {
+    async attached(){
+      const studio = app.globalData.studio
+      console.log("studio:" + studio)
+     this.setData({studio})
+    }
+  },
   /**
    * Component methods
    */
@@ -35,11 +46,9 @@ export default Behavior ({
             page.navigateToProfileUpdate()
           }
         },
-        fail(){
-          wx.showToast({
-            title: 'Please Authorize',
-            icon: 'none'
-          })
+        fail(err){
+          console.log(err)
+          //page.navigateToProfileUpdate()
         }
       })
     },

@@ -5,6 +5,8 @@ import {
   getMembershipTypesBySession,
   getStrings
 } from '../../utils/requests/index.js'
+import { updateBarColors } from '../../utils/util'
+
 const app = getApp()
 Page({
 
@@ -23,7 +25,8 @@ Page({
     classpack: {},
     discount: 0,
     couponCode: null,
-    couponBtnDisabled: false
+    couponBtnDisabled: false,
+    studio: "reshape"
   },
 
   /**
@@ -34,6 +37,9 @@ Page({
     this.setData({options})
   },
   async onShow(){
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
+    
     const sessionId = this.data.options.sessionId
     const session = await getSession(sessionId)
     //const membershipTypes = await getMembershipTypes()
@@ -94,6 +100,9 @@ Page({
   },
 
   handleLanguageChanged(){
+    this.onShow()
+  },
+  handleStudioChanged(){
     this.onShow()
   },
 

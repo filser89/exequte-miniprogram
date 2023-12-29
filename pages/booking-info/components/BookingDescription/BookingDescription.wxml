@@ -1,15 +1,12 @@
 <!--pages/booking-info/components/BookingDescription/BookingDescription.wxml-->
 
-<view class='banner d-flex item-center w-100 h-20 '
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}});   height:600rpx !important; postition: absolute; z-index: -1">
-  
+<view class='banner d-flex item-center w-100 h-20 booking-banner'
+  style="background-image: url({{session.image_url}});">
   <view class="pl20">
   </view>
 </view>
-<view style="background-color: black; border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px ">
-</view>
-<view class=" bg-black ">
-  <view class='text-white' style="margin-left: 30px">
+<view class="booking-description {{studio}}-booking-container">
+  <view class='coach-card {{studio}}-card' >
     <view class="text-size-sheader bold">{{session.name}}</view>
     <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
     <view class="db-flex" style="justify-content: space-around">
@@ -20,21 +17,28 @@
       </view>
     </view>
   </view>
-  <view class="coach-card text-white" >
-      <view>
-        <image style="width: 60px; height: 60px; radius: 50%; z-index: 1; margin-right: 20px"
-          src="{{instructor.image_url}}"></image>
-          {{strings.coach}} {{instructor.first_name}}
+  <view wx:if="{{ booking.hrm }}" class="hrm-card tl text-white {{studio}}-card">
+      <view class="d-flex content-center item-center" >
+        <view bindtap="navigateToHrmData" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}" class="btn-card {{studio}}-card-active" >{{ strings.hrm_data }}</view> 
+        <image style="width: 100px; height: 100px;"
+          src="../../../../images/hrm-white.svg"></image>
+        <view class="btn-card {{studio}}-card-active" >{{ booking.hrm.display_name }}</view> 
       </view>
+      <view class="hrm-note text-size-sbody">{{strings.hrm_checkin}}</view>
+    </view>
+  <view class="coach-card text-white {{studio}}-card" >
+      <view class="instructor-container">
+        <image class="instructor-img" style="width: 60px; height: 60px; border-radius: 50%; z-index: 1; margin-right: 20px"
+          src="{{instructor.image_url}}"></image><view class="instructor-name">{{instructor.first_name}}</view></view>
       <!-- Last Name: {{instructor.last_name}} -->
-      <view class='text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px"> {{strings.bio}} {{instructor.bio}}
+      <view class='instructor-bio text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px">{{instructor.bio}}
       </view>
 
     </view>
 
 
 
-  <view class="coach-card text-white tl">
+  <view class="coach-card text-white tl {{studio}}-card">
     <view class="text-size-sbody ml">
       <image src='/images/information.png' class='icon-time' style="margin-right: 5px; "> </image>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
     </view>
@@ -43,7 +47,7 @@
     <view class="text-size-sbody ml"> {{strings.date}}{{session.date_locale}}</view>
   </view>
 
-  <view wx:if="{{session.photos_urls && session.photos_urls.length}}" class="coach-card text-white tl">
+  <view wx:if="{{session.photos_urls && session.photos_urls.length}}" class="coach-card text-white tl {{studio}}-card">
     <view wx:for="{{session.photos_urls}}" wx:for-item="photo" wx:for-index="i" wx:key="unique"  >
       <image show-menu-by-longpress="true"src="{{photo}}"></image>
     </view>

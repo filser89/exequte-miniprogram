@@ -1,4 +1,6 @@
 import {getUsersBookings, getStrings} from "../../utils/requests/index"
+import { updateBarColors } from '../../utils/util'
+
 // pages/my-classes/my-classes.js
 Page({
 
@@ -8,7 +10,8 @@ Page({
   data: {
     strings: {},
     bookings: [],
-    selected: 0
+    selected: 0,
+    studio: "reshape"
   },
 
   /**
@@ -16,6 +19,9 @@ Page({
    */
 
   async onShow() {
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
+    
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
 
@@ -35,6 +41,12 @@ Page({
   },
   handleLanguageChanged(){
     this.onShow()
+  },
+  handleStudioChanged(){
+    console.log("studio got changed")
+    wx.reLaunch({
+      url: '/pages/my-classes/my-classes',
+    })
   },
 
   /**

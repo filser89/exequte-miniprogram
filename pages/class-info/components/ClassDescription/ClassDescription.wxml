@@ -21,6 +21,16 @@
       </view>
     </view>
   </view>
+
+  <view wx:if="{{ session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white">
+      <view class="d-flex content-center item-center" >
+        <image style="width: 100px; height: 100px;"
+          src="../../../../images/hrm-white.svg"></image>
+        <view class="btn-card" >{{ session.hrm.display_name }}</view> 
+      </view>
+      <view class="hrm-note text-size-sbody">{{strings.hrm_checkin}}</view>
+    </view>
+
     <view class="coach-card  tl text-white">
       <view class="d-flex" >
         <image style="width: 70px; height: 70px; border-radius: 50%; margin: 5px 5px"
@@ -34,7 +44,7 @@
     </view>
 
 
-  <view style="height: 100%; background-color: #555555; color: #5C0C17 ; margin-top: 25px; ">
+  <view style="height: 100%; background-color: #555555; color: #97daf540 ; margin-top: 25px; ">
 
     <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" strings="{{strings}}" />

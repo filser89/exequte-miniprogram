@@ -7,7 +7,8 @@ Component({
     strings: Object,
     rawDates: Array,
     dates: Array,
-    lang: String
+    lang: String,
+    studio: String
   },
 
   /**

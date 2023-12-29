@@ -6,6 +6,9 @@ import {
   deleteFailedPayment,
   updateUser
 } from '../utils/requests/index'
+
+const app = getApp()
+
 import {
   promisifyAll
 } from 'miniprogram-api-promise'
@@ -25,20 +28,10 @@ export default Behavior({
       value: false,
       type: Boolean
     },
-    params: Object
+    params: Object,
+    studio: String
   },
 
-  /**
-   * Component initial data
-   */
-  data: {
-
-  },
-  lifetimes: {
-    attached() {
-      // console.log(this.data)
-    }
-  },
 
   /**
    * Component methods

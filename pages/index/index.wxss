@@ -1,6 +1,13 @@
 /**index.wxss**/
 @import "/app.wxss";
 
+.black-mask {
+  background-color: black !important;
+  z-index: 999;
+  height: 100vh;
+  position: relative;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -20,4 +27,8 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+.page-background {
+  padding-top: 20%;
 }

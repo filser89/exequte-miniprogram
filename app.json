@@ -1,6 +1,7 @@
 
 {
   "pages":[
+    "pages/splash/splash",
     "pages/index/index",
     "pages/booking/booking",
     "pages/class-info/class-info",
@@ -13,29 +14,30 @@
     "pages/booking-info/booking-info",
     "pages/instructor-classes/instructor-classes",
     "pages/terms-and-conditions/terms-and-conditions",
-    "pages/customer-service/customer-service"
+    "pages/customer-service/customer-service",
+    "pages/hrm-data/hrm-data"
   ],
   "tabBar": {
     "custom": false,
     "color": "white",
-    "selectedColor": "#5C0C17",
+    "selectedColor": "#97daf540",
     "borderStyle": "black",
     "backgroundColor": "#000000",
     "list": [{
       "pagePath": "pages/about/about",
       "text": "",
-      "iconPath": "images/XQ-logo-white.png",
-      "selectedIconPath": "images/XQ-red.png"
+      "iconPath": "images/home-unselected.png",
+      "selectedIconPath": "images/home-selected-reshape.png"
     }, {
       "pagePath": "pages/index/index",
       "text": "",
-      "iconPath": "images/schedule.png",
-      "selectedIconPath": "images/schedule2.png"
+      "iconPath": "images/schedule-unselected.png",
+      "selectedIconPath": "images/schedule-selected-reshape.png"
     }, {
       "pagePath": "pages/profile/profile",
       "text": "",
-      "iconPath": "/images/user-xq.png",
-      "selectedIconPath": "/images/user-red.png"
+      "iconPath": "images/user-unselected.png",
+      "selectedIconPath": "images/user-selected-reshape.png"
     }]
   },
   "window":{

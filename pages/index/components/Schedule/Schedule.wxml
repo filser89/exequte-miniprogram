@@ -2,17 +2,17 @@
 <!-- <text>pages/index/components/Schedule/Schedule.wxml</text>
 <view>Dates:</view> -->
 <view style="padding: 10px;">
-  <view class="table text-size-body z">
+  <view class="table text-size-body z {{studio}}-card-extralight">
     <view wx:for="{{dates}}" wx:for-item="date" wx:for-index="i" wx:key="uniqui">
       <view data-index="{{i}}" bindtap="toggleCurrent"
-        class="d-flex flex-column content-around {{current == i ? 'calendar-button-active' : 'calendar-button' }}">
+        class="d-flex flex-column content-around {{current == i ? 'calendar-button-active' : 'calendar-button' }} {{studio}}-calendar-btn">
         <view>{{date.dateW}}</view>
         <view>{{date.dateD}}</view>
         <view>{{date.dateM}}</view>
       </view>
     </view>
   </view>
-  <DateSessions strings="{{strings}}" date="{{rawDates[current]}}" lang="{{lang}}" />
+  <DateSessions studio="{{studio}}" strings="{{strings}}" date="{{rawDates[current]}}" lang="{{lang}}" />
 
   <!-- <view wx:for="{{sessions}}" wx:for-item="date" wx:for-index="i" wx:key="unique">
     <view wx:if="{{current == i}}">

@@ -1,5 +1,4 @@
 <!--pages/about/about.wxml-->
-<Topbar bindlanguagechanged="handleLanguageChanged" />
 <block wx:if="{{info.has_items}}">
 <!-- 'before_photo_1'-->
 <view class="block" wx:for="{{info.items.before_photo_1}}" wx:key="unique">

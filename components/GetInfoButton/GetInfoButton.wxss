@@ -2,6 +2,6 @@
 /* @import "/app.wxss"; */
 
 /* .action-btn{
-  width:115px; height: 50px; background-color: #5C0C17; text-align: center; color: white;
+  width:115px; height: 50px; background-color: #97daf540; text-align: center; color: white;
   font-weight: bold; font-size: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;
 } */

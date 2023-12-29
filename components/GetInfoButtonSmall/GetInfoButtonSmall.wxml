@@ -1,7 +1,7 @@
 <!--components/GetInfoButtonSmall/GetInfoButtonSmall.wxml-->
 <!-- <text>components/GetInfoButtonSmall/GetInfoButtonSmall.wxml</text> -->
 <view class="text-capitalize class-info-book-button text-white" >
-  <button style="width:115px; height: 50px; background-color: #5C0C17; text-align: center; color: white; font-weight: bold; font-size: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px; margin-top:10px" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" catchtap="doNothing" >
+  <button class="{{studio}}-card-active"style="width:115px; height: 50px; text-align: center; color: white; font-weight: bold; font-size: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px; margin-top:10px" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" catchtap="doNothing" >
   <slot />
   </button>
 </view>

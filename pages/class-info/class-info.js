@@ -18,7 +18,8 @@ Page({
     isLateCancel: false,
     enforceCancellationPolicy: true,
     btnPattern: {},
-    options:{}
+    options:{},
+    studio: "reshape"
   },
 
   /**
@@ -28,6 +29,7 @@ Page({
     this.setData({options})
   },
   async onShow() {
+    this.setData({studio: getApp().globalData.studio})
     const user = wx.getStorageSync('user')
       this.setData({
         user
@@ -71,7 +73,9 @@ Page({
   handleLanguageChanged(){
     this.onShow()
   },
-
+  handleStudioChanged(){
+    this.onShow()
+  },
   handleQueuedUp({
     detail
   }) {

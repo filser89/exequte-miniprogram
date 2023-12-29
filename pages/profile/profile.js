@@ -1,5 +1,8 @@
 // pages/profile/profile.js
 import {getUserDetails, getStrings} from "../../utils/requests/index"
+import { updateBarColors } from '../../utils/util'
+
+const app = getApp()
 Page({
 
   /**
@@ -7,13 +10,18 @@ Page({
    */
   data: {
     strings: {},
-    user: {}
+    user: {},
+    showPrivacy: false,
+    studio: "reshape"
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+
   async onShow(){
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
     wx.setStorageSync('selectedTab', 2)
     console.log('profile page', wx.getStorageSync('selectedTab'))
     const currentUser = wx.getStorageSync('user')
@@ -24,7 +32,40 @@ Page({
       user,
       strings
     })
+    wx.getPrivacySetting({
+      success: res => {
+        console.log(res) // 返回结果为: res = { needAuthorization: true/false, privacyContractName: '《xxx隐私保护指引》' }
+        if (res.needAuthorization) {
+          // 需要弹出隐私协议
+          this.setData({
+            showPrivacy: true
+          })
+        } else {
+          // 用户已经同意过隐私协议，所以不需要再弹出隐私协议，也能调用已声明过的隐私接口
+          // wx.getUserProfile()
+          // wx.chooseMedia()
+          // wx.getClipboardData()
+          // wx.startRecord()
+        }
+      },
+      fail: () => {},
+      complete: () => {}
+    })
   },
+
+  closePrivacyPopup(){
+    this.setData({
+      showPrivacy: false
+    })
+  },
+
+  handleAgreePrivacyAuthorization(res){ 
+    console.log(res)
+    this.setData({
+      showPrivacy: false
+    })
+  },
+
 
   navigateToMyClasses(){
     console.log('clicked my')
@@ -63,6 +104,12 @@ Page({
   handleLanguageChanged(){
     this.onShow()
   },
+  handleStudioChanged(){
+    console.log("studio got changed")
+    wx.reLaunch({
+      url: '/pages/profile/profile',
+    })
+    },
 
   /**
    * Lifecycle function--Called when page is initially rendered

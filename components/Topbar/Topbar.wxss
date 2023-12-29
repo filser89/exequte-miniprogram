@@ -14,10 +14,28 @@
 
 .language-button-topbar {
   position: absolute;
-	top: 36rpx; 
-  right: 10px; 
-  background-color: #555555;
+	top: 50rpx; 
+  right: 10rpx; 
+  background-color: rgba(0, 0, 0, 0.459);
   width: 40px !important;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+  padding: 3px;
+  padding-top: 3px;
+  font-weight: bold;
+  text-align: center;
+  position: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.studio-button-topbar {
+  position: absolute;
+	top: 50rpx; 
+  left: 10px; 
+  background-color: rgba(0, 0, 0, 0.459);
+  width: 90px !important;
   height: 25px;
   border-radius: 10px;
   color: white;

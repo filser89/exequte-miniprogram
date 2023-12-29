@@ -43,6 +43,7 @@
 }
 
 .icon-lg {
-  height: 120rpx;
-  width: 130rpx;
+  height: 150rpx;
+  width: 200rpx;
+  margin-left: -30rpx;
 }

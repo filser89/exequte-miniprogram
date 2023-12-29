@@ -1,6 +1,8 @@
 // pages/booking-info/booking-info.js
 import {getBooking, getInstructor, getStrings} from "../../utils/requests/index"
-import {isLateCancellation} from "../../utils/util"
+import {isLateCancellation, updateBarColors} from "../../utils/util"
+const app = getApp()
+
 Page({
 
   /**
@@ -16,7 +18,8 @@ Page({
       disabled: false,
       text: "CANCEL",
       action: "askCancel"
-    }
+    },
+    studio: "reshape"
   },
 
   /**
@@ -27,6 +30,9 @@ Page({
     this.setData({options})
    },
   async onShow() {
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio);
+
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const options = this.data.options
@@ -57,6 +63,12 @@ Page({
 
   handleLanguageChanged(){
     this.onShow()
+  },
+  handleStudioChanged(){
+    console.log("studio got changed")
+    wx.reLaunch({
+      url: '/pages/booking-info/booking-info',
+    })
   },
 
   /**

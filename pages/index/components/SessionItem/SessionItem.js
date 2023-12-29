@@ -13,7 +13,8 @@ Component({
    */
   properties: {
     strings: Object,
-    session: Object
+    session: Object,
+    studio: String
   },
 
   /**

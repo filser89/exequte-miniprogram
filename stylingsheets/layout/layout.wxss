@@ -7,5 +7,80 @@
 @import './size';
 
 page {
-  background-color: black;
+  /* @todo replace with wx.loadFontFace remote url*/
+  font-family: Nasalization !important;
+  /* background-color: black !important; */
+}
+
+.reshape {
+  background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/reshape-bg.jpg') !important;
+  background-repeat: repeat !important; 
+  background-size: contain !important; 
+  color: whitesmoke;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.glam {
+  background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/glam-bg.jpg'); 
+  background-repeat: repeat !important; 
+  background-size: contain !important; 
+  color: whitesmoke;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.reshape-card {
+  background-color: #97daf540 !important;
+}
+
+.reshape-card-dark {
+  background-color: #212121c7 !important;
+}
+
+.reshape-card-light {
+  background-color: #d9d9de12 !important; 
+}
+
+.reshape-card-extralight {
+  background-color: #d9d9de12 !important; 
+}
+
+.reshape-card-active {
+  background-color: #97daf5b3 !important;
+}
+
+.reshape-card-inactive {
+  background-color: #97daf540 !important;
+}
+
+.reshape-card-selected {
+  background-color: #97daf5b3 !important;
+}
+
+.glam-card {
+  background-color: #21212191 !important;
+}
+.glam-card-dark {
+  background-color: #212121c7 !important;
+}
+
+.glam-card-extralight {
+  background-color: #2121213d !important;
+}
+
+.glam-card-light {
+  background-color: #c6b0a2ad !important;
+}
+
+.glam-card-active {
+  background-color: #af6e48 !important;
+}
+
+.glam-card-inactive {
+  background-color: #c6b0a2 !important;
+}
+
+.glam-card-selected {
+  background-color: #212121fa !important;
 }

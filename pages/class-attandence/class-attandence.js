@@ -32,7 +32,9 @@ onLoad(options) {
   handleLanguageChanged(){
     this.onShow()
   },
-
+  handleStudioChanged(){
+    this.onShow()
+  },
   /**
    * Lifecycle function--Called when page hide
    */

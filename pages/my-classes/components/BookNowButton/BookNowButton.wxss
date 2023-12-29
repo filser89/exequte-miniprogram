@@ -6,7 +6,7 @@
 .action-btn{
   width: 90%;
   height: 50px;
-  background-color: #5C0C17;
+  background-color: #97daf540;
   text-align: center;
   position: center;
   color: white;
@@ -24,4 +24,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.reshape-card-active {
+  background-color: #97daf5b3 !important;
+}
+
+
+
+
+.glam-card-active {
+  background-color: #af6e48 !important;
 }

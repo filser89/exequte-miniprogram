@@ -41,6 +41,12 @@ import {
 
 } from './users.js'
 
+import {
+  getHrmDataForBooking,
+  getHrmGraphForBooking,
+  getHrmDataGraphForBooking
+} from './hrms.js'
+
 const getStrings = (page) => {
   const options = {
     method: 'post',
@@ -120,5 +126,8 @@ module.exports = {
   getDates,
   getSessionsByDate,
   cancelSession,
-  changeCapacity
+  changeCapacity,
+  getHrmDataForBooking,
+  getHrmGraphForBooking,
+  getHrmDataGraphForBooking
 }

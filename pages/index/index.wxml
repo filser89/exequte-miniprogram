@@ -1,8 +1,9 @@
 <!--index.wxml-->
   <!-- <Banner url="{{banner.url}}" /> -->
-<Topbar3 bindlanguagechanged="handleLanguageChanged"/>
-  <view style="background-color: black">
-  <view class='banner'>
+<!-- <view class="black-mask"  wx:if="{{showSplash == 'true'}}"></view> -->
+<Topbar3 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
+  <view class="{{studio}}">
+  <!-- <view class='banner'>
     <swiper class="screen-swiper" indicator-color="#ffffff6c" indicator-active-color="#ffffff85" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="_id" data-index="{{index}}" data-type="swiper" bindtap="itemClick">
     <image src="{{item.url}}" mode="scaleToFill"></image>
@@ -10,11 +11,11 @@
 </swiper>
   <view class="pl20">
     <!-- <view class='text-white bold text-size-theader mb p20 w60'>First 5 trainings for FREE<slot></slot></view> -->
-  </view>
-</view>
+  <!-- </view>
+</view>  -->
 
-  <view class="db" style="background-color: black; color: white">
-    <Schedule strings="{{strings}}" dates="{{dates}}" rawDates="{{rawDates}}" lang="{{lang}}" />
+  <view class="page-background">
+    <Schedule studio="{{studio}}" strings="{{strings}}" dates="{{dates}}" rawDates="{{rawDates}}" lang="{{lang}}" />
   </view>
 </view>
 <!-- 
