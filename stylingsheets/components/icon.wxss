@@ -17,6 +17,7 @@
 .icon-time {
   height: 13px;
   width: 13px;
+  filter: brightness(0) invert(1);
 }
 .icon-fire {
   height: 13px;
@@ -24,6 +25,7 @@
 }
 
 .icon-time2 {
+  filter: brightness(0.1) invert(1);
   height: 16px;
   width: 16px;
 }

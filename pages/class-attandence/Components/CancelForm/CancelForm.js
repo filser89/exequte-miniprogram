@@ -12,7 +12,8 @@ Component({
    */
   properties: {
     strings:Object,
-    session:Object
+    session:Object,
+    studio: String
   },
 
   /**
@@ -55,7 +56,12 @@ Component({
       console.log('sending cancellation')
       console.log(this.properties.session)
       console.log(this.properties.session.id)
-      this.submitRequest(this.properties.session.id, this.data.note)
+      let note = this.data.note
+      if (typeof note === 'function') {
+        note = ''
+      }
+      console.log("cancellation reason:" + note);
+      this.submitRequest(this.properties.session.id, note)
       this.closePrompt()
     },
 

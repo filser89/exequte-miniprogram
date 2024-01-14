@@ -3,10 +3,10 @@
 <view>
   <view wx:if="{{sessions.length}}" >
     <view wx:for="{{sessions}}" wx:for-item="session" wx:for-index="i" wx:key="unique"  >
-      <SessionItem studio="{{studio}}" strings="{{strings}}" session="{{session}}" />
+      <SessionItem size="{{size}}" studio="{{studio}}" strings="{{strings}}" session="{{session}}" />
     </view>
   </view>
   <view wx:else > 
-    <view class=" tc {{studio}}-card-extralight" style="margin-top: 40px; border-radius: 30rpx; ">{{strings.no_sessions_today}}</view>
+    <view class=" tc {{studio}}-card-extralight" style="padding: 5px; margin-top: 10px; border-radius: 30rpx; ">{{strings.no_sessions_today}}</view>
   </view>  
 </view>

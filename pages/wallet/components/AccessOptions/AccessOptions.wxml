@@ -1,0 +1,20 @@
+<!--pages/booking/components/AccessOptions/AccessOptions.wxml-->
+<view class='db' style=''>
+  <view class='bold view-size-theader' style='margin: 20px; color: white'>{{strings.access_options}}</view>
+  <view class="credits-options-container" wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
+      <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership"
+        data-membership-type-price="{{mt.price}}" data-index="{{index}}"
+        class="{{selected == 'buy-membership' && current == index ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
+        <view class="credits-name">{{mt.name}}</view>
+        <view class="credits-num-container"><span class="credits-num">{{mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
+        <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
+        <view wx:if="{{selected == 'buy-membership' && current == index}}" class="credits-option-description">
+          <view class="credits-option-perks" >
+            <view wx:for="{{ mt.description }}" wx:for-item="line" wx:key="unique">• {{ line }}</view>
+          <view class="credits-option-book-before">• {{ mt.book_before }} {{ strings.book_before || " days advance bookings" }}</view>
+        </view>
+
+        </view>
+        </view>
+      </view>
+</view>

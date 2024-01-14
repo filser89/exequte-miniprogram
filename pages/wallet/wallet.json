@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Topbar3": "/components/Topbar3/Topbar3",
+    "GetInfoButton": "/components/GetInfoButton/GetInfoButton",
+    "PayButton": "components/PayButton/PayButton",
+    "AccessOptions": "components/AccessOptions/AccessOptions"
+  }
+}

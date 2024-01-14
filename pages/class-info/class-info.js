@@ -5,6 +5,7 @@ import {
   getStrings
 } from '../../utils/requests/index'
 import {isLateCancellation} from "../../utils/util"
+import { updateBarColors } from '../../utils/util'
 
 Page({
 
@@ -19,7 +20,7 @@ Page({
     enforceCancellationPolicy: true,
     btnPattern: {},
     options:{},
-    studio: "reshape"
+    studio: ""
   },
 
   /**
@@ -30,6 +31,7 @@ Page({
   },
   async onShow() {
     this.setData({studio: getApp().globalData.studio})
+    updateBarColors(getApp().globalData.studio)
     const user = wx.getStorageSync('user')
       this.setData({
         user

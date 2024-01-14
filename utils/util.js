@@ -35,11 +35,17 @@ const updateBarColors = (studio) => {
     wx.setTabBarItem({
       index: 1,
       text: '',
+      'iconPath': '/images/wallet-unselected.png',
+      'selectedIconPath': '/images/wallet-selected-reshape.png'
+    });
+    wx.setTabBarItem({
+      index: 2,
+      text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/user-unselected.png',
       'selectedIconPath': '/images/user-selected-reshape.png'
@@ -56,17 +62,24 @@ const updateBarColors = (studio) => {
     wx.setTabBarItem({
       index: 1,
       text: '',
+      'iconPath': '/images/wallet-unselected.png',
+      'selectedIconPath': '/images/wallet-selected-glam.png'
+    });
+    wx.setTabBarItem({
+      index: 2,
+      text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-glam.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/user-unselected.png',
       'selectedIconPath': '/images/user-selected-glam.png'
     });
     studioTitle = "exeQute - Glam";
-    barBgColor = "#c6b0a2";
+    //barBgColor = "#c6b0a2";
+    barBgColor = "#c8a2c8";
   }
   wx.setNavigationBarColor({
     frontColor: "#ffffff",

@@ -1,0 +1,103 @@
+/* pages/booking/components/AccessOptions/AccessOptions.wxss */
+@import "/app.wxss";
+
+.glam-btn.button-option{
+  
+  background-color: #401d5a52 !important;
+  /* background-color: #2121213d !important; */
+  color: whitesmoke;
+}
+.reshape-btn.button-option{
+  background-color: #d9d9de12 !important; 
+  color: whitesmoke;
+}
+.glam-btn.button-option-active{
+  /* background-color: #af6e48 !important; */
+  background-color: #4c2867ad !important; 
+  color: whitesmoke;
+}
+.reshape-btn.button-option-active{
+  background-color: #97daf5b3 !important;
+  color: whitesmoke;
+}
+.button-option {
+  background-color: #D8D8D8;
+  color: #000000;
+  position: relative;
+  padding: 0 20px;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.button-option-active {
+  background-color: #97daf540;
+  color: white;
+  border: 2px solid white;
+  position: relative;
+  /* display: grid; */
+  /* grid-template-columns: 80% 20%; */
+  /* height: 72px; */
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.sm-text {
+  font-size: 12px;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.content-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.credits-name {
+  position: absolute;
+  font-size: 3vh;
+  left: 1%;
+}
+
+.credits-num-container {
+  position: absolute;
+  left: 50%;
+}
+
+.credits-num {
+  font-size: 3vh;
+}
+.credits-label {
+  font-size: 1vh;
+}
+.credits-price {
+  position: absolute;
+  right: 10%;
+  font-size: 2vh;
+}
+.credits-option-perks {
+  margin-top: 5vh;
+  padding: 1vh;
+}
+
+.credits-option-description {
+  display: flex;
+  min-height: 5vh;
+}

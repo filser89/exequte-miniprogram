@@ -1,0 +1,52 @@
+<!--pages/home/home.wxml-->
+<view class="{{studio}}">
+  <Topbar3 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
+<view class='banner'>
+    <swiper class="screen-swiper" indicator-color="#ffffff6c" indicator-active-color="#ffffff85" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="_id" data-index="{{index}}" data-type="swiper" >
+    <image src="{{item.url}}" mode="scaleToFill"></image>
+  </swiper-item>
+  </swiper>
+  </view> 
+  <view wx:if="{{user.profile_filled}}">
+  <view class="coming-next-container">
+    <view class="coming-next-title full-card {{studio}}-card-active-opaque">{{strings.coming_up || "COMING UP"}}</view>
+    <DateSessions studio="{{studio}}" strings="{{strings}}" date="{{date}}" lang="{{lang}}" />
+    </view>
+    <view class="hrm-container">
+    <view class="hrm-title full-card {{studio}}-card-active-opaque">{{strings.hrm_data || "HEART MATRIX HUB"}}</view>
+    <view class="hrm-list-container">
+      <BookingsList picture="false" studio="{{studio}}" strings="{{strings}}"  bookings="{{bookings}}"  />
+    </view>
+    </view>
+    <view class="about-us-container">
+      <view class="about-title full-card {{studio}}-card-active-opaque">{{strings.about_us || "INFO"}}</view>
+      <!-- STUDIOS-->
+      <view bindtap="navigateToStudios" class='menu-btn d-flex {{studio + "-card"}}'>
+       <view style='margin-left: 20px;'>{{strings.studios || "STUDIOS"}} </view>
+      <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+      </view>
+      <!-- T&C -->
+      <view bindtap="navigateToTerms" class='menu-btn d-flex {{studio + "-card"}}'>
+       <view style='margin-left: 20px;'>{{strings.terms || "TERMS AND CONDITIONS"}} </view>
+      <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+      </view>
+    </view>
+    <view class="pic-container">
+    <view class="pic-title full-card {{studio}}-card-active-opaque">{{strings.pictures || "LAST PHOTOS"}}</view>
+    <view class="pic-list-container">
+      <BookingsList picture="true" studio="{{studio}}" strings="{{strings}}"  bookings="{{last_bookings}}"  />
+    </view>
+    </view>
+  </view>
+  <view wx:else>
+  <view class="sign-up-form">
+    <view class="sign-up-text {{studio}}-card">{{info || strings.sign_up_explanation}}</view>
+    <view class="sign-up-container">
+      <GetInfoButton studio="{{studio}}" profileFilled="{{user.profile_filled}}" itemId="">
+                {{strings.sign_up}}
+      </GetInfoButton>
+      </view>
+    </view>
+  </view>
+</view>

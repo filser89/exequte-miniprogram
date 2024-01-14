@@ -11,7 +11,8 @@ Component({
     strings: Object,
     sessions: Array,
     selected: Number,
-    isUserAdmin: Boolean
+    isUserAdmin: Boolean,
+    studio: String
   },
 
   computed: {

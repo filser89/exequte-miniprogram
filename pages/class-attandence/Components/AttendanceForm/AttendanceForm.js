@@ -8,7 +8,8 @@ Component({
     strings:Object,
     bookings: Array,
     session:Object,
-    isUserAdmin: Boolean
+    isUserAdmin: Boolean,
+    studio: String
   },
 
   /**

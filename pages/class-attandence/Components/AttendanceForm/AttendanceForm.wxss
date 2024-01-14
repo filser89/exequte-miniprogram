@@ -37,3 +37,11 @@
 .capacity {
   color: white;
 }
+
+.glam-card-active {
+  background-color: #51307d9c !important;
+}
+
+.reshape-card-active {
+  background-color: #97daf5b3 !important;
+}

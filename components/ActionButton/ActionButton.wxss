@@ -42,3 +42,19 @@
   justify-content: center;
   align-items: center;
 }
+
+.action-btn.glam-action-btn {
+  background-color: #431186bf !important;
+}
+
+.action-btn.reshape-action-btn {
+  background-color: #97daf5b3 !important;
+}
+
+.action-btn-disabled.reshape-action-btn {
+  background-color: #2121213d !important;
+}
+
+.action-btn-disabled.glam-action-btn {
+  background-color: #2121213d !important;
+}

@@ -11,7 +11,8 @@ Component({
     strings: Object,
     date: String,
     lang: String,
-    studio: String
+    studio: String,
+    size: String
   },
 
   /**
@@ -45,7 +46,19 @@ Component({
     let date = this.data.date == "" ? this.todayDateString() : this.data.date
     console.log("DATE", date)
     let sessions  = await getSessionsByDate(date)
-     this.setData({sessions})
+    try {
+     let currentStudio = getApp().globalData.studio
+     if (!currentStudio || currentStudio  == ""){
+       console.log("current studio null, setting it to reshape");
+       currentStudio = "reshape";
+     }
+     console.log("current studio for filter:" + currentStudio);
+     sessions = sessions.filter(session => session.location === currentStudio);
+     console.log('filtered sessions:');
+     console.log(sessions);
+    } catch(e){console.log(e)}
+    this.setData({sessions})
+     
     }
   },
   

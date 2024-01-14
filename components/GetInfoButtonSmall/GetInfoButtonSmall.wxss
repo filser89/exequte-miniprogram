@@ -1,1 +1,9 @@
 /* components/GetInfoButtonSmall/GetInfoButtonSmall.wxss */
+
+.reshape-card-active {
+  background-color: #97daf5b3 !important;
+}
+
+.glam-card-active {
+  background-color: #51307d9c !important;
+}

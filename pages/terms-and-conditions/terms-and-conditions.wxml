@@ -1,11 +1,11 @@
 <!--pages/terms-and-conditions/terms-and-conditions.wxml-->
+<view class="{{studio}}">
 <Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
+<view class="title-container {{studio}}-card">
 <view class="terms">{{terms.title_one}}</view>
-<view class="paragraph">{{terms.paragraph_one}}</view>
-<view class="terms">{{terms.title_two}}</view>
-<view class="paragraph">{{terms.paragraph_two}}</view>
-<view class="terms">{{terms.title_three}}</view>
-<view class="paragraph">{{terms.paragraph_three}}</view>
-<view class="terms">{{terms.title_four}}</view>
-<view class="paragraph">{{terms.paragraph_four}}</view>
-<view bindtap="navigateBack" class="btn-back">Back</view>
+</view>
+<view class="text-container {{studio}}-card">
+<rich-text class="paragraph" nodes="{{terms.paragraph_one}}"></rich-text>
+</view>
+<view bindtap="navigateBack" class="action-btn {{studio}}-btn">{{strings.back || "BACK"}}</view>
+</view>

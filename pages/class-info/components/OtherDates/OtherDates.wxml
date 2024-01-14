@@ -3,16 +3,16 @@
   {{strings.check_other_dates}} <image src='/images/Triangle.png' class='icon-time2'
     style="margin-right: 5px; margin-left: 150px; margin-top: 7px"></image>
 </view>
-<block wx:if="{{datesShown}}">
-  <view bindtap="hideOtherDates" class='bg-white dates-container'>
+<block wx:if="{{datesShown}}" class="{{studio}}-card">
+  <view bindtap="hideOtherDates" class='dates-container {{studio}}-date-container'>
     <block wx:for="{{dates}}" wx:for-item="date" wx:for-index="i" wx:key="unique">
       <view data-session-id="{{date.id}}" data-instructor-id="{{date.instructor_id}}" catchtap="switchSelectedDate"
-        class="{{selectedDateId == date.id ? 'date-box-current' : 'date-box'}}">
+        class="{{studio}}-date-box {{selectedDateId == date.id ? 'date-box-current' : 'date-box'}}">
         <view class='tc bold text14 '>{{date.date_locale}}</view>
         <view class='tc text14 mb'>{{date.from}}-{{date.to}} </view>
         <view class='tc text14'> {{strings.book_now}} </view>
       </view>
     </block>
   </view>
-  <view bindtap="hideOtherDates" class="bg-white pa tc">{{strings.confirm_date}}</view>
+  <view bindtap="hideOtherDates" class="pa tc {{studio}}-card-active">{{strings.confirm_date}}</view>
 </block>

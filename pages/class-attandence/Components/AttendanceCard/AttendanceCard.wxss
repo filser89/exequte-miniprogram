@@ -22,7 +22,6 @@
   text-align: center;
   justify-content: center;
   margin-top: 12px;
-
 }
 
 .first-booking {
@@ -31,4 +30,16 @@
   
   justify-content: center;
   color: #1FDE8D;
+}
+
+.icon-hrm-booking {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  margin-left: -3px;
+}
+
+.hrm-holder {
+  display: flex;
+  align-items: center;
 }

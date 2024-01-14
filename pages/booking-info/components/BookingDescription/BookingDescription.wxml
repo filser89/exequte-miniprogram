@@ -20,7 +20,7 @@
   <view wx:if="{{ booking.hrm }}" class="hrm-card tl text-white {{studio}}-card">
       <view class="d-flex content-center item-center" >
         <view bindtap="navigateToHrmData" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}" class="btn-card {{studio}}-card-active" >{{ strings.hrm_data }}</view> 
-        <image style="width: 100px; height: 100px;"
+        <image class="{{studio}}-hrm" style="width: 100px; height: 100px;"
           src="../../../../images/hrm-white.svg"></image>
         <view class="btn-card {{studio}}-card-active" >{{ booking.hrm.display_name }}</view> 
       </view>
@@ -29,9 +29,9 @@
   <view class="coach-card text-white {{studio}}-card" >
       <view class="instructor-container">
         <image class="instructor-img" style="width: 60px; height: 60px; border-radius: 50%; z-index: 1; margin-right: 20px"
-          src="{{instructor.image_url}}"></image><view class="instructor-name">{{instructor.first_name}}</view></view>
+          src="{{instructor.image_url ? instructor.image_url : '/images/xq-logo-new.jpg'}}"></image><view class="instructor-name">{{instructor.first_name}}</view></view>
       <!-- Last Name: {{instructor.last_name}} -->
-      <view class='instructor-bio text-size-sbody' style="margin-top: 5px; margin-left: 10px; padding: 5px">{{instructor.bio}}
+      <view class='instructor-bio text-size-sbody' style="margin-left: 10px; padding: 5px">{{instructor.bio}}
       </view>
 
     </view>

@@ -65,3 +65,8 @@
 .item-end {
   align-items: flex-end;
 }
+
+
+.overflow-hidden {
+  overflow: hidden;
+}

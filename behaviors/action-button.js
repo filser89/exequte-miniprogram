@@ -46,6 +46,10 @@ export default Behavior({
         this.buyMembership()
       } else if (action == "bookClass") {
         this.bookClass()
+      } else if (action == "topUp") {
+        this.topUp()
+      } else if (action == "upgradeCredit") {
+        this.upgradeCredit()
       } else if (action == "queueUp") {
         this.queueUp()
       } else if (action == "navigateToBooking") {
@@ -66,8 +70,12 @@ export default Behavior({
       const {membership, res} = await buyMembership(this.data.itemId, this.data.params)
       console.log("buyMembership", res)
       try {
-        let response = await wxp.requestPayment(res)
-        console.log('RESPONSE:', response)
+        if (res !== "free"){
+          let response = await wxp.requestPayment(res)
+          console.log('RESPONSE:', response)
+        } else {
+          console.log("free membership, do not initiate payment");
+        }
       } catch (e) {
         // console.error(e)
         wx.showToast({
@@ -130,14 +138,27 @@ export default Behavior({
       }
     },
 
-    reLaunchToMyClasses() {
+    topUp() {
       wx.reLaunch({
-        url: '../../pages/my-classes/my-classes'
+        url: '/pages/wallet/wallet'
+      })
+    },
+
+    upgradeCredit() {
+      let membershipid = this.data.params && this.data.params.membership_id ? this.data.params.membership_id : ""
+      console.log("membershipid:" + membershipid)
+      wx.reLaunch({
+        url: `/pages/wallet/wallet?selectedMembershipTypeId=${membershipid}`
       })
     },
     reLaunchToIndexPage() {
       wx.reLaunch({
         url: '../../pages/index/index',
+      })
+    },
+    reLaunchToMyClasses() {
+      wx.reLaunch({
+        url: '../../pages/my-classes/my-classes',
       })
     },
     async cancelBooking() {

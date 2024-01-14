@@ -3,7 +3,7 @@
 
   <!-- <BookingCard booking="{{item}}" selected="tab" /> -->
   <view>
-    <view bindtap="navigateToBookingInfo" class="class-card {{studio}}-card-light" data-booking-id="{{booking.id}}"
+    <view bindtap="navigateToBookingInfo" class="class-card {{studio}}-card-extralight" data-booking-id="{{booking.id}}"
       data-instructor-id="{{booking.session.instructor_id}}">
       <!-- card -->
       <view class="bold d-flex space-between pa">

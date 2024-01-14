@@ -3,6 +3,8 @@
   "pages":[
     "pages/splash/splash",
     "pages/index/index",
+    "pages/wallet/wallet",
+    "pages/home/home",
     "pages/booking/booking",
     "pages/class-info/class-info",
     "pages/profile-update/profile-update",
@@ -24,11 +26,18 @@
     "borderStyle": "black",
     "backgroundColor": "#000000",
     "list": [{
-      "pagePath": "pages/about/about",
+      "pagePath": "pages/home/home",
       "text": "",
       "iconPath": "images/home-unselected.png",
       "selectedIconPath": "images/home-selected-reshape.png"
-    }, {
+    }, 
+    {
+      "pagePath": "pages/wallet/wallet",
+      "text": "",
+      "iconPath": "images/wallet-unselected.png",
+      "selectedIconPath": "images/wallet-selected-reshape.png"
+    },
+    {
       "pagePath": "pages/index/index",
       "text": "",
       "iconPath": "images/schedule-unselected.png",

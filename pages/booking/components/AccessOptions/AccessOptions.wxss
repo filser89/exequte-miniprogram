@@ -10,7 +10,7 @@
   color: whitesmoke;
 }
 .glam-btn.button-option-active{
-  background-color: #af6e48 !important;
+  background-color: #4c2867ad !important;
   color: whitesmoke;
 }
 .reshape-btn.button-option-active{

@@ -1,0 +1,49 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="{{studio}}">
+  <Topbar3 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
+  <view wx:if="{{user.profile_filled}}">
+<view class='privilege-container'>
+  <view class="privilege-current-container">
+      <view class="credits-current-title full-card {{studio}}-card-active-opaque">{{ strings.current_card || "CARDS"}}</view>
+      <view wx:if="{{user.current_privilege}}" class='membership-box {{studio + "-card"}}'>
+      <view class="privilege-name {{studio}}-privilege-name" >{{user.current_privilege.name}}</view>
+      <view class="num-container">{{user.credits || "0"}}</view><view class="label-container">{{strings.credits_left || " CREDITS LEFT"}}</view> 
+      <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{user.current_privilege.end_date_locale}}</view>
+      <image bindtap="togglePrivilege" src='/images/Triangle2.png' class='icon-time2 open-privilege-arrow {{privilegeOpen}}' ></image>
+      <view class="privilege-description-box" wx:if="{{privilegeOpen}}">
+        <view class="credits-option-perks" >
+            <view wx:for="{{ user.current_privilege.description }}" wx:for-item="line" wx:key="unique">• {{ line }}</view>
+          <view class="credits-option-book-before">• {{ user.current_privilege.book_before }} {{ strings.book_before || " days advance bookings" }}</view>
+        </view>
+      </view>
+     </view>
+     <view wx:else class='membership-box no-credits {{studio + "-card"}}'>
+      {{ strings.no_credits || "An empty wallet is a sad wallet." }}
+    </view>
+    </view>
+</view>
+    <view class="credits-topup-container">
+    <view class="credits-topup-title full-card {{studio}}-card-active-opaque">{{ strings.topup || "TOP UP YOUR CREDITS"}}</view>
+    <AccessOptions studio="{{studio}}" strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
+    selected="{{selected}}" selectedMembership="{{selectedMembershipTypeLoad}}" membership="{{membership}}" classpack="{{classpack}}" />
+    <view class="top-up-payment d-flex space-between bottom" >
+        <view class="text-white d-flex item-center content-center text-left">{{strings.total_price || "PAY:"}} {{btnPattern.price || 0}} {{strings.currency || "元"}}</view>
+        <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
+          action="{{btnPattern.action}}" params="{{btnPattern.params}}"
+          itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
+          {{btnPattern.text}}
+          </PayButton>
+    </view>
+      </view>
+  </view>
+  <view wx:else>
+    <view class="sign-up-form">
+    <view class="sign-up-text {{studio}}-card">{{info || strings.sign_up_explanation}}</view>
+    <view class="sign-up-container">
+      <GetInfoButton studio="{{studio}}" profileFilled="{{user.profile_filled}}" itemId="">
+                {{strings.sign_up}}
+      </GetInfoButton>
+      </view>
+    </view>
+  </view>
+</view>

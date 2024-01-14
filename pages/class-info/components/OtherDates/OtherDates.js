@@ -8,7 +8,8 @@ Component({
     session: Object,
     selectedDateId: Number,
     selectedInstructorId: Number,
-    strings: Object
+    strings: Object,
+    studio: String
   },
 
   /**

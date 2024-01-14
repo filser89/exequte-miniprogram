@@ -6,6 +6,7 @@
 }
 
 .glam-card {
-  background-color: #21212191 !important;
+  /* background-color: #21212191 !important; */
+  background-color: #302c7369 !important;
   color: whitesmoke;
 }

@@ -20,7 +20,8 @@ import {
   createBooking,
   cancelBooking,
   takeAttendance,
-  getUsersBookings
+  getUsersBookings,
+  getUsersBookingsWithHrm
 } from './bookings.js'
 
 import {
@@ -84,6 +85,14 @@ const getInfo = async (scope) => {
   return request(options)
 }
 
+const getSetting = async (key) => {
+  const options = {
+    method: 'get',
+    url: `/settings?key=${key}`,
+  }
+  return request(options)
+}
+
 const deleteFailedPayment = async (controller, id) =>{
   const options = {
     method: 'delete',
@@ -95,6 +104,7 @@ const deleteFailedPayment = async (controller, id) =>{
 
 module.exports = {
   getInfo,
+  getSetting,
   getStrings,
   useCoupon,
   getCurrentUser,
@@ -117,6 +127,7 @@ module.exports = {
   createBooking,
   cancelBooking,
   getUsersBookings,
+  getUsersBookingsWithHrm,
   getSession,
   getSessions,
   takeAttendance,

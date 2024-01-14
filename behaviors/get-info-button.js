@@ -66,6 +66,18 @@ export default Behavior ({
         url: `../../pages/booking/booking?sessionId=${this.data.itemId}`,
       })
     },
+    navigateToWallet(){
+      console.log('WE ARE NAVIGATING TO WALLET')
+      wx.navigateTo({
+        url: `../../pages/wallet/wallet`,
+      })
+    },
+    navigateToHome(){
+      console.log('WE ARE NAVIGATING TO HOME')
+      wx.navigateTo({
+        url: `../../pages/home/home`,
+      })
+    },
     async saveWxInfo(id, data){
       console.log("UserID", id)
           let updatedUser = await processUserInfo(id, data)

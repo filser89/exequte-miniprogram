@@ -1,6 +1,6 @@
 <!--components/getInfoButton/getInfoButton.wxml-->
 <view class="text-capitalize class-info-book-button text-white" >
-  <button style="width: 100%; height: 50px; background-color: #97daf540; text-align: center; color: white; font-weight: bold; font-size: 18px; display: flex; flex-direction: column; justify-content: center; align-items: center;" open-type="getUserInfo|agreePrivacyAuthorization" bindgetuserinfo="bindGetUserInfo">
+  <button class="{{studio}}-card-active" style="width: 100%; height: 50px; text-align: center; color: whitesmoke; font-weight: bold; font-size: 18px; display: flex; flex-direction: column; justify-content: center; align-items: center;" open-type="getUserInfo|agreePrivacyAuthorization" bindgetuserinfo="bindGetUserInfo">
   <slot />
   </button>
 </view>

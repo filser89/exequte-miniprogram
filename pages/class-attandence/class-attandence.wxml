@@ -1,6 +1,7 @@
 <!--pages/class-attandence/class-attandence.wxml-->
+<view class="{{studio}}">
 <Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
-<view class='back'>
+<view class='{{studio}}-card'>
   <view class='class-about'>
 
     <view style='font-size: 20px; margin:10px'>{{session.name}}</view>
@@ -11,8 +12,9 @@
       <view>{{session.date_locale}}</view>
     </view>
   </view>
-  <AttendanceForm isUserAdmin="{{isUserAdmin}}" strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
-  <CancelForm strings="{{strings}}" session="{{session}}" wx:if="{{isUserAdmin}}"/>
+  <AttendanceForm studio="{{studio}}" isUserAdmin="{{isUserAdmin}}" strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
+  <CancelForm studio="{{studio}}" strings="{{strings}}" session="{{session}}" wx:if="{{isUserAdmin}}"/>
 
 
+</view>
 </view>

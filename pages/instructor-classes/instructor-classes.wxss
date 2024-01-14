@@ -3,7 +3,7 @@
 
 .button-my-classes-active {
   background-color: #D8D8D8; 
-  color: #97daf540; 
+  color: #ffffff; 
   padding: 15px 0;
   font-size: 18px;
   display: flex;
@@ -12,7 +12,6 @@
 }
 
 .button-my-classes {
-  background-color: #18181D; 
   color: white; 
   padding: 15px 0;
   font-size: 18px;

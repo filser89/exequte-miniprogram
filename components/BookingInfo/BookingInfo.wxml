@@ -25,6 +25,12 @@
   <text class="{{studio}}-title" style='width: 60%;'>{{strings.address}}</text>
 </view>
 <view class="block" style='margin-top: 15px'>
+  <text class="{{studio}}-title" style='width: 60%;'>{{strings.price}}</text>
+</view>
+<view class="block" style='margin-top: 15px'>
+  <text style='width: 60%; '>{{session.price}} {{strings.currency}} / <text class="{{studio}}-credits-bubble">{{session.credits}} {{strings.credits}} </text> </text>
+</view>
+<view class="block" style='margin-top: 15px'>
   <text style='width: 100%; '>{{strings.xq_address}}</text>
 </view>
 <view class="block" style='margin-top: 10px'>

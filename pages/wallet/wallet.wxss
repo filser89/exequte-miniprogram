@@ -1,0 +1,105 @@
+/* pages/wallet/wallet.wxss */
+@import "/app.wxss";
+
+.privilege-container {
+  padding-top: 70rpx;
+}
+.credits-topup-container {
+  /* margin-top: 10vh; */
+  padding-bottom: 10vh;
+}
+
+.top-up-payment {
+  margin: 5vh;
+}
+.credits-total-container {
+  padding: 2vh;
+}
+.num-container {
+  font-size: 4vh;
+}
+.credits-current-container {
+  display: none;
+  /* padding-top: 1vh; */
+}
+.label-container {
+  font-size: 2vh;
+}
+.cards-current-container {
+  padding-top: 1vh;
+}
+
+.membership-box {
+  display: flex;
+  /* min-height: fit-content; */
+  flex-direction: column;
+  background-color: #18181D;
+  border: 1px solid #97daf540;
+  border-radius: 10px;
+  /* height: 120px; */
+  margin: 15px 30px;
+  text-align: center;
+  position: center;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+.credits-part {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  height: 130rpx;
+}
+.credits-part {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  height: 130rpx;
+}
+.privilege-label {
+  font-size: 20rpx;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+.privilege-name {
+  padding: 10rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+} 
+.privilege-name.glam-privilege-name {
+  background-color: #51307d9c;
+}
+.privilege-name.reshape-privilege-name{
+  background-color: #97daf55c;
+}
+
+.false {
+  transform: rotate(-90deg);
+}
+
+.true {
+  transform: rotate(90deg);
+}
+
+.open-privilege-arrow {
+  margin-bottom: 10px;
+}
+
+.valid {
+  height: 24px;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #97daf540;
+}
+
+.no-credits {
+  padding: 20rpx;
+}

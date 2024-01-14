@@ -12,7 +12,7 @@
       </view>
     </view>
   </view>
-  <DateSessions studio="{{studio}}" strings="{{strings}}" date="{{rawDates[current]}}" lang="{{lang}}" />
+  <DateSessions size="{{size}}" studio="{{studio}}" strings="{{strings}}" date="{{rawDates[current]}}" lang="{{lang}}" />
 
   <!-- <view wx:for="{{sessions}}" wx:for-item="date" wx:for-index="i" wx:key="unique">
     <view wx:if="{{current == i}}">

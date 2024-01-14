@@ -15,45 +15,9 @@ Page({
     hrmId: {},
     hrmData: {},
     hrmCombinedGraph: {},
-    studio: "reshape",
-    ranking: [
-      {
-        "name":"Jay",
-        "rank":"1",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/jay.jpeg",
-        "calories":"1000"
-      },
-      {
-        "name":"Eliana",
-        "rank":"2",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/eliana.jpeg",
-        "calories":"800"
-      },
-      {
-        "name":"Alberto",
-        "rank":"3",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/albi-half.jpeg",
-        "calories":"700"
-      },
-      {
-        "name":"Oran",
-        "rank":"4",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/oran.jpeg",
-        "calories":"600"
-      },
-      {
-        "name":"Aldo",
-        "rank":"5",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/xq-avatar.png",
-        "calories":"500"
-      },
-      {
-        "name":"Massimo",
-        "rank":"6",
-        "avatarUrl":"https://exequte.oss-cn-shanghai.aliyuncs.com/xq-avatar.png",
-        "calories":"400"
-      }
-    ]
+    ranking: [],
+    my_ranking: "",
+    studio: "reshape"
   },
 
   
@@ -105,7 +69,12 @@ Page({
     this.setData({
       hrmCombinedGraph: hrmData.hrm_combined_graph
     })
-    
+    this.setData({
+      ranking: hrmData.ranking
+    })
+    this.setData({
+      my_ranking: hrmData.my_ranking
+    })
     wx.hideLoading();
     if (hrmData.error) {
       wx.showToast({
@@ -129,6 +98,12 @@ Page({
      })
     this.setData({
       hrmCombinedGraph: hrmData.hrm_combined_graph
+    })
+    this.setData({
+      ranking: hrmData.ranking
+    })
+    this.setData({
+      my_ranking: hrmData.my_ranking
     })
     wx.hideLoading();
   },

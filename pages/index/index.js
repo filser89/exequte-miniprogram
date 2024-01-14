@@ -20,7 +20,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: false,
-    showSplash: true
+    showSplash: true,
+    size: "big"
   },
 
   async onShow() {

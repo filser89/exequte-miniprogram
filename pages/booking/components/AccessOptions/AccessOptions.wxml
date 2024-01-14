@@ -1,23 +1,45 @@
 <!--pages/booking/components/AccessOptions/AccessOptions.wxml-->
 <view class='db' style=''>
   <view class='bold view-size-theader' style='margin: 20px; color: white'>{{strings.access_options}}</view>
-  <view bindtap="chooseOption" data-booking-type="free" wx:if="{{session.access_options.free}}" data-index="{{i}}"
+  <view bindtap="chooseOption" data-booking-type="free" wx:if="{{session.access_options_credits.free}}" data-index="{{i}}"
     class="{{selected == 'free' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view class="d-flex items-center"> {{strings.join_for_free}}</view>
     <view class="d-flex items-center">{{strings.free}}</view>
   </view>
-  <view bindtap="chooseOption" data-booking-type="drop-in" wx:if="{{session.access_options.drop_in}}" data-index="{{i}}"
+  <view wx:else> <!-- if free class (e.g. free class or unlimited membership), do not display the other options -->
+  <view bindtap="chooseOption" data-booking-type="drop-in" wx:if="{{session.access_options_credits.can_use_credits && session.access_options_credits.drop_in}}" data-index="{{i}}"
     class="{{selected == 'drop-in' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view class="d-flex items-center"> {{strings.drop_in}} </view>
     <view class="d-flex items-center">{{session.price}} {{strings.currency}}</view>
   </view>
-  <view bindtap="chooseOption" data-booking-type="voucher" wx:if="{{session.access_options.voucher}}" data-index="{{i}}"
+  <view bindtap="chooseOption" data-booking-type="voucher" wx:if="{{session.access_options_credits.voucher}}" data-index="{{i}}"
     class="{{selected == 'voucher' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view class="d-flex items-center">{{strings.voucher}}</view>
     <view class="d-flex items-center">{{strings.free}}</view>
   </view>
+  <!-- scenario 1 : sufficient credit and can book before -->
+  <view bindtap="chooseOption" data-booking-type="credits" wx:if="{{session.access_options_credits.can_use_credits && session.access_options_credits.credits }}" data-index="{{i}}"
+    class="{{selected == 'credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
+    <view class="d-flex items-center">{{strings.credits}}</view>
+    <view class="d-flex items-center">{{session.credits}}</view>
+  </view>
+  <!-- scenario 2 : sufficient credit but cannot book before-->
+  <view bindtap="chooseOption" data-booking-type="upgrade-credits" wx:if="{{session.access_options_credits.credits && !session.access_options_credits.can_use_credits }}" data-index="{{i}}"
+    class="{{selected == 'upgrade-credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
+    <view class="d-flex items-center">{{strings.upgrade_desc || "Upgrade your membership to unlock this booking!"}}</view>
+  </view>
+  <!-- scenario 3 : insufficient credit and can book before-->
+    <view bindtap="chooseOption" data-booking-type="buy-credits" wx:if="{{ !session.access_options_credits.credits && session.access_options_credits.can_use_credits }}" data-index="{{i}}"
+    class="{{selected == 'buy-credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
+    <view class="d-flex items-center">{{strings.insufficient_credit || "Top Up to book this session!"}}</view>
+  </view>
+    <!-- scenario 4 : insufficient credit and cannot book before-->
+    <view bindtap="chooseOption" data-booking-type="buy-credits" wx:if="{{ !session.access_options_credits.credits && !session.access_options_credits.can_use_credits }}" data-index="{{i}}"
+    class="{{selected == 'buy-credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
+    <view class="d-flex items-center">{{strings.insufficient_credit || "Top Up to book this session!"}}</view>
+  </view>
   <view bindtap="chooseOption" data-booking-type="classpack" data-membership-id="{{session.usable_classpack.id}}"
-    wx:if="{{session.access_options.classpack == 'classpack'}}" data-index="{{i}}"
+    wx:if="{{session.access_options_credits.classpack == 'classpack'}}" data-index="{{i}}"
     class="{{selected == 'classpack' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view  class="d-flex flex-column content-center items-start">
       <view>{{classpack.name}}</view>
@@ -26,7 +48,7 @@
     </view>
     <view class="d-flex items-center" >{{strings.free}}</view>
   </view>
-  <view wx:if="{{session.access_options.membership == 'buy-membership'}}">
+  <view wx:if="{{session.access_options_credits.membership == 'buy-membership'}}">
     <view wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
       <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership"
         data-membership-type-price="{{mt.price}}" data-index="{{index}}"
@@ -37,7 +59,7 @@
     </view>
   </view>
   <view bindtap="chooseOption" data-booking-type="membership" data-membership-id="{{session.usable_membership.id}}"
-    wx:if="{{session.access_options.membership == 'membership'}}" data-index="{{i}}"
+    wx:if="{{session.access_options_credits.membership == 'membership'}}" data-index="{{i}}"
     class="{{selected == 'membership' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view  class="d-flex flex-column content-center items-start">
       <view>{{membership.name}}</view>
@@ -46,4 +68,5 @@
     </view>
     <view class="d-flex items-center" >{{strings.free}}</view>
   </view>
+</view>
 </view>

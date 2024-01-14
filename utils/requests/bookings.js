@@ -50,11 +50,20 @@ const getUsersBookings = () => {
   }
   return request(options)
 }
+
+const getUsersBookingsWithHrm = () => {
+  const options = {
+    method: 'get',
+    url: `/bookings/hrm`,
+  }
+  return request(options)
+}
 module.exports = {
   getBooking,
   getAttendanceList,
   createBooking,
   cancelBooking,
   takeAttendance,
-  getUsersBookings
+  getUsersBookings,
+  getUsersBookingsWithHrm
 }

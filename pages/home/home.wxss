@@ -1,0 +1,26 @@
+/* pages/home/home.wxss */
+
+.hrm-container {
+  padding-top: 20rpx;
+}
+
+.hrm-list-container {
+  max-height: 305rpx;
+  overflow-y: scroll;
+}
+
+.menu-btn {
+  background-color: #97daf540;
+  height: 40px;
+  border-radius: 10px;
+  text-align: left !important;
+  font-size: 18px;
+  align-items: center;
+  margin: 15px 10px;
+  font-weight: bold;
+}
+
+.pic-list-container {
+  max-height: 600rpx;
+  overflow-y: scroll;
+}

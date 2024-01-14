@@ -9,7 +9,7 @@
       </view>
       <view class="hrm-note text-size-sbody">{{strings.hrm_checkin}}</view>
     </view>
-    <view wx:if="{{ hrmCombinedGraph.imageUrl}}" class="flex-box">
+    <view wx:if="{{ hrmData.avg_hr}}" class="flex-box">
     <view bindtap="refreshHrmDataForce" class="btn-refresh" >{{ "⟳" }}</view> 
     </view>
     <view wx:if="{{ hrmCombinedGraph.imageUrl }}" class="hrm-pic-container">
@@ -35,7 +35,7 @@
     </view>
     <view wx:if="{{ hrmData.avg_hr }}" class="ranking-container">
       <view class="trophy-wrapper">
-      <view class="ranking-text">{{hrmData.ranking || 1}}</view>
+      <view class="ranking-text">{{my_ranking || 1}}</view>
       <image class="trophy-img {{studio}}-trophy" src="/images/trophy.svg"></image>
       <view class="bottom-caption">{{strings.ranking || "RANKING"}}</view>
       </view>
@@ -45,17 +45,17 @@
         <view class="rank-item">
           <!--头像-->
           <view class="rank-img">
-            <image src="{{item.avatarUrl}}"></image>
+            <image src="{{item.user.avatar_url}}"></image>
           </view>
           <!--展示昵称,以及贡献值-->
           <block>
-            <view class="rank-name">{{item.name}}</view>
+            <view class="rank-name">{{item.user.workout_name ? item.user.workout_name : item.user.first_name }}</view>
             <view class="rank-price">Calories：{{item.calories}} cal</view>
           </block>
           <!--排名-->
           <view class="rank-uv">
-            <text wx:if="{{item.rank>3}}">第 {{item.rank}} 名</text>
-            <image src="/images/rank{{item.rank}}.png" wx:if="{{item.rank<=3}}" />
+            <text wx:if="{{item.ranking>3}}">第 {{item.ranking}} 名</text>
+            <image src="/images/rank{{item.ranking}}.png" wx:if="{{item.ranking<=3}}" />
           </view>
           </view>
         </view>

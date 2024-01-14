@@ -1,5 +1,5 @@
 <!--pages/instructor-classes/components/SessionCard/SessionCard.wxml-->
-<view bindtap="navigateToClassAttendance" class="class-card">
+<view bindtap="navigateToClassAttendance" class="class-card {{studio}}-card-extralight">
   <!-- card -->
   <view class="bold d-flex space-between pa">
     <!-- left side -->

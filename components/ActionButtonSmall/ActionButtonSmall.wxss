@@ -14,7 +14,8 @@
 } */
 
 .glam-action-btn.action-btn{
-  background-color: #af6e4840 !important;
+  background-color: #8348afb3 !important;
+  /* background-color: #af6e4840 !important; */
 }
 .reshape-action-btn.action-btn{
   background-color: #97daf540 !important;

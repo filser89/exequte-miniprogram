@@ -1,61 +1,60 @@
 <!--pages/class-info/components/ClassDescription/ClassDescription.wxml-->
 
-<view class='banner d-flex item-center w-100 h-20 '
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{session.image_url}}); height:600rpx !important; position: absolute; z-index: -1">
+<view class='banner d-flex item-center w-100 h-20 class-banner'
+  style="background-image: url({{session.image_url}});">
   <view class="pl20">
   </view>
 </view>
-<view style="background-color: black; border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px ">
+<view style="border-radius: 27px 27px 0px 0px; margin-top: -30px; z-index: 1; height: 27px ">
 </view>
 
-<view class=" bg-black ">
-  <view class='text-white' style="margin-left: 30px">
+<view class="class-description">
+  <view class='coach-card {{studio}}-card'>
     <view class="text-size-sheader bold">{{session.name}}</view>
     <view wx:if="{{session.subtitle}}" class="text-size-stheader bold">{{session.subtitle}}</view>
     <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
     <view class="db-flex" style="justify-content: space-around">
       <view class="text-size-sbody" style="margin-top: 20px; display:flex">
         <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}}{{strings.min}}
-        <image src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
-        {{session.calories}}{{strings.kcal}}
+        <image wx:if="{{session.calories}}" src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
+        <view wx:if="{{session.calories}}">{{session.calories}}{{strings.kcal}}</view>
       </view>
     </view>
   </view>
 
-  <view wx:if="{{ session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white">
+  <view wx:if="{{ studio !== 'glam' && session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white {{studio}}-card">
       <view class="d-flex content-center item-center" >
-        <image style="width: 100px; height: 100px;"
+        <image class="{{studio}}-hrm" style="width: 100px; height: 100px;"
           src="../../../../images/hrm-white.svg"></image>
-        <view class="btn-card" >{{ session.hrm.display_name }}</view> 
+        <view class="btn-card {{studio}}-card-active" >{{ session.hrm.display_name }}</view> 
       </view>
       <view class="hrm-note text-size-sbody">{{strings.hrm_checkin}}</view>
     </view>
 
-    <view class="coach-card  tl text-white">
-      <view class="d-flex" >
-        <image style="width: 70px; height: 70px; border-radius: 50%; margin: 5px 5px"
-          src="{{instructor.image_url}}"></image>
-        <view style='justify-content: center; align-items: center;  margin: 35px 10px'> {{strings.coach}}{{instructor.first_name}}</view> 
+    <view class="coach-card  text-white {{studio}}-card">
+      <view class="instructor-container" >
+        <image class="instructor-img" style="width: 60px; height: 60px; border-radius: 50%; z-index: 1; margin-right: 20px"
+        src="{{instructor.image_url ? instructor.image_url : '/images/home-unselected.png'}}"></image>
+        <view class="instructor-name">{{instructor.first_name}}</view> 
       </view>
-      <!-- Last Name: {{instructor.last_name}} -->
-      <view class='text-size-sbody' style="margin-left: 5px; padding: 5px"> {{instructor.bio}}
+      <view class='instructor-bio text-size-sbody' style="margin-left: 10px; padding: 5px">{{instructor.bio}}
       </view>
 
     </view>
 
 
-  <view style="height: 100%; background-color: #555555; color: #97daf540 ; margin-top: 25px; ">
+  <view class="{{studio}}-card" style="height: 100%; margin-top: 25px;">
 
-    <OtherDates bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
+    <OtherDates studio="{{studio}}" bindchangeddate="handleChangedDate" session="{{session}}" selectedDateId="{{session.id}}"
       selectedInstructorId="{{session.instructor_id}}" strings="{{strings}}" />
   </view>
-  <view class="cancel-card text-white tl" style="margin-top: 20px; margin: 20px; padding:10px;">
+  <view class="cancel-card tl {{studio}}-card" style="margin-top: 20px; margin: 20px; padding:10px;">
     <view class="text-size-theader ml" style="margin-left: 15px; margin-bottom: 10px;">
 {{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
     </view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.price}}{{session.price}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.time}}{{session.from}}-{{session.to}}</view>
-    <view class="text-size-sbody ml" style="margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date_locale}}</view>
+    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.price}}{{session.price}}{{strings.currency}} / <text class="{{studio}}-credits-bubble mini">{{session.credits}} {{strings.credits}}</text> </view>
+    <view class="text-size-sbody ml" style="margin-top:10px; margin-left: 15px"> {{strings.time}}{{session.from}}-{{session.to}}</view>
+    <view class="text-size-sbody ml" style="margin-top:10px; margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date_locale}}</view>
   </view>
 
 

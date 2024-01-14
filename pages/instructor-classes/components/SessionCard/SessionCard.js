@@ -7,7 +7,8 @@ Component({
     strings: Object,
     session: Object,
     selected: Number,
-    isUserAdmin: Boolean
+    isUserAdmin: Boolean,
+    studio: String
   },
 
   /**

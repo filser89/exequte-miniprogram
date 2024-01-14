@@ -35,5 +35,5 @@
 
 
 .glam-card-active {
-  background-color: #af6e48 !important;
+  background-color: #51307d9c !important;
 }

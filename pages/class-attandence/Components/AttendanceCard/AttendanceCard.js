@@ -7,7 +7,8 @@ Component({
    */
   properties: {
     strings: Object,
-    item: Object
+    item: Object,
+    studio: String
   },
 
   /**

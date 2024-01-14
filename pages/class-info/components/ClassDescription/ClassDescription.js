@@ -6,7 +6,8 @@ Component({
   properties: {
     session: Object,
     instructor: Object,
-    strings: Object
+    strings: Object,
+    studio: String
   },
 
   /**

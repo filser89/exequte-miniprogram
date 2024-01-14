@@ -3,7 +3,7 @@
 
 .topbar{
   position: absolute;
-  top: 10rpx;
+  top: 0rpx;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 
 .language-button-topbar {
   position: absolute;
-	top: 50rpx; 
+	top: 10rpx; 
   right: 10px; 
   background-color: rgba(0, 0, 0, 0.459);
   width: 40px !important;
@@ -32,7 +32,7 @@
 
 .studio-button-topbar {
   position: absolute;
-	top: 50rpx; 
+	top: 10rpx; 
   left: 10px; 
   background-color: rgba(0, 0, 0, 0.459);
   width: 90px !important;

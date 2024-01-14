@@ -1,16 +1,18 @@
 <!--pages/profile/profile.wxml-->
 <view class="{{studio}}">
 <Topbar3 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
-<view class="privacy-popup" wx:if="{{showPrivacy}}">
-  <view>{{ string.privacy || "We need your permission to send you notifications for important class updates. Please click Agree to not miss any beat!" }} </view>
-  <view class="privacy-btns"><button class="{{studio}}-card-active" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">{{ strings.agree || "Agree" }}</button>
-  <button class="{{studio}}-card-inactive" id="close-btn" bind:tap="closePrivacyPopup">{{ strings.close || "Close" }}</button></view>  
+<view class="privacy-container">
+  <view class="privacy-popup" wx:if="{{showPrivacy}}">
+    <view>{{ string.privacy || "We need your permission to send you notifications for important class updates. Please click Agree to not miss any beat!" }} </view>
+    <view class="privacy-btns"><button class="{{studio}}-card-active" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">{{ strings.agree || "Agree" }}</button>
+    <button class="{{studio}}-card-inactive" id="close-btn" bind:tap="closePrivacyPopup">{{ strings.close || "Close" }}</button></view>  
+  </view>
 </view>
 <view class='block avatar' style='flex-direction: column'>
   <view class='block'>
     <image class='photo-style' src="{{user.avatar_url}}"></image>
   </view>
-  <view class='bold block' style="font-size: 20px; margin-top: 10px;">{{user.profile_filled  ? user.first_name : strings.welcome}}
+  <view class='bold block {{studio}}-card' style="font-size: 20px; margin-top: 10px; padding:20rpx; border-radius: 20rpx;">{{user.profile_filled  ? user.first_name : strings.welcome}}
     {{user.profile_filled ? user.last_name : ''}}</view>
 </view>
 
@@ -26,7 +28,30 @@
    </view>
   </GetInfoProfileButton>
 <!-- stats -->
-<view class='block' style='margin-top: 15px'>
+<view class='privilege-container' style='margin-top: 15px'>
+  <view wx:if="{{user.current_privilege}}" class='membership-box {{studio + "-card"}}'>
+      <view class="credits-part">
+        <view class='credits-title'> {{strings.credits || "CREDITS"}}</view>
+        <view class='credits-holder'>
+          <view class='credits-container'>
+            <view class='tc bold credits-num'><span class="big-text">{{user.credits}}</span><span class="label small-text">{{strings.left || "left"}}</span></view>
+          </view>
+          <view bindtap="navigateToWallet" class='top-up-btn {{studio}}-topup-btn'>{{strings.topup || "TOP UP ¥"}}</view>
+        </view>
+      </view>
+      <view class="privilege-label {{studio}}-privilege-label" >{{strings.privilege_label || "CARD TYPE"}}</view>
+      <view class="privilege-name {{studio}}-privilege-name" >{{user.current_privilege.name}}</view>
+      <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{user.current_privilege.end_date_locale}}</view>
+      <image bindtap="togglePrivilege" src='/images/Triangle2.png' class='icon-time2 open-privilege-arrow {{privilegeOpen}}' ></image>
+      <view class="privilege-description-box" wx:if="{{privilegeOpen}}">
+        <view class="credits-option-perks" >
+            <view wx:for="{{ user.current_privilege.description }}" wx:for-item="line" wx:key="unique">• {{ line }}</view>
+          <view class="credits-option-book-before">• {{ user.current_privilege.book_before }} {{ strings.book_before || " days advance bookings" }}</view>
+        </view>
+      </view>
+  </view>
+</view>
+<!-- <view class='block' style='margin-top: 15px'>
   <view class=' blu-box d-flex flex-column space-between {{studio + "-card"}}'>
     <view class='d-flex tc bold content-center pb {{user.has_body_data ? "" : "text-size-theader"}}'> {{strings.classes}}</view>
     <view class='d-flex flex-column space-between flex-grow'>
@@ -53,7 +78,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 <!-- button my classes -->
 <view bindtap="navigateToMyClasses" class='my-classes-btn d-flex {{studio + "-card"}}'>
   <view style='margin-left: 20px;'>{{strings.my_classes}} </view>
@@ -81,17 +106,6 @@
     <view class='bold'> {{strings.slogan}} </view>
   </view>
 </view> -->
-<!-- membership -->
-<view wx:for="{{user.memberships}}" wx:key="unique" class='membership-box {{studio + "-card"}}'>
-  <view style="margin-top: 10px">{{item.name}}</view>
-  <block wx:if="{{item.is_class_pack}}">
-    <view>{{item.vouchers}} {{strings.classes_left}}</view>
-  </block>
-  <block wx:if="{{!item.unlimited}}">
-    <view>{{item.bookings_per_day}} {{strings.classes_left_today}}</view>
-  </block>
-  <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{item.end_date_locale}}</view>
-</view>
 </view>
 <!-- nutrition -->
 <!-- <block wx:if="{{user.has_body_data}}">

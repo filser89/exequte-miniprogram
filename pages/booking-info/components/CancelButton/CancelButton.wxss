@@ -30,7 +30,7 @@
 }
 
 .glam-card {
-  background-color: #af6e48b3 !important;
+  background-color: #4c2867ad !important;
   color: whitesmoke;
 }
 

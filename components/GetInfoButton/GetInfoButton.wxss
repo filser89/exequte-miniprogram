@@ -1,7 +1,11 @@
 /* components/getInfoButton/getInfoButton.wxss */
 /* @import "/app.wxss"; */
 
-/* .action-btn{
-  width:115px; height: 50px; background-color: #97daf540; text-align: center; color: white;
-  font-weight: bold; font-size: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;
-} */
+
+.reshape-card-active {
+  background-color: #97daf5b3 !important;
+}
+
+.glam-card-active {
+  background-color: #51307d9c !important;
+}

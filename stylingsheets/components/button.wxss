@@ -120,7 +120,8 @@ button cover-view {
 }
 
 .glam-calendar-btn.calendar-button-active{
-  background-color: #af6e48 !important;
+  /* background-color: #af6e48 !important; */
+  background-color: #51307d9c !important;
 }
 
 .reshape-calendar-btn.calendar-button-active{

@@ -1,0 +1,49 @@
+<!--pages/my-classes/components/BookingCard/BookingsList/BookingsList.wxml-->
+<view wx:if="{{picture === 'false'}}">
+<view wx:for="{{bookings}}" wx:for-item="booking" wx:key="unique">
+<!-- bookings view for hrm-->
+ <view class="card-small tl {{studio}}-card-light">
+  <view class="d-flex" data-session-id="{{booking.session.id}}" data-instructor-id="{{booking.session.instructor_id}}" >
+    <!-- left sede of the card -->
+    <view class="text-white">
+      <view class="flex" style="border-radius: 10px;">
+        <image class="card-image-small" src="{{booking.session.image_url}}" />
+      </view>
+    </view>
+    <!-- left side finished -->
+    <!-- right side of the card -->
+    <view class="d-flex flex-column flex-grow space-around pl ml">
+      <!-- top of the right of the card -->
+      <view class="text-uppercase bold text-lh-copy text-white">
+        <view>{{booking.session.name}}</view>
+      </view>
+      <!-- top of the right of the card finished -->
+      <!-- bottom of the right card -->
+      <view class="d-flex space-between item-center tl">
+        <!-- details -->
+        <view class="text-white">
+          <view class="mb1 text-size-sbody">{{booking.session.date_locale_short}} {{booking.session.from}}-{{booking.session.to}}
+          </view>
+        </view>
+        <view class="action-btn-container">
+        <view bindtap="navigateToHrmData" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}"  class="action-btn-extrasmall {{studio}}-action-btn-extrasmall" >
+          {{strings.stats || "STATS"}}
+        </view>
+        </view>
+      </view>
+    </view>
+    <!-- right side of the card finished -->
+  </view>
+</view>
+</view>
+</view>
+<view wx:else>
+<!-- picture slideshow-->
+  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="unique">
+    <view wx:if="{{booking.session && booking.session.photos_urls && booking.session.photos_urls.length}}" class="coach-card text-white tl {{studio}}-card">
+    <view wx:for="{{booking.session.photos_urls}}" wx:for-item="photo" wx:for-index="i" wx:key="unique"  >
+      <image data-url="{{photo}}" bindtap="preview_img" show-menu-by-longpress="true" src="{{photo}}"></image>
+    </view>
+    </view>
+    </view>
+</view>

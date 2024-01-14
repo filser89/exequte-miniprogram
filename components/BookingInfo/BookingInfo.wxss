@@ -50,7 +50,7 @@ input {
 
 .glam-title {
   /* color: #af6e48; */
-  color: #fdccb0;
+  color: #ffffff;
 }
 
 .reshape-title {
@@ -58,7 +58,7 @@ input {
 }
 
 .glam-card-booking{
-  background-color: #21212166 !important;
+  background-color: #302c7369 !important;
 }
 
 .reshape-card-booking{

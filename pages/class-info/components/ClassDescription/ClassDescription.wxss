@@ -1,3 +1,33 @@
 /* pages/class-info/components/ClassDescription/ClassDescription.wxss */
 
 @import "/app.wxss";
+
+.class-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -40rpx;
+}
+
+.class-description {
+  padding-top: 30rpx;
+}
+
+.reshape-hrm {
+  filter: invert(0.5) brightness(29) sepia(1) saturate(5.1) hue-rotate(95deg);
+}
+.glam-hrm {
+  filter: brightness(99) invert(0.2) sepia(0.2);
+}
+
+
+.instructor-container {
+  display: flex;
+  align-items: center;
+}
+.instructor-img {
+  margin-left: 10rpx;
+}
+.instructor-name {
+  font-size: 40rpx;
+}

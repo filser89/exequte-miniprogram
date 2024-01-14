@@ -1,0 +1,7 @@
+<!--components/ActionButtonSmall/ActionButtonSmall.wxml-->
+<view class="class-info-book-button">
+  <view class="{{btnDisabled ? 'action-btn-extrasmall-disabled' : 'action-btn-extrasmall'}} {{studio}}-action-btn-extrasmall" data-action="{{action}}" disabled="{{btnDisabled}}" catchtap="takeAction" >
+  <slot />
+   </view>
+</view>
+

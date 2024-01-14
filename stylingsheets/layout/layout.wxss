@@ -9,7 +9,7 @@
 page {
   /* @todo replace with wx.loadFontFace remote url*/
   font-family: Nasalization !important;
-  /* background-color: black !important; */
+  background-color: black;
 }
 
 .reshape {
@@ -22,9 +22,10 @@ page {
 }
 
 .glam {
-  background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/glam-bg.jpg'); 
+  background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/glam-bg-bright.jpg'); 
   background-repeat: repeat !important; 
-  background-size: contain !important; 
+  background-position: center;
+  background-size: cover !important; 
   color: whitesmoke;
   height: 100%;
   min-height: 100vh;
@@ -50,6 +51,31 @@ page {
   background-color: #97daf5b3 !important;
 }
 
+.reshape-credits-bubble {
+  color: whitesmoke;
+  background-color: #97daf5b3 !important;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+
+.glam-credits-bubble {
+  color: whitesmoke;
+  background-color: #51307d9c !important;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+.glam-credits-bubble.mini {
+  font-size: 25rpx;
+  padding: 10rpx;
+}
+.reshape-credits-bubble.mini {
+  font-size: 25rpx;
+  padding: 10rpx;
+}
+
+.reshape-card-active-opaque {
+  background-color: #97daf5b3 !important;
+}
 .reshape-card-inactive {
   background-color: #97daf540 !important;
 }
@@ -59,28 +85,52 @@ page {
 }
 
 .glam-card {
-  background-color: #21212191 !important;
+  background-color: #302c7369 !important;
+  /* background-color: #21212191 !important; */
 }
 .glam-card-dark {
   background-color: #212121c7 !important;
 }
 
 .glam-card-extralight {
-  background-color: #2121213d !important;
+  /* background-color: #2121213d !important; */
+  background-color: #302c7340 !important;
+
 }
 
 .glam-card-light {
-  background-color: #c6b0a2ad !important;
+  /* background-color: #c6b0a2ad !important; */
+  background-color: #a288c59c !important;
+
 }
 
 .glam-card-active {
-  background-color: #af6e48 !important;
+  background-color: #51307d9c !important;
 }
 
+.glam-card-active-opaque {
+  /* background-color: #af6e48a3 !important; */
+  background-color: #51307d9c !important;
+}
 .glam-card-inactive {
-  background-color: #c6b0a2 !important;
+  background-color: #a697b196 !important;
 }
 
 .glam-card-selected {
   background-color: #212121fa !important;
+}
+
+/* sign up form */
+
+.sign-up-form {
+  padding-top: 30%;
+  color: whitesmoke;
+}
+
+.sign-up-text {
+  padding: 20rpx;
+  text-align: center;
+}
+.sign-up-container {
+  
 }

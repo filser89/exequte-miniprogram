@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Topbar3": "/components/Topbar3/Topbar3",
+    "GetInfoButton": "/components/GetInfoButton/GetInfoButton",
+    "DateSessions": "/pages/index/components/DateSessions/DateSessions",
+    "BookingsList": "./components/BookingsList/BookingsList"
+  }
+}

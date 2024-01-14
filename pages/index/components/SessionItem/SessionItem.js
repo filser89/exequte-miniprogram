@@ -14,7 +14,8 @@ Component({
   properties: {
     strings: Object,
     session: Object,
-    studio: String
+    studio: String,
+    size: String
   },
 
   /**
@@ -32,6 +33,7 @@ Component({
   pageLifetimes: {
     show() {
     this.setUser()
+    console.log(this.data.size)
   }
   },
   /**

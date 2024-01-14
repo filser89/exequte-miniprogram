@@ -1,0 +1,8 @@
+<!--pages/wallet/components/PayButton/PayButton.wxml-->
+<view class="text-capitalize text-white btn-container">
+  <view class="action-btn {{studio}}-btn"  data-action="{{action}}"
+    disabled="{{btnDisabled}}" catchtap="takeAction">
+    <slot />
+  </view>
+  <!-- <slot /> -->
+</view>

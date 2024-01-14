@@ -1,0 +1,73 @@
+/* pages/my-classes/components/BookingCard/BookingsList/BookingsList.wxss */
+@import "/app.wxss";
+
+.class-card {
+  /* border-radius: 10px; */
+  margin: 20px auto 0 auto;
+  
+}
+
+
+.class-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-size:cover;
+  margin-left: 20px;
+}
+
+.icon-time-booking {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+
+.icon-hrm-booking {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  margin-left: -3px;
+}
+
+.status {
+  height: 10px;
+  font-size: 13px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 0px !important;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+
+
+.glam-action-btn-extrasmall.action-btn-extrasmall{
+  background-color: #51307d9c !important;
+}
+.reshape-action-btn-extrasmall.action-btn-extrasmall{
+  background-color: #97daf540 !important;
+}
+
+.action-btn-extrasmall{
+  width: 115px;
+  height: 50px;
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 10px; /* Add margin for spacing */
+  margin-top: -40rpx;
+}
+
+.action-btn-container {
+  margin-top: -20rpx;
+}

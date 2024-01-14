@@ -1,5 +1,7 @@
 // pages/class-attandence/class-attandence.js
 import {getSessionAttendance, getStrings} from '../../utils/requests/index'
+import { updateBarColors } from '../../utils/util'
+
 Page({
 
   /**
@@ -8,7 +10,8 @@ Page({
   data: {
     strings: {},
     session: {},
-    options: {}
+    options: {},
+    studio: ""
   },
 
   /**
@@ -19,6 +22,9 @@ onLoad(options) {
 
   },
   async onShow(){
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
+
     const session = await getSessionAttendance(this.data.options.id)
     const strings = await getStrings(this.route.split('/')[2])
 

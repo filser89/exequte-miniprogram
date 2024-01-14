@@ -2,12 +2,12 @@
 <view class="{{studio}}">
 <Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
 <BookingInfo studio="{{studio}}"strings="{{strings}}" session="{{booking.session}}" />
-<view class='{{studio}}-square square db'>
+<view wx:if="{{ studio !== 'glam' && booking.hrm }}" class='{{studio}}-square square db'>
   <view class='bold text-black tc'>
     <view class="d-flex content-center item-center" >
-        <image style="width: 100px; height: 100px;"
-          src="/images/hrm-red.svg"></image>
-        <view class="btn-card" >{{ booking.hrm.display_name }}</view> 
+        <image class="{{studio}}-hrm" style="width: 100px; height: 100px;"
+          src="/images/hrm-white.svg"></image>
+        <view class="btn-card {{studio}}-card-active" >{{ booking.hrm.display_name }}</view> 
       </view>
   </view>
 </view>
@@ -21,7 +21,10 @@
   <view class='bold text-black tc' style='margin-top: 20px'>{{strings.come_in_advance}}</view>
 </view>
 
-<ActionButton studio="{{studio}}" strings="{{strings}}" action="reLaunchToMyClasses">
+<!-- <ActionButton studio="{{studio}}" strings="{{strings}}" action="reLaunchToMyClasses">
   {{strings.go_to_my_classes}}
+</ActionButton> -->
+<ActionButton studio="{{studio}}" strings="{{strings}}" action="reLaunchToIndexPage">
+  {{strings.book_another}}
 </ActionButton>
 </view>

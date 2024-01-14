@@ -44,7 +44,7 @@ Page({
     const session = await getSession(sessionId)
     //const membershipTypes = await getMembershipTypes()
     const membershipTypes = await getMembershipTypesBySession(sessionId)
-    const selected = this.setSelected(session.access_options)
+    const selected = this.setSelected(session.access_options_credits)
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     const membership = session.usable_membership
@@ -109,7 +109,11 @@ Page({
   // data setters
   setSelected(accessOptions) {
     console.log(accessOptions)
+    if (accessOptions){
     return accessOptions.hasOwnProperty('drop_in') ? 'drop-in' : 'free'
+    } else {
+      return 'drop-in';
+    }
   },
 
   setBtnPattern(accessOption) {
@@ -196,6 +200,37 @@ Page({
           }
         })
         break;
+        case 'credits':
+          this.setData({
+            btnPattern: {
+              action: 'bookClass',
+              text: this.properties.strings && this.properties.strings.book_class  || 'Book Class',
+              params: {
+                booked_with: 'credits',
+                membership_id: ''
+               }
+            }
+          })
+          break;
+          case 'buy-credits':
+            this.setData({
+              btnPattern: {
+                action: 'topUp',
+                text: this.properties.strings && this.properties.strings.top_up  || 'TOP UP'
+              }
+            })
+          break;    
+          case 'upgrade-credits':
+            this.setData({
+              btnPattern: {
+                action: 'upgradeCredit',
+                text: this.properties.strings && this.properties.strings.upgrade_credit  || 'UPGRADE',
+                params: {
+                  membership_id: (this.data.session.access_options_credits && this.data.session.access_options_credits.upgrade_membership) ? this.data.session.access_options_credits.upgrade_membership.id : ''
+                }
+              }
+            })
+          break;   
     }
     console.log('btnPattern', this.data.btnPattern)
   },

@@ -1,12 +1,12 @@
 <!--pages/class-attandence/AttendanceForm/AttendanceForm.wxml-->
-<form bindsubmit="formSubmit">
+<form bindsubmit="formSubmit" class="{{studio}}-card">
   <view class="capacity-container" wx:if="{{isUserAdmin}}">
     <button class='decrease' bindtap="decreaseCapacity">-</button>
     <view class="capacity">{{bookings.length}}/{{capacity ? capacity : session.capacity}}</view>
     <button class='increase' bindtap="increaseCapacity">+</button>
   </view>
   <view wx:for="{{bookings}}" wx:key="unique">
-   <AttendanceCard strings="{{strings}}" item="{{item}}"/>
+   <AttendanceCard studio="{{studio}}" strings="{{strings}}" item="{{item}}"/>
   </view>
-  <button class='update' style="width: 100%" form-type="submit">{{strings.update}}</button>
+  <button class='update {{studio}}-card-active' style="width: 100%" form-type="submit">{{strings.update}}</button>
 </form>

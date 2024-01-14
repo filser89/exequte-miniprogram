@@ -12,7 +12,8 @@ Page({
     strings: {},
     user: {},
     showPrivacy: false,
-    studio: "reshape"
+    studio: "reshape",
+    privilegeOpen: false
   },
 
   /**
@@ -101,6 +102,10 @@ Page({
     })
   },
 
+  navigateToWallet(){
+    wx.switchTab({url:'/pages/wallet/wallet'})
+  },
+
   handleLanguageChanged(){
     this.onShow()
   },
@@ -151,6 +156,12 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  togglePrivilege: function () {
+    this.setData({
+      privilegeOpen: !this.data.privilegeOpen
+    });
+  },
 
 })

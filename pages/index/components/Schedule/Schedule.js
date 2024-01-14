@@ -8,7 +8,8 @@ Component({
     rawDates: Array,
     dates: Array,
     lang: String,
-    studio: String
+    studio: String,
+    size: String
   },
 
   /**

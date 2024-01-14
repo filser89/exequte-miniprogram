@@ -1,5 +1,7 @@
 // pages/instructor-classes/instructor-classes.js
 import {getInstructorSessions, getAdminSessions, getStrings} from '../../utils/requests/index'
+import { updateBarColors } from '../../utils/util'
+
 
 Page({
 
@@ -9,7 +11,8 @@ Page({
   data: {
     strings: {},
     sessions: [],
-    selected: 0
+    selected: 0,
+    studio: ""
   },
 
   /**
@@ -21,6 +24,9 @@ Page({
 
   async onShow() {
     console.log(this.data.options)
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
+
     wx.setStorageSync('selectedTab', -1)
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     let sessions
