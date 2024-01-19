@@ -1,5 +1,5 @@
 // pages/home/home.js
-import {getSetting, getUserDetails, getStrings, getBanner, getUsersBookingsWithHrm} from "../../utils/requests/index"
+import {getSetting, getUserDetails, getStrings, getBanner, getUsersBookingsWithHrm, getUsersBookings} from "../../utils/requests/index"
 
 import { updateBarColors } from '../../utils/util'
 
@@ -50,24 +50,43 @@ Page({
     const currentUser = wx.getStorageSync('user')
     console.log('id', currentUser.id)
     const user = await getUserDetails(currentUser.id)
-    const bookings = await getUsersBookingsWithHrm();
+    let hrm_bookings = await getUsersBookingsWithHrm();
+    let bookings = await getUsersBookings();
     const strings = await getStrings(this.route.split('/')[2])
     const banner = await getBanner()
+    let info = "Click here to sign up with eXequte and start your new transformational journey";
     try {
-      let info = JSON.parse(await getSetting('signup_text'));
+      info = JSON.parse(await getSetting('signup_text'));
       const lang = getApp().globalData.headers['X-API-Lang'];
       info = info[lang];
+      } catch (e){console.log(e); }
       this.setData({info})
-      } catch (e){console.log(e)}
     Promise.all([strings, user, banner, bookings]).then((values) => {
       console.log('values', values)
-      this.setData({strings, user, banner, bookings})
-      let last_bookings = bookings
-      if (bookings && bookings.length > 5){
-        last_bookings = bookings.slice(0,5);
-      }
-      this.setData({last_bookings})
-      wx.hideLoading()
+      try {
+        let currentStudio = getApp().globalData.studio
+        if (!currentStudio || currentStudio  == ""){
+          console.log("current studio null, setting it to reshape");
+          currentStudio = "reshape";
+        }
+        if (bookings && bookings[1]){
+          bookings = bookings[1];
+        } else {
+          bookings = hrm_bookings;
+        }
+        let last_bookings = hrm_bookings
+        if (bookings){
+          hrm_bookings = hrm_bookings.filter(booking => booking.session.location === currentStudio);
+          last_bookings = bookings.filter(booking => booking.session.location === currentStudio);
+        }
+        this.setData({strings, user, banner, hrm_bookings, bookings})
+        if (last_bookings && last_bookings.length > 5){
+          last_bookings = last_bookings.slice(0,5);
+        }
+        
+        this.setData({last_bookings})
+        wx.hideLoading()
+      } catch(e){console.log(e);}
     })
   },
 

@@ -1,18 +1,18 @@
 <!--pages/profile-update/components/BodyTargetForm/BodyTargetForm.wxml-->
-<view>
+<view class="view">
   <text>{{strings.goal}}</text>
   <picker name="target" bindchange="bindTargetChange" value="{{targets[index]}}" range="{{targets}}"  style="width: 430rpx;">
-    <view class="picker">
+    <view class="view picker">
        {{targets[index]}}
     </view>
   </picker>
 </view>
 
-<view>
+<view class="view">
   <text>{{strings.t_weight}}</text>
   <input type="number" name="target_weight" value="{{user.target_weight}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.t_fat}} %</text>
   <input type="number" name="target_body_fat" value="{{user.target_body_fat}}" />
 </view>

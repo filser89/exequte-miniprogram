@@ -1,14 +1,15 @@
 <!--pages/profile-update/profile-update.wxml-->
+<view class="{{studio}}">
 <Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
-<view class="white tc bold"
-  style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white;"> 
-  <wux-accordion-group isOpen="{{!isWaiverSigned}}" class="consent-form">
+<view class="view tc bold"
+  style="margin: 50rpx 120rpx 50rpx 120rpx; justify-content: center;"> 
+  <wux-accordion-group isOpen="{{!isWaiverSigned}}" class="{{studio}}-card consent-form">
     <wux-accordion key="first" class="consent-form-title" title="{{strings.waiver_title || 'Informed Consent Form'}}">
       <rich-text class="waiver-text" nodes="{{strings.waiver_form || waiver_default}}" >
       
       </rich-text>
-      <view class="confirm-waiver-box">
-        <view class="confirm-waiver">{{strings.waiver_confirm || "I HEREBY AFFIRM THAT I HAVE READ AND FULLY UNDERSTAND THE ABOVE STATEMENTS."}}</view>
+      <view class="view confirm-waiver-box">
+        <view class="view confirm-waiver">{{strings.waiver_confirm || "I HEREBY AFFIRM THAT I HAVE READ AND FULLY UNDERSTAND THE ABOVE STATEMENTS."}}</view>
         <checkbox-group name="waiver" bindchange="updateWaiver" >
           <label class="checkbox">
             <checkbox value="waiver_signed" color="black" checked="{{user.waiver_signed}}"/>
@@ -19,28 +20,28 @@
   </wux-accordion-group>
 </view>
 
-<view class="white tc bold"
-  style="margin: 0px; justify-content: center; background-color: black; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
+<view class="{{studio}}-card view tc bold"
+  style="margin: 0px; justify-content: center; border-top: 1rpx solid white; border-bottom: 1rpx solid white; padding: 20px">
   {{ isOtherUser ? strings.personal_info : strings.my_personal_info }}
 </view>
-<view style="background-color: black; margin: 0; color: white">
+<view class="{{studio}}-card view" style="margin: 0; color: white">
   <form bindsubmit="formSubmit">
 
     <ProfileForm strings="{{strings}}" user="{{user}}" birthday="{{user.birthday}}" />
-    <view style="justify-content: center; margin-top: 5px">{{strings.my_body}}</view>
+    <view class="view" style="justify-content: center; margin-top: 5px">{{strings.my_body}}</view>
     <BodyNowForm strings="{{strings}}" user="{{user}}" />
-    <view style="justify-content: center; margin-top: 5px">{{strings.targets}}</view>
+    <view class="view" style="justify-content: center; margin-top: 5px">{{strings.targets}}</view>
     <BodyTargetForm strings="{{strings}}" user="{{user}}" />
-    <view>
+    <view class="view" >
       <text>{{strings.avatar}}</text>
       <view bindtap="uploadImage"
-        style="border-radius: 2px; background-color: white; color: #555555; width: 50px; height: 50px; font-size: 28px; justify-content: center; margin-left: 5px;">
+        style="border-radius: 2px; background-color: white; color: #555555;font-size: 28px; justify-content: center; margin-left: 5px;">
         +</view>
     </view>
-    <view style="margin-left: 10px; font-size: 14px; display: block;">{{strings.save1}} <navigator
+    <view class="view" style="margin-left: 10px; font-size: 14px; display: block;">{{strings.save1}} <navigator
         style="display: inline; text-decoration: underline;"
         url="../../pages/terms-and-conditions/terms-and-conditions">{{strings.save2}}</navigator> {{strings.save3}}</view>
-    <button style="background-color: #97daf540; width: 95%; border-radius: 2px; margin-bottom: 10px; color: white"
-      form-type="submit">{{strings.save}}</button>
+    <view style="padding-bottom: 100rpx;"><button class="{{studio}}-action-btn action-btn" form-type="submit">{{strings.save}}</button></view>
   </form>
+</view>
 </view>

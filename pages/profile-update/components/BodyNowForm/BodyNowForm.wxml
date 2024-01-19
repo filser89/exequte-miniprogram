@@ -1,13 +1,13 @@
 <!--pages/profile-update/components/BodyNowForm/BodyNowForm.wxml-->
-<view>
+<view class="view">
   <text>{{strings.height}}</text>
   <input type="number" name="height" value="{{user.height}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.weight}}</text>
   <input type="number" name="current_weight" value="{{user.current_weight}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.fat}}%</text>
   <input type="number" name="current_body_fat" value="{{user.current_body_fat}}" />
 </view>

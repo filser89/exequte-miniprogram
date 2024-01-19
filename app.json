@@ -26,27 +26,33 @@
     "borderStyle": "black",
     "backgroundColor": "#000000",
     "list": [{
-      "pagePath": "pages/home/home",
+      "pagePath": "pages/splash/splash",
       "text": "",
       "iconPath": "images/home-unselected.png",
-      "selectedIconPath": "images/home-selected-reshape.png"
+      "selectedIconPath": "images/home-unselected.png"
+    },
+    {
+      "pagePath": "pages/home/home",
+      "text": "",
+      "iconPath": "images/studio-unselected.png",
+      "selectedIconPath": "images/studio-unselected.png"
     }, 
     {
       "pagePath": "pages/wallet/wallet",
       "text": "",
       "iconPath": "images/wallet-unselected.png",
-      "selectedIconPath": "images/wallet-selected-reshape.png"
+      "selectedIconPath": "images/wallet-unselected.png"
     },
     {
       "pagePath": "pages/index/index",
       "text": "",
       "iconPath": "images/schedule-unselected.png",
-      "selectedIconPath": "images/schedule-selected-reshape.png"
+      "selectedIconPath": "images/schedule-unselected.png"
     }, {
       "pagePath": "pages/profile/profile",
       "text": "",
       "iconPath": "images/user-unselected.png",
-      "selectedIconPath": "images/user-selected-reshape.png"
+      "selectedIconPath": "images/user-unselected.png"
     }]
   },
   "window":{

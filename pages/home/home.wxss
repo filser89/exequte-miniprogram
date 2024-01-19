@@ -1,7 +1,17 @@
 /* pages/home/home.wxss */
+page {
+  overflow-x: hidden !important;
+}
 
 .hrm-container {
   padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.hrm-title {
+  margin-bottom: 30rpx;
+}
+.coming-next-title {
+  margin-bottom: 30rpx;
 }
 
 .hrm-list-container {

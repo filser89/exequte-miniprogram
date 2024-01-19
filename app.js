@@ -6,8 +6,8 @@ App({
   globalData: {
     ApiKey: 'ExeQuteapikey',
 
-    // BASE_URL: 'https://exequte.cn/api/v1',
-     BASE_URL: 'http://localhost:3000/api/v1',
+    BASE_URL: 'https://exequte.cn/api/v1',
+    //  BASE_URL: 'http://localhost:3000/api/v1',
     // BASE_URL: 'http://exequte.5gzvip.idcfengye.com/api/v1',
     headers: {
       'API-Key': 'ExeQuteapikey'

@@ -6,7 +6,11 @@
         data-membership-type-price="{{mt.price}}" data-index="{{index}}"
         class="{{selected == 'buy-membership' && current == index ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
         <view class="credits-name">{{mt.name}}</view>
-        <view class="credits-num-container"><span class="credits-num">{{mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
+        <view wx:if="{{mt.is_unlimited}}">
+          <view class="credits-unlimited-container"><span class="credits-unlmited">{{strings.unlimited || "UNLIMITED"}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
+        <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
+        </view>
+        <view wx:else class="credits-num-container"><span class="credits-num">{{mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
         <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
         <view wx:if="{{selected == 'buy-membership' && current == index}}" class="credits-option-description">
           <view class="credits-option-perks" >

@@ -1,3 +1,5 @@
+import { updateBarColors } from '../../utils/util'
+
 // splash.js
 Page({
     /**
@@ -11,6 +13,7 @@ Page({
    */
 
   async onShow() {
+    updateBarColors("splash");
     console.log('splash page')
   },
   handleReshape() {

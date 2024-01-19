@@ -66,7 +66,8 @@ Page({
     this.setData({info})
     } catch (e){console.log(e)}
 
-    const membershipTypes = await getMembershipTypes()
+    let membershipTypesUnsorted = await getMembershipTypes()
+    const membershipTypes = membershipTypesUnsorted.sort((a, b) => a.price - b.price)
     this.setData({
       membershipTypes
     })

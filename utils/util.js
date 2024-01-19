@@ -35,24 +35,30 @@ const updateBarColors = (studio) => {
     wx.setTabBarItem({
       index: 1,
       text: '',
+      'iconPath': '/images/studio-unselected.png',
+      'selectedIconPath': '/images/studio-selected-reshape.png'
+    });
+    wx.setTabBarItem({
+      index: 2,
+      text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 4,
       text: '',
       'iconPath': '/images/user-unselected.png',
       'selectedIconPath': '/images/user-selected-reshape.png'
     });
     studioTitle = "exeQute - Reshape";
     barBgColor = "#141e2d"
-  } else {
+  } else if (studio === "glam") {
     wx.setTabBarItem({
       index: 0,
       text: '',
@@ -62,17 +68,23 @@ const updateBarColors = (studio) => {
     wx.setTabBarItem({
       index: 1,
       text: '',
+      'iconPath': '/images/studio-unselected.png',
+      'selectedIconPath': '/images/studio-selected-glam.png'
+    });
+    wx.setTabBarItem({
+      index: 2,
+      text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-selected-glam.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-glam.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 4,
       text: '',
       'iconPath': '/images/user-unselected.png',
       'selectedIconPath': '/images/user-selected-glam.png'
@@ -80,6 +92,39 @@ const updateBarColors = (studio) => {
     studioTitle = "exeQute - Glam";
     //barBgColor = "#c6b0a2";
     barBgColor = "#c8a2c8";
+  } else {
+    wx.setTabBarItem({
+      index: 0,
+      text: '',
+      'iconPath': '/images/home-unselected.png',
+      'selectedIconPath': '/images/home-unselected.png'
+    });
+    wx.setTabBarItem({
+      index: 1,
+      text: '',
+      'iconPath': '/images/studio-unselected.png',
+      'selectedIconPath': '/images/studio-unselected.png'
+    });
+    wx.setTabBarItem({
+      index: 2,
+      text: '',
+      'iconPath': '/images/wallet-unselected.png',
+      'selectedIconPath': '/images/wallet-unselected.png'
+    });
+    wx.setTabBarItem({
+      index: 3,
+      text: '',
+      'iconPath': '/images/schedule-unselected.png',
+      'selectedIconPath': '/images/schedule-unselected.png'
+    });
+    wx.setTabBarItem({
+      index: 4,
+      text: '',
+      'iconPath': '/images/user-unselected.png',
+      'selectedIconPath': '/images/user-unselected.png'
+    });
+    studioTitle = "exeQute";
+    barBgColor = "#000000"
   }
   wx.setNavigationBarColor({
     frontColor: "#ffffff",

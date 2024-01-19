@@ -6,6 +6,7 @@ import {
   uploadUserAvatar,
   getStrings
 } from '../../utils/requests/index'
+import { updateBarColors } from '../../utils/util'
 
 import {
   promisifyAll,
@@ -23,6 +24,7 @@ Page({
     user: {},
     showWaiver: true,
     isWaiverSigned: false,
+    studio: "",
     /*waiver_default: "I, the participant named below, have agreed to participate in the ExeQute workouts"
     */
   
@@ -77,6 +79,8 @@ Page({
   },
   async onShow() {
     console.log('ON SHOW CALLED')
+    this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
+    updateBarColors(getApp().globalData.studio)
     this.initValidate()
 
     const strings = await getStrings(this.route.split('/')[2])
@@ -165,13 +169,13 @@ Page({
         required: true
       },
       mp_email: {
-        required: true
+        required: false
       },
       emergency_name: {
-        required: true
+        required: false
       },
       emergency_phone: {
-        required: true
+        required: false
       },
       birthday: {
         required: true

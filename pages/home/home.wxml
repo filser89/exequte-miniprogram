@@ -10,17 +10,22 @@
   </view> 
   <view wx:if="{{user.profile_filled}}">
   <view class="coming-next-container">
-    <view class="coming-next-title full-card {{studio}}-card-active-opaque">{{strings.coming_up || "COMING UP"}}</view>
+    <view class="coming-next-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.coming_up || "COMING UP"}}</view>
     <DateSessions studio="{{studio}}" strings="{{strings}}" date="{{date}}" lang="{{lang}}" />
     </view>
     <view class="hrm-container">
-    <view class="hrm-title full-card {{studio}}-card-active-opaque">{{strings.hrm_data || "HEART MATRIX HUB"}}</view>
+    <view class="hrm-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.hrm_data || "HEART MATRIX HUB"}}</view>
     <view class="hrm-list-container">
-      <BookingsList picture="false" studio="{{studio}}" strings="{{strings}}"  bookings="{{bookings}}"  />
+      <view wx:if="{{hrm_bookings && hrm_bookings.length > 0}}">
+        <BookingsList picture="false" studio="{{studio}}" strings="{{strings}}"  bookings="{{hrm_bookings}}"  />
+      </view>
+      <view wx:else>
+        <view class=" tc {{studio}}-card-extralight" style="padding: 5px;border-radius: 30rpx; ">{{strings.no_sessions_today}}</view>
+      </view>
     </view>
     </view>
     <view class="about-us-container">
-      <view class="about-title full-card {{studio}}-card-active-opaque">{{strings.about_us || "INFO"}}</view>
+      <view class="about-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.about_us || "INFO"}}</view>
       <!-- STUDIOS-->
       <view bindtap="navigateToStudios" class='menu-btn d-flex {{studio + "-card"}}'>
        <view style='margin-left: 20px;'>{{strings.studios || "STUDIOS"}} </view>
@@ -33,7 +38,7 @@
       </view>
     </view>
     <view class="pic-container">
-    <view class="pic-title full-card {{studio}}-card-active-opaque">{{strings.pictures || "LAST PHOTOS"}}</view>
+    <view class="pic-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.pictures || "LAST PHOTOS"}}</view>
     <view class="pic-list-container">
       <BookingsList picture="true" studio="{{studio}}" strings="{{strings}}"  bookings="{{last_bookings}}"  />
     </view>

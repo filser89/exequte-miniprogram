@@ -1,43 +1,43 @@
 <!--pages/profile-update/components/ProfileForm/ProfileForm.wxml-->
-<view class="bg-black text-white db">
+<view class="view db">
   <text>*{{strings.first_name}} </text>
   <input name="first_name" value="{{user.first_name}}" />
 </view>
-<view>
+<view class="view">
   <text>*{{strings.last_name}}</text>
   <input name="last_name" value="{{user.last_name}}" />
 </view>
-<view>
-  <text>{{strings.nick}}</text>
+<view class="view">
+  <text>*{{strings.nick}}</text>
   <input name="workout_name" value="{{user.workout_name}}" />
 </view>
-<view>
+<view class="view">
   <text>*{{strings.phone}}</text>
   <input name="phone" value="{{user.phone}}" />
 </view>
-<view>
-  <text>*{{strings.email}}</text>
+<view class="view">
+  <text>{{strings.email}}</text>
   <input name="mp_email" value="{{user.mp_email}}" />
 </view>
-<view>
-  <text>*{{strings.emergency}}</text>
+<view class="view">
+  <text>{{strings.emergency}}</text>
   <input name="emergency_name" value="{{user.emergency_name}}" />
 </view>
-<view>
-  <text>*{{strings.emergency_number}}</text>
+<view class="view">
+  <text>{{strings.emergency_number}}</text>
   <input name="emergency_phone" value="{{user.emergency_phone}}" />
 </view>
 
-<view>
+<view class="view"> 
   <picker mode="date"></picker>
 </view>
-<view>
+<view class="view">
   <text>*{{strings.birthday}}</text>
   <picker name="birthday" mode="date" value="{{user.birthday || today}}" start="1940-01-01" end="2030-01-01" bindchange="bindDateChange" style="width: 430rpx;">
-    <view class="picker">{{birthday}}</view> 
+    <view class="picker view">{{birthday}}</view> 
   </picker>
 </view>
-<view>
+<view class="view">
   <text> {{strings.gender}}</text>
   <picker name="gender" bindchange="bindGenderChange" value="{{genders[genderIndex]}}" range="{{genders}}" style="width: 430rpx;">
     <view class="picker" >
@@ -45,35 +45,35 @@
     </view>
   </picker>
 </view>
-<view>
+<!-- <view class="view">
   <text>{{strings.nationality}}</text>
   <input name="nationality" value="{{user.nationality}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.profession}}</text>
   <input name="profession" value="{{user.profession}}" />
-</view>
-<view>
+</view> -->
+<view class="view">
   <text> {{strings.activity}}</text>
   <picker name="profession_activity_level" bindchange="bindActivityLevelChange" value="{{activityLevels[activityIndex]}}" range="{{activityLevels}}" style="width: 430rpx;">
-    <view class="picker" >
+    <view class="view picker" >
     {{activityLevels[activityIndex]}}
     </view>
   </picker>
 </view>
-<view>
+<!-- <view class="view">
   <text> {{strings.song}} </text>
   <input name="favorite_song" value="{{user.favorite_song}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.music_style}}</text>
   <input name="music_styles" value="{{user.music_styles}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.sports}}</text>
   <input name="sports" value="{{user.sports}}" />
 </view>
-<view>
+<view class="view">
   <text>{{strings.foods}}</text>
   <textarea name="favorite_food" value="{{user.favorite_food}}" />
-</view>
+</view> -->

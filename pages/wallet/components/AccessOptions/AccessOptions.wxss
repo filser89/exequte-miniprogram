@@ -78,8 +78,14 @@
 
 .credits-num-container {
   position: absolute;
-  left: 50%;
+  left: 40%;
 }
+
+.credits-unlimited-container {
+  position: absolute;
+  left: 32%;
+}
+
 
 .credits-num {
   font-size: 3vh;

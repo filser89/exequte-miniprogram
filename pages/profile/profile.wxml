@@ -34,7 +34,7 @@
         <view class='credits-title'> {{strings.credits || "CREDITS"}}</view>
         <view class='credits-holder'>
           <view class='credits-container'>
-            <view class='tc bold credits-num'><span class="big-text">{{user.credits}}</span><span class="label small-text">{{strings.left || "left"}}</span></view>
+            <view class='tc bold credits-num'><span class="big-text">{{user.credits || "0"}}</span><span class="label small-text">{{strings.left || "left"}}</span></view>
           </view>
           <view bindtap="navigateToWallet" class='top-up-btn {{studio}}-topup-btn'>{{strings.topup || "TOP UP ¥"}}</view>
         </view>
