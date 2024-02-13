@@ -46,7 +46,7 @@
   </view>
   <view wx:else>
   <view class="sign-up-form">
-    <view class="sign-up-text {{studio}}-card">{{info || strings.sign_up_explanation}}</view>
+    <view class="sign-up-text {{studio}}-card">{{custom_strings.signup_text}}</view>
     <view class="sign-up-container">
       <GetInfoButton studio="{{studio}}" profileFilled="{{user.profile_filled}}" itemId="">
                 {{strings.sign_up}}

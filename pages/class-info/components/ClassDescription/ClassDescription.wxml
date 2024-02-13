@@ -10,9 +10,9 @@
 
 <view class="class-description">
   <view class='coach-card {{studio}}-card'>
-    <view class="text-size-sheader bold">{{session.name}}</view>
+    <view class="text-size-sheader bold" style="margin-bottom: 10px;">{{session.name}}</view>
     <view wx:if="{{session.subtitle}}" class="text-size-stheader bold">{{session.subtitle}}</view>
-    <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
+    <rich-text class="text-size-sbody" style="margin-top: 5px" nodes="{{session.description}}"></rich-text>
     <view class="db-flex" style="justify-content: space-around">
       <view class="text-size-sbody" style="margin-top: 20px; display:flex">
         <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}}{{strings.min}}
@@ -52,7 +52,20 @@
     <view class="text-size-theader ml" style="margin-left: 15px; margin-bottom: 10px;">
 {{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}
     </view>
-    <view class="text-size-sbody ml" style="margin-left: 15px"> {{strings.price}}{{session.price}}{{strings.currency}} / <text class="{{studio}}-credits-bubble mini">{{session.credits}} {{strings.credits}}</text> </view>
+    <view class="price-credits-container">
+    </view>
+    <block wx:if="{{session.access_options_credits.free}}">
+      <view class="text-size-sbody grid-container">
+      <view style="margin-left: 15px" class="grid-item">{{strings.price}}</view>
+      <view class="grid-item"><text style="margin-left: -20px" class="{{studio}}-credits-bubble mini">{{strings.free || "FREE"}}</text></view>
+    </view>
+    </block>
+    <block wx:else>
+      <view class="text-size-sbody grid-container">
+        <view style="margin-left: 15px" class="grid-item">{{strings.price}}</view>
+        <view class="grid-item"><text style="margin-left: -15px" class="{{studio}}-credits-bubble mini credits-num-txt">{{session.credits}}</text><text class="credits-txt text-uppercase">{{strings.credits}}</text></view>
+      </view>
+    </block>
     <view class="text-size-sbody ml" style="margin-top:10px; margin-left: 15px"> {{strings.time}}{{session.from}}-{{session.to}}</view>
     <view class="text-size-sbody ml" style="margin-top:10px; margin-left: 15px; margin-bottom: 10px">{{strings.date}}{{session.date_locale}}</view>
   </view>

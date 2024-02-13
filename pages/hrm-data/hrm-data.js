@@ -17,7 +17,8 @@ Page({
     hrmCombinedGraph: {},
     ranking: [],
     my_ranking: "",
-    studio: "reshape"
+    studio: "reshape",
+    isModalVisible: false
   },
 
   
@@ -112,11 +113,21 @@ Page({
   },
 
   preview_img: function () {
-    wx.previewImage({
-      current: this.data.hrmCombinedGraph.imageUrl,
-      urls: [this.data.hrmCombinedGraph.imageUrl]
-    })
+    // wx.previewImage({
+    //   current: this.data.hrmCombinedGraph.imageUrl,
+    //   urls: [this.data.hrmCombinedGraph.imageUrl]
+    // })
+    this.setData({
+      isModalVisible: true
+    });
   },
+
+    // Event handler for closing the custom modal
+    closeCustomModal: function () {
+      this.setData({
+        isModalVisible: false,
+      });
+    }
 
 
 })

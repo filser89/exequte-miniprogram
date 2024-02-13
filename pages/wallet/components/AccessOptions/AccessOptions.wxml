@@ -10,7 +10,7 @@
           <view class="credits-unlimited-container"><span class="credits-unlmited">{{strings.unlimited || "UNLIMITED"}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
         <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
         </view>
-        <view wx:else class="credits-num-container"><span class="credits-num">{{mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
+        <view wx:else class="credits-num-container"><span class="credits-num">{{ mt.settings.credits_display ?  mt.settings.credits_display : mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
         <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
         <view wx:if="{{selected == 'buy-membership' && current == index}}" class="credits-option-description">
           <view class="credits-option-perks" >

@@ -40,7 +40,10 @@ Page({
       sessionId,
       instructorId
     } = this.data.options
-    const session = await getSession(sessionId)
+    let session = await getSession(sessionId)
+    try {
+      session.credit_price = session.credits * 6.5;
+    } catch(e){}
     const instructor = await getInstructor(instructorId)
     const strings = await getStrings(this.route.split('/')[2])
     if (session && session.begins_at){
@@ -66,8 +69,12 @@ Page({
       sessionId,
       instructorId
     } = detail
+    let session = await getSession(sessionId)
+    try {
+      session.credit_price = session.credits * 6.5;
+    } catch(e){}
     this.setData({
-      session: await getSession(sessionId),
+      session,
       instructor: await getInstructor(instructorId)
     })
     this.setBtnPattern(this.data.session)

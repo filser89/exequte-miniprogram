@@ -14,6 +14,13 @@
     </view>
     <view wx:if="{{ hrmCombinedGraph.imageUrl }}" class="hrm-pic-container">
       <image catchtap='preview_img' class="hrm-pic" mode="aspectFit" show-menu-by-longpress="true" src="{{hrmCombinedGraph.imageUrl }}"/>
+      <view class="modal-mask" wx:if="{{isModalVisible}}">
+        <view class="modal-content">
+        <image src="{{hrmCombinedGraph.imageUrl}}" style="height: 50vh; width: 100%; margin-top: 25vh; margin-left: -24vh;transform: rotate(+90deg);" mode="aspectFit" show-menu-by-longpress="true" ></image>
+        <!-- Close button -->
+        <button class="{{studio}}-card-active close-btn-modal" bindtap="closeCustomModal">{{string.close || "X"}}</button>
+      </view>
+      </view>
     </view>
 
 

@@ -13,7 +13,7 @@ Page({
     user: {},
     showPrivacy: false,
     studio: "reshape",
-    privilegeOpen: false
+    privilegeOpen: true
   },
 
   /**

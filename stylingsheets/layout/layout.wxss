@@ -72,6 +72,32 @@ page {
   font-size: 25rpx;
   padding: 10rpx;
 }
+.credits-bubble-mini {
+  font-size: 25rpx;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  width: 90px;
+}
+
+.platinum {
+  background-color: #97daf5b3 !important;
+}
+
+.drop-in {
+  background-color: #ffffff00 !important;
+  color: #ffffff75;
+}
+.gold {
+  background-color: rgba(255, 217, 0, 0.596) !important;
+}
+
+.silver {
+  background-color: rgba(192, 192, 192, 0.61);
+}
+
+.bronze {
+  background-color: rgba(211, 124, 42, 0.5); 
+}
 
 .reshape-card-active-opaque {
   background-color: #97daf5b3 !important;

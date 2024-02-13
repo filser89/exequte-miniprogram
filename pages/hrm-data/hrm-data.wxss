@@ -302,3 +302,34 @@ position: relative;
 .glam-trophy {
   filter: brightness(99) invert(1);
 }
+
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Ensure it's on top of other elements */
+}
+
+.modal-content {
+  width: 100vh; /* Adjust the maximum width of the modal content */
+  height: 100vh; /* Adjust the maximum height of the modal content */
+  overflow: auto; /* Enable scrolling if content exceeds the modal dimensions */
+  background: #000000; /* Set the background color of the modal content */
+  border-radius: 8px; /* Add rounded corners if desired */
+  position: relative;
+}
+
+.close-btn-modal {
+  position: absolute;
+  top: 0px; /* Adjust the top position as needed */
+  left: 26%;
+  color: whitesmoke;
+  transform: translateX(-50%);
+  max-width: fit-content;
+}

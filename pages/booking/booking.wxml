@@ -2,7 +2,7 @@
 <!-- <page> -->
   <view class="{{studio}}">
   <Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
-  <BookingInfo studio="{{studio}}" strings="{{strings}}" session="{{session}}" />
+  <BookingInfo studio="{{studio}}" strings="{{strings}}" session="{{session}}" custom_strings="{{custom_strings}}"/>
   <AccessOptions studio="{{studio}}"  strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" membership="{{membership}}" classpack="{{classpack}}" />
   <!-- <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">

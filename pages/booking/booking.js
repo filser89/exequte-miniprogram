@@ -3,7 +3,8 @@ import {
   getSession,
   // getMembershipTypes,
   getMembershipTypesBySession,
-  getStrings
+  getStrings,
+  getSetting
 } from '../../utils/requests/index.js'
 import { updateBarColors } from '../../utils/util'
 
@@ -15,6 +16,7 @@ Page({
    */
   data: {
     strings: {},
+    custom_strings: {},
     session: {},
     selected: '',
     selectedMembershipTypeId: '',
@@ -50,6 +52,13 @@ Page({
     const membership = session.usable_membership
     const classpack = session.usable_classpack
     const strings = await getStrings(this.route.split('/')[2])
+    let custom_strings = {}
+    try {
+      custom_strings = JSON.parse(await getSetting('strings'));
+      const lang = getApp().globalData.headers['X-API-Lang'];
+      custom_strings = custom_strings[lang];
+      } catch (e){console.log(e); }
+    this.setData({custom_strings})
 
     this.setData({
       session,

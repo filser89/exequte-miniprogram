@@ -95,8 +95,8 @@
 }
 .credits-price {
   position: absolute;
-  right: 10%;
-  font-size: 2vh;
+  right: 1%;
+  font-size: 3vh;
 }
 .credits-option-perks {
   margin-top: 5vh;

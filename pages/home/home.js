@@ -10,6 +10,7 @@ Page({
    */
   data: {
     strings: {},
+    custom_strings: {},
     banner: [],
     user: {},
     studio: "",
@@ -54,13 +55,13 @@ Page({
     let bookings = await getUsersBookings();
     const strings = await getStrings(this.route.split('/')[2])
     const banner = await getBanner()
-    let info = "Click here to sign up with eXequte and start your new transformational journey";
+    let custom_strings = {}
     try {
-      info = JSON.parse(await getSetting('signup_text'));
+      custom_strings = JSON.parse(await getSetting('strings'));
       const lang = getApp().globalData.headers['X-API-Lang'];
-      info = info[lang];
+      custom_strings = custom_strings[lang];
       } catch (e){console.log(e); }
-      this.setData({info})
+    this.setData({custom_strings})
     Promise.all([strings, user, banner, bookings]).then((values) => {
       console.log('values', values)
       try {

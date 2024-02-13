@@ -7,8 +7,8 @@
 </view>
 <view class="booking-description {{studio}}-booking-container">
   <view class='coach-card {{studio}}-card' >
-    <view class="text-size-sheader bold">{{session.name}}</view>
-    <view class="text-size-sbody" style="margin-top: 5px"> {{session.description}}</view>
+    <view style="margin-bottom: 5px" class="text-size-sheader bold">{{session.name}}</view>
+    <rich-text class="text-size-sbody" style="margin-top: 5px" nodes="{{session.description}}"></rich-text>
     <view class="db-flex" style="justify-content: space-around">
       <view class="text-size-sbody" style="margin-top: 20px; display:flex">
         <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}} {{strings.min}}

@@ -28,10 +28,10 @@
   <text class="{{studio}}-title" style='width: 60%;'>{{strings.price}}</text>
 </view>
 <view class="block" style='margin-top: 15px'>
-  <text style='width: 60%; '>{{session.price}} {{strings.currency}} / <text class="{{studio}}-credits-bubble">{{session.credits}} {{strings.credits}} </text> </text>
+  <text style='width: 60%; '><block wx:if="{{ session.access_options_credits && session.access_options_credits.free }}"><text class="{{studio}}-credits-bubble">{{strings.free || "FREE"}} </text> </block><block wx:else><text class="{{studio}}-credits-bubble">{{session.credits}} {{strings.credits}} </text> </block></text>
 </view>
 <view class="block" style='margin-top: 15px'>
-  <text style='width: 100%; '>{{strings.xq_address}}</text>
+  <text style='width: 100%; '>{{custom_strings.xq_address}}</text>
 </view>
 <view class="block" style='margin-top: 10px'>
   <!-- <image src='/images/information.png' class='icon-time' style="margin-right: 5px;  margin-left: 5px; width: 5%"> </image> -->

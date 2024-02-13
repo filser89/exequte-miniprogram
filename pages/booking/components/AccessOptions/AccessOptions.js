@@ -24,6 +24,11 @@ Component({
    * Component methods
    */
   methods: {
+    openSubAndChooseOption({currentTarget}){
+      // console.log(currentTarget.dataset)
+      this.setData({selected: bookingType, current: index})
+    },
+
     chooseOption({currentTarget}){
       // console.log(currentTarget.dataset)
       const {bookingType, membershipTypeId, membershipTypePrice, membershipId, index} = currentTarget.dataset

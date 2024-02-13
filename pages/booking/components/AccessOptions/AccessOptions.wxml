@@ -19,9 +19,35 @@
   </view>
   <!-- scenario 1 : sufficient credit and can book before -->
   <view bindtap="chooseOption" data-booking-type="credits" wx:if="{{session.access_options_credits.can_use_credits && session.access_options_credits.credits }}" data-index="{{i}}"
-    class="{{selected == 'credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
-    <view class="d-flex items-center">{{strings.credits}}</view>
-    <view class="d-flex items-center">{{session.credits}}</view>
+    class="{{selected == 'credits' ? 'button-option-active-credits' : 'button-option'}} {{studio}}-btn">
+    <view wx:if="{{ selected != 'credits' }}" class="d-flex items-center">{{strings.card || "Card"}}</view>
+    <view wx:if="{{ selected != 'credits' }}" class="d-flex items-center text-upper">{{session.credits}} {{strings.credits}}</view>
+    <block wx:if="{{ selected == 'credits' }}">
+      <view class="credits-top">
+        <view class="d-flex items-center">{{strings.card || "Card"}}</view>
+        <view class="d-flex items-center">{{session.credits}} {{strings.credits}}</view>
+      </view>
+      <view class="text-size-sbody grid-container">
+        <view class="grid-item"></view>
+        <view class="grid-item"> ~ ({{session.credits * 6.5}}{{strings.currency}})</view>
+        <view class="grid-item credits-bubble-mini platinum">{{strings.platinum || "PLATINUM"}}</view>
+      </view>
+    <view class="text-size-sbody grid-container">
+      <view class="grid-item"></view>
+      <view class="grid-item"> ~ ({{session.credits * 7.2}}{{strings.currency}})</view>
+      <view class="grid-item credits-bubble-mini gold">{{strings.gold || "GOLD"}}</view>
+    </view>
+    <view class="text-size-sbody grid-container">
+      <view class="grid-item"></view>
+      <view class="grid-item"> ~ ({{session.credits * 7.5}}{{strings.currency}})</view>
+      <view class="grid-item credits-bubble-mini silver">{{strings.silver || "SILVER"}}</view>
+    </view>
+    <view class="text-size-sbody grid-container">
+      <view class="grid-item"></view>
+      <view class="grid-item"> ~ ({{session.credits * 8}}{{strings.currency}})</view>
+      <view class="grid-item credits-bubble-mini bronze">{{strings.bronze || "BRONZE"}}</view>
+    </view>
+    </block>
   </view>
   <!-- scenario 2 : sufficient credit but cannot book before-->
   <view bindtap="chooseOption" data-booking-type="upgrade-credits" wx:if="{{session.access_options_credits.credits && !session.access_options_credits.can_use_credits }}" data-index="{{i}}"

@@ -20,7 +20,7 @@ Page({
     membershipDate: '',
     membership: {},
     classpack: {},
-    privilegeOpen: false
+    privilegeOpen: true
   },
 
   /**
@@ -67,7 +67,19 @@ Page({
     } catch (e){console.log(e)}
 
     let membershipTypesUnsorted = await getMembershipTypes()
-    const membershipTypes = membershipTypesUnsorted.sort((a, b) => a.price - b.price)
+    
+    let membershipTypes = membershipTypesUnsorted;
+    try {
+      membershipTypes = membershipTypesUnsorted.sort((a, b) => JSON.parse(a.settings).order - JSON.parse(b.settings).order).map(membershipType => {
+        return {
+            ...membershipType,
+            settings: JSON.parse(membershipType.settings)
+        };
+    });
+      
+    } catch(e){
+      console.log("something went wrong sorting memberships")
+    }
     this.setData({
       membershipTypes
     })

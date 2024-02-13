@@ -5,6 +5,7 @@ Component({
    */
   properties: {
     strings: Object,
+    custom_strings: Object,
     session: Object,
     studio: String
   },
