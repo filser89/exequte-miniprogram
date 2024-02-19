@@ -71,6 +71,7 @@
 }
 
 .credits-name {
+  max-width: 100px;
   position: absolute;
   font-size: 3vh;
   left: 1%;

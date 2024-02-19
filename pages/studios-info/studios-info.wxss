@@ -1,0 +1,69 @@
+/* pages/studios-info/studios-info.wxss */
+.terms {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.paragraph {
+  margin: 20px;
+  text-align: auto;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.glam {
+  padding-bottom: 20rpx;
+}
+
+.reshape {
+  padding-bottom: 20rpx;
+}
+.page-container {
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+.title-container {
+  margin: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 40rpx;
+}
+
+.text-container {
+  margin: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 40rpx;
+}
+.action-btn{
+  background-color: #97daf540;
+  padding: 10px 40px;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  min-width: 80px;
+  margin-bottom: 50rpx;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glam-btn {
+  background-color: #51307d9c !important;
+}
+
+.reshape-btn {
+  background-color: #97daf5b3 !important;
+}

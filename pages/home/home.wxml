@@ -27,9 +27,30 @@
     <view class="about-us-container">
       <view class="about-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.about_us || "INFO"}}</view>
       <!-- STUDIOS-->
-      <view bindtap="navigateToStudios" class='menu-btn d-flex {{studio + "-card"}}'>
+      <view bindtap="toggleStudios" class='studios-btn-main menu-btn d-flex {{studio + "-card"}}'>
        <view style='margin-left: 20px;'>{{strings.studios || "STUDIOS"}} </view>
-      <image src='/images/Triangle2.png' class='icon-time2' style="position: absolute; right: 20px"></image>
+      <image src='/images/Triangle2.png' class='icon-time2 {{studiosOpen}}' style="position: absolute; right: 20px"></image>
+      <view wx:if="{{studiosOpen}}" class="reshape-glam-btns">
+        <view bindtap="navigateToReshape"  class='menu-btn d-flex {{studio + "-card"}}' style="width: 100px; justify-content: center; padding: 0 5px 0px 5px">
+          <view>{{strings.reshape || "RESHAPE"}} </view>
+    </view>
+    <view bindtap="navigateToGlam"  class='menu-btn d-flex {{studio + "-card"}}' style="width: 100px; justify-content: center; padding: 0 5px 0px 5px">
+          <view>{{strings.glam || "GLAM"}} </view>
+    </view>
+    </view>
+      </view>
+            <!-- SCIENCE-->
+            <view bindtap="toggleScience" class='studios-btn-main menu-btn d-flex {{studio + "-card"}}'>
+       <view style='margin-left: 20px;'>{{strings.studios || "SCIENCE"}} </view>
+      <image src='/images/Triangle2.png' class='icon-time2 {{scienceOpen}}' style="position: absolute; right: 20px"></image>
+      <view wx:if="{{scienceOpen}}" class="reshape-glam-btns">
+        <view bindtap="navigateToWS" class='menu-btn d-flex {{studio + "-card"}}' style="width: 120px; justify-content: center; padding: 0 5px 0px 5px">
+          <view>{{strings.workouts || "WORKOUTS"}} </view>
+    </view>
+    <view  bindtap="navigateToHS" class='menu-btn d-flex {{studio + "-card"}}' style="width: 120px; justify-content: center; padding: 0 5px 0px 5px">
+          <view>{{strings.hrn || "HRMS"}} </view>
+    </view>
+    </view>
       </view>
       <!-- T&C -->
       <view bindtap="navigateToTerms" class='menu-btn d-flex {{studio + "-card"}}'>

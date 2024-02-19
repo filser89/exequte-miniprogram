@@ -3,7 +3,7 @@
   <view class='bold view-size-theader' style='margin: 20px; color: white'>{{strings.access_options}}</view>
   <view class="credits-options-container" wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
       <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership"
-        data-membership-type-price="{{mt.price}}" data-index="{{index}}"
+        data-membership-type-price="{{mt.price}}" data-index="{{index}}" data-membership-discount-multiplier="{{ (mt.settings && mt.settings.discount_multiplier) ? mt.settings.discount_multiplier : 1 }}"
         class="{{selected == 'buy-membership' && current == index ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
         <view class="credits-name">{{mt.name}}</view>
         <view wx:if="{{mt.is_unlimited}}">

@@ -15,7 +15,7 @@
     <view class="d-flex flex-column flex-grow space-around pl ml">
       <!-- top of the right of the card -->
       <view class="text-uppercase bold text-lh-copy text-white">
-        <view>{{session.name}}</view>
+        <view style="max-width: 380rpx;">{{session.name}}</view>
         <view class="text-capitalize" wx:if="{{session.subtitle}}">{{session.subtitle}}</view>
       </view>
       <!-- top of the right of the card finished -->
@@ -39,7 +39,7 @@
        <view style="height: 100%;">
         <view wx:if="{{user.profile_filled}}">
           <ActionButtonSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
-            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ studio === 'reshape' || studio === 'pt' ||  studio === 'glam' && user.gender && user.gender === 'Female' }}">
             <view class="d-flex flex-column">
               <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
               <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>
@@ -85,7 +85,7 @@
     <view class="d-flex flex-column flex-grow space-around pl ml">
       <!-- top of the right of the card -->
       <view class="text-uppercase bold text-lh-copy text-white">
-        <view>{{session.name}}</view>
+        <view style="max-width: 380rpx;">{{session.name}}</view>
       </view>
       <!-- top of the right of the card finished -->
       <!-- bottom of the right card -->
@@ -100,7 +100,7 @@
        <view style="height: 100%;">
         <view wx:if="{{user.profile_filled}}">
           <ActionButtonExtraSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
-            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}">
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ studio === 'reshape' || studio === 'pt' ||  studio === 'glam' && user.gender && user.gender === 'Female' }}">
             <view class="btn-extra-small d-flex flex-column">
               <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
               <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>

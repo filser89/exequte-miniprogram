@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "Topbar3": "/components/Topbar3/Topbar3",
+    "PromoCode": "./components/PromoCode/PromoCode",
     "GetInfoButton": "/components/GetInfoButton/GetInfoButton",
     "PayButton": "components/PayButton/PayButton",
     "AccessOptions": "components/AccessOptions/AccessOptions"

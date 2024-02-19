@@ -1,4 +1,4 @@
-import {request} from './request'
+import {request, upload} from './request'
 
 const getDates = () => {
   const options = {
@@ -87,6 +87,16 @@ const changeCapacity = (id, capacity) => {
   }
   return request(options)
 }
+
+const uploadSessionPhoto = async (id, filePath) => {
+  const options = {
+    url: `/training_sessions/${id}/group_picture`,
+    filePath,
+    name: 'group_picture'
+  }
+  return upload(options)
+}
+
 // /training_sessions/:id/session_attendance
 
 module.exports = {
@@ -97,6 +107,7 @@ module.exports = {
   addUserToQueue,
   getSessionDates,
   getSessionAttendance,
+  uploadSessionPhoto,
   getDates,
   getSessionsByDate,
   cancelSession,

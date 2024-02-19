@@ -34,3 +34,20 @@ page {
   max-height: 600rpx;
   overflow-y: scroll;
 }
+
+.studios-btn-main {
+  min-height: 40px;
+  height: fit-content;
+}
+
+.reshape-glam-btns {
+  margin-left: 20%;
+}
+
+.false {
+  transform: rotate(90deg);
+}
+
+.true {
+  transform: rotate(-90deg);
+}

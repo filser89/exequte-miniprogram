@@ -14,7 +14,12 @@
   </view>
   <AttendanceForm studio="{{studio}}" isUserAdmin="{{isUserAdmin}}" strings="{{strings}}" bookings="{{session.bookings}}" session="{{session}}" />
   <CancelForm studio="{{studio}}" strings="{{strings}}" session="{{session}}" wx:if="{{isUserAdmin}}"/>
-
-
+  <view class="upload-picture-container" >
+      <view class="upload {{studio}}-card-active" bindtap="uploadImage">
+{{strings.upload || "UPLOAD GROUP PICTURE"}}</view>
+    <view  wx:if="{{session && session.group_photo_url }}" class="coach-card text-white tl {{studio}}-card">
+            <image data-url="{{session.group_photo_url}}" bindtap="preview_img" show-menu-by-longpress="true" src="{{session.group_photo_url}}"></image>
+          </view>
+      </view>
 </view>
 </view>

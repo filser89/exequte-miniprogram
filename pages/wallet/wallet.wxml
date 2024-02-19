@@ -26,6 +26,9 @@
     <view class="credits-topup-title full-card {{studio}}-card-active-opaque">{{ strings.topup || "TOP UP YOUR CREDITS"}}</view>
     <AccessOptions studio="{{studio}}" strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" selectedMembership="{{selectedMembershipTypeLoad}}" membership="{{membership}}" classpack="{{classpack}}" />
+      <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
+    <PromoCode studio="{{studio}}" strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
+  </view>
     <view class="top-up-payment d-flex space-between bottom" >
         <view class="text-white d-flex item-center content-center text-left">{{strings.total_price || "PAY:"}} {{btnPattern.price || 0}} {{strings.currency || "元"}}</view>
         <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"

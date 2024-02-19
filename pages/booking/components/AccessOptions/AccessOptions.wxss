@@ -13,7 +13,15 @@
   background-color: #4c2867ad !important;
   color: whitesmoke;
 }
+.glam-btn.button-option-active-credits{
+  background-color: #4c2867ad !important;
+  color: whitesmoke;
+}
 .reshape-btn.button-option-active{
+  background-color: #97daf5b3 !important;
+  color: whitesmoke;
+}
+.reshape-btn.button-option-active-credits{
   background-color: #97daf5b3 !important;
   color: whitesmoke;
 }
@@ -131,7 +139,7 @@ container {
 }
 
 .button-option-active-credits {
-  background-color: #97daf540;
+  /* background-color: #97daf540; */
   color: white;
   border: 2px solid white;
   /* display: grid; */

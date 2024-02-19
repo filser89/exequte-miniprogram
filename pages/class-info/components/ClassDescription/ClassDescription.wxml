@@ -20,6 +20,9 @@
         <view wx:if="{{session.calories}}">{{session.calories}}{{strings.kcal}}</view>
       </view>
     </view>
+    <view wx:if="{{ studio === 'glam'}}" class='coach-card {{studio}}-card'>
+    {{ strings.womenonly || "NOTICE: This is a women-only session, please be reminded that men will be denied entry." }}
+    </view>
   </view>
 
   <view wx:if="{{ studio !== 'glam' && session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white {{studio}}-card">

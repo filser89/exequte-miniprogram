@@ -29,7 +29,7 @@ text {
   /* width: 30%; */
   font-size: 14px;
 }
-input {
+/* input {
   padding: 2px;
   border-radius: 2px;
   width: 60%;
@@ -40,7 +40,7 @@ input {
   color: black;
   padding-left: 15px;
   
-}
+} */
 
 .icon-time-booking {
   height: 15px;

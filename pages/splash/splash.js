@@ -26,7 +26,7 @@ Page({
   handlePt() {
     // Logic for handling the Reshape button click
     //@todo , show PT slots
-    getApp().globalData.studio = 'reshape';
+    getApp().globalData.studio = 'pt';
     console.log('pt button clicked');
     getApp().globalData.splashSeen = true
     wx.switchTab({url:'../home/home'})

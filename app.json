@@ -16,6 +16,7 @@
     "pages/booking-info/booking-info",
     "pages/instructor-classes/instructor-classes",
     "pages/terms-and-conditions/terms-and-conditions",
+    "pages/studios-info/studios-info",
     "pages/customer-service/customer-service",
     "pages/hrm-data/hrm-data"
   ],

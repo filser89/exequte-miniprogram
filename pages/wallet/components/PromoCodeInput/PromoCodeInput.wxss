@@ -9,7 +9,7 @@ input {
   margin-left: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
-  width: 150px;
+  width: 130px;
   border: 1px solid white;
   border-radius: 10px;
   padding-left: 10px;
@@ -27,8 +27,9 @@ input {
   color: white;
 }
 
+
 .glam-placeholder {
-  color: rgba(255, 255, 255, 0.822) !important;
+  color: white !important;
 }
 
 .reshape-placeholder {

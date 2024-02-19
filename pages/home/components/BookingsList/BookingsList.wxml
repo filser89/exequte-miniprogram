@@ -40,10 +40,8 @@
 <view wx:else>
 <!-- picture slideshow-->
   <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="unique">
-    <view wx:if="{{booking.session && booking.session.photos_urls && booking.session.photos_urls.length}}" class="coach-card text-white tl {{studio}}-card">
-    <view wx:for="{{booking.session.photos_urls}}" wx:for-item="photo" wx:for-index="i" wx:key="unique"  >
-      <image data-url="{{photo}}" bindtap="preview_img" show-menu-by-longpress="true" src="{{photo}}"></image>
-    </view>
+    <view wx:if="{{booking.session && booking.session.group_photo_url }}" class="coach-card text-white tl {{studio}}-card">
+      <image data-url="{{booking.session.group_photo_url}}" bindtap="preview_img" show-menu-by-longpress="true" src="{{booking.session.group_photo_url}}"></image>
     </view>
     </view>
 </view>

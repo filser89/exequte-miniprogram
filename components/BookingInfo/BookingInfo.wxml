@@ -37,4 +37,7 @@
   <!-- <image src='/images/information.png' class='icon-time' style="margin-right: 5px;  margin-left: 5px; width: 5%"> </image> -->
   <text style='width: 100%; font-size: 25px;'>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}</text>
 </view>
+<view wx:if="{{ studio === 'glam'}}" class='coach-card {{studio}}-card'>
+    {{ strings.womenonly || "NOTICE: This is a women-only session, please be reminded that men will be denied entry." }}
+    </view>
 </view>

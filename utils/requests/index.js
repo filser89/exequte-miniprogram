@@ -8,6 +8,7 @@ import {
   addUserToQueue,
   getSessionDates,
   getSessionAttendance,
+  uploadSessionPhoto,
   getDates,
   getSessionsByDate,
   cancelSession,
@@ -85,6 +86,14 @@ const getInfo = async (scope) => {
   return request(options)
 }
 
+const getInfoById = async (id) => {
+  const options = {
+    method: 'get',
+    url: `/infos/${id}`,
+  }
+  return request(options)
+}
+
 const getSetting = async (key) => {
   const options = {
     method: 'get',
@@ -104,6 +113,7 @@ const deleteFailedPayment = async (controller, id) =>{
 
 module.exports = {
   getInfo,
+  getInfoById,
   getSetting,
   getStrings,
   useCoupon,
@@ -134,6 +144,7 @@ module.exports = {
   getBanner,
   getSessionDates,
   getSessionAttendance,
+  uploadSessionPhoto,
   getDates,
   getSessionsByDate,
   cancelSession,

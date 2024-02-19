@@ -1,0 +1,11 @@
+<!--pages/studios-info/studios-info.wxml-->
+<view class="{{studio}}">
+<Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
+<view class="title-container {{studio}}-card">
+<view class="terms">{{infos.title_one}}</view>
+</view>
+<view class="text-container {{studio}}-card">
+<rich-text class="paragraph" nodes="{{infos.paragraph_one}}"></rich-text>
+</view>
+<view bindtap="navigateBack" class="action-btn {{studio}}-btn">{{strings.back || "BACK"}}</view>
+</view>

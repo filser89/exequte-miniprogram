@@ -20,3 +20,21 @@
   width: 15px;
   margin-right: 5px;
 }
+.upload {
+  height: 50px;
+  background-color: #97daf540;
+  text-align: center;
+  position: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.upload-picture-container {
+  padding-bottom: 20px;
+}

@@ -72,13 +72,14 @@ Component({
     chooseOption({currentTarget}){
       console.log("someone called me");
       console.log(currentTarget.dataset)
-      const {bookingType, membershipTypeId, membershipTypePrice, membershipId, index} = currentTarget.dataset
+      const {bookingType, membershipTypeId, membershipTypePrice, membershipId, index, membershipDiscountMultiplier } = currentTarget.dataset
       console.log(membershipTypeId, membershipTypePrice)
       this.setData({selected: bookingType, current: index})
       this.triggerEvent('optionchanged', {
         selected: bookingType,
          selectedMembershipTypeId: membershipTypeId,
          selectedMembershipTypePrice: membershipTypePrice,
+         selecteMembershipDiscountMultiplier: membershipDiscountMultiplier,
          membershipId
         })
       

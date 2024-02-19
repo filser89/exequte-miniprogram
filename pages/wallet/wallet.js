@@ -16,11 +16,15 @@ Page({
     selectedMembershipTypeId: '',
     selectedMembershipTypeLoad: '',
     selectedMembershipTypePrice: 0,
+    selecteMembershipDiscountMultiplier: 1,
     btnPattern: { price: 0, text: "Pay" },
     membershipDate: '',
     membership: {},
     classpack: {},
-    privilegeOpen: true
+    privilegeOpen: true,
+    discount: 0,
+    couponCode: null,
+    couponBtnDisabled: false
   },
 
   /**
@@ -182,7 +186,11 @@ Page({
       case 'buy-membership':
         console.log("buying membership btn_pattern");
         console.log("Price:" + this.data.selectedMembershipTypePrice);
-        price = this.data.selectedMembershipTypePrice
+        try {
+        price = this.data.selectedMembershipTypePrice * (1- (this.data.discount * this.data.selecteMembershipDiscountMultiplier))
+        } catch(e){
+          price = this.data.selectedMembershipTypePrice
+        }
         this.setData({
           btnPattern: {
             price,
@@ -211,5 +219,12 @@ Page({
     this.setData({
       privilegeOpen: !this.data.privilegeOpen
     });
-  }
+  },
+
+  handleCouponUsed({detail}){
+    console.log("handleCouponUsed", detail)
+    const {discount, couponCode} = detail
+    this.setData({couponCode, discount, couponBtnDisabled: true})
+    this.setBtnPattern(this.data.selected)
+  },
 })

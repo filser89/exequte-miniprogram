@@ -17,8 +17,16 @@
   background-color: #8348afb3 !important;
   /* background-color: #af6e4840 !important; */
 }
+.glam-action-btn.action-btn-disabled{
+  background-color: #976eb6b3 !important;
+  /* background-color: #af6e4840 !important; */
+}
+
 .reshape-action-btn.action-btn{
   background-color: #97daf540 !important;
+}
+.reshape-action-btn.action-btn-disabled{
+  background-color: #9abfce40 !important;
 }
 
 .action-btn{
@@ -41,7 +49,7 @@
 .action-btn-disabled{
   width:115px;
   height: 50px;
-  background-color: #5c282f;
+  /* background-color: #5c282f; */
   text-align: center;
   position: center;
   color: white;

@@ -18,7 +18,9 @@ Page({
     lang: "en",
     date: "",
     bookings: [],
-    last_bookings: []
+    last_bookings: [],
+    studiosOpen: false,
+    scienceOpen: false
   },
 
   /**
@@ -141,23 +143,65 @@ Page({
   },
 
   todayDateString() {
-    let date = new Date
+    let date = "";
+    try {
+    date = new Date(Date.now() + (8 * 60 * 60 * 1000));
     console.log('before date function')
+    console.log(date);
+    console.log(date.toJSON());
     date = date.toJSON().replace(/T.*/, "T00:00:00.000+08:00")
+    console.log(date);
+    } catch (e){
+      date = new Date();
+      date = date.toJSON().replace(/T.*/, "T00:00:00.000+08:00")
+    }
     return date
   },
 
 
-  navigateToStudios(){
-    console.log('clicked studios')
+  navigateToReshape(){
+    console.log('clicked reshape')
     wx.navigateTo({
-      url: `/pages/terms-and-conditions/terms-and-conditions`
+      url: `/pages/studios-info/studios-info?id=7`
     })
   },
+  
+  navigateToGlam(){
+    console.log('clicked glam')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=8`
+    })
+  },
+
+  navigateToWS(){
+    console.log('clicked workout science')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=9`
+    })
+  },
+
+  navigateToHS(){
+    console.log('clicked hrms science')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=10`
+    })
+  },
+
   navigateToTerms(){
     console.log('clicked terms')
     wx.navigateTo({
       url: `/pages/terms-and-conditions/terms-and-conditions`
     })
+  },
+
+  toggleStudios: function () {
+    this.setData({
+      studiosOpen: !this.data.studiosOpen
+    });
+  },
+  toggleScience: function () {
+    this.setData({
+      scienceOpen: !this.data.scienceOpen
+    });
   },
 })

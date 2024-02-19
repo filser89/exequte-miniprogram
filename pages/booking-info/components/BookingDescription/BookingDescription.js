@@ -23,6 +23,13 @@ Component({
    */
   methods: {
 
+    preview_img: function ({target}) {
+      wx.previewImage({
+        current: target.dataset.url,
+        urls: [target.dataset.url]
+      })
+    },
+    
     navigateToHrmData({currentTarget}){
       const {bookingId,hrmId} = currentTarget.dataset
       console.log('clicked hrm-view')

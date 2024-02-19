@@ -5,9 +5,9 @@
   <BookingInfo studio="{{studio}}" strings="{{strings}}" session="{{session}}" custom_strings="{{custom_strings}}"/>
   <AccessOptions studio="{{studio}}"  strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
     selected="{{selected}}" membership="{{membership}}" classpack="{{classpack}}" />
-  <!-- <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
-    <PromoCode strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
-  </view> -->
+  <view wx:if="{{selected == 'drop-in'}}">
+    <PromoCode studio="{{ studio }}" strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
+  </view>
   <view wx:if="{{selected == 'buy-membership'}}">
     <DateForm studio="{{studio}}"  strings="{{strings}}" dates="{{session.dates_array}}" binddatechanged="handleDateChange" />
   </view>
