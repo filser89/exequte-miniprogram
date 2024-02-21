@@ -127,18 +127,31 @@ Page({
     // console.log('submitRequest', params)
     const res = await updateUser(this.data.user.id, params)
     console.log("RES", res)
-    if (this.data.sessionId) {
-      this.redirectToBooking()
-
+    if (res && res.user){
+      console.log("RES.USER", res.user)
+      wx.setStorageSync('user', res.user)
+    }
+    let resp = await wxp.showModal({
+      title: this.data && this.data && this.data.strings && this.data.strings.profile_updated 
+      || "Profile updated!",
+      cancelText: this.data && this.data && this.data.strings && this.data.strings.close 
+      || "Close",
+      confirmText: this.data && this.data && this.data.strings && this.data.strings.book_class 
+      || "Book",
+    })
+    if (resp.confirm) {
+      if (this.data.sessionId) {
+        this.redirectToBooking()
+      } else {
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
+      }
     } else {
-      wx.showToast({
-        title: res.message,
-        icon: 'none',
-        duration: 1500,
+      wx.reLaunch({
+        url: '/pages/home/home',
       })
     }
-    console.log("RES.USER", res.user)
-    wx.setStorageSync('user', res.user)
   },
 
   redirectToBooking() {
@@ -179,8 +192,16 @@ Page({
       },
       birthday: {
         required: true
+      }, 
+      workout_name: {
+        required: true
+      },
+      gender: {
+        required: true
+      },
+      current_weight: {
+        required: true
       }
-
     }
     const messages = {
       first_name: {
@@ -189,8 +210,14 @@ Page({
       last_name: {
         required: "Last Name is a required field"
       },
+      workout_name: {
+        required: "Nickname is equired, pick whatever name you like for yourself!"
+      },
+      current_weight: {
+        required: "Please input your weight (Weight is required for accurate calories burned calculation)"
+      },
       phone: {
-        required: "Phone is a required field"
+        required: "Phone is a required field, we need it to notify you about class cancellations!"
       },
       mp_email: {
         required: "Email is a required field"
@@ -202,7 +229,7 @@ Page({
         required: "Emergency Contact  Phone is a required field"
       },
       birthday: {
-        required: "Birthday is required"
+        required: "Birthday is required (we use this for calculating your calories burned)"
       }
     }
     this.WxValidate = new WxValidate(rules, messages)

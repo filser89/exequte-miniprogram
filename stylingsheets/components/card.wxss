@@ -122,6 +122,14 @@
   background-color: #97daf540;
 }
 
+.pt-status.status.blue-status {
+  background-color: #97daf540;
+}
+
+.pt-status.status.green-status {
+  background-color: #97daf540;
+}
+
 .glam-status.status.blue-status {
   background-color: #51307d9c;
 }

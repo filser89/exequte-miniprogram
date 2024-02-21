@@ -31,7 +31,7 @@
   </view>
     <view class="top-up-payment d-flex space-between bottom" >
         <view class="text-white d-flex item-center content-center text-left">{{strings.total_price || "PAY:"}} {{btnPattern.price || 0}} {{strings.currency || "元"}}</view>
-        <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
+        <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought" bindmembershipboughtfailed="handleMembershipBoughtFailed"
           action="{{btnPattern.action}}" params="{{btnPattern.params}}"
           itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
           {{btnPattern.text}}

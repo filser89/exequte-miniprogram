@@ -173,6 +173,13 @@ Page({
     })
   },
 
+  navigateToPt(){
+    console.log('clicked pt')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=11`
+    })
+  },
+  
   navigateToWS(){
     console.log('clicked workout science')
     wx.navigateTo({

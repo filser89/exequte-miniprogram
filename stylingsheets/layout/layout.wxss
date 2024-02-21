@@ -11,6 +11,15 @@ page {
   font-family: Nasalization !important;
   background-color: black;
 }
+.pt {
+  /* background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/reshape-bg.jpg') !important;
+  background-repeat: repeat !important; 
+  background-size: contain !important;  */
+  background-color: black;
+  color: whitesmoke;
+  height: 100%;
+  min-height: 100vh;
+}
 
 .reshape {
   background-image: url('https://exequte.oss-cn-shanghai.aliyuncs.com/images/bg/reshape-bg.jpg') !important;
@@ -159,4 +168,49 @@ page {
 }
 .sign-up-container {
   
+}
+
+
+.pt-card {
+  background-color: #999d9e40 !important;
+}
+
+.pt-card-dark {
+  background-color: #2b2d2e40 !important;
+}
+
+.pt-card-light {
+  background-color: #999d9e67 !important; 
+}
+
+.pt-card-extralight {
+  background-color: black !important; 
+}
+
+.pt-card-active {
+  background-color: #08080898 !important;
+}
+
+.pt-credits-bubble {
+  color: whitesmoke;
+  background-color: #000000b3 !important;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+
+
+.pt-card-active-opaque {
+  background-color: #2f4249b3 !important;
+}
+.pt-card-inactive {
+  background-color: #97daf540 !important;
+}
+
+.pt-card-selected {
+  background-color: #97daf5b3 !important;
+}
+
+.pt-credits-bubble.mini {
+  font-size: 25rpx;
+  padding: 10rpx;
 }

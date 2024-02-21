@@ -76,6 +76,7 @@ export default Behavior({
         } else {
           console.log("free membership, do not initiate payment");
         }
+        this.triggerEvent('membershipbought')
       } catch (e) {
         // console.error(e)
         wx.showToast({
@@ -84,8 +85,9 @@ export default Behavior({
           icon: 'none'
         })
         deleteFailedPayment('memberships', membership.id)
+        this.triggerEvent('membershipboughtfailed')
       } finally {
-        this.triggerEvent('membershipbought')
+        //this.triggerEvent('membershipbought')
       }
     },
 

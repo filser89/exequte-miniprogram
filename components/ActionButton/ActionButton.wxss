@@ -55,6 +55,13 @@
   background-color: #2121213d !important;
 }
 
+.action-btn.pt-action-btn {
+  background-color: #b1a7a75e !important;
+}
+
+.action-btn-disabled.pt-action-btn {
+  background-color: #2121213d !important;
+}
 .action-btn-disabled.glam-action-btn {
   background-color: #2121213d !important;
 }

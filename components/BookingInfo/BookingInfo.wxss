@@ -57,10 +57,18 @@ text {
   color: #97daf5;
 }
 
+.pt-title {
+  color: #7f888c;
+}
+
 .glam-card-booking{
   background-color: #302c7369 !important;
 }
 
 .reshape-card-booking{
   background-color: #d9d9de12 !important; 
+}
+
+.pt-card-booking{
+  background-color: #999d9e40 !important; 
 }

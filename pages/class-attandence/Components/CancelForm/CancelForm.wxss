@@ -24,3 +24,7 @@
 .reshape-card-active {
   background-color: #97daf5b3 !important;
 }
+
+.pt-card-active {
+  background-color: #08080898 !important;
+}

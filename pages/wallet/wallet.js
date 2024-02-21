@@ -2,6 +2,13 @@
 import {getSetting, getUserDetails, getStrings, getMembershipTypes } from "../../utils/requests/index"
 import { updateBarColors } from '../../utils/util'
 
+import {
+  promisifyAll,
+} from 'miniprogram-api-promise';
+
+const wxp = {}
+promisifyAll(wx, wxp)
+
 Page({
 
   /**
@@ -159,11 +166,44 @@ Page({
     console.log("handleDateChange", this.data.membershipDate)
   },
 
-  handleMembershipBought(){
-    // wx.redirectTo({
-    //   url: `booking?sessionId=${this.data.session.id}`
-    // })
-    this.onShow()
+  async handleMembershipBought(){
+    let resp = await wxp.showModal({
+      title: this.data && this.data && this.data.strings && this.data.strings.membershipbought 
+      || "Purchase successful!",
+      cancelText: this.data && this.data && this.data.strings && this.data.strings.close 
+      || "Close",
+      confirmText: this.data && this.data && this.data.strings && this.data.strings.book_class 
+      || "Book",
+    })
+    if (resp.confirm) {
+      wx.reLaunch({
+        url: '/pages/index/index',
+      })
+    } else {
+      wx.reLaunch({
+        url: '/pages/home/home',
+      })
+    }
+  },
+
+    async handleMembershipBoughtFailed(){
+      let resp = await wxp.showModal({
+        title: this.data && this.data && this.data.strings && this.data.strings.membershipfailed 
+        || "Purchase failed!",
+        cancelText: this.data && this.data && this.data.strings && this.data.strings.close 
+        || "Close",
+        confirmText: this.data && this.data && this.data.strings && this.data.strings.book_class 
+        || "Retry",
+      })
+      if (resp.confirm) {
+        wx.reLaunch({
+          url: '/pages/wallet/wallet',
+        })
+      } else {
+        wx.reLaunch({
+          url: '/pages/home/home',
+        })
+      }
   },
 
   handleLanguageChanged(){

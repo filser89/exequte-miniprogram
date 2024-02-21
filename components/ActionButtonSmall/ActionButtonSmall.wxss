@@ -28,6 +28,12 @@
 .reshape-action-btn.action-btn-disabled{
   background-color: #9abfce40 !important;
 }
+.pt-action-btn.action-btn{
+  background-color: #00000040 !important;
+}
+.pt-action-btn.action-btn-disabled{
+  background-color: #9abfce40 !important;
+}
 
 .action-btn{
   width:115px;

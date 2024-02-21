@@ -37,6 +37,9 @@
     <view bindtap="navigateToGlam"  class='menu-btn d-flex {{studio + "-card"}}' style="width: 100px; justify-content: center; padding: 0 5px 0px 5px">
           <view>{{strings.glam || "GLAM"}} </view>
     </view>
+    <view bindtap="navigateToPt"  class='menu-btn d-flex {{studio + "-card"}}' style="width: 100px; justify-content: center; padding: 0 5px 0px 5px">
+          <view>{{strings.pt || "PT"}} </view>
+    </view>
     </view>
       </view>
             <!-- SCIENCE-->

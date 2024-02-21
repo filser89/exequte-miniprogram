@@ -40,6 +40,10 @@
   background-color: #97daf5b3 !important;
 }
 
+.pt-btn.reshape-action-btn {
+  background-color: #000000b3 !important;
+}
+
 .action-btn{
   width: 100%;
   height: 50px;

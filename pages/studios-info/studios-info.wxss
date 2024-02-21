@@ -67,3 +67,7 @@
 .reshape-btn {
   background-color: #97daf5b3 !important;
 }
+
+.pt-btn {
+  background-color: #000000b3 !important;
+}

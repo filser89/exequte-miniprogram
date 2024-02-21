@@ -1,7 +1,9 @@
 <!--pages/customer-service/customer-service.wxml-->
+<view class="{{studio}}">
 <Topbar bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged" />
-<view class="terms">{{strings.scan || "Press and hold to add our customer service"}}</view>
+<view class="{{studio}}-terms terms">{{strings.scan || "Press and hold to add our customer service"}}</view>
 <view class="qr-code-box">
 <image show-menu-by-longpress="true" src="../../images/xq-qrcode-cs.jpeg" mode="aspectFit"></image>
 </view>
-<view bindtap="navigateBack" class="btn-back">{{strings.back}}</view>
+<view bindtap="navigateBack" class="btn-back {{studio}}-btn-active">{{strings.back}}</view>
+</view>

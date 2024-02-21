@@ -34,5 +34,30 @@ Page({
     wx.navigateBack({
       delta: 0
     })
-  }
+  },
+
+  onTapImg({currentTarget}) {
+    try {
+      const {nodes} = currentTarget.dataset
+      console.log(nodes);
+      if (nodes){
+        const imgTags = currentTarget.dataset.nodes.match(/<img.*?>/g);
+        const urls = [];
+        if (imgTags) {
+          imgTags.forEach((tag) => {
+            const url = tag.match(/src="(.*?)"/);
+            if (url) {
+              urls.push(url[1]);
+            }
+          });
+        }
+        wx.previewImage({
+          urls: urls,
+        });
+      }
+    } catch(e){
+
+    }
+  },
+  
 })

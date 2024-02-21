@@ -16,7 +16,7 @@
   
 <view class="d-flex space-between bottom" >
   <view class="text-white d-flex item-center content-center text-left">{{strings.total_price}} {{btnPattern.price || 0}} {{strings.currency}}</view>
-  <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought"
+  <PayButton studio="{{studio}}" strings="{{strings}}" bindclassbooked="handleClassBooked" bindmembershipbought="handleMembershipBought" bindmembershipboughtfailed="handleMembershipBoughtFailed"
     action="{{btnPattern.action}}" params="{{btnPattern.params}}"
     itemId="{{selected == 'buy-membership' ? selectedMembershipTypeId : session.id}}" >
     {{btnPattern.text}}

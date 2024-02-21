@@ -72,6 +72,9 @@
 .privilege-name.reshape-privilege-name{
   background-color: #97daf55c;
 }
+.privilege-name.pt-privilege-name{
+  background-color: #08080898;
+}
 
 .false {
   transform: rotate(-90deg);

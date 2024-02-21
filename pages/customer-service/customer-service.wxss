@@ -6,6 +6,15 @@
   margin-top: 170px;
   color: white;
 }
+.glam-terms {
+  color: purple;
+}
+.reshape-terms {
+  color: white;
+}
+.pt-terms {
+  color: white;
+}
 .paragraph {
   color: white;
   margin: 20px;

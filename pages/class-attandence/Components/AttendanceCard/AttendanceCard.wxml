@@ -3,10 +3,13 @@
       <label class="checkbox attend">
         <image data-user-id="{{item.user_id}}" bindtap="goToUserProfile" class='photo' src="{{item.avatar_url}}"></image>
         <view class='check-text'>{{item.first_name}} {{item.last_name}}</view>
+        <view wx:if="{{ item.has_injury }}" class="hrm-holder">
+          <image src='/images/injury.svg' class='icon-hrm-booking'> </image>
+        </view>
         <view class="first-booking" wx:if="{{item.first_booking}}">New</view> 
         <view wx:if="{{ item.hrm && item.hrm.display_name }}" class="hrm-holder">
-            <image src='/images/hrm-white.svg' class='icon-hrm-booking'> </image> <view class="text14">HRM #{{item.hrm.display_name}}</view>
-          </view>
+          <image src='/images/hrm-white.svg' class='icon-hrm-booking'> </image> <view class="text14">#{{item.hrm.display_name}}</view>
+        </view>
         <checkbox class='check-text' value="{{item.id}}" checked="{{item.attended}}" />
       </label>
 </checkbox-group>

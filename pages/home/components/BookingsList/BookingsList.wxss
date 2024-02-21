@@ -51,6 +51,9 @@
 .reshape-action-btn-extrasmall.action-btn-extrasmall{
   background-color: #97daf540 !important;
 }
+.pt-action-btn-extrasmall.action-btn-extrasmall{
+  background-color: #000000b3 !important;
+}
 
 .action-btn-extrasmall{
   width: 115px;

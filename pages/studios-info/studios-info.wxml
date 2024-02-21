@@ -5,7 +5,7 @@
 <view class="terms">{{infos.title_one}}</view>
 </view>
 <view class="text-container {{studio}}-card">
-<rich-text class="paragraph" nodes="{{infos.paragraph_one}}"></rich-text>
+<rich-text class="paragraph" data-nodes="{{infos.paragraph_one}}" nodes="{{infos.paragraph_one}}" catchtap="onTapImg"></rich-text>
 </view>
 <view bindtap="navigateBack" class="action-btn {{studio}}-btn">{{strings.back || "BACK"}}</view>
 </view>

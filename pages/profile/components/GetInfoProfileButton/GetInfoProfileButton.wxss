@@ -5,6 +5,11 @@
   color: whitesmoke;
 }
 
+.pt-card {
+  background-color: #999d9e40 !important;
+  color: whitesmoke;
+}
+
 .glam-card {
   /* background-color: #21212191 !important; */
   background-color: #302c7369 !important;

@@ -30,8 +30,8 @@
     <ProfileForm strings="{{strings}}" user="{{user}}" birthday="{{user.birthday}}" />
     <view class="view" style="justify-content: center; margin-top: 5px">{{strings.my_body}}</view>
     <BodyNowForm strings="{{strings}}" user="{{user}}" />
-    <view class="view" style="justify-content: center; margin-top: 5px">{{strings.targets}}</view>
-    <BodyTargetForm strings="{{strings}}" user="{{user}}" />
+    <view wx:if="{{ user.first_name }}" class="view" style="justify-content: center; margin-top: 5px">{{strings.targets}}</view>
+    <BodyTargetForm wx:if="{{ user.first_name }}" strings="{{strings}}" user="{{user}}" />
     <view class="view" >
       <text>{{strings.avatar}}</text>
       <view bindtap="uploadImage"

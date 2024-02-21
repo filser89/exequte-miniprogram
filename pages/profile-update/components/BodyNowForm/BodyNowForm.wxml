@@ -1,5 +1,5 @@
 <!--pages/profile-update/components/BodyNowForm/BodyNowForm.wxml-->
-<view class="view">
+<view  wx:if="{{ user.first_name }}" class="view">
   <text>{{strings.height}}</text>
   <input type="number" name="height" value="{{user.height}}" />
 </view>
@@ -7,9 +7,14 @@
   <text>{{strings.weight}}</text>
   <input type="number" name="current_weight" value="{{user.current_weight}}" />
 </view>
-<view class="view">
+<view  wx:if="{{ user.first_name }}" class="view">
   <text>{{strings.fat}}%</text>
   <input type="number" name="current_body_fat" value="{{user.current_body_fat}}" />
+</view>
+<view class="view">
+  <text>{{strings.injury || "Injuries (if none, leave empty):"}}</text>
+  <textarea cols="20" rows="5" class="injury-container" name="injury" value="{{user.injury}}" ></textarea>
+  <!-- <input name="injury" value="{{user.injury}}" /> -->
 </view>
 <!-- <view>
   <text>Shapes</text>

@@ -8,6 +8,13 @@ import {
 } from '../../utils/requests/index.js'
 import { updateBarColors } from '../../utils/util'
 
+import {
+  promisifyAll,
+} from 'miniprogram-api-promise';
+
+const wxp = {}
+promisifyAll(wx, wxp)
+
 const app = getApp()
 Page({
 
@@ -101,7 +108,13 @@ Page({
     console.log("handleDateChange", this.data.membershipDate)
   },
 
-  handleMembershipBought(){
+  async handleMembershipBought(){
+    // wx.redirectTo({
+    //   url: `booking?sessionId=${this.data.session.id}`
+    // })
+    this.onShow()
+  },
+  async handleMembershipBoughtFailed(){
     // wx.redirectTo({
     //   url: `booking?sessionId=${this.data.session.id}`
     // })

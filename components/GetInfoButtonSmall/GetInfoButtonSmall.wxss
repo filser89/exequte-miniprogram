@@ -7,3 +7,7 @@
 .glam-card-active {
   background-color: #51307d9c !important;
 }
+
+.pt-card-active {
+  background-color: #08080898 !important;
+}

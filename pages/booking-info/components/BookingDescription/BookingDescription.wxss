@@ -15,6 +15,9 @@
 .reshape-hrm {
   filter: invert(0.5) brightness(29) sepia(1) saturate(5.1) hue-rotate(95deg);
 }
+.pt-hrm {
+  filter: invert(0.5) brightness(29) sepia(1) saturate(5.1) hue-rotate(95deg);
+}
 .glam-hrm {
   filter: brightness(99) invert(0.2) sepia(0.2);
 }

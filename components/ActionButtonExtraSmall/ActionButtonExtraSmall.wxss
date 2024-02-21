@@ -19,6 +19,9 @@
 .reshape-action-btn-extrasmall.action-btn-extrasmall{
   background-color: #97daf540 !important;
 }
+.pt-action-btn-extrasmall.action-btn-extrasmall{
+  background-color: #b1a7a75e !important;
+}
 
 .action-btn-extrasmall{
   width: 115px;

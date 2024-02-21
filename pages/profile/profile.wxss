@@ -202,6 +202,12 @@
 .top-up-btn.reshape-topup-btn {
   background-color: #97daf55c;
 }
+.privilege-name.pt-privilege-name{
+  background-color: #08080898;
+}
+.top-up-btn.pt-topup-btn {
+  background-color: #08080898;
+}
 .top-up-btn {
   /* height: 20rpx; */
   /* position: relative; */

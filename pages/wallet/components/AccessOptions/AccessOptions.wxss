@@ -11,6 +11,10 @@
   background-color: #d9d9de12 !important; 
   color: whitesmoke;
 }
+.pt-btn.button-option{
+  background-color: #08080842 !important; 
+  color: whitesmoke;
+}
 .glam-btn.button-option-active{
   /* background-color: #af6e48 !important; */
   background-color: #4c2867ad !important; 
@@ -18,6 +22,10 @@
 }
 .reshape-btn.button-option-active{
   background-color: #97daf5b3 !important;
+  color: whitesmoke;
+}
+.pt-btn.button-option-active{
+  background-color: #08080898 !important;
   color: whitesmoke;
 }
 .button-option {
