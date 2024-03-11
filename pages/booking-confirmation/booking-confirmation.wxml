@@ -1,7 +1,7 @@
 <!--pages/booking-confirmation/booking-confirmation.wxml-->
 <view class="{{studio}}">
 <Topbar2 bindlanguagechanged="handleLanguageChanged" bindstudiochanged="handleStudioChanged"/>
-<BookingInfo studio="{{studio}}"strings="{{strings}}" session="{{booking.session}}" />
+<BookingInfo studio="{{studio}}"strings="{{strings}}" session="{{booking.session}}" early="{{ early }}" />
 <view wx:if="{{ studio !== 'glam' && booking.hrm }}" class='{{studio}}-square square db'>
   <view class='bold text-black tc'>
     <view class="d-flex content-center item-center" >

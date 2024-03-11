@@ -39,13 +39,13 @@ const updateBarColors = (studio) => {
       'selectedIconPath': '/images/studio-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 2,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-reshape.png'
@@ -72,13 +72,13 @@ const updateBarColors = (studio) => {
       'selectedIconPath': '/images/studio-selected-glam.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-selected-glam.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 2,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-glam.png'
@@ -106,13 +106,13 @@ const updateBarColors = (studio) => {
       'selectedIconPath': '/images/studio-unselected.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-unselected.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 2,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-unselected.png'
@@ -139,13 +139,13 @@ const updateBarColors = (studio) => {
       'selectedIconPath': '/images/studio-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 2,
+      index: 3,
       text: '',
       'iconPath': '/images/wallet-unselected.png',
       'selectedIconPath': '/images/wallet-selected-reshape.png'
     });
     wx.setTabBarItem({
-      index: 3,
+      index: 2,
       text: '',
       'iconPath': '/images/schedule-unselected.png',
       'selectedIconPath': '/images/schedule-selected-reshape.png'

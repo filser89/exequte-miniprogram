@@ -27,17 +27,55 @@
 <view class="block" style='margin-top: 15px'>
   <text class="{{studio}}-title" style='width: 60%;'>{{strings.price}}</text>
 </view>
-<view class="block" style='margin-top: 15px'>
-  <text style='width: 60%; '><block wx:if="{{ session.access_options_credits && session.access_options_credits.free }}"><text class="{{studio}}-credits-bubble">{{strings.free || "FREE"}} </text> </block><block wx:else><text class="{{studio}}-credits-bubble">{{session.credits}} {{strings.credits}} </text> </block></text>
-</view>
+<!-- free option-->
+<block wx:if="{{ session.access_options_credits && session.access_options_credits.free }}">
+  <view class="block" style='margin-top: 15px'>
+  <text style='width: 60%; '>
+    <text class="{{studio}}-credits-bubble">{{strings.free || "FREE"}} </text> 
+    </text>
+    </view>
+</block>
+<!-- credit option -->
+<block wx:else>
+  <view class="block" style='margin-top: 15px'>
+  <text>
+    <text class="{{studio}}-credits-bubble">{{session.credits}} {{strings.credits}} </text>
+    </text>
+    </view>
+    <view class="price-estimate">
+    <view class="block">
+    <text bindtap="buyCard" data-membership-id="22">
+      <text >~ ({{session.credits * 8.5}}{{strings.currency || "元"}})</text><text class="credits-bubble-mini platinum push-right " > {{strings.platinum || "PLATINUM"}}</text>
+    </text>
+    </view>
+    <view class="block" style='margin-top: 15px'>
+    <text bindtap="buyCard"  data-membership-id="21">
+      <text >~ ({{session.credits * 9}}{{strings.currency || "元"}})</text><text  class="credits-bubble-mini gold push-right " > {{strings.gold || "GOLD"}}</text>
+    </text>
+    </view>
+    <view class="block" style='margin-top: 15px'>
+    <text data-membership-id="20" bindtap="buyCard">
+      <text>~ ({{session.credits * 10}}{{strings.currency || "元"}}) </text><text class="credits-bubble-mini silver push-right " >{{strings.silver || "SILVER"}}</text>
+    </text>
+    </view>
+    <view class="block" style='margin-top: 15px'>
+    <text data-membership-id="22" bindtap="buyCard">
+      <text>~ ({{session.credits * 11}}{{strings.currency || "元"}})</text><text class="credits-bubble-mini bronze push-right " > {{strings.bronze || "BRONZE"}}</text>
+    </text>
+    </view>
+    </view>
+</block>
 <view class="block" style='margin-top: 15px'>
   <text style='width: 100%; '>{{custom_strings.xq_address}}</text>
 </view>
 <view class="block" style='margin-top: 10px'>
   <!-- <image src='/images/information.png' class='icon-time' style="margin-right: 5px;  margin-left: 5px; width: 5%"> </image> -->
-  <text style='width: 100%; font-size: 25px;'>{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}</text>
+  <text style='width: 100%;'>*{{strings.cancellation_1}}{{session.cancel_before}}{{strings.cancellation_2}}*</text>
 </view>
-<view wx:if="{{ studio === 'glam'}}" class='coach-card {{studio}}-card'>
+<view wx:if="{{ session.location === 'glam' }}" class='coach-card {{studio}}-card'>
     {{ strings.womenonly || "NOTICE: This is a women-only session, please be reminded that men will be denied entry." }}
+    </view>
+    <view wx:if="{{ early }}" class='coach-card {{studio}}-card' bindtap="navigateToDirections" >
+    {{ strings.early_class || "NOTICE: This is an early class. Click here to see instructions for early entry to the gym." }}
     </view>
 </view>

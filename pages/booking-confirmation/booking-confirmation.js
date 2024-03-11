@@ -53,7 +53,16 @@ Page({
     console.log('non-tabbar page', wx.getStorageSync('selectedTab'))
     const booking = await getBooking(this.data.options.bookingId)
     const strings = await getStrings(this.route.split('/')[2])
-    this.setData({booking, strings})
+    let early = false
+    try { 
+        let session = booking.session;
+        if (session){
+          let session_from = session.from;
+          const isBeforeTen = time => parseInt(time.split(':')[0], 10) < 10;
+          early = isBeforeTen(session_from);
+        }
+    } catch(e){console.log(e)}
+    this.setData({booking, strings, early})
     this.showFollowAccountModal()
   },
   handleLanguageChanged(){

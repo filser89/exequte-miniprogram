@@ -20,7 +20,8 @@ Page({
     enforceCancellationPolicy: true,
     btnPattern: {},
     options:{},
-    studio: ""
+    studio: "",
+    studioParameter: ""
   },
 
   /**
@@ -30,16 +31,23 @@ Page({
     this.setData({options})
   },
   async onShow() {
+    const {
+      sessionId,
+      instructorId,
+      studioParameter
+    } = this.data.options
+    console.log(studioParameter)
+    if (studioParameter && studioParameter !== getApp().globalData.studio){
+      console.log('updating studio')
+      getApp().globalData.studio = studioParameter;
+    }
     this.setData({studio: getApp().globalData.studio})
     updateBarColors(getApp().globalData.studio)
     const user = wx.getStorageSync('user')
       this.setData({
         user
       })
-    const {
-      sessionId,
-      instructorId
-    } = this.data.options
+
     let session = await getSession(sessionId)
     try {
       session.credit_price = session.credits * 6.5;

@@ -79,8 +79,8 @@ Page({
         }
         let last_bookings = hrm_bookings
         if (bookings){
-          hrm_bookings = hrm_bookings.filter(booking => booking.session.location === currentStudio);
-          last_bookings = bookings.filter(booking => booking.session.location === currentStudio);
+          hrm_bookings = hrm_bookings.filter(booking => booking.session.location === currentStudio || booking.session.location === "" );
+          last_bookings = bookings.filter(booking => booking.session.location === currentStudio || booking.session.location === "" );
         }
         this.setData({strings, user, banner, hrm_bookings, bookings})
         if (last_bookings && last_bookings.length > 5){
@@ -179,6 +179,13 @@ Page({
       url: `/pages/studios-info/studios-info?id=11`
     })
   },
+
+  navigateToFacilities(){
+    console.log('clicked facilities')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=15`
+    })
+  },
   
   navigateToWS(){
     console.log('clicked workout science')
@@ -194,10 +201,31 @@ Page({
     })
   },
 
+  navigateToFoot(){
+    console.log('clicked foot science')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=14`
+    })
+  },
+
+  navigateToCredits(){
+    console.log('clicked credits')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=13`
+    })
+  },
+  
   navigateToTerms(){
     console.log('clicked terms')
     wx.navigateTo({
       url: `/pages/terms-and-conditions/terms-and-conditions`
+    })
+  },
+
+  navigateToDirections(){
+    console.log('clicked directions')
+    wx.navigateTo({
+      url: `/pages/studios-info/studios-info?id=12`
     })
   },
 

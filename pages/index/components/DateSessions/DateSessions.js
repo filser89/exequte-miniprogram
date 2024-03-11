@@ -32,7 +32,7 @@ Component({
         currentStudio = "reshape";
       }
       console.log("current studio for filter:" + currentStudio);
-      sessions = sessions.filter(session => session.location === currentStudio);
+      //sessions = sessions.filter(session => session.location === currentStudio ||  session.location === "");
       console.log('filtered sessions:');
       console.log(sessions);
      } catch(e){console.log(e)}
@@ -53,7 +53,7 @@ Component({
        currentStudio = "reshape";
      }
      console.log("current studio for filter:" + currentStudio);
-     sessions = sessions.filter(session => session.location === currentStudio);
+    //  sessions = sessions.filter(session => session.location === currentStudio || session.location === "");
      console.log('filtered sessions:');
      console.log(sessions);
     } catch(e){console.log(e)}

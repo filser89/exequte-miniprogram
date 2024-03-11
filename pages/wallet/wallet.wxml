@@ -7,7 +7,7 @@
       <view class="credits-current-title full-card {{studio}}-card-active-opaque">{{ strings.current_card || "CARDS"}}</view>
       <view wx:if="{{user.current_privilege}}" class='membership-box {{studio + "-card"}}'>
       <view class="privilege-name {{studio}}-privilege-name" >{{user.current_privilege.name}}</view>
-      <view class="num-container">{{user.credits || "0"}}</view><view class="label-container">{{strings.credits_left || " CREDITS LEFT"}}</view> 
+      <view class="num-container">{{user.current_privilege.is_unlimited ? "∞" : ( user.credits || "0") }}</view><view class="label-container">{{strings.credits_left || " CREDITS LEFT"}}</view> 
       <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{user.current_privilege.end_date_locale}}</view>
       <image bindtap="togglePrivilege" src='/images/Triangle2.png' class='icon-time2 open-privilege-arrow {{privilegeOpen}}' ></image>
       <view class="privilege-description-box" wx:if="{{privilegeOpen}}">

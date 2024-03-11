@@ -1,12 +1,15 @@
 <!--pages/index/components/SessionItem/SessionItem.wxml-->
 <view wx:if="{{ size == 'big' }}">
-<view class="card tl {{studio}}-card-light">
-  <view class="d-flex" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
+<!-- if session is reshape and current studio is glam-->
+<view wx:if="{{ studio !== session.location }}" class="card tl {{session.location}}-card-light-opposite">
+  <view class="d-flex" data-studio="{{session.location}}" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
     bindtap="navigateToClassInfo">
     <!-- left sede of the card -->
     <view class="text-white">
-      <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px;">
-        <image class="card-image" src="{{session.image_url}}" />
+      <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px;position: relative;">
+        <image style="width: 100%; height: 100%; filter:brightness(0.5)" class="card-image" src="{{session.image_url}}" >
+        </image>
+        <image  style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 80px;" class="logo-inside-image" src='{{ "https://exequte.oss-cn-shanghai.aliyuncs.com/images/about/" + session.location + "-logo.jpg" }}' />
       </view>
       <!-- <view class=" status text-white " style="background-color: #97daf540" >FULL</view> -->
     </view>
@@ -38,13 +41,82 @@
         <!-- button -->
        <view style="height: 100%;">
         <view wx:if="{{user.profile_filled}}">
-          <ActionButtonSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
-            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ studio === 'reshape' || studio === 'pt' ||  studio === 'glam' && user.gender && user.gender === 'Female' }}">
+          <ActionButtonSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" location="{{session.location}}" itemId="{{session.id}}"
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ session.location === 'reshape' || session.location === 'pt' ||  session.location === 'glam' && user.gender && user.gender === 'Female' }}">
             <view class="d-flex flex-column">
               <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
               <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>
-              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'IN QUEUE'}}"> {{strings.in_queue}}</view>
-              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'QUEUE UP'}}"> {{strings.queue_up}}</view> 
+              <view class="text-capitalize bold text-size-mini" wx:elif="{{session.btn_pattern.text  == 'IN QUEUE'}}"> {{strings.in_queue}}</view>
+              <block wx:elif="{{session.btn_pattern.text  == 'QUEUE UP'}}"><view class="text-capitalize bold"> {{strings.queue_up}}</view> <view class="text-capitalize text-size-mini"> {{strings.queue_up_updates}}</view> </block>
+              <view wx:if="{{!session.btn_pattern.disabled}}" class="text-size-sbody">
+                {{session.btn_pattern.disabled ? "" : ""}} </view>
+            </view>
+          </ActionButtonSmall>
+
+        </view>
+
+        <view wx:else>
+          <view class="text-capitalize bold">
+            <GetInfoButtonSmall studio="{{studio}}" profileFilled="{{user.profile_filled}}" itemId="{{session.id}}">
+              {{strings.sign_up}}
+            </GetInfoButtonSmall>
+          </view>
+        </view>
+
+       </view>
+       <!-- button finished -->
+      </view>
+      <!-- bottom of th right side finished -->
+    </view>
+    <!-- right side of the card finished -->
+  </view>
+</view>
+<view wx:else class="card tl {{studio}}-card-light">
+  <view class="d-flex" data-studio="{{session.location}}" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
+    bindtap="navigateToClassInfo">
+    <!-- left sede of the card -->
+    <view class="text-white">
+      <view class="flex" style=" height: 100px; width: 100px; border-radius: 10px;position:relative; ">
+        <image class="card-image" style="width: 100%;height:100%;filter:brightness(0.5)" src="{{session.image_url}}" />
+        <image  style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 80px;" class="logo-inside-image" src='{{ "https://exequte.oss-cn-shanghai.aliyuncs.com/images/about/" + session.location + "-logo.jpg" }}' />
+      </view>
+      <!-- <view class=" status text-white " style="background-color: #97daf540" >FULL</view> -->
+    </view>
+    <!-- left side finished -->
+    <!-- right side of the card -->
+    <view class="d-flex flex-column flex-grow space-around pl ml">
+      <!-- top of the right of the card -->
+      <view class="text-uppercase bold text-lh-copy text-white">
+        <view style="max-width: 380rpx;">{{session.name}}</view>
+        <view class="text-capitalize" wx:if="{{session.subtitle}}">{{session.subtitle}}</view>
+      </view>
+      <!-- top of the right of the card finished -->
+      <!-- bottom of the right card -->
+      <view class="d-flex space-between item-center tl ">
+        <!-- details -->
+        <view class="text-white">
+          <view class="mb1 text-size-sbody">
+            {{session.from}}-{{session.to}}
+          </view>
+          <view class="text-size-sbody mb1">
+            <image src='/images/time.png' class='icon-time' style="margin-right: 2px"> </image>{{session.duration}} {{strings.min}}
+          </view>
+          <view wx:if="{{session.calories}}" class="text-size-sbody mb1">
+            <image src='/images/fire.png' class='icon-fire' style="margin-right: 2px"> </image> {{session.calories}}
+            {{strings.kcal}}
+          </view>
+        </view>
+        <!-- details finished -->
+        <!-- button -->
+       <view style="height: 100%;">
+        <view wx:if="{{user.profile_filled}}">
+          <ActionButtonSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" location="{{session.location}}" itemId="{{session.id}}"
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ session.location === 'reshape' || session.location === 'pt' ||  session.location === 'glam' && user.gender && user.gender === 'Female' }}">
+            <view class="d-flex flex-column">
+              <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
+              <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>
+              <view class="text-capitalize bold text-size-mini" wx:elif="{{session.btn_pattern.text  == 'IN QUEUE'}}"> {{strings.in_queue}}</view>
+              <block wx:elif="{{session.btn_pattern.text  == 'QUEUE UP'}}"><view class="text-capitalize bold"> {{strings.queue_up}}</view> <view class="text-capitalize text-size-mini"> {{strings.queue_up_updates}}</view> </block>
               <view wx:if="{{!session.btn_pattern.disabled}}" class="text-size-sbody">
                 {{session.btn_pattern.disabled ? "" : ""}} </view>
             </view>
@@ -71,7 +143,7 @@
 </view>
 <view wx:else>
   <view class="card-small tl {{studio}}-card-light">
-  <view class="d-flex" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
+  <view class="d-flex" data-studio="{{session.location}}" data-session-id="{{session.id}}" data-instructor-id="{{session.instructor_id}}"
     bindtap="navigateToClassInfo">
     <!-- left sede of the card -->
     <view class="text-white">
@@ -99,8 +171,8 @@
         <!-- button -->
        <view style="height: 100%;">
         <view wx:if="{{user.profile_filled}}">
-          <ActionButtonExtraSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" itemId="{{session.id}}"
-            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ studio === 'reshape' || studio === 'pt' ||  studio === 'glam' && user.gender && user.gender === 'Female' }}">
+          <ActionButtonExtraSmall studio="{{studio}}" bindqueuedup="handleQueuedUp" userId="{{user.id}}" waiverSigned="{{user.waiver_signed}}" location="{{session.location}}" itemId="{{session.id}}"
+            action="{{session.btn_pattern.action}}" btnDisabled="{{session.btn_pattern.disabled}}" wx:if="{{ session.location === 'reshape' || session.location === 'pt' ||  session.location === 'glam' && user.gender && user.gender === 'Female' }}">
             <view class="btn-extra-small d-flex flex-column">
               <view class="text-capitalize bold" wx:if="{{session.btn_pattern.text == 'BOOKED'}}"> {{strings.booked}}</view>
               <view class="text-capitalize bold" wx:elif="{{session.btn_pattern.text  == 'COMMIT'}}"> {{strings.commit}}</view>

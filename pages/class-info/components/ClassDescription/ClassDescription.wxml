@@ -18,14 +18,15 @@
         <image src='/images/time.png' class='icon-time2' style="margin-right: 5px; "> </image>{{session.duration}}{{strings.min}}
         <image wx:if="{{session.calories}}" src='/images/fire.png' class='icon-fire2' style="margin-right: 5px; margin-left: 50px"> </image>
         <view wx:if="{{session.calories}}">{{session.calories}}{{strings.kcal}}</view>
+        <view style="margin-left: 50px" class="studio-name text-uppercase">{{session.location}}</view>
       </view>
     </view>
-    <view wx:if="{{ studio === 'glam'}}" class='coach-card {{studio}}-card'>
+    <view wx:if="{{ session.location === 'glam'}}" class='coach-card {{studio}}-card'>
     {{ strings.womenonly || "NOTICE: This is a women-only session, please be reminded that men will be denied entry." }}
     </view>
   </view>
 
-  <view wx:if="{{ studio !== 'glam' && session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white {{studio}}-card">
+  <view wx:if="{{ session.location !== 'glam' && session && session.btn_pattern &&session.btn_pattern.booking && session.btn_pattern.booking.hrm_id }}" class="hrm-card  tl text-white {{studio}}-card">
       <view class="d-flex content-center item-center" >
         <image class="{{studio}}-hrm" style="width: 100px; height: 100px;"
           src="../../../../images/hrm-white.svg"></image>

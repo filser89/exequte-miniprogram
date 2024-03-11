@@ -21,6 +21,7 @@ export default Behavior({
     action: String,
     itemId: Number,
     userId: Number,
+    location: String,
     waiverSigned: Boolean,
     isLateCancel: Boolean,
     enforceCancellationPolicy: Boolean,
@@ -109,9 +110,10 @@ export default Behavior({
     },
 
     async navigateToBooking() {
+      let studioParameter = this.properties.location ? this.properties.location : ""
       if (this.properties.waiverSigned) {
         wx.navigateTo({
-          url: `../../pages/booking/booking?sessionId=${this.properties.itemId}`,
+          url: `../../pages/booking/booking?sessionId=${this.properties.itemId}&studioParameter=${studioParameter}`,
         }) 
       } else {
         let res = await wxp.showModal({
@@ -130,7 +132,7 @@ export default Behavior({
           console.log("RES", res)
           wx.setStorageSync('user', res.user)
           wx.navigateTo({
-            url: `../../pages/booking/booking?sessionId=${this.properties.itemId}`,
+            url: `../../pages/booking/booking?sessionId=${this.properties.itemId}&studioParameter=${studioParameter}`,
           }) 
         }  else {
           wx.navigateTo({

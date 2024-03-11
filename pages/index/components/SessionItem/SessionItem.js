@@ -44,13 +44,14 @@ Component({
     async navigateToClassInfo(e) {
       const {
         sessionId,
-        instructorId
+        instructorId,
+        studio
       } = e.currentTarget.dataset
-      if (this.properties && this.properties.studio === "glam"){
+      if (studio === "glam"){
         if (this.data && this.data.user && this.data.user.gender){
           if (this.data.user.gender === "Female"){
             wx.navigateTo({
-              url: `../class-info/class-info?sessionId=${sessionId}&instructorId=${instructorId}`,
+              url: `../class-info/class-info?sessionId=${sessionId}&instructorId=${instructorId}&studioParameter=${studio}`,
             })
           } else {
             console.log("women only, dont click");
@@ -81,7 +82,7 @@ Component({
         }
       } else {
         wx.navigateTo({
-          url: `../class-info/class-info?sessionId=${sessionId}&instructorId=${instructorId}`,
+          url: `../class-info/class-info?sessionId=${sessionId}&instructorId=${instructorId}&studioParameter=${studio}`,
         })
       }
     },

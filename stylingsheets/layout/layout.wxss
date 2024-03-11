@@ -52,6 +52,10 @@ page {
   background-color: #d9d9de12 !important; 
 }
 
+.reshape-card-light-opposite {
+  background-color: #504e529c !important; 
+}
+
 .reshape-card-extralight {
   background-color: #d9d9de12 !important; 
 }
@@ -88,6 +92,7 @@ page {
   width: 90px;
 }
 
+
 .platinum {
   background-color: #97daf5b3 !important;
 }
@@ -96,6 +101,12 @@ page {
   background-color: #ffffff00 !important;
   color: #ffffff75;
 }
+
+.push-right {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
 .gold {
   background-color: rgba(255, 217, 0, 0.596) !important;
 }
@@ -137,6 +148,11 @@ page {
   /* background-color: #c6b0a2ad !important; */
   background-color: #a288c59c !important;
 
+}
+
+.glam-card-light-opposite {
+  /* background-color: #c6b0a2ad !important; */
+  background-color: #a848c759 !important;
 }
 
 .glam-card-active {

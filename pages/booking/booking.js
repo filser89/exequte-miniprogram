@@ -35,7 +35,8 @@ Page({
     discount: 0,
     couponCode: null,
     couponBtnDisabled: false,
-    studio: "reshape"
+    studio: "reshape",
+    studioParameter: ""
   },
 
   /**
@@ -46,6 +47,12 @@ Page({
     this.setData({options})
   },
   async onShow(){
+    const studioParameter = this.data.options.studioParameter
+    console.log(studioParameter)
+    if (studioParameter && studioParameter !== getApp().globalData.studio){
+      console.log('updating studio')
+      getApp().globalData.studio = studioParameter;
+    }
     this.setData({ studio : getApp().globalData.studio ? getApp().globalData.studio : "reshape" })
     updateBarColors(getApp().globalData.studio)
     
@@ -53,7 +60,7 @@ Page({
     const session = await getSession(sessionId)
     //const membershipTypes = await getMembershipTypes()
     const membershipTypes = await getMembershipTypesBySession(sessionId)
-    const selected = this.setSelected(session.access_options_credits)
+    const selected = "empty" //this.setSelected(session.access_options_credits)
     console.log("Initial selected", selected)
     const membershipDate = session.membership_date
     const membership = session.usable_membership
@@ -77,6 +84,7 @@ Page({
       strings
     })
     this.setBtnPattern(this.data.selected)
+    //this.setBtnPattern(this.data.btnPattern)
   },
 
  //event handlers
@@ -241,7 +249,15 @@ Page({
                 text: this.properties.strings && this.properties.strings.top_up  || 'TOP UP'
               }
             })
-          break;    
+          break;
+          case 'empty':
+            this.setData({
+              btnPattern: {
+                disabled: true,
+                text: this.properties.strings && this.properties.strings.chooseabove  || 'CLICK ONE OF THE OPTIONS'
+              }
+            })
+          break;      
           case 'upgrade-credits':
             this.setData({
               btnPattern: {
