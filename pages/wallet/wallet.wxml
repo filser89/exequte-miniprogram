@@ -5,27 +5,36 @@
 <view class='privilege-container'>
   <view class="privilege-current-container">
       <view class="credits-current-title full-card {{studio}}-card-active-opaque">{{ strings.current_card || "CARDS"}}</view>
-      <view wx:if="{{user.current_privilege}}" class='membership-box {{studio + "-card"}}'>
-      <view class="privilege-name {{studio}}-privilege-name" >{{user.current_privilege.name}}</view>
-      <view class="num-container">{{user.current_privilege.is_unlimited ? "∞" : ( user.credits || "0") }}</view><view class="label-container">{{strings.credits_left || " CREDITS LEFT"}}</view> 
-      <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{user.current_privilege.end_date_locale}}</view>
-      <image bindtap="togglePrivilege" src='/images/Triangle2.png' class='icon-time2 open-privilege-arrow {{privilegeOpen}}' ></image>
-      <view class="privilege-description-box" wx:if="{{privilegeOpen}}">
-        <view class="credits-option-perks" >
-            <view wx:for="{{ user.current_privilege.description }}" wx:for-item="line" wx:key="unique">• {{ line }}</view>
-          <view class="credits-option-book-before">• {{ user.current_privilege.book_before }} {{ strings.book_before || " days advance bookings" }}</view>
+      <block wx:if="{{user.current_privilege}}">
+        <view wx:for="{{user.memberships}}" wx:for-item="mt" wx:key="unique" class='membership-box {{studio + "-card"}}'>
+          <view class="privilege-name {{studio}}-privilege-name" >{{mt.name}}</view>
+        <view wx:if="{{mt.is_class_pack}}" class="num-container">
+        {{  mt.vouchers}}
         </view>
+        <view wx:else class="num-container">
+          {{mt.is_unlimited ? "∞" : ( user.credits || "0") }}
+        </view>
+        <view wx:if="{{mt.is_class_pack}}" class="label-container">{{strings.classes_left || " CLASSES LEFT"}}</view>
+        <view  wx:else class="label-container">{{strings.credits_left || " CREDITS LEFT"}}</view> 
+          <view class='valid {{studio}}-card-active'>{{strings.active_until}} {{mt.end_date_locale}}</view>
+          <image bindtap="togglePrivilege" src='/images/Triangle2.png' class='icon-time2 open-privilege-arrow {{privilegeOpen}}' ></image>
+         <view class="privilege-description-box" wx:if="{{privilegeOpen}}">
+          <view class="credits-option-perks" >
+              <view wx:for="{{ mt.description }}" wx:for-item="line" wx:key="unique">• {{ line }}</view>
+            <view class="credits-option-book-before">• {{ mt.book_before }} {{ strings.book_before || " days advance bookings" }}</view>
+          </view>
+         </view>
       </view>
-     </view>
-     <view wx:else class='membership-box no-credits {{studio + "-card"}}'>
-      {{ strings.no_credits || "An empty wallet is a sad wallet." }}
-    </view>
+   </block>
+   <view wx:else class='membership-box no-credits {{studio + "-card"}}'>
+        {{ strings.no_credits || "An empty wallet is a sad wallet." }}
+      </view>
     </view>
 </view>
     <view class="credits-topup-container">
     <view class="credits-topup-title full-card {{studio}}-card-active-opaque">{{ strings.topup || "TOP UP YOUR CREDITS"}}</view>
     <AccessOptions studio="{{studio}}" strings="{{strings}}" bindoptionchanged="handleOptionChange" session="{{session}}" membershipTypes="{{membershipTypes}}"
-    selected="{{selected}}" selectedMembership="{{selectedMembershipTypeLoad}}" membership="{{membership}}" classpack="{{classpack}}" />
+    selected="{{selected}}" user="{{user}}" selectedMembership="{{selectedMembershipTypeLoad}}" membership="{{membership}}" classpack="{{classpack}}" />
       <view wx:if="{{selected == 'buy-membership' || selected == 'drop-in'}}">
     <PromoCode studio="{{studio}}" strings="{{strings}}" bindcouponused="handleCouponUsed" couponBtnDisabled="{{couponBtnDisabled}}"/>
   </view>

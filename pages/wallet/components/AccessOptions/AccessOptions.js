@@ -1,4 +1,11 @@
 // pages/booking/components/AccessOptions/AccessOptions.js
+import {
+  promisifyAll
+} from 'miniprogram-api-promise';
+
+const wxp = {}
+promisifyAll(wx, wxp)
+
 Component({
   /**
    * Component properties
@@ -10,6 +17,7 @@ Component({
       type: Array,
       observer: 'membershipTypesChanged'
     },
+    user: Object,
     membership: Object,
     classpack: Object,
     selected: String,
@@ -69,20 +77,74 @@ Component({
         })
     },
 
-    chooseOption({currentTarget}){
+    async chooseOption({currentTarget}){
       console.log("someone called me");
       console.log(currentTarget.dataset)
-      const {bookingType, membershipTypeId, membershipTypePrice, membershipId, index, membershipDiscountMultiplier } = currentTarget.dataset
+      const {bookingType, membershipTypeId, membershipTypePrice, membershipId, index, membershipDiscountMultiplier, membershipOnlyFemale  } = currentTarget.dataset
       console.log(membershipTypeId, membershipTypePrice)
-      this.setData({selected: bookingType, current: index})
-      this.triggerEvent('optionchanged', {
-        selected: bookingType,
-         selectedMembershipTypeId: membershipTypeId,
-         selectedMembershipTypePrice: membershipTypePrice,
-         selecteMembershipDiscountMultiplier: membershipDiscountMultiplier,
-         membershipId
-        })
-      
+      try {
+        console.log("is women only? " + membershipOnlyFemale)
+        if (membershipOnlyFemale){
+          if (this.properties && this.properties.user && this.properties.user.gender){
+            if (this.properties.user.gender === "Female"){
+              console.log("user is female, can proceed")
+              this.setData({selected: bookingType, current: index})
+              this.triggerEvent('optionchanged', {
+                selected: bookingType,
+                 selectedMembershipTypeId: membershipTypeId,
+                 selectedMembershipTypePrice: membershipTypePrice,
+                 selecteMembershipDiscountMultiplier: membershipDiscountMultiplier,
+                 membershipId
+                })
+            } else {
+              console.log("women only, dont click");
+              wx.showToast({
+                title: this.properties.strings && this.properties.strings.womennoclick 
+                || "This is a women-only membership",
+                icon: 'none',
+                duration: 3000,
+              })
+              return false;
+            }
+          } else {  
+            let res = await wxp.showModal({
+              title: this.properties.strings && this.properties.strings.genderupdate 
+              || "Please update your gender in profile before buying this membershi.",
+              cancelText: this.properties.strings && this.properties.strings.maybelater
+              || "Later",
+              confirmText: this.properties.strings && this.properties.strings.updatenow
+              || "Update",
+            })
+            if (res.confirm) {
+              wx.navigateTo({
+                url: `/pages/profile-update/profile-update`
+              })
+            } else {
+              return false;
+            }
+          }
+        } else {
+          this.setData({selected: bookingType, current: index})
+          this.triggerEvent('optionchanged', {
+            selected: bookingType,
+             selectedMembershipTypeId: membershipTypeId,
+             selectedMembershipTypePrice: membershipTypePrice,
+             selecteMembershipDiscountMultiplier: membershipDiscountMultiplier,
+             membershipId
+            })
+        }
+      } catch (e){
+        console.log(e);
+        console.log("something went wrong, allowing to click and proceed");
+        this.setData({selected: bookingType, current: index})
+        this.triggerEvent('optionchanged', {
+          selected: bookingType,
+           selectedMembershipTypeId: membershipTypeId,
+           selectedMembershipTypePrice: membershipTypePrice,
+           selecteMembershipDiscountMultiplier: membershipDiscountMultiplier,
+           membershipId
+          })
+      }      
     }
   }
 })

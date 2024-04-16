@@ -3,14 +3,21 @@
   <view class='bold view-size-theader' style='margin: 20px; color: white'>{{strings.access_options}}</view>
   <view class="credits-options-container" wx:for="{{membershipTypes}}" wx:for-item="mt" wx:key="unique">
       <view bindtap="chooseOption" data-membership-type-id="{{mt.id}}" data-booking-type="buy-membership"
-        data-membership-type-price="{{mt.price}}" data-index="{{index}}" data-membership-discount-multiplier="{{ (mt.settings && mt.settings.discount_multiplier) ? mt.settings.discount_multiplier : 1 }}"
+        data-membership-type-price="{{mt.price}}" data-index="{{index}}" data-membership-discount-multiplier="{{ (mt.settings && mt.settings.discount_multiplier) ? mt.settings.discount_multiplier : 1 }}" data-membership-only-female="{{ (mt.settings && mt.settings.only_female) ? mt.settings.only_female : false }}"
         class="{{selected == 'buy-membership' && current == index ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
         <view class="credits-name">{{mt.name}}</view>
         <view wx:if="{{mt.is_unlimited}}">
           <view class="credits-unlimited-container"><span class="credits-unlmited">{{strings.unlimited || "UNLIMITED"}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
         <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
         </view>
-        <view wx:else class="credits-num-container"><span class="credits-num">{{ mt.settings.credits_display ?  mt.settings.credits_display : mt.credits}}</span><span class="credits-label">{{strings.credits || "CREDITS" }}</span></view>
+        <view wx:else class="credits-num-container">
+        <span wx:if="{{mt.is_class_pack}}" class="credits-num">
+        {{ mt.settings.vouchers_display ?  mt.settings.vouchers_display : mt.vouchers}}
+        </span>
+        <span wx:else class="credits-num">
+        {{ mt.settings.credits_display ?  mt.settings.credits_display : mt.credits}}
+        </span>
+        <span class="credits-label">{{ mt.is_class_pack ? (strings.classes || "CLASSES") : (strings.credits || "CREDITS") }}</span></view>
         <view class="credits-price">{{mt.price}} {{strings.currency || "元"}}</view>
         <view wx:if="{{selected == 'buy-membership' && current == index}}" class="credits-option-description">
           <view class="credits-option-perks" >

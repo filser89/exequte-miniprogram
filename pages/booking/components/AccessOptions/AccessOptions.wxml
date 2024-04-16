@@ -56,6 +56,7 @@
   </view>
  <!-- scenario 2b : sufficient credit but cannot book before-->
  <view bindtap="chooseOption" data-booking-type="upgrade-credits" wx:if="{{session.access_options_credits.credits && !session.access_options_credits.can_use_credits && !session.access_options_credits.can_use_dropin }}" data-index="{{i}}"
+ 
     class="{{selected == 'upgrade-credits' ? 'button-option-active' : 'button-option'}} {{studio}}-btn">
     <view class="d-flex items-center">{{strings.upgrade_desc || "Upgrade your membership to unlock this booking!"}}</view>
   </view>

@@ -40,7 +40,8 @@ Page({
       booking,
       strings,
       hrmId
-    }) 
+    })
+    this.refreshHrmData() 
   },
 
 
