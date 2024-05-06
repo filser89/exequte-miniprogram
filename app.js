@@ -58,6 +58,9 @@ App({
             page.setToken(user.data.data)
           }
         })
+      }, 
+      fail: res => {
+        console.log("WX_LOGIN FAIL",res)
       }
     })
   },

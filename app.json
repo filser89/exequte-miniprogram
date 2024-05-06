@@ -18,7 +18,8 @@
     "pages/terms-and-conditions/terms-and-conditions",
     "pages/studios-info/studios-info",
     "pages/customer-service/customer-service",
-    "pages/hrm-data/hrm-data"
+    "pages/hrm-data/hrm-data",
+    "pages/fitness-test/fitness-test"
   ],
   "tabBar": {
     "custom": false,

@@ -41,7 +41,7 @@ Page({
       strings,
       hrmId
     })
-    this.refreshHrmData() 
+    //this.refreshHrmData() 
   },
 
 

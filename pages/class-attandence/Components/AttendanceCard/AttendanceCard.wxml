@@ -2,7 +2,7 @@
 <checkbox-group name="{{item.id}}">
       <label class="checkbox attend">
         <image data-user-id="{{item.user_id}}" bindtap="goToUserProfile" class='photo' src="{{item.avatar_url}}"></image>
-        <view class='check-text'>{{item.first_name}} {{item.last_name}}</view>
+        <view data-is-fitness-test="{{item.is_fitness_test}}" data-booking-id="{{item.id}}" class='check-text' bindtap="goToFitnessTest" >{{item.first_name}} {{item.last_name}}</view>
         <view wx:if="{{ item.has_injury }}" class="hrm-holder">
           <image src='/images/injury.svg' class='icon-hrm-booking'> </image>
         </view>

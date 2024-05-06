@@ -10,7 +10,8 @@ Component({
     bookings: Array,
     selected: Number,
     studio: String,
-    picture: String
+    picture: String,
+    fitness: String
   },
 
 
@@ -24,6 +25,13 @@ Component({
       console.log('clicked hrm-view')
       wx.navigateTo({
         url: `/pages/hrm-data/hrm-data?&bookingId=${bookingId}&hrmId=${hrmId}`
+      })
+    },
+    navigateToFitness({currentTarget}){
+      const {bookingId} = currentTarget.dataset
+      console.log('clicked fitness-view')
+      wx.navigateTo({
+        url: `/pages/fitness-test/fitness-test?&bookingId=${bookingId}`
       })
     },
     preview_img: function ({target}) {

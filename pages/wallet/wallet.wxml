@@ -5,7 +5,7 @@
 <view class='privilege-container'>
   <view class="privilege-current-container">
       <view class="credits-current-title full-card {{studio}}-card-active-opaque">{{ strings.current_card || "CARDS"}}</view>
-      <block wx:if="{{user.current_privilege}}">
+      <block wx:if="{{user.memberships}}">
         <view wx:for="{{user.memberships}}" wx:for-item="mt" wx:key="unique" class='membership-box {{studio + "-card"}}'>
           <view class="privilege-name {{studio}}-privilege-name" >{{mt.name}}</view>
         <view wx:if="{{mt.is_class_pack}}" class="num-container">

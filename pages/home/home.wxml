@@ -14,14 +14,25 @@
     <DateSessions studio="{{studio}}" strings="{{strings}}" date="{{date}}" lang="{{lang}}" />
     </view>
     <view class="hrm-container">
-    <view class="hrm-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.hrm_data || "HEART MATRIX HUB"}}</view>
+    <view class="hrm-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.hrm_data || "RECORD MATRIX HUB"}}</view>
     <view class="hrm-list-container">
       <view wx:if="{{hrm_bookings && hrm_bookings.length > 0}}">
-        <BookingsList picture="false" studio="{{studio}}" strings="{{strings}}"  bookings="{{hrm_bookings}}"  />
+        <BookingsList fitness="false" picture="false" studio="{{studio}}" strings="{{strings}}"  bookings="{{hrm_bookings}}"  />
       </view>
       <view wx:else>
         <view class=" tc {{studio}}-card-extralight" style="padding: 5px;border-radius: 30rpx; ">{{strings.no_sessions_today}}</view>
       </view>
+    </view>
+    <view class="fitness-container">
+    <view class="fitness-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.fitness_test || "FITNESS TEST"}}</view>
+    <view class="fitnesstest-list-container">
+      <view wx:if="{{fitness_tests && fitness_tests.length > 0}}">
+        <BookingsList picture="false" studio="{{studio}}" strings="{{strings}}" fitness="true" bookings="{{fitness_tests}}"  />
+      </view>
+      <view wx:else>
+        <view class=" tc {{studio}}-card-extralight" style="padding: 5px;border-radius: 30rpx; ">{{strings.no_tests}}</view>
+      </view>
+    </view>
     </view>
     </view>
     <view class="about-us-container">
@@ -80,7 +91,7 @@
     <view class="pic-container">
     <view class="pic-title full-card-no-flow {{studio}}-card-active-opaque">{{strings.pictures || "LAST PHOTOS"}}</view>
     <view class="pic-list-container">
-      <BookingsList picture="true" studio="{{studio}}" strings="{{strings}}"  bookings="{{last_bookings}}"  />
+      <BookingsList fitness="false" picture="true" studio="{{studio}}" strings="{{strings}}"  bookings="{{last_bookings}}"  />
     </view>
     </view>
   </view>

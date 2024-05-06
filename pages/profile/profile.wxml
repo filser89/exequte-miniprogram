@@ -29,7 +29,7 @@
   </GetInfoProfileButton>
 <!-- stats -->
 <view class='privilege-container' style='margin-top: 15px'>
-  <view wx:if="{{user.current_privilege}}" class='membership-box {{studio + "-card"}}'>
+  <view wx:if="{{user.memberships}}" class='membership-box {{studio + "-card"}}'>
       <view class="credits-part">
         <view class='credits-title'> {{strings.credits || "CREDITS"}}</view>
         <view class='credits-holder'>

@@ -18,6 +18,7 @@ Page({
     lang: "en",
     date: "",
     bookings: [],
+    fitness_tests: [],
     last_bookings: [],
     studiosOpen: false,
     scienceOpen: false
@@ -54,6 +55,7 @@ Page({
     console.log('id', currentUser.id)
     const user = await getUserDetails(currentUser.id)
     let hrm_bookings = await getUsersBookingsWithHrm();
+    let fitness_tests = [];
     let bookings = await getUsersBookings();
     const strings = await getStrings(this.route.split('/')[2])
     const banner = await getBanner()
@@ -72,6 +74,14 @@ Page({
           console.log("current studio null, setting it to reshape");
           currentStudio = "reshape";
         }
+        if (bookings && bookings[0]){
+          let fitness_future = bookings[0].filter(booking => booking.is_fitness_test === true && booking.status !== "cancelled");
+          if (fitness_future && fitness_future.length > 0){
+            fitness_tests = [...fitness_future];
+            console.log("future:");
+            console.log(fitness_tests);
+          }
+        }
         if (bookings && bookings[1]){
           bookings = bookings[1];
         } else {
@@ -81,8 +91,16 @@ Page({
         if (bookings){
           hrm_bookings = hrm_bookings.filter(booking => booking.session.location === currentStudio || booking.session.location === "" );
           last_bookings = bookings.filter(booking => booking.session.location === currentStudio || booking.session.location === "" );
+          let fitness_past = bookings.filter(booking => booking.is_fitness_test === true && booking.status !== "cancelled");
+          if (fitness_past && fitness_past.length > 0){   
+            if (fitness_tests) {
+              fitness_tests = [...fitness_past, ...fitness_tests]; // Merge past fitness tests with future ones
+            } else {
+              fitness_tests = [...fitness_past];
+            }
+          }
         }
-        this.setData({strings, user, banner, hrm_bookings, bookings})
+        this.setData({strings, user, banner, hrm_bookings, bookings, fitness_tests})
         if (last_bookings && last_bookings.length > 5){
           last_bookings = last_bookings.slice(0,5);
         }

@@ -1,0 +1,104 @@
+<!--pages/fitness-test/fitness-test.wxml-->
+<view wx:if="{{ booking.is_fitness_test }}" class="{{studio}}">
+  <view class="coach-card tl text-white top-card {{studio}}-card">
+    <view wx:if="{{ booking.workout }}" class="{{studio}}-workout">
+    <view class="{{studio}}-validation-status-container">
+      <view class="{{studio}}-validation-status text-uppercase {{booking.workout.validation_status}}-color">
+      {{booking.workout.validation_status_str || "NONE"}}
+      </view>
+    </view>
+      <form bindsubmit="submitWorkout">
+      <view wx:if="{{ booking.workout.exercises_workouts && booking.workout.exercises_workouts['block-a'] }}" class="{{studio}}-exercise">
+        <view wx:for="{{booking.workout.exercises_workouts['block-a']}}" wx:for-item="exercise" wx:for-index="i" wx:key="unique"  >
+        <swiper class="exercises-container" 
+        current="{{current[exercise.id]}}"
+        circular="{{circular}}"
+			 vertical="{{vertical}}"
+			 interval="{{interval}}"
+       duration="{{duration}}"
+       cache-extent="3"
+			 previous-margin="{{previousMargin}}px"
+       next-margin="{{nextMargin}}px"
+       >
+          <swiper-item class="past-exercise">
+            <swiper class="swiper-container" flayout-type="normal" circular="{{historyCircular}}">
+              <view wx:for="{{past_exercises[exercise.id]}}" wx:for-item="previous" wx:for-index="i" wx:key="unique"  >
+            <swiper-item class="past-exercise-single">
+              <view class="exercise-header">
+          <view class="exercise-name text-uppercase {{studio}}-card">{{exercise.name}}</view>
+          <view class="header-label"> {{ strings.format || "TYPE:" }}</view>
+          <view class="format-label">{{ previous.format }}</view> 
+        </view>
+        <view data-exercise-name="{{exercise.name}}" data-exercise-id="{{exercise.id}}" bindtap="hideHistory" class="exercise-past-performance text-uppercase {{studio}}-card">{{strings.hide_past || "HIDE OLD RECORDS"}}</view>
+        <view class="history-date">{{previous.logged_workout_date}}</view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.reps || "REPS" }}</text>
+            <input disabled class="data-value {{studio}}-text-input" type="text" value="{{previous.reps}}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.sets || "SETS" }}</text>
+            <input disabled class="data-value {{studio}}-text-input" type="number" value="{{ previous.sets }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.weight || "WEIGHT" }}</text>
+            <input disabled class="data-value {{studio}}-text-input" type="number" value="{{ previous.weight }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.reps || "TIME" }}</text>
+            <input  disabled class="data-value {{studio}}-text-input" type="number" value="{{ previous.time_limit }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.comments || "NOTE" }}</text>
+            <input  disabled class="data-value {{studio}}-text-input" type="text" value="{{ previous.comments }}" />
+            </view>
+            </swiper-item>
+            </view>
+			    </swiper>
+          </swiper-item>
+        <swiper-item class="current-exercise">
+         <view class="exercise-header">
+          <view data-exercise-name="{{exercise.name}}" data-exercise-id="{{exercise.id}}" class="exercise-name text-uppercase {{studio}}-card">{{exercise.name}}</view>
+          <view class="header-label"> {{ strings.format || "TYPE:" }}</view>
+          <view class="format-label">{{ exercise.format }}</view> 
+        </view>
+        <view class="exercise-header">
+          <view data-exercise-name="{{exercise.name}}" data-exercise-id="{{exercise.id}}" bindtap="loadHistory" class="exercise-past-performance text-uppercase {{studio}}-card">{{strings.show_past || "CLICK TO SEE PAST PERFORMANCE"}}</view>
+        </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.reps || "REPS" }}</text>
+            <input class="data-value {{studio}}-text-input" type="text" name="{{exercise.id}}-reps" value="{{exercise.reps}}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.sets || "SETS" }}</text>
+            <input  class="data-value {{studio}}-text-input" type="number" name="{{exercise.id}}-sets" value="{{ exercise.sets }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.weight || "WEIGHT" }}</text>
+            <input class="data-value {{studio}}-text-input" type="number" name="{{exercise.id}}-weight" value="{{ exercise.weight }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.time || "TIME" }}</text>
+            <input class="data-value {{studio}}-text-input" type="number" name="{{exercise.id}}-time_limit" value="{{ exercise.time_limit }}" />
+          </view>
+          <view class="exercise-data">
+            <text class="{{studio}}-data-label">{{ strings.comments || "NOTE" }}</text>
+            <input class="data-value {{studio}}-text-input" type="text" name="{{exercise.id}}-comments" value="{{ exercise.comments }}" />
+          </view>
+          </swiper-item>  
+        </swiper>
+        </view>
+        <view class="submit-container">
+            <button class="submit {{studio}}-card-active" form-type="submit">
+            {{strings.upload || "SUBMIT"}}</button>
+      </view>
+      </view>
+      </form>
+      <button wx:if="{{options && options.is_admin}}" class="validate-button approved-color" bindtap="approveWorkout">
+            {{strings.approve || "APPROVE"}}
+      </button>
+      <button wx:if="{{options && options.is_admin}}" class="validate-button denied-color" bindtap="denyWorkout">
+            {{strings.deny || "DENY"}}
+      </button>
+    </view>
+    </view>
+  </view>

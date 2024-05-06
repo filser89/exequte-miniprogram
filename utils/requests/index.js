@@ -22,8 +22,18 @@ import {
   cancelBooking,
   takeAttendance,
   getUsersBookings,
-  getUsersBookingsWithHrm
+  getUsersBookingsWithHrm,
+  getBookingWithLoggedWorkout,
+  getUsersBookingsWithLoggedWorkouts,
+  updateBookingWorkout
 } from './bookings.js'
+
+import {
+  updateLoggedWorkout,
+  getLoggedExercisesHistory,
+  approveLoggedWorkout,
+  denyLoggedWorkout
+} from './logged_workouts.js'
 
 import {
   getMembershipTypes,
@@ -138,6 +148,13 @@ module.exports = {
   cancelBooking,
   getUsersBookings,
   getUsersBookingsWithHrm,
+  getBookingWithLoggedWorkout,
+  getUsersBookingsWithLoggedWorkouts,
+  updateBookingWorkout,
+  updateLoggedWorkout,
+  getLoggedExercisesHistory,
+  approveLoggedWorkout,
+  denyLoggedWorkout,
   getSession,
   getSessions,
   takeAttendance,

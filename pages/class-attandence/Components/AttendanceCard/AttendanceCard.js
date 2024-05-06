@@ -30,6 +30,20 @@ Component({
       wx.navigateTo({
         url: `../../pages/profile-update/profile-update?userId=${userId}`,
       }) 
+    },    
+    goToFitnessTest(e) {
+      const {
+        bookingId,
+        isFitnessTest
+      } = e.currentTarget.dataset
+      console.log(bookingId + " booking is fitness_test:" + isFitnessTest)
+      if (isFitnessTest){
+        wx.navigateTo({
+          url: `../../pages/fitness-test/fitness-test?is_admin=true&bookingId=${bookingId}`,
+        }) 
+      } else {
+        console.log("not fitness test, do nothing")
+      }
     },
   }
 })

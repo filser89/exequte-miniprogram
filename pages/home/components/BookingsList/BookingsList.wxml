@@ -26,7 +26,10 @@
           </view>
         </view>
         <view class="action-btn-container">
-        <view bindtap="navigateToHrmData" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}"  class="action-btn-extrasmall {{studio}}-action-btn-extrasmall" >
+          <view wx:if="{{fitness === 'false'}}" bindtap="navigateToHrmData" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}"  class="action-btn-extrasmall {{studio}}-action-btn-extrasmall" >
+          {{strings.heart || "HEART"}}
+        </view>
+        <view wx:else bindtap="navigateToFitness" data-booking-id="{{booking.id}}" data-hrm-id="{{booking.hrm.id}}"  class="action-btn-extrasmall {{studio}}-action-btn-extrasmall" >
           {{strings.stats || "STATS"}}
         </view>
         </view>

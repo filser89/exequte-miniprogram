@@ -8,6 +8,14 @@ const getBooking = (bookingId) => {
   return request(options)
 }
 
+const getBookingWithLoggedWorkout = (bookingId) => {
+  const options = {
+    method: 'get',
+    url: `/bookings/${bookingId}/workout_log`,
+  }
+  return request(options)
+}
+
 const getAttendanceList = () => {
   const options = {
     method: 'get',
@@ -26,6 +34,18 @@ const createBooking = (sessionId, params) => {
   }
   return request(options)
 }
+
+const updateBookingWorkout = (bookingId, params) => {
+  const options = {
+    method: 'post',
+    url: `/bookings/${bookingId}/log_workout`,
+    data: {
+      ...params
+    }
+  }
+  return request(options)
+}
+
 const cancelBooking = (id) => {
   const options = {
     method: 'put',
@@ -58,6 +78,19 @@ const getUsersBookingsWithHrm = () => {
   }
   return request(options)
 }
+
+const getUsersBookingsWithLoggedWorkouts = (isFitnessTest) => {
+  let url = "/bookings/workout_logs"
+  if (isFitnessTest)
+    url = "/bookings/fitness_tests"
+  const options = {
+    method: 'get',
+    url: url,
+  }
+  return request(options)
+}
+
+
 module.exports = {
   getBooking,
   getAttendanceList,
@@ -65,5 +98,8 @@ module.exports = {
   cancelBooking,
   takeAttendance,
   getUsersBookings,
-  getUsersBookingsWithHrm
+  getUsersBookingsWithHrm,
+  getBookingWithLoggedWorkout,
+  getUsersBookingsWithLoggedWorkouts,
+  updateBookingWorkout
 }
